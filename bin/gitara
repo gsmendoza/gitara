@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'gitara'
+
+Gitara::App.start

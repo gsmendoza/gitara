@@ -1,5 +1,7 @@
+require "thor"
+
+require "gitara/app"
 require "gitara/version"
 
-module Gitara
-  # Your code goes here...
-end
+
+
