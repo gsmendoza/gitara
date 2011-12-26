@@ -1,4 +1,5 @@
 *.gem
+*.ly
 .bundle
 Gemfile.lock
 files/*
