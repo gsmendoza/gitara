@@ -1,5 +1,8 @@
 *.gem
 *.ly
+*.midi
+*.pdf
+*.ps
 .bundle
 Gemfile.lock
 files/*

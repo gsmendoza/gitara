@@ -9,8 +9,10 @@ require "gitara/node/tab"
 require "gitara/template/tab"
 
 module Gitara
-  def self.define
-    @@tab = Node::Tab.new #TODO.instance_eval(&block)
+  def self.define(&block)
+    @@tab = Node::Tab.new.tap do |tab|
+      tab.instance_eval(&block)
+    end
   end
 
   def self.tab

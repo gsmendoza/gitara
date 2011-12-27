@@ -1,2 +1,59 @@
 \version "2.12.3"
 \include "english.ly"
+
+treble = { {{{tab.voice.first}}} }
+
+\score {
+  \new StaffGroup <<
+    \new Staff <<
+      \tempo 4 = 75
+      \clef "treble_8"
+
+      \new Voice {
+        \voiceOne
+        \treble
+      }
+    >>
+
+    \new TabStaff <<
+      \new TabVoice {
+        \slurUp
+        \treble
+      }
+    >>
+  >>
+
+  \layout {
+    \context { \Staff
+      \override TimeSignature #'style = #'numbered
+      \override StringNumber #'transparent = ##t
+    }
+    \context { \TabStaff
+      \override TimeSignature #'style = #'numbered
+    }
+    \context { \Voice
+      \remove Slur_engraver
+    }
+    \context { \TabVoice
+      \remove Dots_engraver
+      \remove Stem_engraver
+      \remove Rest_engraver
+    }
+  }
+}
+
+% showLastLength = R1*4
+\score {
+  \new Staff \with {midiInstrument = #"acoustic guitar (nylon)"} <<
+    \tempo 4 = 75
+    \clef "treble_8"
+
+    \new Voice {
+      \unfoldRepeats {
+        \treble
+      }
+    }
+  >>
+
+  \midi {}
+}
