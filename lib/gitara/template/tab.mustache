@@ -1,7 +1,8 @@
+{{=<% %>=}}
 \version "2.12.3"
 \include "english.ly"
 
-treble = { {{{tab.voice.first}}} }
+treble = { <%& tab.voice.value %> }
 
 \score {
   \new StaffGroup <<
