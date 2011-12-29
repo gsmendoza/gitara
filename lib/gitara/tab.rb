@@ -1,11 +1,19 @@
 module Gitara
   class Tab
-    attr_accessor :voice
-
     def self.parse(text)
       Tab.new.tap do |tab|
-        tab.voice = Node::Voice.parse(text)
+        i = 1
+        text.split("\n").each do |line|
+          voice = Node::Voice.new(:id => i)
+          voice.parse_attributes_from_text(line)
+          tab.voices << voice
+          i += 1
+        end
       end
+    end
+
+    def voices
+      @voices ||= []
     end
   end
 end

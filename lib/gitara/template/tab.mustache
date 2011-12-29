@@ -2,7 +2,12 @@
 \version "2.12.3"
 \include "english.ly"
 
-treble = { <%& tab.voice.value %> }
+<%# voices %>
+<% definition_name %> = {
+  <%& value %>
+}
+<%/ voices %>
+
 
 \score {
   \new StaffGroup <<
@@ -10,17 +15,21 @@ treble = { <%& tab.voice.value %> }
       \tempo 4 = 75
       \clef "treble_8"
 
+      <%# voices %>
       \new Voice {
-        \voiceOne
-        \treble
+        <% stem_type %>
+        <% name %>
       }
+      <%/ voices %>
     >>
 
     \new TabStaff <<
+      <%# voices %>
       \new TabVoice {
         \slurUp
-        \treble
+        <% name %>
       }
+      <%/ voices %>
     >>
   >>
 
@@ -49,11 +58,13 @@ treble = { <%& tab.voice.value %> }
     \tempo 4 = 75
     \clef "treble_8"
 
+    <%# voices %>
     \new Voice {
       \unfoldRepeats {
-        \treble
+        <% name %>
       }
     }
+    <%/ voices %>
   >>
 
   \midi {}

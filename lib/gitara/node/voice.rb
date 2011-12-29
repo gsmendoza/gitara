@@ -1,12 +1,28 @@
 module Gitara
   module Node
     class Voice
-      constructor :value, :accessors => true
+      constructor :id, :value, :accessors => true, :strict => false
 
-      def self.parse(text)
+      def definition_name
+        "v#{id_as_word}"
+      end
+
+      def id_as_word
+        id.en.numwords.camelize
+      end
+
+      def name
+        "\\#{definition_name}"
+      end
+
+      def parse_attributes_from_text(text)
         matches = text.match(/\s*(.*)\s*:\s*(.*)\s*/)
 
-        Voice.new(:value => matches[2])
+        self.value = matches[2]
+      end
+
+      def stem_type
+        "\\voice#{id_as_word}"
       end
     end
   end

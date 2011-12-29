@@ -1,4 +1,6 @@
+require "active_support/inflector"
 require "constructor"
+require "linguistics"
 require "mustache"
 require "pow"
 require "thor"
@@ -9,6 +11,5 @@ require "gitara/version"
 require "gitara/node/voice"
 require "gitara/template/tab"
 
+Linguistics::use :en
 Mustache.template_path = Pow!
-
-
