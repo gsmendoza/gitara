@@ -9,3 +9,6 @@ require "gitara/version"
 require "gitara/node/voice"
 require "gitara/template/tab"
 
+Mustache.template_path = Pow!
+
+
