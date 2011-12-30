@@ -9,7 +9,6 @@ require "gitara/app"
 require "gitara/tab"
 require "gitara/version"
 require "gitara/node/voice"
-require "gitara/template/tab"
 
 Linguistics::use :en
 Mustache.template_path = Pow!

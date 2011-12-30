@@ -18,7 +18,7 @@ module Gitara
       tab = Gitara::Tab.parse(Pow(source_path).read)
       lilypond_name = Pow(source_path).name(false) + '.ly'
       lilypond_path = Pow(options['target-directory']) / lilypond_name
-      lilypond_path.write(Gitara::Template::Tab.new(:tab => tab).render)
+      lilypond_path.write(Mustache.render(Pow!('template/tab.mustache').read, tab))
 
       if options['run-lilypond']
         `lilypond -o #{lilypond_path.parent / lilypond_path.name(false)} #{lilypond_path}`
