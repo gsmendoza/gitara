@@ -15,7 +15,7 @@ module Gitara
       :type => :boolean
 
     def export(source_path)
-      tab = Gitara::Tab.parse(Pow(source_path).read)
+      tab = Gitara::Dsl::Tab.parse(Pow(source_path).read)
       lilypond_name = Pow(source_path).name(false) + '.ly'
       lilypond_path = Pow(options['target-directory']) / lilypond_name
       lilypond_path.write(Mustache.render(Pow!('template/tab.mustache').read, tab))
