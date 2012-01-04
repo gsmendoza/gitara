@@ -8,7 +8,7 @@ module Gitara
       voices.each_with_index do |voice, i|
         voice.id = i + 1
       end
-      Dsl::Tab.new(:voices => voices)
+      Tab.new(:voices => voices)
     end
   end
 end

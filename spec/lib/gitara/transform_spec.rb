@@ -19,7 +19,7 @@ describe "Transform" do
     }
 
     tab = transform.apply(hash)
-    tab.should be_a(Dsl::Tab)
+    tab.should be_a(Tab)
     tab.voices.size.should == 2
     tab.voices[0].id.should == 1
     tab.voices[1].id.should == 2
