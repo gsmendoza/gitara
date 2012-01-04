@@ -4,8 +4,7 @@ module Gitara
       constructor :voices, :accessors => true, :strict => false
 
       def self.parse(text)
-        tokens = Parser.new.parse(text)
-        Tab.new(:voices => Transform.new.apply(tokens))
+        Transform.new.apply(Parser.new.parse(text))
       end
     end
   end

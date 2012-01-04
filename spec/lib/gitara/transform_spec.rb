@@ -10,7 +10,7 @@ describe "Transform" do
     voice.value.should == 'a'
   end
 
-  it "can add ids to an array of voices" do
+  it "can convert an array of voices to a tab" do
     hash = {
       :method_calls => [
         {:value=>{:string=>"a"}, :method_id=>{:identifier=>"voice"}},
@@ -18,9 +18,10 @@ describe "Transform" do
       ]
     }
 
-    voices = transform.apply(hash)
-    voices.size.should == 2
-    voices[0].id.should == 1
-    voices[1].id.should == 2
+    tab = transform.apply(hash)
+    tab.should be_a(Dsl::Tab)
+    tab.voices.size.should == 2
+    tab.voices[0].id.should == 1
+    tab.voices[1].id.should == 2
   end
 end
