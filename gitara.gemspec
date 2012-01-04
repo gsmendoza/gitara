@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency "constructor"
   s.add_runtime_dependency "linguistics"
   s.add_runtime_dependency "mustache"
+  s.add_runtime_dependency "parslet"
   s.add_runtime_dependency "pow"
   s.add_runtime_dependency "thor"
 
