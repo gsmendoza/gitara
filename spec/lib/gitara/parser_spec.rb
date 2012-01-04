@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'parslet/rig/rspec'
 
 describe "Parser" do
   let(:parser){ Parser.new }
@@ -37,9 +36,9 @@ describe "Parser" do
     TEXT
 
     tokens = parser.parse(text)
-    tokens.size.should == 2
-    tokens[0][:value][:string].to_s.should == 'a'
-    tokens[1][:value][:string].to_s.should == 'b'
+    tokens[:method_calls].size.should == 2
+    tokens[:method_calls][0][:value][:string].to_s.should == 'a'
+    tokens[:method_calls][1][:value][:string].to_s.should == 'b'
   end
 end
 

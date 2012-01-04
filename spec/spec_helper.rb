@@ -1,5 +1,5 @@
 require 'gitara'
-
+require 'parslet/rig/rspec'
 
 RSpec.configure do |config|
   include Gitara

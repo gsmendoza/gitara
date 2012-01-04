@@ -10,6 +10,7 @@ require "gitara/app"
 require "gitara/dsl/tab"
 require "gitara/node/voice"
 require "gitara/parser"
+require "gitara/transform"
 require "gitara/version"
 
 Linguistics::use :en

@@ -5,7 +5,7 @@ module Gitara
     end
 
     rule(:method_call) do
-      identifier.as(:method_id) >> string.as(:value)
+      (identifier.as(:method_id) >> string.as(:value))
     end
 
     rule :space do
@@ -23,7 +23,10 @@ module Gitara
       space?
     end
 
-    rule(:tab) { space? >> method_call.repeat }
-    root(:tab)
+    rule :method_calls do
+      space? >> method_call.repeat.as(:method_calls)
+    end
+
+    root(:method_calls)
   end
 end
