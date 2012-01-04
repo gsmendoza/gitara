@@ -1,20 +1,11 @@
 module Gitara
   module Dsl
     class Tab
-      def self.parse(text)
-        Tab.new.tap do |tab|
-          i = 1
-          text.split("\n").each do |line|
-            voice = Node::Voice.new(:id => i)
-            voice.parse_attributes_from_text(line)
-            tab.voices << voice
-            i += 1
-          end
-        end
-      end
+      constructor :voices, :accessors => true, :strict => false
 
-      def voices
-        @voices ||= []
+      def self.parse(text)
+        tokens = Parser.new.parse(text)
+        Tab.new(:voices => Transform.new.apply(tokens))
       end
     end
   end
