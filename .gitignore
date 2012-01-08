@@ -3,6 +3,7 @@
 *.pdf
 *.ps
 .bundle
+.geanyprj
 Gemfile.lock
 files/*
 pkg/*
