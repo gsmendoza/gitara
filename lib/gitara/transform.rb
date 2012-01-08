@@ -1,14 +1,16 @@
 module Gitara
   class Transform < Parslet::Transform
-    rule :method_id => {:identifier => 'voice'}, :value => {:string => simple(:string)} do
-      Node::Voice.new(:value => string)
+    rule :method_id => {:identifier => 'tab'}, :value => nil, :method_calls => sequence(:children) do
+      children.each_with_index do |child, i|
+        child.id = i + 1
+      end
+      children
+
+      Tab.new(:children => children)
     end
 
-    rule :method_calls => sequence(:voices) do
-      voices.each_with_index do |voice, i|
-        voice.id = i + 1
-      end
-      Tab.new(:voices => voices)
+    rule :method_id => {:identifier => 'voice'}, :value => {:string => simple(:string)} do
+      Node::Voice.new(:value => string)
     end
   end
 end
