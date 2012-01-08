@@ -6,7 +6,7 @@ module Gitara
       end
       children
 
-      Tab.new(:children => children)
+      Node::Tab.new(:children => children)
     end
 
     rule :identifier => 'voice', :string => simple(:string) do

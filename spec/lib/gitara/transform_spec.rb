@@ -16,7 +16,7 @@ describe "Transform" do
     it "can be transformed from hash to object" do
       hash = {:identifier=>"tab", :method_calls => []}
       tab = transform.apply(hash)
-      tab.should be_a(Tab)
+      tab.should be_a(Node::Tab)
       tab.children.should == []
     end
 
@@ -27,7 +27,7 @@ describe "Transform" do
         :method_calls => [voice]
       }
       tab = transform.apply(hash)
-      tab.should be_a(Tab)
+      tab.should be_a(Node::Tab)
       tab.children.should == [voice]
     end
   end
