@@ -34,23 +34,23 @@ describe "Parser:" do
 
       tokens = parser.method_calls.parse(text.strip)
       tokens[:method_calls].size.should == 2
-      tokens[:method_calls][0][:value][:string].to_s.should == 'a'
-      tokens[:method_calls][1][:value][:string].to_s.should == 'b'
+      tokens[:method_calls][0][:string].to_s.should == 'a'
+      tokens[:method_calls][1][:string].to_s.should == 'b'
     end
   end
 
   describe "method_call" do
     it "can be parsed without a block" do
       result = parser.method_call.parse('voice "a b c d e f g"')
-      result[:method_id][:identifier].should == 'voice'
-      result[:value][:string].should == 'a b c d e f g'
+      result[:identifier].should == 'voice'
+      result[:string].should == 'a b c d e f g'
     end
 
     it "can be parsed with an empty block" do
       text = "tab do end"
 
       tokens = parser.method_call.parse(text)
-      tokens[:method_id][:identifier].should == 'tab'
+      tokens[:identifier].should == 'tab'
       tokens[:method_calls].should == []
     end
   end
@@ -75,7 +75,7 @@ describe "Parser:" do
 
       tokens = parser.block.parse(text.strip)
       tokens[:method_calls].size.should == 1
-      tokens[:method_calls][0][:method_id][:identifier].should == "voice"
+      tokens[:method_calls][0][:identifier].should == "voice"
     end
   end
 

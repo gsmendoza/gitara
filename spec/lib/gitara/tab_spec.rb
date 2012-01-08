@@ -10,6 +10,7 @@ describe 'Tab' do
       TEXT
 
       tab = Tab.parse(text)
+
       tab.voices.should have(1).voice
       tab.voices[0].value =  %q|r8 <d'\2>16( <c'\2>8.) <a\3>16 <c'\2>8. <d'\2>16 <e'\1>8. <g\3>8|
     end

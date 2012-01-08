@@ -17,7 +17,11 @@ module Gitara
     end
 
     rule :method_call do
-      space? >> (identifier.as(:method_id) >> string.maybe.as(:value) >> block.maybe)
+      space? >> (identifier >> string.maybe >> block.maybe)
+    end
+
+    rule :method_calls do
+      method_call.repeat.as(:method_calls)
     end
 
     rule :space do
@@ -33,10 +37,6 @@ module Gitara
       ( (str('"').absent? >> any) ).repeat.as(:string) >>
       str('"') >>
       space?
-    end
-
-    rule :method_calls do
-      method_call.repeat.as(:method_calls)
     end
 
     root(:method_call)
