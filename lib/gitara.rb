@@ -8,7 +8,7 @@ require "thor"
 
 require "gitara/app"
 require "gitara/node/tab"
-require "gitara/node/voice"
+require "gitara/node/voice_bar"
 require "gitara/parser"
 require "gitara/transform"
 require "gitara/version"

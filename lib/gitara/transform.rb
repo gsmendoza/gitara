@@ -10,7 +10,7 @@ module Gitara
     end
 
     rule :identifier => 'voice', :string => simple(:string) do
-      Node::Voice.new(:value => string)
+      Node::VoiceBar.new(:value => string)
     end
   end
 end

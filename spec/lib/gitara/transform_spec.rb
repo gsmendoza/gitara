@@ -6,9 +6,9 @@ describe "Transform" do
   describe "voice" do
     it "can be transformed from hash to object" do
       hash = {:string=>"a", :identifier=>"voice"}
-      voice = transform.apply(hash)
-      voice.should be_a(Node::Voice)
-      voice.value.should == 'a'
+      voice_bar = transform.apply(hash)
+      voice_bar.should be_a(Node::VoiceBar)
+      voice_bar.value.should == 'a'
     end
   end
 
@@ -21,14 +21,14 @@ describe "Transform" do
     end
 
     it "can be transformed with children" do
-      voice = Node::Voice.new(:value => 'a')
+      voice_bar = Node::VoiceBar.new(:value => 'a')
       hash = {
         :identifier=>"tab",
-        :method_calls => [voice]
+        :method_calls => [voice_bar]
       }
       tab = transform.apply(hash)
       tab.should be_a(Node::Tab)
-      tab.children.should == [voice]
+      tab.children.should == [voice_bar]
     end
   end
 end

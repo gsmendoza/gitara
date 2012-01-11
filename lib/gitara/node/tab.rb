@@ -11,8 +11,8 @@ module Gitara
         @children ||= []
       end
 
-      def voices
-        children.select{|child| child.is_a?(Node::Voice)}
+      def voice_bars
+        children.select{|child| child.is_a?(Node::VoiceBar)}
       end
     end
   end

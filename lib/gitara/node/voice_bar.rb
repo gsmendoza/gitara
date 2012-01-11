@@ -1,6 +1,6 @@
 module Gitara
   module Node
-    class Voice
+    class VoiceBar
       constructor :id, :value, :accessors => true, :strict => false
 
       def definition_name
