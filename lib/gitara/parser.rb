@@ -13,7 +13,7 @@ module Gitara
     end
 
     rule(:identifier) do
-      (str('tab') | str('voice')).as(:identifier) >> space?
+      (str('bar') | str('tab') | str('voice')).as(:identifier) >> space?
     end
 
     rule :method_call do

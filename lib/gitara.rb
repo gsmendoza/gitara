@@ -7,6 +7,7 @@ require "pow"
 require "thor"
 
 require "gitara/app"
+require "gitara/node/bar"
 require "gitara/node/tab"
 require "gitara/node/voice_bar"
 require "gitara/parser"

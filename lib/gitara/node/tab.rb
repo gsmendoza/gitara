@@ -7,6 +7,11 @@ module Gitara
         Transform.new.apply(Parser.new.parse(text))
       end
 
+      def bars
+        children.select{|child| child.is_a?(Node::Bar) }
+      end
+
+
       def children
         @children ||= []
       end

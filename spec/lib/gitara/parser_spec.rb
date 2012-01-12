@@ -91,5 +91,19 @@ describe "Parser:" do
     end
   end
 
+  describe "bar" do
+    it "can be parsed if empty" do
+      text = <<-TEXT
+        bar "Intro" do
+        end
+      TEXT
+
+      tokens = parser.method_call.parse(text)
+      tokens[:identifier].should == 'bar'
+      tokens[:string].should == 'Intro'
+      tokens[:method_calls].should == []
+    end
+  end
+
 end
 

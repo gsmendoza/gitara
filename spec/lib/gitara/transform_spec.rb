@@ -31,4 +31,25 @@ describe "Transform" do
       tab.children.should == [voice_bar]
     end
   end
+
+  describe "bar" do
+    it "can be transformed from hash to object" do
+      hash = {:identifier=>"bar", :method_calls => [], :string => 'Intro'}
+      bar = transform.apply(hash)
+      bar.should be_a(Node::Bar)
+      bar.name.should == 'Intro'
+      bar.children.should == []
+    end
+
+    it "can be transformed with children" do
+      voice_bar = Node::VoiceBar.new(:value => 'a')
+      hash = {
+        :identifier=>"bar",
+        :method_calls => [voice_bar],
+        :string => 'Intro'
+      }
+      bar = transform.apply(hash)
+      bar.children.should == [voice_bar]
+    end
+  end
 end
