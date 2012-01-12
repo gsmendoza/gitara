@@ -14,4 +14,13 @@ describe Node::Base do
       node.call_name.should == '\vOne'
     end
   end
+
+  describe "children=(other)" do
+    it "should set the ids and parents of the children" do
+      parent = Node::Base.new
+      parent.children = [Node::Base.new(:id => nil)]
+      parent.children[0].id.should == 1
+      parent.children[0].parent.should == parent
+    end
+  end
 end
