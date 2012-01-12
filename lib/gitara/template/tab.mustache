@@ -18,7 +18,7 @@
       <%# voice_bars %>
       \new Voice {
         <% stem_type %>
-        <% name %>
+        <% call_name %>
       }
       <%/ voice_bars %>
     >>
@@ -27,7 +27,7 @@
       <%# voice_bars %>
       \new TabVoice {
         \slurUp
-        <% name %>
+        <% call_name %>
       }
       <%/ voice_bars %>
     >>
@@ -61,7 +61,7 @@
     <%# voice_bars %>
     \new Voice {
       \unfoldRepeats {
-        <% name %>
+        <% call_name %>
       }
     }
     <%/ voice_bars %>
