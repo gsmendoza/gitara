@@ -2,12 +2,19 @@
 \version "2.12.3"
 \include "english.ly"
 
-<%# voice_bars %>
-<% definition_name %> = {
-  <%& value %>
-}
-<%/ voice_bars %>
+%-----------------------------------------------------------------------
+% Bars
 
+<%#bars%>
+<%> bar %>
+<%/bars%>
+
+%-----------------------------------------------------------------------
+% Voices
+
+<%# voices %>
+<%> voice %>
+<%/ voices %>
 
 \score {
   \new StaffGroup <<
@@ -15,21 +22,21 @@
       \tempo 4 = 75
       \clef "treble_8"
 
-      <%# voice_bars %>
+      <%# voices %>
       \new Voice {
         <% stem_type %>
         <% call_name %>
       }
-      <%/ voice_bars %>
+      <%/ voices %>
     >>
 
     \new TabStaff <<
-      <%# voice_bars %>
+      <%# voices %>
       \new TabVoice {
         \slurUp
         <% call_name %>
       }
-      <%/ voice_bars %>
+      <%/ voices %>
     >>
   >>
 
@@ -58,13 +65,13 @@
     \tempo 4 = 75
     \clef "treble_8"
 
-    <%# voice_bars %>
+    <%# voices %>
     \new Voice {
       \unfoldRepeats {
         <% call_name %>
       }
     }
-    <%/ voice_bars %>
+    <%/ voices %>
   >>
 
   \midi {}

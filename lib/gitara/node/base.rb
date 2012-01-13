@@ -1,8 +1,7 @@
 module Gitara
   module Node
     class Base
-      constructor :name, :id, :value, :accessors => true, :strict => false
-      attr_accessor :children, :parent
+      constructor :name, :id, :parent, :value, :accessors => true, :strict => false
 
       def children
         @children ||= []
