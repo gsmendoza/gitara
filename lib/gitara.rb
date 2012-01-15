@@ -2,7 +2,6 @@ require "active_support/inflector"
 require "constructor"
 require "erubis"
 require "linguistics"
-require "mustache"
 require "parslet"
 require "pow"
 require "thor"
@@ -18,5 +17,3 @@ require "gitara/transform"
 require "gitara/version"
 
 Linguistics::use :en
-Mustache.raise_on_context_miss = true
-Mustache.template_path = Pow! / :gitara / :template
