@@ -1,0 +1,3 @@
+<% voice_bars.each do |voice_bar| %>
+<%= voice_bar.definition_name %> = { <%= voice_bar.value %> }
+<% end %>

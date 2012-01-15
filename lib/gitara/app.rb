@@ -16,9 +16,11 @@ module Gitara
 
     def export(source_path)
       tab = Gitara::Node::Tab.parse(Pow(source_path).read)
+      eruby = Erubis::Eruby.new(Pow!('template/tab.eruby').read)
+
       lilypond_name = Pow(source_path).name(false) + '.ly'
       lilypond_path = Pow(options['target-directory']) / lilypond_name
-      lilypond_path.write(Mustache.render(Pow!('template/tab.mustache').read, tab))
+      lilypond_path.write(eruby.evaluate(tab))
 
       if options['run-lilypond']
         `lilypond -o #{lilypond_path.parent / lilypond_path.name(false)} #{lilypond_path}`

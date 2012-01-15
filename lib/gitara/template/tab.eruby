@@ -1,20 +1,19 @@
-{{=<% %>=}}
 \version "2.12.3"
 \include "english.ly"
 
 %-----------------------------------------------------------------------
 % Bars
 
-<%#bars%>
-<%> bar %>
-<%/bars%>
+<% bars.each do |bar| %>
+<%= Erubis::Eruby.new(Pow!('lib/gitara/template/bar.eruby').read).evaluate(bar) %>
+<% end %>
 
 %-----------------------------------------------------------------------
 % Voices
 
-<%# voices %>
-<%> voice %>
-<%/ voices %>
+<% voices.each do |voice| %>
+<%= Erubis::Eruby.new(Pow!('lib/gitara/template/voice.eruby').read).evaluate(voice) %>
+<% end %>
 
 \score {
   \new StaffGroup <<
@@ -22,21 +21,21 @@
       \tempo 4 = 75
       \clef "treble_8"
 
-      <%# voices %>
+      <% voices.each do |voice| %>
       \new Voice {
-        <% stem_type %>
-        <% call_name %>
+        <%= voice.stem_type %>
+        <%= voice.call_name %>
       }
-      <%/ voices %>
+      <% end %>
     >>
 
     \new TabStaff <<
-      <%# voices %>
+      <% voices.each do |voice| %>
       \new TabVoice {
         \slurUp
-        <% call_name %>
+        <%= voice.call_name %>
       }
-      <%/ voices %>
+      <% end %>
     >>
   >>
 
@@ -65,13 +64,13 @@
     \tempo 4 = 75
     \clef "treble_8"
 
-    <%# voices %>
+    <% voices.each do |voice| %>
     \new Voice {
       \unfoldRepeats {
-        <% call_name %>
+        <%= voice.call_name %>
       }
     }
-    <%/ voices %>
+    <% end %>
   >>
 
   \midi {}

@@ -1,5 +1,6 @@
 require "active_support/inflector"
 require "constructor"
+require "erubis"
 require "linguistics"
 require "mustache"
 require "parslet"
