@@ -17,3 +17,10 @@ require "gitara/transform"
 require "gitara/version"
 
 Linguistics::use :en
+
+module Gitara
+  def self.render(path, object)
+    eruby = Erubis::Eruby.new((Pow!('gitara/template') / "#{path}.eruby").read)
+    eruby.evaluate(object)
+  end
+end

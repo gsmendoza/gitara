@@ -5,14 +5,14 @@
 % Bars
 
 <% bars.each do |bar| %>
-<%= Erubis::Eruby.new(Pow!('lib/gitara/template/bar.eruby').read).evaluate(bar) %>
+<%= Gitara.render('bar', bar) %>
 <% end %>
 
 %-----------------------------------------------------------------------
 % Voices
 
 <% voices.each do |voice| %>
-<%= Erubis::Eruby.new(Pow!('lib/gitara/template/voice.eruby').read).evaluate(voice) %>
+<%= Gitara.render('voice', voice) %>
 <% end %>
 
 \score {
