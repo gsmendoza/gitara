@@ -6,11 +6,15 @@ module Gitara
       end
 
       def bars
-        children.select{|child| child.is_a?(Node::Bar) }
+        [playable_child]
       end
 
       def max_number_of_voices
         bars.map{|bar| bar.voice_bars.size}.max
+      end
+
+      def playable_child
+        children.last
       end
 
       def voice_bars

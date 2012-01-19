@@ -1,5 +1,9 @@
 module Gitara
   class Transform < Parslet::Transform
+    rule :identifier => 'bar', :string => simple(:name) do
+      Node::Bar.new(:name => name)
+    end
+
     rule :identifier => 'bar', :string => simple(:name), :method_calls => sequence(:children) do
       Node::Bar.new(:name => name).tap do |bar|
         bar.children = children

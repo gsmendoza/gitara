@@ -15,6 +15,15 @@ module Gitara
         end
       end
 
+      def definition?
+        ! children.empty?
+      end
+
+      def definition!(target = self)
+        result = parent.children.detect{|node| node.definition? && node.name == target.name}
+        result ? result : parent.definition!(target)
+      end
+
       def id_as_word
         id.en.numwords.camelize
       end

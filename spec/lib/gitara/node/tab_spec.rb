@@ -87,4 +87,40 @@ describe 'Tab' do
       tab.max_number_of_voices.should == 2
     end
   end
+
+  describe "bars" do
+    it "should include only the playable bar of the tab" do
+      tab = Node::Tab.new.tap {|tab|
+        tab.children = [
+          Node::Bar.new(:name => 'Intro').tap {|bar|
+            bar.children = [
+              Node::VoiceBar.new,
+              Node::VoiceBar.new
+            ]
+          },
+          Node::Bar.new(:name => 'Intro')
+        ]
+      }
+
+      tab.bars.map(&:id).should == [2]
+    end
+  end
+
+  describe "playable_child" do
+    it "should be the last child of the tab" do
+      tab = Node::Tab.new.tap {|tab|
+        tab.children = [
+          Node::Bar.new(:name => 'Intro').tap {|bar|
+            bar.children = [
+              Node::VoiceBar.new,
+              Node::VoiceBar.new
+            ]
+          },
+          Node::Bar.new(:name => 'Intro')
+        ]
+      }
+
+      tab.playable_child.id.should == 2
+    end
+  end
 end

@@ -23,4 +23,40 @@ describe Node::Base do
       parent.children[0].parent.should == parent
     end
   end
+
+  describe "definition!" do
+    it "should be the definition node which matches this node's name" do
+      definition_bar = Node::Bar.new(:name => 'Intro').tap {|bar|
+        bar.children = [
+          Node::VoiceBar.new,
+          Node::VoiceBar.new
+        ]
+      }
+
+      call_bar = Node::Bar.new(:name => 'Intro')
+
+      tab = Node::Tab.new.tap {|tab|
+        tab.children = [definition_bar, call_bar]
+      }
+
+      call_bar.definition!.should == definition_bar
+    end
+  end
+
+  describe "definition?" do
+    it "should be true if this node has children" do
+      definition_bar = Node::Bar.new(:name => 'Intro').tap {|bar|
+        bar.children = [
+          Node::VoiceBar.new,
+          Node::VoiceBar.new
+        ]
+      }
+      definition_bar.should be_definition
+    end
+
+    it "should be false if this node does not have children" do
+      call_bar = Node::Bar.new(:name => 'Intro')
+      call_bar.should_not be_definition
+    end
+  end
 end

@@ -51,5 +51,14 @@ describe "Transform" do
       bar = transform.apply(hash)
       bar.children.should == [voice_bar]
     end
+
+    it "can be transformed without children" do
+      hash = {
+        :identifier=>"bar",
+        :string => 'Intro'
+      }
+      bar = transform.apply(hash)
+      bar.children.should be_empty
+    end
   end
 end
