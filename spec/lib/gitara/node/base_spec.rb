@@ -24,6 +24,20 @@ describe Node::Base do
     end
   end
 
+  describe "add(child)" do
+    it "should set the id and parent of the child" do
+      parent = Node::Base.new
+
+      parent.add Node::Base.new(:id => nil)
+      parent.children[0].id.should == 1
+      parent.children[0].parent.should == parent
+
+      parent.add Node::Base.new(:id => nil)
+      parent.children[1].id.should == 2
+      parent.children[1].parent.should == parent
+    end
+  end
+
   describe "definition!" do
     it "should be the definition node which matches this node's name" do
       definition_bar = Node::Bar.new(:name => 'Intro').tap {|bar|

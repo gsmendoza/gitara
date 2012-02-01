@@ -15,7 +15,8 @@ module Gitara
       :type => :boolean
 
     def export(source_path)
-      tab = Gitara::Node::Tab.parse(Pow(source_path).read)
+      load source_path
+      tab = Gitara.tab
       lilypond_name = Pow(source_path).name(false) + '.ly'
       lilypond_path = Pow(options['target-directory']) / lilypond_name
       lilypond_path.write(Gitara.render('tab', tab))

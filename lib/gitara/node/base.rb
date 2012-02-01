@@ -3,6 +3,12 @@ module Gitara
     class Base
       constructor :name, :id, :parent, :value, :accessors => true, :strict => false
 
+      def add(child)
+        children << child
+        child.id = children.size
+        child.parent = self
+      end
+
       def children
         @children ||= []
       end
