@@ -22,7 +22,7 @@ describe Node::Voice do
         tab.children = [
           Node::Bar.new.tap {|bar|
             bar.children = voice_bars
-          }
+        }
         ]
       }
 

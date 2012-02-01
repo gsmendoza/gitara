@@ -14,10 +14,8 @@ module Gitara
       end
 
       def children=(children)
-        @children = children
-        @children.each_with_index do |child, i|
-          child.id = i + 1
-          child.parent = self
+        children.each do |child|
+          add child
         end
       end
 
@@ -40,6 +38,10 @@ module Gitara
 
       def definition_name
         name
+      end
+
+      def value
+        @value.gsub('/', "\\")
       end
     end
   end

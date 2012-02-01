@@ -60,10 +60,8 @@ describe Node::Base do
   describe "definition?" do
     it "should be true if this node has children" do
       definition_bar = Node::Bar.new(:name => 'Intro').tap {|bar|
-        bar.children = [
-          Node::VoiceBar.new,
-          Node::VoiceBar.new
-        ]
+        bar.add Node::VoiceBar.new
+        bar.add Node::VoiceBar.new
       }
       definition_bar.should be_definition
     end
@@ -71,6 +69,13 @@ describe Node::Base do
     it "should be false if this node does not have children" do
       call_bar = Node::Bar.new(:name => 'Intro')
       call_bar.should_not be_definition
+    end
+  end
+
+  describe "value" do
+    it "should convert slashes to backslashes" do
+      node = Node::Base.new(:value => %q|voice "<g'/1>8 <a/3>8 <g'/1>8 <a/3>16 <g'/1>8 <g/3>16 <e'/1>4 <g/3>8"|)
+      node.value.should == %q|voice "<g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8"|
     end
   end
 end

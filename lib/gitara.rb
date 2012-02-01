@@ -18,15 +18,15 @@ require "gitara/version"
 Linguistics::use :en
 
 module Gitara
-  def self.render(path, object)
-    eruby = Erubis::Eruby.new((Pow!('gitara/template') / "#{path}.eruby").read)
-    eruby.evaluate(object)
-  end
-
   def self.define(&block)
     @tab = Dsl.new(:node => Node::Tab.new).tap {|dsl|
       dsl.instance_eval(&block) if block_given?
     }.node
+  end
+
+  def self.render(path, object)
+    eruby = Erubis::Eruby.new((Pow!('gitara/template') / "#{path}.eruby").read)
+    eruby.evaluate(object)
   end
 
   def self.tab
