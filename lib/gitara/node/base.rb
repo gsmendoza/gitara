@@ -28,6 +28,10 @@ module Gitara
         result ? result : parent.definition!(target)
       end
 
+      def definitions(klass)
+        self.is_a?(klass) ? [self] : self.children.map{|child| child.definitions(klass) }.flatten
+      end
+
       def id_as_word
         id.en.numwords.camelize
       end
@@ -42,6 +46,10 @@ module Gitara
 
       def value
         @value.gsub('/', "\\")
+      end
+
+      def voiced_as(voice)
+        self.class::VoicedNode.new(:node => self, :voice => voice)
       end
     end
   end

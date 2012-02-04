@@ -11,13 +11,9 @@ vTwoBarIntro = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
 %-----------------------------------------------------------------------
 % Voices
 
-vOne = {
-  \vOneBarIntro
-}
+vOne = { \vOneBarIntro }
 
-vTwo = {
-  \vTwoBarIntro
-}
+vTwo = { \vTwoBarIntro }
 
 
 \score {

@@ -13,8 +13,9 @@ describe Gitara do
         bar "Intro"
       end
 
-      tab.bars.size.should == 1
-      tab.bars[0].name.should == 'Intro'
+      bars = tab.definitions(Node::Bar)
+      bars.size.should == 1
+      bars[0].name.should == 'Intro'
     end
   end
 end

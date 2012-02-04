@@ -1,5 +1,1 @@
-<%= definition_name %> = {
-  <% note_sets.each do |note_set| %>
-  <%= note_set.call_name %>
-  <% end %>
-}
+<%= definition_name %> = { <%= parent.playable_child.voiced_as(self).call_name %> }

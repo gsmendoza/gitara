@@ -78,4 +78,36 @@ describe Node::Base do
       node.value.should == %q|notes "<g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8"|
     end
   end
+
+  describe "voiced_as(voice)" do
+    it "should voice the node with the voice" do
+      node = Node::Base.new
+      voice = Node::Voice.new
+
+      node_voice_pair = node.voiced_as(voice)
+      node_voice_pair.should be_a(Node::Base::VoicedNode)
+      node_voice_pair.node.should == node
+      node_voice_pair.voice.should == voice
+    end
+  end
+
+  describe "definitions(klass)" do
+    it "should be itself if it is an instance of the klass" do
+      node = Node::NoteSet.new
+      node.definitions(Node::NoteSet).should == [node]
+    end
+
+    it "should include descendants which are instances of klass" do
+      node = Node::Base.new.tap do |base|
+        bar = Node::Bar.new.tap do |bar|
+          bar.add Node::NoteSet.new
+          bar.add Node::NoteSet.new
+        end
+
+        base.add bar
+      end
+
+      node.definitions(Node::NoteSet).should have(2).note_sets
+    end
+  end
 end

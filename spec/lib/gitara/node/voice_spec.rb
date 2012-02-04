@@ -14,20 +14,4 @@ describe Node::Voice do
       voice.stem_type.should == '\voiceOne'
     end
   end
-
-  describe "note_sets" do
-    it "should be the matching note set of each bar of the parent" do
-      note_sets = [Node::NoteSet.new, Node::NoteSet.new]
-      tab = Node::Tab.new.tap {|tab|
-        tab.children = [
-          Node::Bar.new.tap {|bar|
-            bar.children = note_sets
-        }
-        ]
-      }
-
-      tab.voices[0].note_sets.should == [note_sets[0]]
-      tab.voices[1].note_sets.should == [note_sets[1]]
-    end
-  end
 end
