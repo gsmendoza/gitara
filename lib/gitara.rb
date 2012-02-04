@@ -25,8 +25,8 @@ module Gitara
   end
 
   def self.render(path, object)
-    eruby = Erubis::Eruby.new((Pow!('gitara/template') / "#{path}.eruby").read)
-    eruby.evaluate(object)
+    erb = Erubis::Eruby.new((Pow!('gitara/template') / "#{path}.erb").read)
+    erb.evaluate(object)
   end
 
   def self.tab
