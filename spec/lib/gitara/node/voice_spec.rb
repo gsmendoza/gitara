@@ -15,19 +15,19 @@ describe Node::Voice do
     end
   end
 
-  describe "voice_bars" do
+  describe "note_sets" do
     it "should be the matching voice bar of each bar of the parent" do
-      voice_bars = [Node::VoiceBar.new, Node::VoiceBar.new]
+      note_sets = [Node::NoteSet.new, Node::NoteSet.new]
       tab = Node::Tab.new.tap {|tab|
         tab.children = [
           Node::Bar.new.tap {|bar|
-            bar.children = voice_bars
+            bar.children = note_sets
         }
         ]
       }
 
-      tab.voices[0].voice_bars.should == [voice_bars[0]]
-      tab.voices[1].voice_bars.should == [voice_bars[1]]
+      tab.voices[0].note_sets.should == [note_sets[0]]
+      tab.voices[1].note_sets.should == [note_sets[1]]
     end
   end
 end

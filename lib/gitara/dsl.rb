@@ -12,7 +12,7 @@ module Gitara
     end
 
     def voice(value)
-      add Node::VoiceBar.new(:value => value)
+      add Node::NoteSet.new(:value => value)
     end
   end
 end

@@ -10,15 +10,15 @@ module Gitara
       end
 
       def max_number_of_voices
-        bars.map{|bar| bar.voice_bars.size}.max
+        bars.map{|bar| bar.note_sets.size}.max
       end
 
       def playable_child
         children.last
       end
 
-      def voice_bars
-        children.select{|child| child.is_a?(Node::VoiceBar)}
+      def note_sets
+        children.select{|child| child.is_a?(Node::NoteSet)}
       end
 
       def voices

@@ -9,8 +9,8 @@ module Gitara
         "\\voice#{id_as_word}"
       end
 
-      def voice_bars
-        parent.bars.map{|bar| bar.voice_bars[self.id - 1]}
+      def note_sets
+        parent.bars.map{|bar| bar.note_sets[self.id - 1]}
       end
     end
   end

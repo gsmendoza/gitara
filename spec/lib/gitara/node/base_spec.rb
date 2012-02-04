@@ -42,8 +42,8 @@ describe Node::Base do
     it "should be the definition node which matches this node's name" do
       definition_bar = Node::Bar.new(:name => 'Intro').tap {|bar|
         bar.children = [
-          Node::VoiceBar.new,
-          Node::VoiceBar.new
+          Node::NoteSet.new,
+          Node::NoteSet.new
         ]
       }
 
@@ -60,8 +60,8 @@ describe Node::Base do
   describe "definition?" do
     it "should be true if this node has children" do
       definition_bar = Node::Bar.new(:name => 'Intro').tap {|bar|
-        bar.add Node::VoiceBar.new
-        bar.add Node::VoiceBar.new
+        bar.add Node::NoteSet.new
+        bar.add Node::NoteSet.new
       }
       definition_bar.should be_definition
     end

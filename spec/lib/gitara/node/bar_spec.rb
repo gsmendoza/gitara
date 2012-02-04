@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe 'Bar' do
-  describe "voice_bars" do
+  describe "note_sets" do
     it "should be the voice bars of its definition" do
       definition_bar = Node::Bar.new(:name => 'Intro').tap {|bar|
         bar.children = [
-          Node::VoiceBar.new,
-          Node::VoiceBar.new
+          Node::NoteSet.new,
+          Node::NoteSet.new
         ]
       }
 
@@ -16,7 +16,7 @@ describe 'Bar' do
         tab.children = [definition_bar, call_bar]
       }
 
-      call_bar.voice_bars.should have(2).voice_bars
+      call_bar.note_sets.should have(2).note_sets
     end
   end
 end

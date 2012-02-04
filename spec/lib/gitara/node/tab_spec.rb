@@ -7,8 +7,8 @@ describe 'Tab' do
         tab.children = [
           Node::Bar.new.tap {|bar|
             bar.children = [
-              Node::VoiceBar.new,
-              Node::VoiceBar.new
+              Node::NoteSet.new,
+              Node::NoteSet.new
             ]
           }
         ]
@@ -22,13 +22,13 @@ describe 'Tab' do
   end
 
   describe "max_number_of_voices" do
-    it "should be the max number of voice_bars in a bar" do
+    it "should be the max number of note_sets in a bar" do
       tab = Node::Tab.new.tap {|tab|
         tab.children = [
           Node::Bar.new.tap {|bar|
             bar.children = [
-              Node::VoiceBar.new,
-              Node::VoiceBar.new
+              Node::NoteSet.new,
+              Node::NoteSet.new
             ]
           }
         ]
@@ -43,8 +43,8 @@ describe 'Tab' do
         tab.children = [
           Node::Bar.new(:name => 'Intro').tap {|bar|
             bar.children = [
-              Node::VoiceBar.new,
-              Node::VoiceBar.new
+              Node::NoteSet.new,
+              Node::NoteSet.new
             ]
           },
           Node::Bar.new(:name => 'Intro')
@@ -61,8 +61,8 @@ describe 'Tab' do
         tab.children = [
           Node::Bar.new(:name => 'Intro').tap {|bar|
             bar.children = [
-              Node::VoiceBar.new,
-              Node::VoiceBar.new
+              Node::NoteSet.new,
+              Node::NoteSet.new
             ]
           },
           Node::Bar.new(:name => 'Intro')

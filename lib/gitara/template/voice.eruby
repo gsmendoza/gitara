@@ -1,5 +1,5 @@
 <%= definition_name %> = {
-  <% voice_bars.each do |voice_bar| %>
-  <%= voice_bar.call_name %>
+  <% note_sets.each do |note_set| %>
+  <%= note_set.call_name %>
   <% end %>
 }

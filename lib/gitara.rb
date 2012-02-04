@@ -12,7 +12,7 @@ require "gitara/node/base"
 require "gitara/node/bar"
 require "gitara/node/tab"
 require "gitara/node/voice"
-require "gitara/node/voice_bar"
+require "gitara/node/note_set"
 require "gitara/version"
 
 Linguistics::use :en

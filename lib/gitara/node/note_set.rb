@@ -1,6 +1,6 @@
 module Gitara
   module Node
-    class VoiceBar < Base
+    class NoteSet < Base
       def definition_name
         "v#{id_as_word}Bar#{parent.name}"
       end

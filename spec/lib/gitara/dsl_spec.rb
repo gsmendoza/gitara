@@ -20,18 +20,18 @@ describe Gitara do
         dsl = Dsl.new(:node => Node::Tab.new)
         dsl.node.children.should be_empty
 
-        voice_bar = Node::VoiceBar.new
+        note_set = Node::NoteSet.new
 
         dsl.bar 'Intro' do
-          add voice_bar
+          add note_set
         end
 
         dsl.node.children.should have(1).bar
         dsl.node.children[0].name.should == 'Intro'
 
         bar = dsl.node.children[0]
-        bar.children.should have(1).voice_bar
-        bar.children[0].should == voice_bar
+        bar.children.should have(1).note_set
+        bar.children[0].should == note_set
       end
     end
 
@@ -53,17 +53,17 @@ describe Gitara do
         dsl.node.children.should be_empty
 
         bar = Node::Bar.new
-        voice_bar = Node::VoiceBar.new
+        note_set = Node::NoteSet.new
 
         dsl.add bar do
-          add voice_bar
+          add note_set
         end
 
         dsl.node.children.should have(1).bar
         dsl.node.children[0].should == bar
 
-        bar.children.should have(1).voice_bar
-        bar.children[0].should == voice_bar
+        bar.children.should have(1).note_set
+        bar.children[0].should == note_set
       end
     end
 

@@ -1,8 +1,8 @@
 module Gitara
   module Node
     class Bar < Base
-      def voice_bars
-        definition!.children.select{|child| child.is_a?(Node::VoiceBar)}
+      def note_sets
+        definition!.children.select{|child| child.is_a?(Node::NoteSet)}
       end
     end
   end
