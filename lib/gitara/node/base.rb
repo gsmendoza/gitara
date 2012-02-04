@@ -9,6 +9,10 @@ module Gitara
         child.parent = self
       end
 
+      def call_name
+        "\\#{definition_name}"
+      end
+
       def children
         @children ||= []
       end
@@ -23,33 +27,47 @@ module Gitara
         ! children.empty?
       end
 
+      def definition_of?(target)
+        self.definition? && self.name == target.name
+      end
+
       def definition!(target = self)
-        result = parent.children.detect{|node| node.definition? && node.name == target.name}
-        result ? result : parent.definition!(target)
+        if self.definition_of?(target)
+          self
+        else
+          result = parent.children.detect{|node| node.definition_of?(self) }
+          result ? result : parent.definition!(target)
+        end
       end
 
       def definitions(klass)
         self.is_a?(klass) ? [self] : self.children.map{|child| child.definitions(klass) }.flatten
       end
 
+      def definition_name
+        name
+      end
+
       def id_as_word
         id.en.numwords.camelize
       end
 
-      def call_name
-        "\\#{definition_name}"
-      end
-
-      def definition_name
-        name
+      def root
+        parent.nil? ? self : parent.root
       end
 
       def value
         @value.gsub('/', "\\")
       end
 
-      def voiced_as(voice)
-        self.class::VoicedNode.new(:node => self, :voice => voice)
+      def voiced_as(arg)
+        if arg.is_a?(Node::Voice)
+          self.class::VoicedNode.new(:node => self, :voice => arg)
+        elsif arg.is_a?(Array)
+          arg.map{|voice| self.voiced_as(voice) }
+        else
+          raise ArgumentError
+        end
       end
     end
   end

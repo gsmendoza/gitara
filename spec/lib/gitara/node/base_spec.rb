@@ -79,8 +79,8 @@ describe Node::Base do
     end
   end
 
-  describe "voiced_as(voice)" do
-    it "should voice the node with the voice" do
+  describe "voiced_as(arg)" do
+    it "should return the voiced version of the node, if arg is a voice" do
       node = Node::Base.new
       voice = Node::Voice.new
 
@@ -88,6 +88,22 @@ describe Node::Base do
       node_voice_pair.should be_a(Node::Base::VoicedNode)
       node_voice_pair.node.should == node
       node_voice_pair.voice.should == voice
+    end
+
+    it "should return the voiced versions of the node, if arg are voices" do
+      node = Node::Base.new
+      voices = [Node::Voice.new, Node::Voice.new]
+
+      node_voice_pairs = node.voiced_as(voices)
+      node_voice_pairs.size.should == 2
+
+      node_voice_pairs.each do |pair|
+        pair.should be_a(Node::Base::VoicedNode)
+        pair.node.should == node
+      end
+
+      node_voice_pairs[0].voice.should == voices[0]
+      node_voice_pairs[1].voice.should == voices[1]
     end
   end
 
@@ -108,6 +124,25 @@ describe Node::Base do
       end
 
       node.definitions(Node::NoteSet).should have(2).note_sets
+    end
+  end
+
+  describe "root" do
+    it "should be itself if it has no parent" do
+      node = Node::Base.new
+      node.root.should == node
+    end
+
+    it "should be the ancentor of the node which has no parent of its own" do
+      note_set = Node::NoteSet.new
+
+      bar = Node::Bar.new
+      bar.add note_set
+
+      root = Node::Base.new
+      root.add bar
+
+      note_set.root.should == root
     end
   end
 end
