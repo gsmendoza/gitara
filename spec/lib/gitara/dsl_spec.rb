@@ -67,14 +67,14 @@ describe Gitara do
       end
     end
 
-    describe "voice(value)" do
-      it "should add a voice with the value" do
+    describe "notes(value)" do
+      it "should add a note set with the value" do
         dsl = Dsl.new(:node => Node::Bar.new)
         dsl.node.children.should be_empty
 
-        dsl.voice 'test'
+        dsl.notes 'test'
 
-        dsl.node.children.should have(1).voice
+        dsl.node.children.should have(1).note_set
         dsl.node.children[0].value.should == 'test'
       end
     end

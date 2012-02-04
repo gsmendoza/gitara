@@ -16,7 +16,7 @@ describe Node::Voice do
   end
 
   describe "note_sets" do
-    it "should be the matching voice bar of each bar of the parent" do
+    it "should be the matching note set of each bar of the parent" do
       note_sets = [Node::NoteSet.new, Node::NoteSet.new]
       tab = Node::Tab.new.tap {|tab|
         tab.children = [

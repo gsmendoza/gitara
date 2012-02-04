@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Bar' do
   describe "note_sets" do
-    it "should be the voice bars of its definition" do
+    it "should be the note sets of its definition" do
       definition_bar = Node::Bar.new(:name => 'Intro').tap {|bar|
         bar.children = [
           Node::NoteSet.new,
