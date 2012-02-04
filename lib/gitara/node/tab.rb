@@ -14,7 +14,7 @@ module Gitara
       end
 
       def voices
-        @voices ||= Array.new(max_number_of_voices){|i| Node::Voice.new(:id => i + 1, :parent => self)}
+        @voices ||= Array.new(max_number_of_voices){|i| Voice.new(:id => i + 1, :parent => self)}
       end
     end
   end

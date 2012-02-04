@@ -9,10 +9,6 @@ module Gitara
         child.parent = self
       end
 
-      def call_name
-        "\\#{definition_name}"
-      end
-
       def children
         @children ||= []
       end
@@ -44,14 +40,6 @@ module Gitara
         self.is_a?(klass) ? [self] : self.children.map{|child| child.definitions(klass) }.flatten
       end
 
-      def definition_name
-        name
-      end
-
-      def id_as_word
-        id.en.numwords.camelize
-      end
-
       def root
         parent.nil? ? self : parent.root
       end
@@ -61,7 +49,7 @@ module Gitara
       end
 
       def voiced_as(arg)
-        if arg.is_a?(Node::Voice)
+        if arg.is_a?(Voice)
           self.class::VoicedNode.new(:node => self, :voice => arg)
         elsif arg.is_a?(Array)
           arg.map{|voice| self.voiced_as(voice) }

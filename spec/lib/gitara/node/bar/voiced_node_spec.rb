@@ -8,7 +8,7 @@ describe 'Bar::VoicedNode' do
       bar = Node::Bar.new
       bar.add note_set
 
-      voice = Node::Voice.new(:id => 1)
+      voice = Voice.new(:id => 1)
 
       voiced_bar = Node::Bar::VoicedNode.new(:node => bar, :voice => voice)
       voiced_bar.matching_note_set.should == note_set
