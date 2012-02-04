@@ -1,8 +1,9 @@
 module Gitara
   module Node
     class Base
-      class VoicedNode
-        constructor :node, :voice, :accessors => true, :strict => false
+      class VoicedNode < Valuable
+        has_value :node
+        has_value :voice
 
         def call_name
           "\\#{definition_name}"

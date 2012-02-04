@@ -1,7 +1,10 @@
 module Gitara
   module Node
-    class Base
-      constructor :name, :id, :parent, :value, :accessors => true, :strict => false
+    class Base < Valuable
+      has_value :name
+      has_value :id
+      has_value :parent
+      has_value :value
 
       def add(child)
         children << child
@@ -45,7 +48,7 @@ module Gitara
       end
 
       def value
-        @value.gsub('/', "\\")
+        attributes[:value].gsub('/', "\\")
       end
 
       def voiced_as(arg)

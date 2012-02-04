@@ -1,6 +1,7 @@
 module Gitara
-  class Voice
-    constructor :id, :parent, :accessors => true, :strict => false
+  class Voice < Valuable
+    has_value :id
+    has_value :parent
 
     def call_name
       "\\#{definition_name}"

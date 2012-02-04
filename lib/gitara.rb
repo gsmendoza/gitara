@@ -1,10 +1,10 @@
 require "active_support/inflector"
-require "constructor"
 require "erubis"
 require "linguistics"
 require "parslet"
 require "pow"
 require "thor"
+require "valuable"
 
 require "gitara/app"
 require "gitara/dsl"

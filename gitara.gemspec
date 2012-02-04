@@ -19,12 +19,12 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_runtime_dependency "active_support"
-  s.add_runtime_dependency "constructor"
   s.add_runtime_dependency "erubis"
   s.add_runtime_dependency "linguistics"
   s.add_runtime_dependency "parslet"
   s.add_runtime_dependency "pow"
   s.add_runtime_dependency "thor"
+  s.add_runtime_dependency "valuable"
 
   s.add_development_dependency "guard"
   s.add_development_dependency "guard-rspec"

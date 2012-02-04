@@ -1,6 +1,6 @@
 module Gitara
-  class Dsl
-    constructor :node, :accessors => true, :strict => false
+  class Dsl < Valuable
+    has_value :node
 
     def add(child, &block)
       self.node.add child
