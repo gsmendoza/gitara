@@ -1,6 +1,31 @@
 require 'spec_helper'
 
 describe Node::Base do
+  describe "children" do
+    it "should be its own children if they exist" do
+      child = Node::Base.new(:id => nil)
+
+      parent = Node::Base.new
+      parent.children = [child]
+      parent.children.should == [child]
+    end
+
+    it "should be the children of its definition if the node is not a definition" do
+      child = Node::NoteSet.new
+      definition_bar = Node::Bar.new(:name => 'Intro').tap {|bar|
+        bar.children = [child]
+      }
+
+      call_bar = Node::Bar.new(:name => 'Intro')
+
+      tab = Node::Tab.new.tap {|tab|
+        tab.children = [definition_bar, call_bar]
+      }
+
+      call_bar.children.should == [child]
+    end
+  end
+
   describe "children=(other)" do
     it "should set the ids and parents of the children" do
       parent = Node::Base.new
@@ -24,7 +49,7 @@ describe Node::Base do
     end
   end
 
-  describe "definition!" do
+  describe "definition" do
     it "should be the definition node which matches this node's name" do
       definition_bar = Node::Bar.new(:name => 'Intro').tap {|bar|
         bar.children = [
@@ -39,7 +64,7 @@ describe Node::Base do
         tab.children = [definition_bar, call_bar]
       }
 
-      call_bar.definition!.should == definition_bar
+      call_bar.send(:definition).should == definition_bar
     end
   end
 

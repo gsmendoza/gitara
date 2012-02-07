@@ -10,7 +10,7 @@ module Gitara
         end
 
         def children
-          node.definition!.children.map{|child| child.voiced_as(voice) }
+          node.children.map{|child| child.voiced_as(voice) }
         end
 
         def definition_name

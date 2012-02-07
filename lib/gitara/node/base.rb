@@ -7,40 +7,39 @@ module Gitara
       has_value :value
 
       def add(child)
-        children << child
-        child.id = children.size
+        own_children << child
+        child.id = own_children.size
         child.parent = self
       end
 
       def children
-        @children ||= []
+        if own_children.empty?
+          definition ? definition.own_children : []
+        else
+          own_children
+        end
       end
 
-      def children=(children)
-        children.each do |child|
+      def children=(values)
+        values.each do |child|
           add child
         end
       end
 
       def definition?
-        ! children.empty?
+        ! own_children.empty?
       end
 
       def definition_of?(target)
         self.definition? && self.name == target.name && self.class == target.class
       end
 
-      def definition!(target = self)
-        if self.definition_of?(target)
-          self
-        else
-          result = parent.children.detect{|node| node.definition_of?(target) }
-          result ? result : parent.definition!(target)
-        end
+      def definitions(klass)
+        self.is_a?(klass) && self.definition? ? [self] : self.own_children.map{|child| child.definitions(klass) }.flatten
       end
 
-      def definitions(klass)
-        self.is_a?(klass) && self.definition? ? [self] : self.children.map{|child| child.definitions(klass) }.flatten
+      def own_children
+        @children ||= []
       end
 
       def root
@@ -60,6 +59,17 @@ module Gitara
           raise ArgumentError
         end
       end
+
+      private
+
+        def definition(target = self)
+          if self.definition_of?(target)
+            self
+          else
+            result = parent.own_children.detect{|node| node.definition_of?(target) }
+            result ? result : parent.definition(target)
+          end
+        end
     end
   end
 end
