@@ -14,5 +14,22 @@ describe 'VoicedNode' do
       voiced_node.definition_name.should == 'vOneBaseIntro'
     end
   end
+
+  describe "children" do
+    it "should be voiced versions of the node's children" do
+      parent = Node::Base.new(:name => 'parent')
+      child = Node::Base.new(:name => 'child')
+      parent.add child
+
+      voice = Voice.new(:id => 1)
+
+      voiced_node = Node::Base::VoicedNode.new(:node => parent, :voice => voice)
+
+      children = voiced_node.children
+      children.should have(1).voiced_node
+      children[0].node.should == child
+      children[0].voice.should == voice
+    end
+  end
 end
 

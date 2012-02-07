@@ -11,6 +11,10 @@ module Gitara
       add Node::Bar.new(:name => name), &block
     end
 
+    def line(name, &block)
+      add Node::Line.new(:name => name), &block
+    end
+
     def notes(value)
       add Node::NoteSet.new(:value => value)
     end

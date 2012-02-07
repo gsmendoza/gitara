@@ -12,8 +12,10 @@ require "gitara/node/base"
 require "gitara/node/base/voiced_node"
 require "gitara/node/bar"
 require "gitara/node/bar/voiced_node"
+require "gitara/node/line"
 require "gitara/node/note_set"
 require "gitara/node/tab"
+require "gitara/pow/base"
 require "gitara/version"
 require "gitara/voice"
 
@@ -27,7 +29,8 @@ module Gitara
   end
 
   def self.render(path, object)
-    erb = Erubis::Eruby.new((Pow!('gitara/template') / "#{path}.erb").read)
+    template = (Pow!('gitara/template') / "#{path}.erb")
+    erb = Erubis::Eruby.new(template.read!)
     erb.evaluate(object)
   end
 

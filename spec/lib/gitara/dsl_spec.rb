@@ -78,5 +78,38 @@ describe Gitara do
         dsl.node.children[0].value.should == 'test'
       end
     end
+
+    describe "line(name, &block)" do
+      it "should add a line with the name" do
+        dsl = Dsl.new(:node => Node::Tab.new)
+        dsl.node.children.should be_empty
+
+        dsl.line 'Intro'
+
+        dsl.node.children.should have(1).line
+
+        line = dsl.node.children[0]
+        line.name.should == 'Intro'
+        line.children.should be_empty
+      end
+
+      it "should add the children declared in the block to the line" do
+        dsl = Dsl.new(:node => Node::Tab.new)
+        dsl.node.children.should be_empty
+
+        bar = Node::Bar.new
+
+        dsl.line 'Intro' do
+          add bar
+        end
+
+        dsl.node.children.should have(1).line
+        dsl.node.children[0].name.should == 'Intro'
+
+        line = dsl.node.children[0]
+        line.children.should have(1).bar
+        line.children[0].should == bar
+      end
+    end
   end
 end

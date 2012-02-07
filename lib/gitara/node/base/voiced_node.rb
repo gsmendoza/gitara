@@ -9,6 +9,10 @@ module Gitara
           "\\#{definition_name}"
         end
 
+        def children
+          node.definition!.children.map{|child| child.voiced_as(voice) }
+        end
+
         def definition_name
           "#{voice.definition_name}#{node.class.to_s.split('::').last}#{node.name}"
         end

@@ -95,21 +95,29 @@ describe Node::Base do
 
   describe "definitions(klass)" do
     it "should be itself if it is an instance of the klass" do
-      node = Node::NoteSet.new
-      node.definitions(Node::NoteSet).should == [node]
+      node = Node::Bar.new
+      node.add Node::NoteSet.new
+      node.should be_definition
+
+      node.definitions(Node::Bar).should == [node]
     end
 
     it "should include descendants which are instances of klass" do
       node = Node::Base.new.tap do |base|
-        bar = Node::Bar.new.tap do |bar|
-          bar.add Node::NoteSet.new
-          bar.add Node::NoteSet.new
-        end
+        base.add(
+          Node::Bar.new.tap do |bar|
+            bar.add Node::NoteSet.new
+          end
+        )
 
-        base.add bar
+        base.add(
+          Node::Bar.new.tap do |bar|
+            bar.add Node::NoteSet.new
+          end
+        )
       end
 
-      node.definitions(Node::NoteSet).should have(2).note_sets
+      node.definitions(Node::Bar).should have(2).bars
     end
   end
 

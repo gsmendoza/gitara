@@ -9,11 +9,18 @@ vTwoBarIntro = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
 
 
 %-----------------------------------------------------------------------
+% Lines
+
+vOneLineIntro = { \vOneBarIntro \vOneBarIntro \break }
+vTwoLineIntro = { \vTwoBarIntro \vTwoBarIntro \break }
+
+
+%-----------------------------------------------------------------------
 % Voices
 
-vOne = { \vOneBarIntro }
+vOne = { \vOneLineIntro }
 
-vTwo = { \vTwoBarIntro }
+vTwo = { \vTwoLineIntro }
 
 
 \score {

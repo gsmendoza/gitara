@@ -27,20 +27,20 @@ module Gitara
       end
 
       def definition_of?(target)
-        self.definition? && self.name == target.name
+        self.definition? && self.name == target.name && self.class == target.class
       end
 
       def definition!(target = self)
         if self.definition_of?(target)
           self
         else
-          result = parent.children.detect{|node| node.definition_of?(self) }
+          result = parent.children.detect{|node| node.definition_of?(target) }
           result ? result : parent.definition!(target)
         end
       end
 
       def definitions(klass)
-        self.is_a?(klass) ? [self] : self.children.map{|child| child.definitions(klass) }.flatten
+        self.is_a?(klass) && self.definition? ? [self] : self.children.map{|child| child.definitions(klass) }.flatten
       end
 
       def root

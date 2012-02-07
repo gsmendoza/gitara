@@ -4,8 +4,15 @@
 %-----------------------------------------------------------------------
 % Bars
 
-<% playable_child.definitions(Node::Bar).each do |bar| %>
+<% definitions(Node::Bar).each do |bar| %>
 <%= Gitara.render('bar', bar) %>
+<% end %>
+
+%-----------------------------------------------------------------------
+% Lines
+
+<% definitions(Node::Line).each do |line| %>
+<%= Gitara.render('line', line) %>
 <% end %>
 
 %-----------------------------------------------------------------------

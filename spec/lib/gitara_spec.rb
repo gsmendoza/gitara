@@ -10,7 +10,9 @@ describe Gitara do
 
     it "should instance evaluate a block if given" do
       tab = Gitara.define do
-        bar "Intro"
+        bar "Intro" do
+          notes "c"
+        end
       end
 
       bars = tab.definitions(Node::Bar)
