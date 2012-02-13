@@ -111,5 +111,20 @@ describe Gitara do
         line.own_children[0].should == bar
       end
     end
+
+    describe "add_names(o)" do
+      it "should add a node with o[:name] of o[:node_class] to the node" do
+        dsl = Dsl.new(:node => Node::Tab.new)
+        dsl.node.own_children.should be_empty
+
+        dsl.add_names :names => [:Intro, :Intro], :node_class => Node::Bar
+
+        dsl.node.own_children.should have(2).bars
+        dsl.node.own_children.each do |child|
+          child.should be_a(Node::Bar)
+          child.name.should == :Intro
+        end
+      end
+    end
   end
 end
