@@ -1,6 +1,4 @@
 *.gem
-*.midi
-*.pdf
 *.ps
 .bundle
 .geanyprj
