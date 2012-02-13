@@ -125,6 +125,17 @@ describe Gitara do
           child.name.should == :Intro
         end
       end
+
+      it "should add a node with nil name if the o[:names] is blank" do
+        dsl = Dsl.new(:node => Node::Tab.new)
+        dsl.node.own_children.should be_empty
+
+        dsl.add_names :names => [], :node_class => Node::Bar
+
+        dsl.node.own_children.should have(1).bar
+        dsl.node.own_children[0].attributes[:name].should be_nil
+        dsl.node.own_children[0].should be_a(Node::Bar)
+      end
     end
   end
 end

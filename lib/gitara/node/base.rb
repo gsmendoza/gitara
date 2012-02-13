@@ -2,7 +2,7 @@ module Gitara
   module Node
     class Base < Valuable
       has_value :name
-      has_value :id
+      has_value :id, :default => 1
       has_value :parent
       has_value :value
 
@@ -36,6 +36,14 @@ module Gitara
 
       def definitions(klass)
         self.is_a?(klass) && self.definition? ? [self] : self.own_children.map{|child| child.definitions(klass) }.flatten
+      end
+
+      def id_as_word
+        id.en.numwords.camelize
+      end
+
+      def name
+        attributes[:name] || "#{parent && parent.name}#{self.class.to_s.split('::').last}#{self.id_as_word}"
       end
 
       def own_children

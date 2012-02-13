@@ -11,16 +11,16 @@ vTwoBarIntro = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
 %-----------------------------------------------------------------------
 % Lines
 
-vOneLineIntro = { \vOneBarIntro \vOneBarIntro \break }
-vTwoLineIntro = { \vTwoBarIntro \vTwoBarIntro \break }
+vOneLineTabOneLineTwo = { \vOneBarIntro \vOneBarIntro \break }
+vTwoLineTabOneLineTwo = { \vTwoBarIntro \vTwoBarIntro \break }
 
 
 %-----------------------------------------------------------------------
 % Voices
 
-vOne = { \vOneLineIntro }
+vOne = { \vOneLineTabOneLineTwo }
 
-vTwo = { \vTwoLineIntro }
+vTwo = { \vTwoLineTabOneLineTwo }
 
 
 \score {

@@ -8,7 +8,10 @@ module Gitara
     end
 
     def add_names(options = {}, &block)
-      options[:names].map{|name| options[:node_class].new(:name => name) }.each do |child|
+      names = options[:names].empty? ? [nil] : options[:names]
+      node_class = options[:node_class]
+
+      names.map{|name| node_class.new(:name => name) }.each do |child|
         add child, &block
       end
     end

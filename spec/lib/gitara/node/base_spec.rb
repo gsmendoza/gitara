@@ -164,4 +164,31 @@ describe Node::Base do
       note_set.root.should == root
     end
   end
+
+  describe "name" do
+    it "should be the given name, if available" do
+      Node::Bar.new(:name => :Intro).name.should == :Intro
+    end
+
+    it "should be based on the parent's name the node's class and id, if not available" do
+      child = Node::NoteSet.new
+      bar = Node::Bar.new(:name => :Intro).tap do |bar|
+        bar.add child
+      end
+
+      child.name.should == "IntroNoteSetOne"
+    end
+
+    it "should be based on the node's class and id, if there's no parent and the there's no given name" do
+      child = Node::NoteSet.new
+      child.name.should == "NoteSetOne"
+    end
+  end
+
+  describe "id" do
+    it "should be 1 by default" do
+      child = Node::NoteSet.new
+      child.id.should == 1
+    end
+  end
 end

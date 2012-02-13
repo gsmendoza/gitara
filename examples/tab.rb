@@ -4,9 +4,7 @@ Gitara.define do
     notes "<f/4>4 <f/4>4 <c/5>4 <e/4>4"
   end
 
-  line :Intro do
+  line do
     bar :Intro, :Intro
   end
-
-  line :Intro
 end
