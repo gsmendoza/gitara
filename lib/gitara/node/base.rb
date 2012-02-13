@@ -1,6 +1,8 @@
 module Gitara
   module Node
     class Base < Valuable
+      include IdAsWord
+
       has_value :name
       has_value :id, :default => 1
       has_value :parent
@@ -36,10 +38,6 @@ module Gitara
 
       def definitions(klass)
         self.is_a?(klass) && self.definition? ? [self] : self.own_children.map{|child| child.definitions(klass) }.flatten
-      end
-
-      def id_as_word
-        id.en.numwords.camelize
       end
 
       def name

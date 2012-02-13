@@ -191,4 +191,11 @@ describe Node::Base do
       child.id.should == 1
     end
   end
+
+  describe "id_as_word" do
+    it "should camelize if necessary" do
+      node = Node::Base.new(:id => 24)
+      node.id_as_word.should == "TwentyFour"
+    end
+  end
 end

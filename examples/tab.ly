@@ -4,23 +4,48 @@
 %-----------------------------------------------------------------------
 % Bars
 
-vOneBarIntro = { <g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8 }
-vTwoBarIntro = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
+vOneBarBeganIt = { \skip 4 <a\3 c'\2 >8 <g\3>8 \skip 4 <g\3 c'\2 >8 <g\3>8 }
+vTwoBarBeganIt = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
+
+vOneBarItsNot = { r8 <g'\1>4 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>16( <a\3>16) }
+vTwoBarItsNot = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
+
+vOneBarItThough = { r8 <d'\2>16( <c'\2>16) r8 <a\3>16 <c'\2>16 r8 <d'\2>16( <c'\2>16) r8 <a\3>8 }
+vTwoBarItThough = { <f\4>4 <f\4>4 <d\4>4 <d\4>4 }
+
+vOneBarWhatYouThought = { r8 <g'\1>4 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8 }
+vTwoBarWhatYouThought = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
+
+vOneBarWhenYouFirst = { <e'\1>8 <d'\2>16( <c'\2>8) <a\3>8. <c'\2>4 <a\3>8 <c'\2>8 }
+vTwoBarWhenYouFirst = { <a,\5>4 <a,\5>8 <e\4>4 <a,\5>4 \skip 8 }
+
+vOneBarYouGot = { <g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>16( <a\3>16) }
+vTwoBarYouGot = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
 
 
 %-----------------------------------------------------------------------
 % Lines
 
-vOneLineTabOneLineTwo = { \vOneBarIntro \vOneBarIntro \break }
-vTwoLineTabOneLineTwo = { \vTwoBarIntro \vTwoBarIntro \break }
+vOneLineVerseOneLineTwo = { \vOneBarYouGot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarItThough \break }
+vTwoLineVerseOneLineTwo = { \vTwoBarYouGot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarItThough \break }
+
+vOneLineTabOneScoreEightLineOne = { \vOneBarItsNot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarBeganIt \break }
+vTwoLineTabOneScoreEightLineOne = { \vTwoBarItsNot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
+
+
+%-----------------------------------------------------------------------
+% Scores
+
+vOneScoreTabOneScoreEight = { \vOneLineTabOneScoreEightLineOne \vOneLineVerseOneLineTwo }
+vTwoScoreTabOneScoreEight = { \vTwoLineTabOneScoreEightLineOne \vTwoLineVerseOneLineTwo }
 
 
 %-----------------------------------------------------------------------
 % Voices
 
-vOne = { \vOneLineTabOneLineTwo }
+vOne = { \vOneScoreTabOneScoreEight }
 
-vTwo = { \vTwoLineTabOneLineTwo }
+vTwo = { \vTwoScoreTabOneScoreEight }
 
 
 \score {

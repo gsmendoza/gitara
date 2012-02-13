@@ -137,5 +137,37 @@ describe Gitara do
         dsl.node.own_children[0].should be_a(Node::Bar)
       end
     end
+
+    describe "score(name, &block)" do
+      it "should add a score with the name" do
+        dsl = Dsl.new(:node => Node::Tab.new)
+        dsl.node.own_children.should be_empty
+
+        dsl.score
+
+        dsl.node.own_children.should have(1).score
+
+        score = dsl.node.own_children[0]
+        score.should be_a(Node::Score)
+        score.own_children.should be_empty
+      end
+
+      it "should add the children declared in the block to the score" do
+        dsl = Dsl.new(:node => Node::Tab.new)
+        dsl.node.own_children.should be_empty
+
+        note_set = Node::NoteSet.new
+
+        dsl.score do
+          add note_set
+        end
+
+        dsl.node.own_children.should have(1).score
+
+        score = dsl.node.own_children[0]
+        score.own_children.should have(1).note_set
+        score.own_children[0].should == note_set
+      end
+    end
   end
 end

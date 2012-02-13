@@ -1,0 +1,3 @@
+<% self.voiced_as(self.root.voices).each do |voiced_score| %>
+<%= voiced_score.definition_name %> = { <%= voiced_score.children.map(&:call_name).join(' ') %> }
+<% end %>

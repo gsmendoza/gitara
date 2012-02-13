@@ -27,5 +27,9 @@ module Gitara
     def notes(value)
       add Node::NoteSet.new(:value => value)
     end
+
+    def score(*names, &block)
+      add_names :names => names, :node_class => Node::Score, &block
+    end
   end
 end

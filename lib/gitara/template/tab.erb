@@ -16,6 +16,13 @@
 <% end %>
 
 %-----------------------------------------------------------------------
+% Scores
+
+<% definitions(Gitara::Node::Score).each do |score| %>
+<%= Gitara.render('score', score) %>
+<% end %>
+
+%-----------------------------------------------------------------------
 % Voices
 
 <% voices.each do |voice| %>
