@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["George Mendoza"]
   s.email       = ["gsmendoza@gmail.com"]
   s.homepage    = ""
-  s.summary     = "A Ruby DSL for tablatures"
-  s.description = "This will be a work in progress. Ultimately the goal is to have a good basic tablature DSL that is easily convertible to lilypond."
+  s.summary     = "Ruby + Lilypond = pretty guitar tablatures."
+  s.description = "A Ruby DSL for generating Lilypond guitar tablatures."
 
   s.rubyforge_project = "gitara"
 
