@@ -185,7 +185,7 @@ Since a Gitara file is a Ruby program, you have to be careful with backslashes w
 
 or
 
-    notes "c'\\\\2"
+    notes "c'\\2"
 
 Gitara provides a third option: it will automatically convert slashes to backslashes. This way, you can write the note above as
 
