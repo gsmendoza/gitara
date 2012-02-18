@@ -11,16 +11,6 @@ RSpec.configure do |config|
     Gitara.instance_variable_set :@tab, nil
   end
 
-  def debug?
-    $debug.tap do
-      $debug = false
-    end
-  end
-
-  def debug!
-    $debug = true
-  end
-
   def test_tmp_dir
     Pow('tmp/test')
   end

@@ -29,23 +29,23 @@ vTwoBarYouGot = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
 vOneLineVerseOneLineTwo = { \vOneBarYouGot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarItThough \break }
 vTwoLineVerseOneLineTwo = { \vTwoBarYouGot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarItThough \break }
 
-vOneLineTabOneScoreEightLineOne = { \vOneBarItsNot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarBeganIt \break }
-vTwoLineTabOneScoreEightLineOne = { \vTwoBarItsNot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
+vOneLineTabOneScoreOneLineOne = { \vOneBarItsNot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarBeganIt \break }
+vTwoLineTabOneScoreOneLineOne = { \vTwoBarItsNot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
 
 
 %-----------------------------------------------------------------------
 % Scores
 
-vOneScoreTabOneScoreEight = { \vOneLineTabOneScoreEightLineOne \vOneLineVerseOneLineTwo }
-vTwoScoreTabOneScoreEight = { \vTwoLineTabOneScoreEightLineOne \vTwoLineVerseOneLineTwo }
+vOneScoreTabOneScoreOne = { \vOneLineTabOneScoreOneLineOne \vOneLineVerseOneLineTwo }
+vTwoScoreTabOneScoreOne = { \vTwoLineTabOneScoreOneLineOne \vTwoLineVerseOneLineTwo }
 
 
 %-----------------------------------------------------------------------
 % Voices
 
-vOne = { \vOneScoreTabOneScoreEight }
+vOne = { \vOneScoreTabOneScoreOne }
 
-vTwo = { \vTwoScoreTabOneScoreEight }
+vTwo = { \vTwoScoreTabOneScoreOne }
 
 
 \score {

@@ -10,7 +10,7 @@ module Gitara
 
       def add(child)
         own_children << child
-        child.id = own_children.size
+        child.id = own_children.select{|c| c.is_a?(child.class)}.size
         child.parent = self
       end
 

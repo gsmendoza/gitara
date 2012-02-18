@@ -47,6 +47,22 @@ describe Node::Base do
       parent.children[1].id.should == 2
       parent.children[1].parent.should == parent
     end
+
+    it "should set the id based on existing siblings having the same class as the child" do
+      parent = Node::Base.new
+
+      bar_1 = Node::Bar.new
+      parent.add bar_1
+      bar_1.id.should == 1
+
+      line_1 = Node::Line.new
+      parent.add line_1
+      line_1.id.should == 1
+
+      bar_2 = Node::Bar.new
+      parent.add bar_2
+      bar_2.id.should == 2
+    end
   end
 
   describe "definition" do
