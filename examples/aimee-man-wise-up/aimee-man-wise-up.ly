@@ -77,44 +77,44 @@ vTwoLineIntroLineOne = { \vTwoBarIntro \vTwoBarIntro \vTwoBarIntro \vTwoBarIntro
 vOneLineVerseOneLineTwo = { \vOneBarYouGot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarItThough \break }
 vTwoLineVerseOneLineTwo = { \vTwoBarYouGot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarItThough \break }
 
-vOneLineTabOneScoreTwentyFourLineTwo = { \vOneBarItsNot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarBeganIt \break }
-vTwoLineTabOneScoreTwentyFourLineTwo = { \vTwoBarItsNot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
+vOneLineTabOneScoreOneLineTwo = { \vOneBarItsNot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarBeganIt \break }
+vTwoLineTabOneScoreOneLineTwo = { \vTwoBarItsNot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
 
-vOneLineTabOneScoreTwentyFourLineFive = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUp \vOneBarIntro \vOneBarIntro \break }
-vTwoLineTabOneScoreTwentyFourLineFive = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUp \vTwoBarIntro \vTwoBarIntro \break }
+vOneLineTabOneScoreOneLineFive = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUp \vOneBarIntro \vOneBarIntro \break }
+vTwoLineTabOneScoreOneLineFive = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUp \vTwoBarIntro \vTwoBarIntro \break }
 
-vOneLineTabOneScoreTwentyFourLineSix = { \vOneBarYoureSure \vOneBarTheresACure \vOneBarWhenYouFirst \vOneBarBeganIt \break }
-vTwoLineTabOneScoreTwentyFourLineSix = { \vTwoBarYoureSure \vTwoBarTheresACure \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
+vOneLineTabOneScoreOneLineSix = { \vOneBarYoureSure \vOneBarTheresACure \vOneBarWhenYouFirst \vOneBarBeganIt \break }
+vTwoLineTabOneScoreOneLineSix = { \vTwoBarYoureSure \vTwoBarTheresACure \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
 
-vOneLineTabOneScoreTwentyFourLineNine = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUpTwo \vOneBarIntro \vOneBarIntro \break }
-vTwoLineTabOneScoreTwentyFourLineNine = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUpTwo \vTwoBarIntro \vTwoBarIntro \break }
+vOneLineTabOneScoreOneLineNine = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUpTwo \vOneBarIntro \vOneBarIntro \break }
+vTwoLineTabOneScoreOneLineNine = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUpTwo \vTwoBarIntro \vTwoBarIntro \break }
 
-vOneLineTabOneScoreTwentyFourLineTen = { \vOneBarPrepareAList \vOneBarBeforeYouSign \break }
-vTwoLineTabOneScoreTwentyFourLineTen = { \vTwoBarPrepareAList \vTwoBarBeforeYouSign \break }
+vOneLineTabOneScoreOneLineTen = { \vOneBarPrepareAList \vOneBarBeforeYouSign \break }
+vTwoLineTabOneScoreOneLineTen = { \vTwoBarPrepareAList \vTwoBarBeforeYouSign \break }
 
-vOneLineTabOneScoreTwentyFourLineTwelve = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUpThree \vOneBarItsNotGoingToStopCcgeTwo \vOneBarTilYouWiseUpThree \break }
-vTwoLineTabOneScoreTwentyFourLineTwelve = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUpThree \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarTilYouWiseUpThree \break }
+vOneLineTabOneScoreOneLineTwelve = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUpThree \vOneBarItsNotGoingToStopCcgeTwo \vOneBarTilYouWiseUpThree \break }
+vTwoLineTabOneScoreOneLineTwelve = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUpThree \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarTilYouWiseUpThree \break }
 
-vOneLineTabOneScoreTwentyFourLineThirteen = { \vOneBarItsNotGoingToStopCcgeTwo \vOneBarTilYouWiseUpThree \vOneBarItsNotGoingToStopCcgeTwo \vOneBarSoJustGiveUp \break }
-vTwoLineTabOneScoreTwentyFourLineThirteen = { \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarTilYouWiseUpThree \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarSoJustGiveUp \break }
+vOneLineTabOneScoreOneLineThirteen = { \vOneBarItsNotGoingToStopCcgeTwo \vOneBarTilYouWiseUpThree \vOneBarItsNotGoingToStopCcgeTwo \vOneBarSoJustGiveUp \break }
+vTwoLineTabOneScoreOneLineThirteen = { \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarTilYouWiseUpThree \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarSoJustGiveUp \break }
 
-vOneLineTabOneScoreTwentyFourLineFifteen = { \vOneBarOutro \vOneBarOutro \vOneBarOutro \vOneBarOutro \break }
-vTwoLineTabOneScoreTwentyFourLineFifteen = { \vTwoBarOutro \vTwoBarOutro \vTwoBarOutro \vTwoBarOutro \break }
+vOneLineTabOneScoreOneLineFifteen = { \vOneBarOutro \vOneBarOutro \vOneBarOutro \vOneBarOutro \break }
+vTwoLineTabOneScoreOneLineFifteen = { \vTwoBarOutro \vTwoBarOutro \vTwoBarOutro \vTwoBarOutro \break }
 
 
 %-----------------------------------------------------------------------
 % Scores
 
-vOneScoreTabOneScoreTwentyFour = { \vOneLineIntroLineOne \vOneLineTabOneScoreTwentyFourLineTwo \vOneLineVerseOneLineTwo \vOneLineChorusOneLineOne \vOneLineTabOneScoreTwentyFourLineFive \vOneLineTabOneScoreTwentyFourLineSix \vOneLineVerseOneLineTwo \vOneLineChorusOneLineOne \vOneLineTabOneScoreTwentyFourLineNine \vOneLineTabOneScoreTwentyFourLineTen \vOneLineChorusOneLineOne \vOneLineTabOneScoreTwentyFourLineTwelve \vOneLineTabOneScoreTwentyFourLineThirteen \vOneLineIntroLineOne \vOneLineTabOneScoreTwentyFourLineFifteen }
-vTwoScoreTabOneScoreTwentyFour = { \vTwoLineIntroLineOne \vTwoLineTabOneScoreTwentyFourLineTwo \vTwoLineVerseOneLineTwo \vTwoLineChorusOneLineOne \vTwoLineTabOneScoreTwentyFourLineFive \vTwoLineTabOneScoreTwentyFourLineSix \vTwoLineVerseOneLineTwo \vTwoLineChorusOneLineOne \vTwoLineTabOneScoreTwentyFourLineNine \vTwoLineTabOneScoreTwentyFourLineTen \vTwoLineChorusOneLineOne \vTwoLineTabOneScoreTwentyFourLineTwelve \vTwoLineTabOneScoreTwentyFourLineThirteen \vTwoLineIntroLineOne \vTwoLineTabOneScoreTwentyFourLineFifteen }
+vOneScoreTabOneScoreOne = { \vOneLineIntroLineOne \vOneLineTabOneScoreOneLineTwo \vOneLineVerseOneLineTwo \vOneLineChorusOneLineOne \vOneLineTabOneScoreOneLineFive \vOneLineTabOneScoreOneLineSix \vOneLineVerseOneLineTwo \vOneLineChorusOneLineOne \vOneLineTabOneScoreOneLineNine \vOneLineTabOneScoreOneLineTen \vOneLineChorusOneLineOne \vOneLineTabOneScoreOneLineTwelve \vOneLineTabOneScoreOneLineThirteen \vOneLineIntroLineOne \vOneLineTabOneScoreOneLineFifteen }
+vTwoScoreTabOneScoreOne = { \vTwoLineIntroLineOne \vTwoLineTabOneScoreOneLineTwo \vTwoLineVerseOneLineTwo \vTwoLineChorusOneLineOne \vTwoLineTabOneScoreOneLineFive \vTwoLineTabOneScoreOneLineSix \vTwoLineVerseOneLineTwo \vTwoLineChorusOneLineOne \vTwoLineTabOneScoreOneLineNine \vTwoLineTabOneScoreOneLineTen \vTwoLineChorusOneLineOne \vTwoLineTabOneScoreOneLineTwelve \vTwoLineTabOneScoreOneLineThirteen \vTwoLineIntroLineOne \vTwoLineTabOneScoreOneLineFifteen }
 
 
 %-----------------------------------------------------------------------
 % Voices
 
-vOne = { \vOneScoreTabOneScoreTwentyFour }
+vOne = { \vOneScoreTabOneScoreOne }
 
-vTwo = { \vTwoScoreTabOneScoreTwentyFour }
+vTwo = { \vTwoScoreTabOneScoreOne }
 
 
 \score {
