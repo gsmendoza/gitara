@@ -1,6 +1,6 @@
 module Gitara
-  module IdAsWord
-    def id_as_word
+  module Utilities
+    def self.id_as_word(id)
       id.en.numwords.gsub('-', '_').camelize
     end
   end

@@ -1,7 +1,5 @@
 module Gitara
   class Voice < Valuable
-    include IdAsWord
-
     has_value :id
     has_value :parent
 
@@ -11,6 +9,10 @@ module Gitara
 
     def definition_name
       "v#{id_as_word}"
+    end
+
+    def id_as_word
+      Utilities.id_as_word(id)
     end
 
     def stem_type
