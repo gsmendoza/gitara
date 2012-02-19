@@ -1,6 +1,10 @@
 \version "2.12.3"
 \include "english.ly"
 
+\paper {
+ indent = #0
+}
+
 %-----------------------------------------------------------------------
 % Bars
 
@@ -55,11 +59,24 @@ vOne = { \vOneScoreTabOneScoreOne }
 vTwo = { \vTwoScoreTabOneScoreOne }
 
 
+%-----------------------------------------------------------------------
+% Stanza Headings
+
+stanzaHeadings = {
+  r1^"Verse 1" r r r
+}
+
+%-----------------------------------------------------------------------
+
 \score {
   \new StaffGroup <<
     \new Staff <<
       \tempo 4 = 75
       \clef "treble_8"
+
+      \new Voice \with { \remove Rest_engraver } {
+        \stanzaHeadings
+      }
 
       \new Voice {
         \voiceOne

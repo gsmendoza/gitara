@@ -1,6 +1,10 @@
 \version "2.12.3"
 \include "english.ly"
 
+\paper {
+ indent = #0
+}
+
 %-----------------------------------------------------------------------
 % Bars
 
@@ -36,11 +40,26 @@
 <%= Gitara.render('voice', voice) %>
 <% end %>
 
+%-----------------------------------------------------------------------
+% Stanza Headings
+
+stanzaHeadings = {
+  <% definitions(Gitara::Node::Stanza).each do |stanza| %>
+  <%= stanza.heading_in_lilypond %>
+  <% end %>
+}
+
+%-----------------------------------------------------------------------
+
 \score {
   \new StaffGroup <<
     \new Staff <<
       \tempo 4 = 75
       \clef "treble_8"
+
+      \new Voice \with { \remove Rest_engraver } {
+        \stanzaHeadings
+      }
 
       <% voices.each do |voice| %>
       \new Voice {

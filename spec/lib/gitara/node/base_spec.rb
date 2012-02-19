@@ -221,4 +221,20 @@ describe Node::Base do
       node.definition_name.should == "VerseOneLineTwo"
     end
   end
+
+  describe "descendants(klass)" do
+    it "should be itself if it is an instance of the klass" do
+      node = Node::Bar.new
+      node.descendants(Node::Bar).should == [node]
+    end
+
+    it "should include descendants which are instances of klass" do
+      node = Node::Base.new.tap do |base|
+        base.add Node::Bar.new
+        base.add Node::Bar.new
+      end
+
+      node.descendants(Node::Bar).should have(2).bars
+    end
+  end
 end

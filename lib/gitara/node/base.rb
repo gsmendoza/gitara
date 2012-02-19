@@ -45,6 +45,10 @@ module Gitara
         self.is_a?(klass) && self.definition? ? [self] : self.own_children.map{|child| child.definitions(klass) }.flatten
       end
 
+      def descendants(klass)
+        self.is_a?(klass) ? [self] : self.own_children.map{|child| child.descendants(klass) }.flatten
+      end
+
       def id_as_word
         Utilities.id_as_word(id)
       end
