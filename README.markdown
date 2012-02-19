@@ -24,13 +24,17 @@ Gitara is a Ruby DSL. A typical Gitara file will have the following structure:
 
     Gitara.define do
       score do
-        line do
-          bar do
-            notes "c d e f g a b c"
+        stanza "Verse 1" do
+          line do
+            bar do
+              notes "c d e f g a b c"
+            end
           end
         end
       end
     end
+
+You can find examples in the examples directory.
 
 
 Bars
@@ -169,6 +173,12 @@ Lines are manually breaked with [\\break](http://lilypond.org/doc/v2.12/Document
 Like bars, lines can be named, reused, etc.
 
 
+Stanzas
+-------
+
+The names of a stanza will be displayed at the top of the stanza's first bar.
+
+
 Notes with single quotes and backslashes
 ----------------------------------------
 
@@ -200,12 +210,11 @@ I'm no Lilypond expert (heh). When writing a tab, I use [TuxGuitar](http://tuxgu
 To do
 -----
 
-For version 1, I want to convert this lilypond file I wrote to Gitara format:
+For version 1, I want to convert this lilypond file to Gitara format:
 
 * [https://github.com/gsmendoza/tabs/tree/master/aimee-mann-wise-up](https://github.com/gsmendoza/tabs/tree/master/aimee-mann-wise-up)
 
 The remaining features are:
 
 1. Properties like the title and authors
-2. Stanza labels
-3. Chord labels
+2. Chord labels
