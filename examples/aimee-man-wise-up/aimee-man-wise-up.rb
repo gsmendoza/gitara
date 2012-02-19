@@ -116,55 +116,63 @@ Gitara.define do
   #-----------------------------------------------------------------------
 
   score do
-    # stanza Intro do
-    line :IntroLineOne
-
-    # stanza "Verse 1" do
-    line do
-      bar :ItsNot, :WhatYouThought, :WhenYouFirst, :BeganIt
+    stanza "Intro" do
+      line :IntroLineOne
     end
 
-    line :VerseOneLineTwo
+    stanza "Verse 1" do
+      line do
+        bar :ItsNot, :WhatYouThought, :WhenYouFirst, :BeganIt
+      end
 
-    # stanza "Chorus 1" do
-    line :ChorusOneLineOne
-    line do
-      bar :ItsNotGoingToStopCcge, :TilYouWiseUp, :Intro, :Intro
+      line :VerseOneLineTwo
     end
 
-    # stanza "Verse 2" do
-    line do
-      bar :YoureSure, :TheresACure, :WhenYouFirst, :BeganIt
+    stanza "Chorus 1" do
+      line :ChorusOneLineOne
+      line do
+        bar :ItsNotGoingToStopCcge, :TilYouWiseUp, :Intro, :Intro
+      end
     end
 
-    line :VerseOneLineTwo
+    stanza "Verse 2" do
+      line do
+        bar :YoureSure, :TheresACure, :WhenYouFirst, :BeganIt
+      end
 
-    # stanza "Chorus 2" do
-    line :ChorusOneLineOne
-    line do
-      bar :ItsNotGoingToStopCcge, :TilYouWiseUpTwo, :Intro, :Intro
+      line :VerseOneLineTwo
     end
 
-    # stanza "Bridge" do
-    line do
-      bar :PrepareAList, :BeforeYouSign
+    stanza "Chorus 2" do
+      line :ChorusOneLineOne
+      line do
+        bar :ItsNotGoingToStopCcge, :TilYouWiseUpTwo, :Intro, :Intro
+      end
     end
 
-    # stanza "Chorus 3" do
-    line :ChorusOneLineOne
-
-    line do
-      bar :ItsNotGoingToStopCcge, :TilYouWiseUpThree, :ItsNotGoingToStopCcgeTwo, :TilYouWiseUpThree
+    stanza "Bridge" do
+      line do
+        bar :PrepareAList, :BeforeYouSign
+      end
     end
 
-    line do
-      bar :ItsNotGoingToStopCcgeTwo, :TilYouWiseUpThree, :ItsNotGoingToStopCcgeTwo, :SoJustGiveUp
+    stanza "Chorus 3" do
+      line :ChorusOneLineOne
+
+      line do
+        bar :ItsNotGoingToStopCcge, :TilYouWiseUpThree, :ItsNotGoingToStopCcgeTwo, :TilYouWiseUpThree
+      end
+
+      line do
+        bar :ItsNotGoingToStopCcgeTwo, :TilYouWiseUpThree, :ItsNotGoingToStopCcgeTwo, :SoJustGiveUp
+      end
     end
 
-    # stanza "Outro" do
-    line :IntroLineOne
-    line do
-      bar :Outro, :Outro, :Outro, :Outro
+    stanza "Outro" do
+      line :IntroLineOne
+      line do
+        bar :Outro, :Outro, :Outro, :Outro
+      end
     end
   end
 end

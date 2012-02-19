@@ -26,6 +26,15 @@ module Gitara
         end
       end
 
+      def definition(target = self)
+        if self.definition_of?(target)
+          self
+        else
+          result = parent.own_children.detect{|node| node.definition_of?(target) }
+          result ? result : parent.definition(target)
+        end
+      end
+
       def definition?
         ! own_children.empty?
       end
@@ -46,11 +55,15 @@ module Gitara
       end
 
       def descendants(klass)
-        self.is_a?(klass) ? [self] : self.own_children.map{|child| child.descendants(klass) }.flatten
+        self.is_a?(klass) ? [self.definition] : self.children.map{|child| child.descendants(klass) }.flatten
       end
 
       def id_as_word
         Utilities.id_as_word(id)
+      end
+
+      def inspect
+        Utilities.inspect_attributes self, :name
       end
 
       def name
@@ -78,17 +91,6 @@ module Gitara
           raise ArgumentError
         end
       end
-
-      private
-
-        def definition(target = self)
-          if self.definition_of?(target)
-            self
-          else
-            result = parent.own_children.detect{|node| node.definition_of?(target) }
-            result ? result : parent.definition(target)
-          end
-        end
     end
   end
 end

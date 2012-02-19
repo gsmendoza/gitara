@@ -63,7 +63,7 @@ vTwo = { \vTwoScoreTabOneScoreOne }
 % Stanza Headings
 
 stanzaHeadings = {
-  r1^"Verse 1" r r r
+  r1^"Verse 1" r r r r r r r
 }
 
 %-----------------------------------------------------------------------

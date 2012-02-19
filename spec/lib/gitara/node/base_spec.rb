@@ -224,17 +224,39 @@ describe Node::Base do
 
   describe "descendants(klass)" do
     it "should be itself if it is an instance of the klass" do
-      node = Node::Bar.new
-      node.descendants(Node::Bar).should == [node]
+      tab = Node::Tab.new(:children => [Node::Bar.new])
+      tab.descendants(Node::Tab).should == [tab]
     end
 
     it "should include descendants which are instances of klass" do
-      node = Node::Base.new.tap do |base|
-        base.add Node::Bar.new
-        base.add Node::Bar.new
-      end
+      tab = Node::Tab.new(:children => [
+        Node::Bar.new(:name => :Intro, :children => [
+          Node::NoteSet.new
+        ])
+      ])
 
-      node.descendants(Node::Bar).should have(2).bars
+      tab.descendants(Node::Bar).should have(1).bar
+    end
+
+    it "should follow the definitions of node references for descendants" do
+      tab = Node::Tab.new(:children => [
+        Node::Bar.new(:name => :Intro, :children => [
+          Node::NoteSet.new
+        ]),
+
+        Node::Line.new(:name => 'Line 1', :children => [
+          Node::Bar.new(:name => :Intro)
+        ]),
+
+        Node::Stanza.new(:children => [
+          Node::Line.new(:name => 'Line 1')
+        ])
+      ])
+
+      bar = tab.own_children[0]
+
+      stanza = tab.own_children[2]
+      stanza.descendants(Node::Bar).should == [bar]
     end
   end
 end

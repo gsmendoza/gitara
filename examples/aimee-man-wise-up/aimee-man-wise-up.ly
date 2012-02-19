@@ -1,6 +1,10 @@
 \version "2.12.3"
 \include "english.ly"
 
+\paper {
+ indent = #0
+}
+
 %-----------------------------------------------------------------------
 % Bars
 
@@ -77,36 +81,64 @@ vTwoLineIntroLineOne = { \vTwoBarIntro \vTwoBarIntro \vTwoBarIntro \vTwoBarIntro
 vOneLineVerseOneLineTwo = { \vOneBarYouGot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarItThough \break }
 vTwoLineVerseOneLineTwo = { \vTwoBarYouGot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarItThough \break }
 
-vOneLineTabOneScoreOneLineTwo = { \vOneBarItsNot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarBeganIt \break }
-vTwoLineTabOneScoreOneLineTwo = { \vTwoBarItsNot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
+vOneLineVerseOneLineOne = { \vOneBarItsNot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarBeganIt \break }
+vTwoLineVerseOneLineOne = { \vTwoBarItsNot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
 
-vOneLineTabOneScoreOneLineFive = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUp \vOneBarIntro \vOneBarIntro \break }
-vTwoLineTabOneScoreOneLineFive = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUp \vTwoBarIntro \vTwoBarIntro \break }
+vOneLineChorusOneLineTwo = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUp \vOneBarIntro \vOneBarIntro \break }
+vTwoLineChorusOneLineTwo = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUp \vTwoBarIntro \vTwoBarIntro \break }
 
-vOneLineTabOneScoreOneLineSix = { \vOneBarYoureSure \vOneBarTheresACure \vOneBarWhenYouFirst \vOneBarBeganIt \break }
-vTwoLineTabOneScoreOneLineSix = { \vTwoBarYoureSure \vTwoBarTheresACure \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
+vOneLineVerseTwoLineOne = { \vOneBarYoureSure \vOneBarTheresACure \vOneBarWhenYouFirst \vOneBarBeganIt \break }
+vTwoLineVerseTwoLineOne = { \vTwoBarYoureSure \vTwoBarTheresACure \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
 
-vOneLineTabOneScoreOneLineNine = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUpTwo \vOneBarIntro \vOneBarIntro \break }
-vTwoLineTabOneScoreOneLineNine = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUpTwo \vTwoBarIntro \vTwoBarIntro \break }
+vOneLineChorusTwoLineTwo = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUpTwo \vOneBarIntro \vOneBarIntro \break }
+vTwoLineChorusTwoLineTwo = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUpTwo \vTwoBarIntro \vTwoBarIntro \break }
 
-vOneLineTabOneScoreOneLineTen = { \vOneBarPrepareAList \vOneBarBeforeYouSign \break }
-vTwoLineTabOneScoreOneLineTen = { \vTwoBarPrepareAList \vTwoBarBeforeYouSign \break }
+vOneLineBridgeLineOne = { \vOneBarPrepareAList \vOneBarBeforeYouSign \break }
+vTwoLineBridgeLineOne = { \vTwoBarPrepareAList \vTwoBarBeforeYouSign \break }
 
-vOneLineTabOneScoreOneLineTwelve = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUpThree \vOneBarItsNotGoingToStopCcgeTwo \vOneBarTilYouWiseUpThree \break }
-vTwoLineTabOneScoreOneLineTwelve = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUpThree \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarTilYouWiseUpThree \break }
+vOneLineChorusThreeLineTwo = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUpThree \vOneBarItsNotGoingToStopCcgeTwo \vOneBarTilYouWiseUpThree \break }
+vTwoLineChorusThreeLineTwo = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUpThree \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarTilYouWiseUpThree \break }
 
-vOneLineTabOneScoreOneLineThirteen = { \vOneBarItsNotGoingToStopCcgeTwo \vOneBarTilYouWiseUpThree \vOneBarItsNotGoingToStopCcgeTwo \vOneBarSoJustGiveUp \break }
-vTwoLineTabOneScoreOneLineThirteen = { \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarTilYouWiseUpThree \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarSoJustGiveUp \break }
+vOneLineChorusThreeLineThree = { \vOneBarItsNotGoingToStopCcgeTwo \vOneBarTilYouWiseUpThree \vOneBarItsNotGoingToStopCcgeTwo \vOneBarSoJustGiveUp \break }
+vTwoLineChorusThreeLineThree = { \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarTilYouWiseUpThree \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarSoJustGiveUp \break }
 
-vOneLineTabOneScoreOneLineFifteen = { \vOneBarOutro \vOneBarOutro \vOneBarOutro \vOneBarOutro \break }
-vTwoLineTabOneScoreOneLineFifteen = { \vTwoBarOutro \vTwoBarOutro \vTwoBarOutro \vTwoBarOutro \break }
+vOneLineOutroLineTwo = { \vOneBarOutro \vOneBarOutro \vOneBarOutro \vOneBarOutro \break }
+vTwoLineOutroLineTwo = { \vTwoBarOutro \vTwoBarOutro \vTwoBarOutro \vTwoBarOutro \break }
+
+
+%-----------------------------------------------------------------------
+% Stanzas
+
+vOneStanzaIntro = { \vOneLineIntroLineOne }
+vTwoStanzaIntro = { \vTwoLineIntroLineOne }
+
+vOneStanzaVerseOne = { \vOneLineVerseOneLineOne \vOneLineVerseOneLineTwo }
+vTwoStanzaVerseOne = { \vTwoLineVerseOneLineOne \vTwoLineVerseOneLineTwo }
+
+vOneStanzaChorusOne = { \vOneLineChorusOneLineOne \vOneLineChorusOneLineTwo }
+vTwoStanzaChorusOne = { \vTwoLineChorusOneLineOne \vTwoLineChorusOneLineTwo }
+
+vOneStanzaVerseTwo = { \vOneLineVerseTwoLineOne \vOneLineVerseOneLineTwo }
+vTwoStanzaVerseTwo = { \vTwoLineVerseTwoLineOne \vTwoLineVerseOneLineTwo }
+
+vOneStanzaChorusTwo = { \vOneLineChorusOneLineOne \vOneLineChorusTwoLineTwo }
+vTwoStanzaChorusTwo = { \vTwoLineChorusOneLineOne \vTwoLineChorusTwoLineTwo }
+
+vOneStanzaBridge = { \vOneLineBridgeLineOne }
+vTwoStanzaBridge = { \vTwoLineBridgeLineOne }
+
+vOneStanzaChorusThree = { \vOneLineChorusOneLineOne \vOneLineChorusThreeLineTwo \vOneLineChorusThreeLineThree }
+vTwoStanzaChorusThree = { \vTwoLineChorusOneLineOne \vTwoLineChorusThreeLineTwo \vTwoLineChorusThreeLineThree }
+
+vOneStanzaOutro = { \vOneLineIntroLineOne \vOneLineOutroLineTwo }
+vTwoStanzaOutro = { \vTwoLineIntroLineOne \vTwoLineOutroLineTwo }
 
 
 %-----------------------------------------------------------------------
 % Scores
 
-vOneScoreTabOneScoreOne = { \vOneLineIntroLineOne \vOneLineTabOneScoreOneLineTwo \vOneLineVerseOneLineTwo \vOneLineChorusOneLineOne \vOneLineTabOneScoreOneLineFive \vOneLineTabOneScoreOneLineSix \vOneLineVerseOneLineTwo \vOneLineChorusOneLineOne \vOneLineTabOneScoreOneLineNine \vOneLineTabOneScoreOneLineTen \vOneLineChorusOneLineOne \vOneLineTabOneScoreOneLineTwelve \vOneLineTabOneScoreOneLineThirteen \vOneLineIntroLineOne \vOneLineTabOneScoreOneLineFifteen }
-vTwoScoreTabOneScoreOne = { \vTwoLineIntroLineOne \vTwoLineTabOneScoreOneLineTwo \vTwoLineVerseOneLineTwo \vTwoLineChorusOneLineOne \vTwoLineTabOneScoreOneLineFive \vTwoLineTabOneScoreOneLineSix \vTwoLineVerseOneLineTwo \vTwoLineChorusOneLineOne \vTwoLineTabOneScoreOneLineNine \vTwoLineTabOneScoreOneLineTen \vTwoLineChorusOneLineOne \vTwoLineTabOneScoreOneLineTwelve \vTwoLineTabOneScoreOneLineThirteen \vTwoLineIntroLineOne \vTwoLineTabOneScoreOneLineFifteen }
+vOneScoreTabOneScoreOne = { \vOneStanzaIntro \vOneStanzaVerseOne \vOneStanzaChorusOne \vOneStanzaVerseTwo \vOneStanzaChorusTwo \vOneStanzaBridge \vOneStanzaChorusThree \vOneStanzaOutro }
+vTwoScoreTabOneScoreOne = { \vTwoStanzaIntro \vTwoStanzaVerseOne \vTwoStanzaChorusOne \vTwoStanzaVerseTwo \vTwoStanzaChorusTwo \vTwoStanzaBridge \vTwoStanzaChorusThree \vTwoStanzaOutro }
 
 
 %-----------------------------------------------------------------------
@@ -117,11 +149,31 @@ vOne = { \vOneScoreTabOneScoreOne }
 vTwo = { \vTwoScoreTabOneScoreOne }
 
 
+%-----------------------------------------------------------------------
+% Stanza Headings
+
+stanzaHeadings = {
+  r1^"Intro" r r r
+  r1^"Verse 1" r r r r r r r
+  r1^"Chorus 1" r r r r r r r
+  r1^"Verse 2" r r r r r r r
+  r1^"Chorus 2" r r r r r r r
+  r1^"Bridge" r
+  r1^"Chorus 3" r r r r r r r r r r r
+  r1^"Outro" r r r r r r r
+}
+
+%-----------------------------------------------------------------------
+
 \score {
   \new StaffGroup <<
     \new Staff <<
       \tempo 4 = 75
       \clef "treble_8"
+
+      \new Voice \with { \remove Rest_engraver } {
+        \stanzaHeadings
+      }
 
       \new Voice {
         \voiceOne
