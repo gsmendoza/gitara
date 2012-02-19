@@ -214,4 +214,11 @@ describe Node::Base do
       node.id_as_word.should == "TwentyFour"
     end
   end
+
+  describe "definition_name" do
+    it "should turn the name to a lilypond acceptable name" do
+      node = Node::Base.new(:name => "Verse 1 line-2")
+      node.definition_name.should == "VerseOneLineTwo"
+    end
+  end
 end

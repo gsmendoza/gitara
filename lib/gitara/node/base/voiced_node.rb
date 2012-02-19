@@ -14,7 +14,7 @@ module Gitara
         end
 
         def definition_name
-          "#{voice.definition_name}#{node.class.to_s.split('::').last}#{node.name}"
+          "#{voice.definition_name}#{node.class.to_s.split('::').last}#{node.definition_name}"
         end
       end
     end

@@ -30,6 +30,13 @@ module Gitara
         ! own_children.empty?
       end
 
+      def definition_name
+        name.to_s.
+          gsub(/\W/, '_').
+          gsub(/\d+/){|s| Utilities.id_as_word(s)}.
+          camelize
+      end
+
       def definition_of?(target)
         self.definition? && self.name == target.name && self.class == target.class
       end
