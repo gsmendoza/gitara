@@ -34,10 +34,12 @@ Gitara.define do
   end
 
   score do
-    line do
-      bar :ItsNot, :WhatYouThought, :WhenYouFirst, :BeganIt
-    end
+    stanza "Verse 1" do
+      line do
+        bar :ItsNot, :WhatYouThought, :WhenYouFirst, :BeganIt
+      end
 
-    line :VerseOneLineTwo
+      line :VerseOneLineTwo
+    end
   end
 end

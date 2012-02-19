@@ -169,5 +169,38 @@ describe Gitara do
         score.own_children[0].should == note_set
       end
     end
+
+    describe "stanza(name, &block)" do
+      it "should add a stanza with the name" do
+        dsl = Dsl.new(:node => Node::Tab.new)
+        dsl.node.own_children.should be_empty
+
+        dsl.stanza 'Intro'
+
+        dsl.node.own_children.should have(1).stanza
+
+        stanza = dsl.node.own_children[0]
+        stanza.name.should == 'Intro'
+        stanza.own_children.should be_empty
+      end
+
+      it "should add the children declared in the block to the stanza" do
+        dsl = Dsl.new(:node => Node::Tab.new)
+        dsl.node.own_children.should be_empty
+
+        line = Node::Line.new
+
+        dsl.stanza 'Intro' do
+          add line
+        end
+
+        dsl.node.own_children.should have(1).stanza
+        dsl.node.own_children[0].name.should == 'Intro'
+
+        stanza = dsl.node.own_children[0]
+        stanza.own_children.should have(1).line
+        stanza.own_children[0].should == line
+      end
+    end
   end
 end

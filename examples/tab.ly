@@ -29,15 +29,22 @@ vTwoBarYouGot = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
 vOneLineVerseOneLineTwo = { \vOneBarYouGot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarItThough \break }
 vTwoLineVerseOneLineTwo = { \vTwoBarYouGot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarItThough \break }
 
-vOneLineTabOneScoreOneLineOne = { \vOneBarItsNot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarBeganIt \break }
-vTwoLineTabOneScoreOneLineOne = { \vTwoBarItsNot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
+vOneLineVerseOneLineOne = { \vOneBarItsNot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarBeganIt \break }
+vTwoLineVerseOneLineOne = { \vTwoBarItsNot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
+
+
+%-----------------------------------------------------------------------
+% Stanzas
+
+vOneStanzaVerseOne = { \vOneLineVerseOneLineOne \vOneLineVerseOneLineTwo }
+vTwoStanzaVerseOne = { \vTwoLineVerseOneLineOne \vTwoLineVerseOneLineTwo }
 
 
 %-----------------------------------------------------------------------
 % Scores
 
-vOneScoreTabOneScoreOne = { \vOneLineTabOneScoreOneLineOne \vOneLineVerseOneLineTwo }
-vTwoScoreTabOneScoreOne = { \vTwoLineTabOneScoreOneLineOne \vTwoLineVerseOneLineTwo }
+vOneScoreTabOneScoreOne = { \vOneStanzaVerseOne }
+vTwoScoreTabOneScoreOne = { \vTwoStanzaVerseOne }
 
 
 %-----------------------------------------------------------------------

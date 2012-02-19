@@ -31,5 +31,9 @@ module Gitara
     def score(*names, &block)
       add_names :names => names, :node_class => Node::Score, &block
     end
+
+    def stanza(*names, &block)
+      add_names :names => names, :node_class => Node::Stanza, &block
+    end
   end
 end

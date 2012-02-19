@@ -1,6 +1,4 @@
 require 'gitara'
-require 'parslet/convenience'
-require 'parslet/rig/rspec'
 require 'pry'
 
 RSpec.configure do |config|
