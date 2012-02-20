@@ -6,7 +6,7 @@ module Gitara
       has_value :instrument
       #has_value :key
       has_value :midi_instrument, :default => "acoustic guitar (nylon)"
-      #has_value :tempo
+      has_value :tempo
       has_value :title
 
       def self.parse(text)

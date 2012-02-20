@@ -11,7 +11,7 @@ module Gitara
     can_add_property :instrument
     #can_add_property :key
     can_add_property :midi_instrument
-    #can_add_property :tempo
+    can_add_property :tempo
     can_add_property :title
 
     def add(child, &block)

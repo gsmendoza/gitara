@@ -176,6 +176,7 @@ stanzaHeadings = {
   \new StaffGroup <<
     \new Staff <<
       \tempo 4 = 75
+
       \clef "treble_8"
 
       \new Voice \with { \remove Rest_engraver } {
@@ -227,6 +228,7 @@ stanzaHeadings = {
 \score {
   \new Staff \with {midiInstrument = #"acoustic guitar (nylon)"} <<
     \tempo 4 = 75
+
     \clef "treble_8"
 
     \new Voice {

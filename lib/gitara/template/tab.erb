@@ -61,7 +61,7 @@ stanzaHeadings = {
 \score {
   \new StaffGroup <<
     \new Staff <<
-      \tempo 4 = 75
+      <%= Gitara.render('tab_tempo', self) %>
       \clef "treble_8"
 
       \new Voice \with { \remove Rest_engraver } {
@@ -108,7 +108,7 @@ stanzaHeadings = {
 % showLastLength = R1*4
 \score {
   \new Staff \with {midiInstrument = #"<%= self.midi_instrument %>"} <<
-    \tempo 4 = 75
+    <%= Gitara.render('tab_tempo', self) %>
     \clef "treble_8"
 
     <% voices.each do |voice| %>

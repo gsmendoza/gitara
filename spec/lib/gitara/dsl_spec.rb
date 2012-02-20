@@ -203,7 +203,7 @@ describe Gitara do
       end
     end
 
-    [:title, :composer, :arranger, :instrument, :midi_instrument].each do |property|
+    [:title, :composer, :arranger, :instrument, :midi_instrument, :tempo].each do |property|
       describe "#{property}(value)" do
         it "should set the #{property} of the tab to value" do
           tab =Node::Tab.new
