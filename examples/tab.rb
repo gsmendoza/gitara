@@ -4,7 +4,7 @@ Gitara.define do
   arranger "Arranged by George Mendoza"
   instrument "Guitar (capo on second fret)"
   midi_instrument "acoustic guitar (nylon)"
-  #key "d"
+  transposition "d"
   tempo "4 = 75"
 
   bar :BeganIt do

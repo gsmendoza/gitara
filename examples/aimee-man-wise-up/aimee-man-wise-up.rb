@@ -5,6 +5,7 @@ Gitara.define do
   instrument "Guitar (capo on second fret)"
   midi_instrument "acoustic guitar (nylon)"
   tempo "4 = 75"
+  transposition "d"
 
   bar :BeforeYouSign do
     notes "r8 <d'/2>16( <c'/2>8.) <a/3>16 <c'/2>8. <d'/2>16 <e'/1>8. <g/3>8"

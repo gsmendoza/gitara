@@ -61,9 +61,15 @@ vTwoScoreTabOneScoreOne = { \vTwoStanzaVerseOne }
 %-----------------------------------------------------------------------
 % Voices
 
-vOne = { \vOneScoreTabOneScoreOne }
+vOne = {
+  \transposition d''
+  \vOneScoreTabOneScoreOne
+}
 
-vTwo = { \vTwoScoreTabOneScoreOne }
+vTwo = {
+  \transposition d'
+  \vTwoScoreTabOneScoreOne
+}
 
 
 %-----------------------------------------------------------------------

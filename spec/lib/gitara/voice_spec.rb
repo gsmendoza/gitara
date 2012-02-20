@@ -28,4 +28,58 @@ describe Voice do
       voice.stem_type.should == '\voiceOne'
     end
   end
+
+  describe "transposition" do
+    it "should be based on the tab's transposition and the voice's octave" do
+      tab = Node::Tab.new(
+        :transposition => 'd',
+        :children => [
+          Node::Bar.new(:children => [
+            Node::NoteSet.new,
+            Node::NoteSet.new
+          ])
+        ]
+      )
+      tab.max_number_of_voices.should == 2
+
+      voice = Voice.new(:parent => tab, :id => 1)
+      voice.transposition.should == "d''"
+
+      voice = Voice.new(:parent => tab, :id => 2)
+      voice.transposition.should == "d'"
+    end
+
+    it "should be blank if the tab has no transposition" do
+      tab = Node::Tab.new(
+        :children => [
+          Node::Bar.new(:children => [
+            Node::NoteSet.new,
+            Node::NoteSet.new
+          ])
+        ]
+      )
+      tab.max_number_of_voices.should == 2
+
+      voice = Voice.new(:parent => tab, :id => 1)
+      voice.transposition.should be_nil
+    end
+  end
+
+  describe "octave" do
+    it "should be based on the voice's position in the tab" do
+      tab = Node::Tab.new(:children => [
+        Node::Bar.new(:children => [
+          Node::NoteSet.new,
+          Node::NoteSet.new
+        ])
+      ])
+      tab.max_number_of_voices.should == 2
+
+      voice = Voice.new(:parent => tab, :id => 1)
+      voice.octave.should == 2
+
+      voice = Voice.new(:parent => tab, :id => 2)
+      voice.octave.should == 1
+    end
+  end
 end
