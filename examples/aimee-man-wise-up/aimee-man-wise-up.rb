@@ -1,4 +1,9 @@
 Gitara.define do
+  title "Wise Up"
+  composer "Aimee Mann"
+  arranger "Arranged by George Mendoza"
+  instrument "Guitar (capo on second fret)"
+
   bar :BeforeYouSign do
     notes "r8 <d'/2>16( <c'/2>8.) <a/3>16 <c'/2>8. <d'/2>16 <e'/1>8. <g/3>8"
     notes "<d/4>4 <d/4>4 <d/4>4 <d/4>4"

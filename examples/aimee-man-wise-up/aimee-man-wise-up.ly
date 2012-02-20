@@ -5,6 +5,13 @@
  indent = #0
 }
 
+\header {
+  title = "Wise Up"
+  composer = "Aimee Mann"
+  arranger = "Arranged by George Mendoza"
+  instrument = "Guitar (capo on second fret)"
+}
+
 %-----------------------------------------------------------------------
 % Bars
 

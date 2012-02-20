@@ -1,6 +1,18 @@
+require "gitara/dsl_macros"
+
 module Gitara
   class Dsl < Valuable
+    extend DslMacros
+
     has_value :node
+
+    can_add_property :arranger
+    can_add_property :composer
+    can_add_property :instrument
+    #can_add_property :key
+    #can_add_property :midi_instrument
+    #can_add_property :tempo
+    can_add_property :title
 
     def add(child, &block)
       self.node.add child

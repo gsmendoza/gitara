@@ -1,4 +1,12 @@
 Gitara.define do
+  title "Wise Up"
+  composer "Aimee Mann"
+  arranger "Arranged by George Mendoza"
+  instrument "Guitar (capo on second fret)"
+  #midi_instrument "acoustic guitar (nylon)"
+  #key "d"
+  #tempo "4 = 75"
+
   bar :BeganIt do
     notes "/skip 4 <a/3 c'/2 >8 <g/3>8 /skip 4 <g/3 c'/2 >8 <g/3>8"
     notes "<f/4>4 <f/4>4 <c/5>4 <e/4>4"

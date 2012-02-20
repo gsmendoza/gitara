@@ -202,5 +202,18 @@ describe Gitara do
         stanza.own_children[0].should == line
       end
     end
+
+    [:title, :composer, :arranger, :instrument].each do |property|
+      describe "#{property}(value)" do
+        it "should set the #{property} of the tab to value" do
+          tab =Node::Tab.new
+
+          dsl = Dsl.new(:node => tab)
+          dsl.send property, "test"
+
+          tab.send(property).should == "test"
+        end
+      end
+    end
   end
 end
