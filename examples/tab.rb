@@ -3,7 +3,7 @@ Gitara.define do
   composer "Aimee Mann"
   arranger "Arranged by George Mendoza"
   instrument "Guitar (capo on second fret)"
-  #midi_instrument "acoustic guitar (nylon)"
+  midi_instrument "acoustic guitar (nylon)"
   #key "d"
   #tempo "4 = 75"
 

@@ -54,4 +54,11 @@ describe 'Tab' do
       tab.playable_child.id.should == 2
     end
   end
+
+  describe "midi_instrument" do
+    it "should have acoustic guitar (nylon) as default" do
+      tab = Node::Tab.new
+      tab.midi_instrument.should == 'acoustic guitar (nylon)'
+    end
+  end
 end

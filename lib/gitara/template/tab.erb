@@ -107,7 +107,7 @@ stanzaHeadings = {
 
 % showLastLength = R1*4
 \score {
-  \new Staff \with {midiInstrument = #"acoustic guitar (nylon)"} <<
+  \new Staff \with {midiInstrument = #"<%= self.midi_instrument %>"} <<
     \tempo 4 = 75
     \clef "treble_8"
 
