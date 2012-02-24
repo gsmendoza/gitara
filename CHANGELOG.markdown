@@ -1,4 +1,9 @@
-0.3.0 - 2012-02-19
+0.3.1 - 2012-02-24
+------------------
+
+* [#14] Released 14-properties branch instead of master hehe.
+
+0.3.0 - 2012-02-24
 ------------------
 
 * [#14] Add properties.
