@@ -234,11 +234,6 @@ I'm no Lilypond expert (heh). When writing a tab, I use [TuxGuitar](http://tuxgu
 To do
 -----
 
-For version 1, I want to convert this lilypond file to Gitara format:
-
-* [https://github.com/gsmendoza/tabs/tree/master/aimee-mann-wise-up](https://github.com/gsmendoza/tabs/tree/master/aimee-mann-wise-up)
-
-The remaining features are:
-
-1. Properties like the title and authors
-2. Chord labels
+1. Chord labels
+2. Alternate tuning
+3. Repeats
