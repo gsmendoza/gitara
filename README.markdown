@@ -48,7 +48,7 @@ Bars are the smallest expressions in Gitara, that is, a gitara file must have at
       end
     end
 
-With Gitara, it's easier to write notes using [absolute note names](http://lilypond.org/doc/v2.12/Documentation/learning/absolute-note-names) instead of relative note names. This is because we'll be reusing bars and other Gitara expressions (see Reusing bars below).
+With Gitara, it's easier to write notes using [absolute note names](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-pitches#Absolute-octave-entry) instead of relative note names. This is because we'll be reusing bars and other Gitara expressions (see Reusing bars below).
 
 
 Multiple voices
@@ -168,7 +168,7 @@ You can group bars in a line:
       bar :BayangMagiliw, :PerlasNgSilanganan, :AlabNgPuso, :SaDibdibMoyBuhay
     end
 
-Lines are manually breaked with [\\break](http://lilypond.org/doc/v2.12/Documentation/notation/line-breaking).
+Lines are manually breaked with [\\break](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Line-breaking).
 
 Like bars, lines can be named, reused, etc.
 
@@ -177,6 +177,30 @@ Stanzas
 -------
 
 The names of a stanza will be displayed at the top of the stanza's first bar.
+
+
+Properties
+----------
+
+A gitara file can have the following optional properties:
+
+    Gitara.define do
+      title "Wise Up"
+      composer "Aimee Mann"
+      arranger "Arranged by George Mendoza"
+      instrument "Guitar (capo on second fret)"
+      midi_instrument "acoustic guitar (nylon)"
+      tempo "4 = 75"
+      transposition "d"
+    end
+
+* arranger - tab's arranger
+* composer - song's composer
+* instrument - description of the instrument used on the tab
+* midi_instrument - the type of instrument played in the midi export of the tab. By default, "acoustic guitar (nylon)".
+* tempo - see (lilypond)[http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-parts#Metronome-marks] for the format.
+* title - title of the song
+* transposition - adjusts the pitch of the instrument. The default transposition is "c". If you set it to "d", then you have to play the tab two frets higher on the guitar (capo on second fret).
 
 
 Notes with single quotes and backslashes
