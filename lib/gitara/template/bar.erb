@@ -1,3 +1,4 @@
 <% self.voiced_as(self.root.voices).each do |voiced_bar| %>
 <%= voiced_bar.definition_name %> = { <%= voiced_bar.matching_note_set.value %> }
 <% end %>
+<%= self.chorded.definition_name %> = { <%= self.chorded.value %> }

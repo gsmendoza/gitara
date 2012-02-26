@@ -32,6 +32,10 @@ module Gitara
       add_names :names => names, :node_class => Node::Bar, &block
     end
 
+    def chords(name, value=nil)
+      add Node::ChordSet.new(:name => name, :value => value)
+    end
+
     def line(*names, &block)
       add_names :names => names, :node_class => Node::Line, &block
     end

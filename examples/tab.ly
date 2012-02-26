@@ -13,25 +13,42 @@
 }
 
 %-----------------------------------------------------------------------
+% Chord Sets
+
+cChordSetAm = { r4-"Am" r r r }
+cChordSetAmC = { r4-"Am" r r-"C" r }
+cChordSetBbF = { r4-"Bb" r r-"F" r }
+cChordSetCCGE = { r4-"C" r r-"G" r-"E" }
+cChordSetD = { r4-"D" r r r }
+cChordSetFC = { r4-"F" r r-"C" r }
+cChordSetFD = { r4-"F" r r-"D" r }
+
+%-----------------------------------------------------------------------
 % Bars
 
 vOneBarBeganIt = { \skip 4 <a\3 c'\2 >8 <g\3>8 \skip 4 <g\3 c'\2 >8 <g\3>8 }
 vTwoBarBeganIt = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
+cBarBeganIt = { \cChordSetFC }
 
 vOneBarItsNot = { r8 <g'\1>4 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>16( <a\3>16) }
 vTwoBarItsNot = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
+cBarItsNot = { \cChordSetFC }
 
 vOneBarItThough = { r8 <d'\2>16( <c'\2>16) r8 <a\3>16 <c'\2>16 r8 <d'\2>16( <c'\2>16) r8 <a\3>8 }
 vTwoBarItThough = { <f\4>4 <f\4>4 <d\4>4 <d\4>4 }
+cBarItThough = { \cChordSetFD }
 
 vOneBarWhatYouThought = { r8 <g'\1>4 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8 }
 vTwoBarWhatYouThought = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
+cBarWhatYouThought = { \cChordSetFC }
 
 vOneBarWhenYouFirst = { <e'\1>8 <d'\2>16( <c'\2>8) <a\3>8. <c'\2>4 <a\3>8 <c'\2>8 }
 vTwoBarWhenYouFirst = { <a,\5>4 <a,\5>8 <e\4>4 <a,\5>4 \skip 8 }
+cBarWhenYouFirst = { \cChordSetAm }
 
 vOneBarYouGot = { <g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>16( <a\3>16) }
 vTwoBarYouGot = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
+cBarYouGot = { \cChordSetFC }
 
 
 %-----------------------------------------------------------------------
@@ -39,9 +56,11 @@ vTwoBarYouGot = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
 
 vOneLineVerseOneLineTwo = { \vOneBarYouGot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarItThough \break }
 vTwoLineVerseOneLineTwo = { \vTwoBarYouGot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarItThough \break }
+cLineVerseOneLineTwo = { \cBarYouGot \cBarWhatYouThought \cBarWhenYouFirst \cBarItThough }
 
 vOneLineVerseOneLineOne = { \vOneBarItsNot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarBeganIt \break }
 vTwoLineVerseOneLineOne = { \vTwoBarItsNot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
+cLineVerseOneLineOne = { \cBarItsNot \cBarWhatYouThought \cBarWhenYouFirst \cBarBeganIt }
 
 
 %-----------------------------------------------------------------------
@@ -49,6 +68,7 @@ vTwoLineVerseOneLineOne = { \vTwoBarItsNot \vTwoBarWhatYouThought \vTwoBarWhenYo
 
 vOneStanzaVerseOne = { \vOneLineVerseOneLineOne \vOneLineVerseOneLineTwo }
 vTwoStanzaVerseOne = { \vTwoLineVerseOneLineOne \vTwoLineVerseOneLineTwo }
+cStanzaVerseOne = { \cLineVerseOneLineOne \cLineVerseOneLineTwo }
 
 
 %-----------------------------------------------------------------------
@@ -56,6 +76,7 @@ vTwoStanzaVerseOne = { \vTwoLineVerseOneLineOne \vTwoLineVerseOneLineTwo }
 
 vOneScoreTabOneScoreOne = { \vOneStanzaVerseOne }
 vTwoScoreTabOneScoreOne = { \vTwoStanzaVerseOne }
+cScoreTabOneScoreOne = { \cStanzaVerseOne }
 
 
 %-----------------------------------------------------------------------
@@ -78,6 +99,11 @@ vTwo = {
 stanzaHeadings = {
   r1^"Verse 1" r r r r r r r
 }
+
+%-----------------------------------------------------------------------
+% Chord Headings
+
+chordHeadings = { \cScoreTabOneScoreOne }
 
 %-----------------------------------------------------------------------
 
@@ -110,6 +136,9 @@ stanzaHeadings = {
       \new TabVoice {
         \slurUp
         \vTwo
+      }
+      \new TabVoice {
+        \chordHeadings
       }
     >>
   >>

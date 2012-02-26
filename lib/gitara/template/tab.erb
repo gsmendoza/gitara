@@ -13,6 +13,13 @@
 }
 
 %-----------------------------------------------------------------------
+% Chord Sets
+
+<% definitions(Gitara::Node::ChordSet).each do |chord_set| %>
+<%= Gitara.render('chord_set', chord_set) %>
+<% end %>
+
+%-----------------------------------------------------------------------
 % Bars
 
 <% definitions(Gitara::Node::Bar).each do |bar| %>
@@ -57,6 +64,11 @@ stanzaHeadings = {
 }
 
 %-----------------------------------------------------------------------
+% Chord Headings
+
+chordHeadings = { <%= playable_child.chorded.call_name %> }
+
+%-----------------------------------------------------------------------
 
 \score {
   \new StaffGroup <<
@@ -83,6 +95,9 @@ stanzaHeadings = {
         <%= voice.call_name %>
       }
       <% end %>
+      \new TabVoice {
+        \chordHeadings
+      }
     >>
   >>
 

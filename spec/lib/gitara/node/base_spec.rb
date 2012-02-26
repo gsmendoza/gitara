@@ -93,8 +93,16 @@ describe Node::Base do
       definition_bar.should be_definition
     end
 
-    it "should be false if this node does not have children" do
+    it "should be true if the node has a value" do
+      chord_set = Node::ChordSet.new(:name => :Am, :value =>'r4-"Am" r r r')
+      chord_set.own_children.should be_empty
+      chord_set.should be_definition
+    end
+
+    it "should be false if this node does not have children and it does not have a value" do
       call_bar = Node::Bar.new(:name => 'Intro')
+      call_bar.own_children.should be_empty
+      call_bar.value.should be_nil
       call_bar.should_not be_definition
     end
   end
@@ -257,6 +265,14 @@ describe Node::Base do
 
       stanza = tab.own_children[2]
       stanza.descendants(Node::Bar).should == [bar]
+    end
+  end
+
+  describe "chorded" do
+    it "should return the chorded version of the node" do
+      node = Node::ChordSet.new
+      chorded_node = node.chorded
+      chorded_node.node.should == node
     end
   end
 end

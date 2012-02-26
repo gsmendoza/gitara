@@ -215,5 +215,34 @@ describe Gitara do
         end
       end
     end
+
+    describe "chords(name, value)" do
+      it "should add a chord set with the name" do
+        dsl = Dsl.new(:node => Node::Tab.new)
+        dsl.node.own_children.should be_empty
+
+        dsl.chords :Am, 'r4-"Am" r r r'
+
+        dsl.node.own_children.should have(1).chord_set
+
+        chord_set = dsl.node.own_children[0]
+        chord_set.name.should == :Am
+        chord_set.value.should == 'r4-"Am" r r r'
+      end
+    end
+
+    describe "chords(name)" do
+      it "should add a bar with the name" do
+        dsl = Dsl.new(:node => Node::Tab.new)
+        dsl.node.own_children.should be_empty
+
+        dsl.chords :Am
+
+        dsl.node.own_children.should have(1).chord_set
+
+        chord_set = dsl.node.own_children[0]
+        chord_set.name.should == :Am
+      end
+    end
   end
 end

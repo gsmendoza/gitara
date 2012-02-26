@@ -26,6 +26,10 @@ module Gitara
         end
       end
 
+      def chorded
+        self.class::ChordedNode.new(:node => self)
+      end
+
       def definition(target = self)
         if self.definition_of?(target)
           self
@@ -36,7 +40,7 @@ module Gitara
       end
 
       def definition?
-        ! own_children.empty?
+        ! own_children.empty? || ! value.nil?
       end
 
       def definition_name
@@ -79,7 +83,7 @@ module Gitara
       end
 
       def value
-        attributes[:value].gsub('/', "\\")
+        attributes[:value] ? attributes[:value].gsub('/', "\\") : nil
       end
 
       def voiced_as(arg)
