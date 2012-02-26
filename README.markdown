@@ -8,6 +8,8 @@ Installation
 
 You need to have [lilypond](http://lilypond.org) 2.12 or higher to generate pdfs and midis.
 
+Gitara is tested on 1.9.3 only. Patches are welcome.
+
 
 Usage
 ------
@@ -230,10 +232,3 @@ Workflow
 
 I'm no Lilypond expert (heh). When writing a tab, I use [TuxGuitar](http://tuxguitar.herac.com.ar) to transcribe a set of notes (usually just one bar). I then export the TuxGuitar tab to lilypond so that I can get the lilypond notes. I then place these lilypond notes inside my Gitara tab. This workflow allows me to use TuxGuitar's GUI for transcribing notes while allowing me to use Gitara's features for naming expressions and reusing them.
 
-
-To do
------
-
-1. Chord labels
-2. Alternate tuning
-3. Repeats
