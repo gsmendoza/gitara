@@ -1,7 +1,8 @@
 *.gem
 *.ps
-.bundle
+git.bundle
 .geanyprj
+.rvmrc
 Gemfile.lock
 files/*
 pkg/*
