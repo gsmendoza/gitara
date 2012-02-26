@@ -180,6 +180,27 @@ Stanzas
 
 The names of a stanza will be displayed at the top of the stanza's first bar.
 
+Chord labels (optional)
+-----------------------
+
+You can add chord labels to bars:
+
+    Gitara.define do
+      chords :FC,   'r4-"F" r r-"C" r'
+
+      bar :BeganIt do
+        notes "/skip 4 <a/3 c'/2 >8 <g/3>8 /skip 4 <g/3 c'/2 >8 <g/3>8"
+        notes "<f/4>4 <f/4>4 <c/5>4 <e/4>4"
+        chords :FC
+      end
+    end
+
+`r4-"F" r r-"C" r` is a [lilypond music expression](http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Music-expressions-explained).
+
+* `r` is a rest. `r4` is a rest that is a quarter note long. Succeeding rests have the same duration as the first one.
+* `-"F"` means 'place the text "F" below the rest note'. See http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-text.
+
+When these chord labels are added to the Gitara lilypond output, Gitara hides the rest notes so only the chord labels are visible.
 
 Properties
 ----------
