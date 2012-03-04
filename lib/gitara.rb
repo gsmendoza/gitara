@@ -7,6 +7,7 @@ require "valuable"
 
 require "gitara/app"
 require "gitara/dsl"
+require "gitara/is_node_version"
 require "gitara/node/base"
 require "gitara/node/base/chorded_version"
 require "gitara/node/base/voiced_version"
