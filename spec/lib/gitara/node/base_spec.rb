@@ -270,9 +270,34 @@ describe Node::Base do
 
   describe "chorded" do
     it "should return the chorded version of the node" do
-      node = Node::ChordSet.new
+      node = Node::Base.new
       chorded_version = node.chorded
       chorded_version.node.should == node
+      chorded_version.should be_a(Node::Base::ChordedVersion)
+    end
+  end
+
+  describe "stanza_version" do
+    it "should be a stanza version of the node" do
+      node = Node::Base.new
+      stanza_version = node.stanza_version
+      stanza_version.node.should == node
+      stanza_version.should be_a(Node::Base::StanzaVersion)
+    end
+  end
+
+  describe "ancestor(node_class)" do
+    it "should be the first ancestor of the node matching the node class" do
+      bar = Node::Bar.new
+      line = Node::Line.new(:name => 'Intro', :children => [bar])
+      stanza = Node::Stanza.new(:name => 'Intro', :children => [line])
+
+      bar.ancestor(Node::Stanza).should == stanza
+    end
+
+    it "should be nil if there is no ancestor matching the node class" do
+      bar = Node::Bar.new
+      bar.ancestor(Node::Stanza).should be_nil
     end
   end
 end

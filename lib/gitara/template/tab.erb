@@ -57,11 +57,7 @@
 %-----------------------------------------------------------------------
 % Stanza Headings
 
-stanzaHeadings = {
-  <% definitions(Gitara::Node::Stanza).each do |stanza| %>
-  <%= stanza.heading_in_lilypond %>
-  <% end %>
-}
+stanzaHeadings = { <%= playable_child.stanza_version.call_name %> }
 
 %-----------------------------------------------------------------------
 % Chord Headings

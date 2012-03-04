@@ -12,6 +12,10 @@ module Gitara
         child.parent = self
       end
 
+      def ancestor(node_class)
+        self.is_a?(node_class) ? self : self.parent && self.parent.ancestor(node_class)
+      end
+
       def children
         if own_children.empty?
           definition ? definition.own_children : []
@@ -80,6 +84,10 @@ module Gitara
 
       def root
         parent.nil? ? self : parent.root
+      end
+
+      def stanza_version
+        self.class::StanzaVersion.new(:node => self)
       end
 
       def value
