@@ -1,4 +1,4 @@
 <% self.voiced_as(self.root.voices).each do |voiced_stanza| %>
-<%= voiced_stanza.definition_name %> = { <%= voiced_stanza.children.map(&:call_name).join(' ') %> }
+<%= voiced_stanza.definition_name %> = { <%= voiced_stanza.value %> }
 <% end %>
 <%= self.chorded.definition_name %> = { <%= self.chorded.value %> }

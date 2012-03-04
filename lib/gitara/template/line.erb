@@ -1,4 +1,4 @@
 <% self.voiced_as(self.root.voices).each do |voiced_line| %>
-<%= voiced_line.definition_name %> = { <%= voiced_line.children.map(&:call_name).join(' ') %> \break }
+<%= voiced_line.definition_name %> = { <%= voiced_line.value %> \break }
 <% end %>
 <%= self.chorded.definition_name %> = { <%= self.chorded.value %> }
