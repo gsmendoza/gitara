@@ -1,3 +1,8 @@
+0.4.1 - 2012-03-04
+------------------
+
+* [#17] If I render a part of the score, only the stanza heading for that part should appear.
+
 0.4.0 - 2012-02-26
 ------------------
 
