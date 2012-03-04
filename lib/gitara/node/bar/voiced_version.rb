@@ -1,7 +1,7 @@
 module Gitara
   module Node
     class Bar
-      class VoicedNode < Base::VoicedNode
+      class VoicedVersion < Base::VoicedVersion
         alias_method :bar, :node
 
         def matching_note_set

@@ -120,7 +120,7 @@ describe Node::Base do
       voice = Voice.new
 
       node_voice_pair = node.voiced_as(voice)
-      node_voice_pair.should be_a(Node::Base::VoicedNode)
+      node_voice_pair.should be_a(Node::Base::VoicedVersion)
       node_voice_pair.node.should == node
       node_voice_pair.voice.should == voice
     end
@@ -133,7 +133,7 @@ describe Node::Base do
       node_voice_pairs.size.should == 2
 
       node_voice_pairs.each do |pair|
-        pair.should be_a(Node::Base::VoicedNode)
+        pair.should be_a(Node::Base::VoicedVersion)
         pair.node.should == node
       end
 

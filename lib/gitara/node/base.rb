@@ -88,7 +88,7 @@ module Gitara
 
       def voiced_as(arg)
         if arg.is_a?(Voice)
-          self.class::VoicedNode.new(:node => self, :voice => arg)
+          self.class::VoicedVersion.new(:node => self, :voice => arg)
         elsif arg.is_a?(Array)
           arg.map{|voice| self.voiced_as(voice) }
         else

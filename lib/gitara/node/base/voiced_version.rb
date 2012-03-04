@@ -1,7 +1,7 @@
 module Gitara
   module Node
     class Base
-      class VoicedNode < Valuable
+      class VoicedVersion < Valuable
         has_value :node
         has_value :voice
 
