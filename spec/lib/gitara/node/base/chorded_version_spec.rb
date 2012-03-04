@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe 'ChordedNode' do
+describe 'ChordedVersion' do
   describe "definition_name" do
     it "should include the node's class and the node's name" do
-      chorded_node = Node::Base::ChordedNode.new(:node => Node::Base.new(:name => :Am))
-      chorded_node.definition_name.should == 'cBaseAm'
+      chorded_version = Node::Base::ChordedVersion.new(:node => Node::Base.new(:name => :Am))
+      chorded_version.definition_name.should == 'cBaseAm'
     end
   end
 
@@ -14,15 +14,15 @@ describe 'ChordedNode' do
         Node::Base.new(:name => :First),
         Node::Base.new(:name => :Second)
       ])
-      chorded_node = Node::Base::ChordedNode.new(:node => node)
-      chorded_node.value.should == '\cBaseFirst \cBaseSecond'
+      chorded_version = Node::Base::ChordedVersion.new(:node => node)
+      chorded_version.value.should == '\cBaseFirst \cBaseSecond'
     end
   end
 
   describe "call_name" do
     it "should be the call name of the voiced node's definition name" do
-      chorded_node = Node::Base::ChordedNode.new(:node => Node::Base.new(:name => :Am))
-      chorded_node.call_name.should == '\cBaseAm'
+      chorded_version = Node::Base::ChordedVersion.new(:node => Node::Base.new(:name => :Am))
+      chorded_version.call_name.should == '\cBaseAm'
     end
   end
 end

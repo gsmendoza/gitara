@@ -27,7 +27,7 @@ module Gitara
       end
 
       def chorded
-        self.class::ChordedNode.new(:node => self)
+        self.class::ChordedVersion.new(:node => self)
       end
 
       def definition(target = self)

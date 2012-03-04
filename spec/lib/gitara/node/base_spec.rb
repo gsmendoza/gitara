@@ -271,8 +271,8 @@ describe Node::Base do
   describe "chorded" do
     it "should return the chorded version of the node" do
       node = Node::ChordSet.new
-      chorded_node = node.chorded
-      chorded_node.node.should == node
+      chorded_version = node.chorded
+      chorded_version.node.should == node
     end
   end
 end

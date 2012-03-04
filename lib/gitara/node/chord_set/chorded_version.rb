@@ -1,7 +1,7 @@
 module Gitara
   module Node
     class ChordSet
-      class ChordedNode < Base::ChordedNode
+      class ChordedVersion < Base::ChordedVersion
         def value
           node.value
         end

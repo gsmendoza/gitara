@@ -1,7 +1,7 @@
 module Gitara
   module Node
     class Base
-      class ChordedNode < Valuable
+      class ChordedVersion < Valuable
         has_value :node
 
         def call_name
