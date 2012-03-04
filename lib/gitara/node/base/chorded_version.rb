@@ -2,19 +2,9 @@ module Gitara
   module Node
     class Base
       class ChordedVersion < Valuable
+        include IsNodeVersion
+
         has_value :node
-
-        def call_name
-          "\\#{definition_name}"
-        end
-
-        def definition_name
-          "c#{node.class.to_s.split('::').last}#{node.definition_name}"
-        end
-
-        def value
-          node.children.map(&:chorded).map(&:call_name).join(' ')
-        end
       end
     end
   end

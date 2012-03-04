@@ -1,17 +1,10 @@
 require 'spec_helper'
 
 describe 'VoicedVersion' do
-  describe "call_name" do
-    it "should be the call name of the voiced node's definition name" do
+  describe "prefix" do
+    it "should be based on the voice's id" do
       voiced_version = Node::Base::VoicedVersion.new(:node => Node::Base.new(:name => 'Intro'), :voice => Voice.new(:id => 1))
-      voiced_version.call_name.should == '\vOneBaseIntro'
-    end
-  end
-
-  describe "definition_name" do
-    it "should include the voice's id, the node's class, and the node's name" do
-      voiced_version = Node::Base::VoicedVersion.new(:node => Node::Base.new(:name => 'Intro'), :voice => Voice.new(:id => 1))
-      voiced_version.definition_name.should == 'vOneBaseIntro'
+      voiced_version.prefix.should == 'vOne'
     end
   end
 
