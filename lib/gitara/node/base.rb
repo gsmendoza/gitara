@@ -25,6 +25,7 @@ module Gitara
       end
 
       def children=(values)
+        own_children.clear
         values.each do |child|
           add child
         end

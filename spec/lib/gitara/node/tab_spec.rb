@@ -3,16 +3,12 @@ require 'spec_helper'
 describe 'Tab' do
   describe "voices" do
     it "should create a <max_number_of_voices> voices" do
-      tab = Node::Tab.new.tap {|tab|
-        tab.children = [
-          Node::Bar.new.tap {|bar|
-            bar.children = [
-              Node::NoteSet.new,
-              Node::NoteSet.new
-            ]
-          }
-        ]
-      }
+      tab = FactoryGirl.build(:tab, :children => [
+        FactoryGirl.build(:bar, :children => [
+          FactoryGirl.build(:note_set),
+          FactoryGirl.build(:note_set)
+        ])
+      ])
       voices = tab.voices
       voices.should have(2).values
       voices[0].id.should == 1
@@ -23,33 +19,26 @@ describe 'Tab' do
 
   describe "max_number_of_voices" do
     it "should be the max number of note_sets in a bar" do
-      tab = Node::Tab.new.tap {|tab|
-        tab.children = [
-          Node::Bar.new.tap {|bar|
-            bar.children = [
-              Node::NoteSet.new,
-              Node::NoteSet.new
-            ]
-          }
-        ]
-      }
+      tab = FactoryGirl.build(:tab, :children => [
+        FactoryGirl.build(:bar, :children => [
+          FactoryGirl.build(:note_set),
+          FactoryGirl.build(:note_set)
+        ])
+      ])
+
       tab.max_number_of_voices.should == 2
     end
   end
 
   describe "playable_child" do
     it "should be the last child of the tab" do
-      tab = Node::Tab.new.tap {|tab|
-        tab.children = [
-          Node::Bar.new(:name => 'Intro').tap {|bar|
-            bar.children = [
-              Node::NoteSet.new,
-              Node::NoteSet.new
-            ]
-          },
-          Node::Bar.new(:name => 'Intro')
-        ]
-      }
+      tab = FactoryGirl.build(:tab, :children => [
+        FactoryGirl.build(:bar, :name => 'Intro', :children => [
+          FactoryGirl.build(:note_set),
+          FactoryGirl.build(:note_set)
+        ]),
+        FactoryGirl.build(:bar, :name => 'Intro')
+      ])
 
       tab.playable_child.id.should == 2
     end
@@ -57,7 +46,7 @@ describe 'Tab' do
 
   describe "midi_instrument" do
     it "should have acoustic guitar (nylon) as default" do
-      tab = Node::Tab.new
+      tab = FactoryGirl.build(:tab)
       tab.midi_instrument.should == 'acoustic guitar (nylon)'
     end
   end

@@ -3,24 +3,22 @@ require 'spec_helper'
 describe Node::Base do
   describe "children" do
     it "should be its own children if they exist" do
-      child = Node::Base.new(:id => nil)
+      child = FactoryGirl.build(:base, :id => nil)
 
-      parent = Node::Base.new
+      parent = FactoryGirl.build(:base)
       parent.children = [child]
       parent.children.should == [child]
     end
 
     it "should be the children of its definition if the node is not a definition" do
-      child = Node::NoteSet.new
-      definition_bar = Node::Bar.new(:name => 'Intro').tap {|bar|
+      child = FactoryGirl.build(:note_set)
+      definition_bar = FactoryGirl.build(:bar, :name => 'Intro').tap {|bar|
         bar.children = [child]
       }
 
-      call_bar = Node::Bar.new(:name => 'Intro')
+      call_bar = FactoryGirl.build(:bar, :name => 'Intro', :children => [])
 
-      tab = Node::Tab.new.tap {|tab|
-        tab.children = [definition_bar, call_bar]
-      }
+      tab = FactoryGirl.build(:tab, :children => [definition_bar, call_bar])
 
       call_bar.children.should == [child]
     end
@@ -28,8 +26,8 @@ describe Node::Base do
 
   describe "children=(other)" do
     it "should set the ids and parents of the children" do
-      parent = Node::Base.new
-      parent.children = [Node::Base.new(:id => nil)]
+      parent = FactoryGirl.build(:base)
+      parent.children = [FactoryGirl.build(:base, :id => nil)]
       parent.children[0].id.should == 1
       parent.children[0].parent.should == parent
     end
@@ -37,29 +35,29 @@ describe Node::Base do
 
   describe "add(child)" do
     it "should set the id and parent of the child" do
-      parent = Node::Base.new
+      parent = FactoryGirl.build(:base)
 
-      parent.add Node::Base.new(:id => nil)
+      parent.add FactoryGirl.build(:base, :id => nil)
       parent.children[0].id.should == 1
       parent.children[0].parent.should == parent
 
-      parent.add Node::Base.new(:id => nil)
+      parent.add FactoryGirl.build(:base, :id => nil)
       parent.children[1].id.should == 2
       parent.children[1].parent.should == parent
     end
 
     it "should set the id based on existing siblings having the same class as the child" do
-      parent = Node::Base.new
+      parent = FactoryGirl.build(:base)
 
-      bar_1 = Node::Bar.new
+      bar_1 = FactoryGirl.build(:bar)
       parent.add bar_1
       bar_1.id.should == 1
 
-      line_1 = Node::Line.new
+      line_1 = FactoryGirl.build(:line)
       parent.add line_1
       line_1.id.should == 1
 
-      bar_2 = Node::Bar.new
+      bar_2 = FactoryGirl.build(:bar)
       parent.add bar_2
       bar_2.id.should == 2
     end
@@ -67,18 +65,16 @@ describe Node::Base do
 
   describe "definition" do
     it "should be the definition node which matches this node's name" do
-      definition_bar = Node::Bar.new(:name => 'Intro').tap {|bar|
+      definition_bar = FactoryGirl.build(:bar, :name => 'Intro').tap {|bar|
         bar.children = [
-          Node::NoteSet.new,
-          Node::NoteSet.new
+          FactoryGirl.build(:note_set),
+          FactoryGirl.build(:note_set)
         ]
       }
 
-      call_bar = Node::Bar.new(:name => 'Intro')
+      call_bar = FactoryGirl.build(:bar, :name => 'Intro', :children => [])
 
-      tab = Node::Tab.new.tap {|tab|
-        tab.children = [definition_bar, call_bar]
-      }
+      tab = FactoryGirl.build(:tab, :children => [definition_bar, call_bar])
 
       call_bar.send(:definition).should == definition_bar
     end
@@ -86,21 +82,21 @@ describe Node::Base do
 
   describe "definition?" do
     it "should be true if this node has children" do
-      definition_bar = Node::Bar.new(:name => 'Intro').tap {|bar|
-        bar.add Node::NoteSet.new
-        bar.add Node::NoteSet.new
+      definition_bar = FactoryGirl.build(:bar, :name => 'Intro').tap {|bar|
+        bar.add FactoryGirl.build(:note_set)
+        bar.add FactoryGirl.build(:note_set)
       }
       definition_bar.should be_definition
     end
 
     it "should be true if the node has a value" do
-      chord_set = Node::ChordSet.new(:name => :Am, :value =>'r4-"Am" r r r')
+      chord_set = FactoryGirl.build(:chord_set, :name => :Am, :value =>'r4-"Am" r r r')
       chord_set.own_children.should be_empty
       chord_set.should be_definition
     end
 
     it "should be false if this node does not have children and it does not have a value" do
-      call_bar = Node::Bar.new(:name => 'Intro')
+      call_bar = FactoryGirl.build(:bar, :name => 'Intro', :children => [])
       call_bar.own_children.should be_empty
       call_bar.value.should be_nil
       call_bar.should_not be_definition
@@ -109,15 +105,15 @@ describe Node::Base do
 
   describe "value" do
     it "should convert slashes to backslashes" do
-      node = Node::Base.new(:value => %q|notes "<g'/1>8 <a/3>8 <g'/1>8 <a/3>16 <g'/1>8 <g/3>16 <e'/1>4 <g/3>8"|)
+      node = FactoryGirl.build(:base, :value => %q|notes "<g'/1>8 <a/3>8 <g'/1>8 <a/3>16 <g'/1>8 <g/3>16 <e'/1>4 <g/3>8"|)
       node.value.should == %q|notes "<g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8"|
     end
   end
 
   describe "voiced_as(arg)" do
     it "should return the voiced version of the node, if arg is a voice" do
-      node = Node::Base.new
-      voice = Voice.new
+      node = FactoryGirl.build(:base)
+      voice = FactoryGirl.build(:voice)
 
       node_voice_pair = node.voiced_as(voice)
       node_voice_pair.should be_a(Node::Base::VoicedVersion)
@@ -126,8 +122,8 @@ describe Node::Base do
     end
 
     it "should return the voiced versions of the node, if arg are voices" do
-      node = Node::Base.new
-      voices = [Voice.new, Voice.new]
+      node = FactoryGirl.build(:base)
+      voices = [FactoryGirl.build(:voice), FactoryGirl.build(:voice)]
 
       node_voice_pairs = node.voiced_as(voices)
       node_voice_pairs.size.should == 2
@@ -144,27 +140,18 @@ describe Node::Base do
 
   describe "definitions(klass)" do
     it "should be itself if it is an instance of the klass" do
-      node = Node::Bar.new
-      node.add Node::NoteSet.new
+      node = FactoryGirl.build(:bar)
+      node.add FactoryGirl.build(:note_set)
       node.should be_definition
 
       node.definitions(Node::Bar).should == [node]
     end
 
     it "should include descendants which are instances of klass" do
-      node = Node::Base.new.tap do |base|
-        base.add(
-          Node::Bar.new.tap do |bar|
-            bar.add Node::NoteSet.new
-          end
-        )
-
-        base.add(
-          Node::Bar.new.tap do |bar|
-            bar.add Node::NoteSet.new
-          end
-        )
-      end
+      node = FactoryGirl.build(:base, :children => [
+        FactoryGirl.build(:bar, :children => [FactoryGirl.build(:note_set)]),
+        FactoryGirl.build(:bar, :children => [FactoryGirl.build(:note_set)])
+      ])
 
       node.definitions(Node::Bar).should have(2).bars
     end
@@ -172,17 +159,17 @@ describe Node::Base do
 
   describe "root" do
     it "should be itself if it has no parent" do
-      node = Node::Base.new
+      node = FactoryGirl.build(:base)
       node.root.should == node
     end
 
     it "should be the ancentor of the node which has no parent of its own" do
-      note_set = Node::NoteSet.new
+      note_set = FactoryGirl.build(:note_set)
 
-      bar = Node::Bar.new
+      bar = FactoryGirl.build(:bar)
       bar.add note_set
 
-      root = Node::Base.new
+      root = FactoryGirl.build(:base)
       root.add bar
 
       note_set.root.should == root
@@ -191,55 +178,53 @@ describe Node::Base do
 
   describe "name" do
     it "should be the given name, if available" do
-      Node::Bar.new(:name => :Intro).name.should == :Intro
+      FactoryGirl.build(:bar, :name => :Intro).name.should == :Intro
     end
 
     it "should be based on the parent's name the node's class and id, if not available" do
-      child = Node::NoteSet.new
-      bar = Node::Bar.new(:name => :Intro).tap do |bar|
-        bar.add child
-      end
+      child = FactoryGirl.build(:note_set)
+      bar = FactoryGirl.build(:bar, :name => :Intro, :children => [child])
 
       child.name.should == "IntroNoteSetOne"
     end
 
     it "should be based on the node's class and id, if there's no parent and the there's no given name" do
-      child = Node::NoteSet.new
+      child = FactoryGirl.build(:note_set)
       child.name.should == "NoteSetOne"
     end
   end
 
   describe "id" do
     it "should be 1 by default" do
-      child = Node::NoteSet.new
+      child = FactoryGirl.build(:note_set)
       child.id.should == 1
     end
   end
 
   describe "id_as_word" do
     it "should camelize if necessary" do
-      node = Node::Base.new(:id => 24)
+      node = FactoryGirl.build(:base, :id => 24)
       node.id_as_word.should == "TwentyFour"
     end
   end
 
   describe "definition_name" do
     it "should turn the name to a lilypond acceptable name" do
-      node = Node::Base.new(:name => "Verse 1 line-2")
+      node = FactoryGirl.build(:base, :name => "Verse 1 line-2")
       node.definition_name.should == "VerseOneLineTwo"
     end
   end
 
   describe "descendants(klass)" do
     it "should be itself if it is an instance of the klass" do
-      tab = Node::Tab.new(:children => [Node::Bar.new])
+      tab = FactoryGirl.build(:tab, :children => [FactoryGirl.build(:bar)])
       tab.descendants(Node::Tab).should == [tab]
     end
 
     it "should include descendants which are instances of klass" do
-      tab = Node::Tab.new(:children => [
-        Node::Bar.new(:name => :Intro, :children => [
-          Node::NoteSet.new
+      tab = FactoryGirl.build(:tab, :children => [
+        FactoryGirl.build(:bar, :name => :Intro, :children => [
+          FactoryGirl.build(:note_set)
         ])
       ])
 
@@ -247,17 +232,15 @@ describe Node::Base do
     end
 
     it "should follow the definitions of node references for descendants" do
-      tab = Node::Tab.new(:children => [
-        Node::Bar.new(:name => :Intro, :children => [
-          Node::NoteSet.new
+      tab = FactoryGirl.build(:tab, :children => [
+        FactoryGirl.build(:bar, :name => :Intro, :children => [FactoryGirl.build(:note_set)]),
+
+        FactoryGirl.build(:line, :name => 'Line 1', :children => [
+          FactoryGirl.build(:bar, :name => :Intro , :children => [])
         ]),
 
-        Node::Line.new(:name => 'Line 1', :children => [
-          Node::Bar.new(:name => :Intro)
-        ]),
-
-        Node::Stanza.new(:children => [
-          Node::Line.new(:name => 'Line 1')
+        FactoryGirl.build(:stanza, :children => [
+          FactoryGirl.build(:line, :name => 'Line 1', :children => [])
         ])
       ])
 
@@ -270,7 +253,7 @@ describe Node::Base do
 
   describe "chorded" do
     it "should return the chorded version of the node" do
-      node = Node::Base.new
+      node = FactoryGirl.build(:base)
       chorded_version = node.chorded
       chorded_version.node.should == node
       chorded_version.should be_a(Node::Base::ChordedVersion)
@@ -279,7 +262,7 @@ describe Node::Base do
 
   describe "stanza_version" do
     it "should be a stanza version of the node" do
-      node = Node::Base.new
+      node = FactoryGirl.build(:base)
       stanza_version = node.stanza_version
       stanza_version.node.should == node
       stanza_version.should be_a(Node::Base::StanzaVersion)
@@ -288,15 +271,15 @@ describe Node::Base do
 
   describe "ancestor(node_class)" do
     it "should be the first ancestor of the node matching the node class" do
-      bar = Node::Bar.new
-      line = Node::Line.new(:name => 'Intro', :children => [bar])
-      stanza = Node::Stanza.new(:name => 'Intro', :children => [line])
+      bar = FactoryGirl.build(:bar)
+      line = FactoryGirl.build(:line, :name => 'Intro', :children => [bar])
+      stanza = FactoryGirl.build(:stanza, :name => 'Intro', :children => [line])
 
       bar.ancestor(Node::Stanza).should == stanza
     end
 
     it "should be nil if there is no ancestor matching the node class" do
-      bar = Node::Bar.new
+      bar = FactoryGirl.build(:bar)
       bar.ancestor(Node::Stanza).should be_nil
     end
   end

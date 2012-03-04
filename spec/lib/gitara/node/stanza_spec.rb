@@ -3,10 +3,10 @@ require 'spec_helper'
 describe 'Stanza' do
   describe "heading_in_lilypond" do
     it "should allow the stanza's name to be added as a heading to the lilypond template" do
-      stanza = Node::Stanza.new(:name => "Verse 1", :children => [
-        Node::Line.new(:children => [
-          Node::Bar.new(:children => [Node::NoteSet.new]),
-          Node::Bar.new(:children => [Node::NoteSet.new]),
+      stanza = FactoryGirl.build(:stanza, :name => "Verse 1", :children => [
+        FactoryGirl.build(:line, :children => [
+          FactoryGirl.build(:bar),
+          FactoryGirl.build(:bar),
         ])
       ])
 

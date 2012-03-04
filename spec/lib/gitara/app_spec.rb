@@ -3,7 +3,7 @@ require 'spec_helper'
 describe App do
   describe "export" do
     it "can convert a tab without a reused bar to lilypond" do
-      app = Gitara::App.new
+      app = FactoryGirl.build(:app)
       app.invoke :export, ['examples/tab.rb'], "target-directory" => test_tmp_dir.path, "run-lilypond" => false
 
       example = Pow('examples/tab.ly').read

@@ -17,23 +17,23 @@ describe IsNodeVersion do
 
   describe "definition_name" do
     it "should include the node's class and the node's name" do
-      dummy_version = DummyVersion.new(:node => Node::Base.new(:name => 'some node'))
+      dummy_version = DummyVersion.new(:node => FactoryGirl.build(:base, :name => 'some node'))
       dummy_version.definition_name.should == 'dBaseSomeNode'
     end
   end
 
   describe "call_name" do
     it "should be the call version of the definition name" do
-      dummy_version = DummyVersion.new(:node => Node::Base.new(:name => 'some node'))
+      dummy_version = DummyVersion.new(:node => FactoryGirl.build(:base, :name => 'some node'))
       dummy_version.call_name.should == '\dBaseSomeNode'
     end
   end
 
   describe "value" do
     it "should be the call names of its children" do
-      node = Node::Base.new(:children => [
-        Node::Base.new(:name => :First),
-        Node::Base.new(:name => :Second)
+      node = FactoryGirl.build(:base, :children => [
+        FactoryGirl.build(:base, :name => :First),
+        FactoryGirl.build(:base, :name => :Second)
       ])
       node_version = DummyVersion.new(:node => node)
       node_version.value.should == '\dBaseFirst \dBaseSecond'
@@ -42,8 +42,8 @@ describe IsNodeVersion do
 
   describe "children" do
     it "should be versionized versions of the node's children" do
-      parent = Node::Base.new(:name => 'parent')
-      child = Node::Base.new(:name => 'child')
+      parent = FactoryGirl.build(:base, :name => 'parent')
+      child = FactoryGirl.build(:base, :name => 'child')
       parent.add child
 
       node_version = DummyVersion.new(:node => parent)

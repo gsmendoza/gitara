@@ -1,8 +1,10 @@
+require 'factory_girl'
 require 'gitara'
 require 'pry'
 
 RSpec.configure do |config|
   include Gitara
+  require 'factories'
 
   config.before :each do
     test_tmp_dir.delete! if test_tmp_dir.exists?
