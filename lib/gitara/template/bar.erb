@@ -1,5 +1,5 @@
 <% self.voiced_as(self.root.voices).each do |voiced_bar| %>
-<%= voiced_bar.definition_name %> = { <%= voiced_bar.matching_note_set.value %> }
+<%= voiced_bar.definition_name %> = { <%= voiced_bar.node.specified_duration_as_lilypond %> <%= voiced_bar.matching_note_set.value %> }
 <% end %>
-<%= self.chorded.definition_name %> = { <%= self.chorded.value %> }
-<%= self.stanza_version.definition_name %> = { <%= self.stanza_version.value %> }
+<%= self.chorded.definition_name %> = { <%= self.specified_duration_as_lilypond %> <%= self.chorded.value %> }
+<%= self.stanza_version.definition_name %> = { <%= self.specified_duration_as_lilypond %> <%= self.stanza_version.value %> }

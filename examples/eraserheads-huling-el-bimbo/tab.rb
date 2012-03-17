@@ -8,6 +8,7 @@ Gitara.define do
   tempo "4 = 90"
 
   chords :G, 'r1-"G"'
+  chords :G8, 'r8-"G"'
   chords :C, 'r1-"C"'
   chords :A7, 'r1-"A7"'
   chords :Em, 'r1-"Em"'
@@ -17,9 +18,10 @@ Gitara.define do
     stanza "Verse" do
       line do
         bar do
-          notes "r2. r8 <g/3>8"
-          notes "r1"
-          chords :G
+          partial 8
+          notes "<g/3>8"
+          notes "r8"
+          chords :G8
         end
 
         bar do

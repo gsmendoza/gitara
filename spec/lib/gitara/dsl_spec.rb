@@ -244,5 +244,16 @@ describe Gitara do
         chord_set.name.should == :Am
       end
     end
+
+    describe "partial(duration)" do
+      it "should set the specified duration of the bar node to duration" do
+        dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:bar))
+        dsl.node.specified_duration.should be_nil
+
+        dsl.partial 8
+
+        dsl.node.specified_duration.should == 8
+      end
+    end
   end
 end

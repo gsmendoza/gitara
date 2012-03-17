@@ -44,6 +44,10 @@ module Gitara
       add Node::NoteSet.new(:value => value)
     end
 
+    def partial(duration)
+      node.specified_duration = duration
+    end
+
     def score(*names, &block)
       add_names :names => names, :node_class => Node::Score, &block
     end
