@@ -52,6 +52,21 @@ Bars are the smallest expressions in Gitara, that is, a gitara file must have at
 
 With Gitara, it's easier to write notes using [absolute note names](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-pitches#Absolute-octave-entry) instead of relative note names. This is because we'll be reusing bars and other Gitara expressions (see Reusing bars below).
 
+Partial measures
+----------------
+
+To indicate that a bar is a [partial measure](http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Advanced-rhythmic-commands#Partial-measure), call `partial <duration>`:
+
+    chords :G8, 'r8-"G"'
+
+    bar do
+      partial 8
+      notes "<g/3>8"
+      notes "r8"
+      chords :G8
+    end
+
+As shown by the example, the durations of the chords and notes within the bar must also have one-eighth durations in order for the tab to render properly.
 
 Multiple voices
 ---------------
