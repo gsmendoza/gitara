@@ -1,3 +1,10 @@
+0.5.0 - 2012-03-18
+------------------
+
+* [#19] I should be able to specify alternate tunings.
+* [#21] I should be able to specify the key signature.
+
+
 0.4.2 - 2012-03-17
 ------------------
 
