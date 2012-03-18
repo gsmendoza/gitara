@@ -5,6 +5,7 @@ module Gitara
       has_value :composer
       has_value :instrument
       has_value :midi_instrument, :default => "acoustic guitar (nylon)"
+      has_value :string_tunings
       has_value :tempo
       has_value :title
       has_value :transposition

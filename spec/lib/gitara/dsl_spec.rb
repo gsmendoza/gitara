@@ -203,7 +203,7 @@ describe Gitara do
       end
     end
 
-    [:title, :composer, :arranger, :instrument, :midi_instrument, :tempo, :transposition].each do |property|
+    [:title, :composer, :arranger, :instrument, :midi_instrument, :string_tunings, :tempo, :transposition].each do |property|
       describe "#{property}(value)" do
         it "should set the #{property} of the tab to value" do
           tab = FactoryGirl.build(:tab)
