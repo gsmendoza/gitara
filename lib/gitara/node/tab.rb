@@ -4,6 +4,7 @@ module Gitara
       has_value :arranger
       has_value :composer
       has_value :instrument
+      has_value :key
       has_value :midi_instrument, :default => "acoustic guitar (nylon)"
       has_value :string_tunings
       has_value :tempo

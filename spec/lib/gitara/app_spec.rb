@@ -12,6 +12,10 @@ describe App do
 
     def expected
       @expected ||= Pow("examples/#{name}.ly").read!.gsub(/\n\s+\n/, "\n")
+    rescue PowError => e
+      puts "#{e.message}. Copying actual result..."
+      Pow("examples/#{name}.ly").write actual
+      retry
     end
 
     def actual
@@ -32,8 +36,14 @@ describe App do
       app_test.actual.should == app_test.expected
     end
 
-    it "can convert a table with alternate tuning to lilypond" do
+    it "can convert a tab with alternate tuning to lilypond" do
       app_test = AppTest.new(:name => 'tab-with-alternate-tuning')
+      app_test.run
+      app_test.actual.should == app_test.expected
+    end
+
+    it "can convert a tab with a specified key signature to lilypond" do
+      app_test = AppTest.new(:name => 'tab-with-key-signature')
       app_test.run
       app_test.actual.should == app_test.expected
     end

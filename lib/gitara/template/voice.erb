@@ -1,6 +1,4 @@
 <%= definition_name %> = {
-  <% if self.transposition %>
-  \transposition <%= self.transposition %>
-  <% end %>
+  <%= self.transposition && "\\transposition #{self.transposition}" %>
   <%= parent.playable_child.voiced_as(self).call_name %>
 }

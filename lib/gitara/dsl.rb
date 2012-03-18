@@ -9,6 +9,7 @@ module Gitara
     can_add_property :arranger
     can_add_property :composer
     can_add_property :instrument
+    can_add_property :key
     can_add_property :midi_instrument
     can_add_property :string_tunings
     can_add_property :tempo
