@@ -1,26 +1,27 @@
 Gitara is a Ruby DSL for generating Lilypond guitar tablatures
 
 
-Installation
-------------
+Usage
+-----
+
+To install,
 
     gem install gitara
 
-You need to have [lilypond](http://lilypond.org) 2.12 or higher to generate pdfs and midis.
+You need [lilypond](http://lilypond.org) 2.12 or higher in order to generate pdfs and midis.
 
-Gitara is tested on 1.9.3 only. Patches are welcome.
+Gitara is tested on Ruby 1.9.3 only. Patches are welcome.
 
 
-Usage
-------
+To run,
 
     gitara export PATH [OPTIONS]...
 
 This will generate a lilypond .ly file and then call lilypond to export the .ly file to pdf and midi. Please see `gitara help export` for the available options.
 
 
-Syntax
-------
+Basic syntax
+------------
 
 Gitara is a Ruby DSL. A typical Gitara file will have the following structure:
 
@@ -42,7 +43,7 @@ You can find examples in the examples directory.
 Bars
 ----
 
-Bars are the smallest expressions in Gitara, that is, a gitara file must have at least one bar. The notes inside a bar follow [Lilypond syntax](http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Simple-notation).
+Bars are the smallest expressions in Gitara. That is, a gitara file must have at least one bar. The notes inside a bar follow [Lilypond syntax](http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Simple-notation).
 
     Gitara.define do
       bar do
@@ -50,26 +51,31 @@ Bars are the smallest expressions in Gitara, that is, a gitara file must have at
       end
     end
 
-With Gitara, it's easier to write notes using [absolute note names](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-pitches#Absolute-octave-entry) instead of relative note names. This is because we'll be reusing bars and other Gitara expressions (see Reusing bars below).
+With Gitara, it's easier to write notes using [absolute note names](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-pitches#Absolute-octave-entry) instead of relative note names. This is because we'll be reusing bars and other Gitara expressions (see Reusing expressions below).
 
-Partial measures
-----------------
 
-To indicate that a bar is a [partial measure](http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Advanced-rhythmic-commands#Partial-measure), call `partial <duration>`:
+### Notes with single quotes and backslashes
 
-    chords :G8, 'r8-"G"'
+In Lilypond syntax, single quotes refer to octaves while backslashes refer to string numbers. So, the c note in the second string is written as
 
-    bar do
-      partial 8
-      notes "<g/3>8"
-      notes "r8"
-      chords :G8
-    end
+    c'\2
 
-As shown by the example, the durations of the chords and notes within the bar must also have one-eighth durations in order for the tab to render properly.
+Since a Gitara file is a Ruby program, you have to be careful with backslashes when writing notes like the one above. Ruby provides AFAIK two ways to preserve the backslash in the note above:
 
-Multiple voices
----------------
+    notes %q|c'\2|
+
+or
+
+    notes "c'\\2"
+
+Gitara provides a third option: it will automatically convert slashes to backslashes. This way, you can write the note above as
+
+    notes "c'/2"
+
+Prettier and easier to search and replace.
+
+
+### Multiple voices
 
 Each line of notes in a bar is a [voice](http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Voices-contain-music):
 
@@ -83,10 +89,97 @@ Each line of notes in a bar is a [voice](http://lilypond.org/doc/v2.12/Documenta
 The tab above will play "c d e f g a b c" and "c' d' e' f' g' a' b' c'" simultaneously, not sequentially.
 
 
-Reusing bars
-------------
+### Partial bars
 
-If you want to repeat a bar, you can name the bar and call it later:
+To indicate that a bar is a [partial measure](http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Advanced-rhythmic-commands#Partial-measure), call `partial <duration>`:
+
+    bar do
+      partial 8
+      notes "<g/3>8"
+      notes "r8"
+    end
+
+As shown by the example, the durations of the notes within the bar must also have one-eighth durations in order for the tab to render properly.
+
+Grouping bars together
+----------------------
+
+### Lines
+
+You can group bars in a line:
+
+    line :LineOne do
+      bar :BayangMagiliw
+      bar :PerlasNgSilanganan
+      bar :AlabNgPuso
+      bar :SaDibdibMoyBuhay
+    end
+
+Lines are [manually breaked](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Line-breaking) in Gitara.
+
+### Stanzas
+
+Lines can be grouped in stanzas. The names of a stanza will be displayed at the top of the stanza's first bar.
+
+
+### Score
+
+Finally, stanzas can be grouped in a score. Scores are important in grouping the tab in a single unit because...
+
+
+### Only the last expression under Gitara.define will be generated
+
+When writing a tab, oftentimes you want to generate only a part of the tab for testing purposes. Gitara makes this easy by processing only for the last expression under Gitara.define. For example, in the following tab, only the second bar (notes "g a b c") will be generated.
+
+    Gitara.define do
+      bar do
+        notes "c d e f"
+      end
+
+      bar do
+        notes "g a b c"
+      end
+    end
+
+If you want Gitara to generate both bars, you must group them inside a score.
+
+    Gitara.define do
+      score do
+        bar do
+          notes "c d e f"
+        end
+
+        bar do
+          notes "g a b c"
+        end
+      end
+    end
+
+If you want to test a particular bar inside the score, you can copy it after the score:
+
+    Gitara.define do
+      score do
+        bar do
+          notes "c d e f"
+        end
+
+        bar do
+          notes "g a b c"
+        end
+      end
+
+      bar do
+        notes "c d e f"
+      end
+    end
+
+Or, as you'll see below, you can give the bar a name so that you can call it later.
+
+
+Reusing expressions
+-------------------
+
+Bars, lines, and other Gitara expressions can be reused. For example, if you want a repeat a bar, you can name the bar and call the name afterwards:
 
     Gitara.define do
       score do
@@ -99,43 +192,13 @@ If you want to repeat a bar, you can name the bar and call it later:
       end
     end
 
-This will generate a tab with two Intro bars. It's important to group the two bars inside a score, because...
+This will generate a tab with two Intro bars. It's important to group the two bars above inside a score, because otherwise Gitara will only generate the second bar.
 
-
-Only the last expression under Gitara.define will be generated
---------------------------------------------------------------
-
-When writing a tab, oftentimes you want to generate only a part of the tab for testing purposes. Gitara makes this easy by processing only for the last expression under Gitara.define. For example:
-
-    Gitara.define do
-      bar do
-        notes "c d e f"
-      end
-
-      bar do
-        notes "g a b c"
-      end
-    end
-
-This tab will generate only the second bar (notes "g a b c"). If you want Gitara to generate both bars, group them inside a score.
+You can reuse a Gitara expression as long as it is defined before the call. The definition can even be deeper than the level of the call:
 
     Gitara.define do
       score do
-        bar do
-          notes "c d e f"
-        end
-
-        bar do
-          notes "g a b c"
-        end
-      end
-    end
-
-If you want to generate a particular bar inside the score, you can copy it after the score:
-
-    Gitara.define do
-      score do
-        bar do
+        bar :testing do
           notes "c d e f"
         end
 
@@ -144,59 +207,46 @@ If you want to generate a particular bar inside the score, you can copy it after
         end
       end
 
-      bar do
-        notes "c d e f"
-      end
+      bar :testing
     end
 
-Or you can define the bar to call later:
+In the example above, Gitara will only generate the last :testing bar.
 
-    Gitara.define do
-      bar :FirstBar do
-        notes "c d e f"
-      end
-
-      score do
-        bar :FirstBar
-
-        bar do
-          notes "g a b c"
-        end
-      end
-
-      bar :FirstBar
-    end
-
-
-Calling multiple bars
----------------------
-
-You can call multiple bars in a single line:
+Finally, you can call multiple expressions in a single line:
 
     bar :BayangMagiliw, :PerlasNgSilanganan, :AlabNgPuso, :SaDibdibMoyBuhay
 
 
-Lines
------
+Properties
+----------
 
-You can group bars in a line:
+A gitara file can have the following properties:
 
-    line :LineOne do
-      bar :BayangMagiliw, :PerlasNgSilanganan, :AlabNgPuso, :SaDibdibMoyBuhay
+    Gitara.define do
+      title "Wise Up"
+      composer "Aimee Mann"
+      arranger "Arranged by George Mendoza"
+      instrument "Guitar (capo on second fret)"
+      key 'c \major'
+      midi_instrument "acoustic guitar (nylon)"
+      string_tunings "#guitar-tuning"
+      tempo "4 = 75"
+      transposition "d"
     end
 
-Lines are manually breaked with [\\break](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Line-breaking).
+* arranger - tab's arranger
+* composer - song's composer
+* instrument - description of the instrument used on the tab
+* [key](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Displaying-pitches#Key-signature)
+* midi_instrument - the type of instrument played in the midi export of the tab. By default, "acoustic guitar (nylon)".
+* [string_tunings](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Common-notation-for-fretted-strings#Custom-tablatures)
+* [tempo](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-parts#Metronome-marks)
+* title - title of the song
+* transposition - adjusts the pitch of the instrument. The default transposition is "c". If you set it to "d", then you have to play the tab two frets higher on the guitar (capo on second fret).
 
-Like bars, lines can be named, reused, etc.
 
-
-Stanzas
--------
-
-The names of a stanza will be displayed at the top of the stanza's first bar.
-
-Chord labels (optional)
------------------------
+Chord labels
+------------
 
 You can add chord labels to bars:
 
@@ -217,54 +267,16 @@ You can add chord labels to bars:
 
 When these chord labels are added to the Gitara lilypond output, Gitara hides the rest notes so only the chord labels are visible.
 
-Properties
-----------
+If the bar is a partial measure, the duration of the chords within the bar must match the bar's duration:
 
-A gitara file can have the following optional properties:
+    chords :G8, 'r8-"G"'
 
-    Gitara.define do
-      title "Wise Up"
-      composer "Aimee Mann"
-      arranger "Arranged by George Mendoza"
-      instrument "Guitar (capo on second fret)"
-      key 'c \major'
-      midi_instrument "acoustic guitar (nylon)"
-      string_tunings "#guitar-tuning"
-      tempo "4 = 75"
-      transposition "d"
+    bar do
+      partial 8
+      notes "<g/3>8"
+      notes "r8"
+      chords :G8
     end
-
-* arranger - tab's arranger
-* composer - song's composer
-* instrument - description of the instrument used on the tab
-* key - [key signature](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Displaying-pitches#Key-signature)
-* midi_instrument - the type of instrument played in the midi export of the tab. By default, "acoustic guitar (nylon)".
-* string_tunings - see [lilypond](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Common-notation-for-fretted-strings#Custom-tablatures)
-* tempo - see [lilypond](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-parts#Metronome-marks) for the format
-* title - title of the song
-* transposition - adjusts the pitch of the instrument. The default transposition is "c". If you set it to "d", then you have to play the tab two frets higher on the guitar (capo on second fret).
-
-Notes with single quotes and backslashes
-----------------------------------------
-
-In Lilypond syntax, single quotes refer to octaves while backslashes refer to string numbers. So, the c note in the second string is written as
-
-    c'\2
-
-Since a Gitara file is a Ruby program, you have to be careful with backslashes when writing notes like the one above. As far as I know, Ruby provides two ways to preserve the backslash in the note above:
-
-    notes %q|c'\2|
-
-or
-
-    notes "c'\\2"
-
-Gitara provides a third option: it will automatically convert slashes to backslashes. This way, you can write the note above as
-
-    notes "c'/2"
-
-Prettier and easier to search and replace.
-
 
 Workflow
 --------
