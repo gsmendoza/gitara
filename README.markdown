@@ -227,7 +227,9 @@ A gitara file can have the following optional properties:
       composer "Aimee Mann"
       arranger "Arranged by George Mendoza"
       instrument "Guitar (capo on second fret)"
+      key 'c \major'
       midi_instrument "acoustic guitar (nylon)"
+      string_tunings "#guitar-tuning"
       tempo "4 = 75"
       transposition "d"
     end
@@ -235,11 +237,12 @@ A gitara file can have the following optional properties:
 * arranger - tab's arranger
 * composer - song's composer
 * instrument - description of the instrument used on the tab
+* key - [key signature](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Displaying-pitches#Key-signature)
 * midi_instrument - the type of instrument played in the midi export of the tab. By default, "acoustic guitar (nylon)".
-* tempo - see [lilypond](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-parts#Metronome-marks) for the format.
+* string_tunings - see [lilypond](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Common-notation-for-fretted-strings#Custom-tablatures)
+* tempo - see [lilypond](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-parts#Metronome-marks) for the format
 * title - title of the song
 * transposition - adjusts the pitch of the instrument. The default transposition is "c". If you set it to "d", then you have to play the tab two frets higher on the guitar (capo on second fret).
-
 
 Notes with single quotes and backslashes
 ----------------------------------------
