@@ -30,7 +30,7 @@ describe IsNodeVersion do
   end
 
   describe "value" do
-    it "should be the call names of its children" do
+    it "should be the call names of its definition_children" do
       node = FactoryGirl.build(:base, :children => [
         FactoryGirl.build(:base, :name => :First),
         FactoryGirl.build(:base, :name => :Second)
@@ -40,15 +40,15 @@ describe IsNodeVersion do
     end
   end
 
-  describe "children" do
-    it "should be versionized versions of the node's children" do
+  describe "definition_children" do
+    it "should be versionized versions of the node's definition_children" do
       parent = FactoryGirl.build(:base, :name => 'parent')
       child = FactoryGirl.build(:base, :name => 'child')
       parent.add child
 
       node_version = DummyVersion.new(:node => parent)
 
-      children = node_version.children
+      children = node_version.definition_children
       children.should have(1).child
       children[0].node.should == child
       children[0].should be_a(DummyVersion)

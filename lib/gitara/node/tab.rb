@@ -20,7 +20,7 @@ module Gitara
       end
 
       def playable_child
-        children.last
+        definition_children.last
       end
 
       def voices

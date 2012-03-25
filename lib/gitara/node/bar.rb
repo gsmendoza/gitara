@@ -12,7 +12,7 @@ module Gitara
       end
 
       def note_sets
-        children.select{|child| child.is_a?(Node::NoteSet)}
+        definition_children.select{|child| child.is_a?(Node::NoteSet)}
       end
 
       def specified_duration_as_lilypond

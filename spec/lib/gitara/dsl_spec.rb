@@ -5,20 +5,20 @@ describe Gitara do
     describe "bar(name, &block)" do
       it "should add a bar with the name" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         dsl.bar 'Intro'
 
-        dsl.node.own_children.should have(1).bar
+        dsl.node.children.should have(1).bar
 
-        bar = dsl.node.own_children[0]
+        bar = dsl.node.children[0]
         bar.name.should == 'Intro'
-        bar.own_children.should be_empty
+        bar.children.should be_empty
       end
 
-      it "should add the children declared in the block to the bar" do
+      it "should add the definition_children declared in the block to the bar" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         note_set = FactoryGirl.build(:note_set)
 
@@ -26,31 +26,31 @@ describe Gitara do
           add note_set
         end
 
-        dsl.node.own_children.should have(1).bar
-        dsl.node.own_children[0].name.should == 'Intro'
+        dsl.node.children.should have(1).bar
+        dsl.node.children[0].name.should == 'Intro'
 
-        bar = dsl.node.own_children[0]
-        bar.own_children.should have(1).note_set
-        bar.own_children[0].should == note_set
+        bar = dsl.node.children[0]
+        bar.children.should have(1).note_set
+        bar.children[0].should == note_set
       end
     end
 
     describe "add(child, &block)" do
       it "should add the child to the dsl's node" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         bar = FactoryGirl.build(:bar, :name => 'Intro')
 
         dsl.add bar
 
-        dsl.node.own_children.should have(1).bar
-        dsl.node.own_children[0].should == bar
+        dsl.node.children.should have(1).bar
+        dsl.node.children[0].should == bar
       end
 
-      it "should add the children in the block to the child" do
+      it "should add the definition_children in the block to the child" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         bar = FactoryGirl.build(:bar, :children => [])
         note_set = FactoryGirl.build(:note_set)
@@ -59,43 +59,43 @@ describe Gitara do
           add note_set
         end
 
-        dsl.node.own_children.should have(1).bar
-        dsl.node.own_children[0].should == bar
+        dsl.node.children.should have(1).bar
+        dsl.node.children[0].should == bar
 
-        bar.own_children.should have(1).note_set
-        bar.own_children[0].should == note_set
+        bar.children.should have(1).note_set
+        bar.children[0].should == note_set
       end
     end
 
     describe "notes(value)" do
       it "should add a note set with the value" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:bar, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         dsl.notes 'test'
 
-        dsl.node.own_children.should have(1).note_set
-        dsl.node.own_children[0].value.should == 'test'
+        dsl.node.children.should have(1).note_set
+        dsl.node.children[0].value.should == 'test'
       end
     end
 
     describe "line(name, &block)" do
       it "should add a line with the name" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         dsl.line 'Intro'
 
-        dsl.node.own_children.should have(1).line
+        dsl.node.children.should have(1).line
 
-        line = dsl.node.own_children[0]
+        line = dsl.node.children[0]
         line.name.should == 'Intro'
-        line.own_children.should be_empty
+        line.children.should be_empty
       end
 
-      it "should add the children declared in the block to the line" do
+      it "should add the definition_children declared in the block to the line" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         bar = FactoryGirl.build(:bar)
 
@@ -103,24 +103,24 @@ describe Gitara do
           add bar
         end
 
-        dsl.node.own_children.should have(1).line
-        dsl.node.own_children[0].name.should == 'Intro'
+        dsl.node.children.should have(1).line
+        dsl.node.children[0].name.should == 'Intro'
 
-        line = dsl.node.own_children[0]
-        line.own_children.should have(1).bar
-        line.own_children[0].should == bar
+        line = dsl.node.children[0]
+        line.children.should have(1).bar
+        line.children[0].should == bar
       end
     end
 
     describe "add_names(o)" do
       it "should add a node with o[:name] of o[:node_class] to the node" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         dsl.add_names :names => [:Intro, :Intro], :node_class => Node::Bar
 
-        dsl.node.own_children.should have(2).bars
-        dsl.node.own_children.each do |child|
+        dsl.node.children.should have(2).bars
+        dsl.node.children.each do |child|
           child.should be_a(Node::Bar)
           child.name.should == :Intro
         end
@@ -128,33 +128,33 @@ describe Gitara do
 
       it "should add a node with nil name if the o[:names] is blank" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         dsl.add_names :names => [], :node_class => Node::Bar
 
-        dsl.node.own_children.should have(1).bar
-        dsl.node.own_children[0].attributes[:name].should be_nil
-        dsl.node.own_children[0].should be_a(Node::Bar)
+        dsl.node.children.should have(1).bar
+        dsl.node.children[0].attributes[:name].should be_nil
+        dsl.node.children[0].should be_a(Node::Bar)
       end
     end
 
     describe "score(name, &block)" do
       it "should add a score with the name" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         dsl.score
 
-        dsl.node.own_children.should have(1).score
+        dsl.node.children.should have(1).score
 
-        score = dsl.node.own_children[0]
+        score = dsl.node.children[0]
         score.should be_a(Node::Score)
-        score.own_children.should be_empty
+        score.children.should be_empty
       end
 
-      it "should add the children declared in the block to the score" do
+      it "should add the definition_children declared in the block to the score" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         note_set = FactoryGirl.build(:note_set)
 
@@ -162,31 +162,31 @@ describe Gitara do
           add note_set
         end
 
-        dsl.node.own_children.should have(1).score
+        dsl.node.children.should have(1).score
 
-        score = dsl.node.own_children[0]
-        score.own_children.should have(1).note_set
-        score.own_children[0].should == note_set
+        score = dsl.node.children[0]
+        score.children.should have(1).note_set
+        score.children[0].should == note_set
       end
     end
 
     describe "stanza(name, &block)" do
       it "should add a stanza with the name" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         dsl.stanza 'Intro'
 
-        dsl.node.own_children.should have(1).stanza
+        dsl.node.children.should have(1).stanza
 
-        stanza = dsl.node.own_children[0]
+        stanza = dsl.node.children[0]
         stanza.name.should == 'Intro'
-        stanza.own_children.should be_empty
+        stanza.children.should be_empty
       end
 
-      it "should add the children declared in the block to the stanza" do
+      it "should add the definition_children declared in the block to the stanza" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         line = FactoryGirl.build(:line)
 
@@ -194,12 +194,12 @@ describe Gitara do
           add line
         end
 
-        dsl.node.own_children.should have(1).stanza
-        dsl.node.own_children[0].name.should == 'Intro'
+        dsl.node.children.should have(1).stanza
+        dsl.node.children[0].name.should == 'Intro'
 
-        stanza = dsl.node.own_children[0]
-        stanza.own_children.should have(1).line
-        stanza.own_children[0].should == line
+        stanza = dsl.node.children[0]
+        stanza.children.should have(1).line
+        stanza.children[0].should == line
       end
     end
 
@@ -219,13 +219,13 @@ describe Gitara do
     describe "chords(name, value)" do
       it "should add a chord set with the name" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         dsl.chords :Am, 'r4-"Am" r r r'
 
-        dsl.node.own_children.should have(1).chord_set
+        dsl.node.children.should have(1).chord_set
 
-        chord_set = dsl.node.own_children[0]
+        chord_set = dsl.node.children[0]
         chord_set.name.should == :Am
         chord_set.value.should == 'r4-"Am" r r r'
       end
@@ -234,13 +234,13 @@ describe Gitara do
     describe "chords(name)" do
       it "should add a bar with the name" do
         dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
-        dsl.node.own_children.should be_empty
+        dsl.node.children.should be_empty
 
         dsl.chords :Am
 
-        dsl.node.own_children.should have(1).chord_set
+        dsl.node.children.should have(1).chord_set
 
-        chord_set = dsl.node.own_children[0]
+        chord_set = dsl.node.children[0]
         chord_set.name.should == :Am
       end
     end

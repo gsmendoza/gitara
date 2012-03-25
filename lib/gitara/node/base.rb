@@ -7,8 +7,8 @@ module Gitara
       has_value :value
 
       def add(child)
-        own_children << child
-        child.id = own_children.select{|c| c.is_a?(child.class)}.size
+        children << child
+        child.id = children.select{|c| c.is_a?(child.class)}.size
         child.parent = self
       end
 
@@ -16,16 +16,16 @@ module Gitara
         self.is_a?(node_class) ? self : self.parent && self.parent.ancestor(node_class)
       end
 
-      def children
-        if own_children.empty?
-          definition ? definition.own_children : []
+      def definition_children
+        if children.empty?
+          definition ? definition.children : []
         else
-          own_children
+          children
         end
       end
 
       def children=(values)
-        own_children.clear
+        children.clear
         values.each do |child|
           add child
         end
@@ -39,13 +39,13 @@ module Gitara
         if self.definition_of?(target)
           self
         else
-          result = parent.own_children.detect{|node| node.definition_of?(target) }
+          result = parent.children.detect{|node| node.definition_of?(target) }
           result ? result : parent.definition(target)
         end
       end
 
       def definition?
-        ! own_children.empty? || ! value.nil?
+        ! children.empty? || ! value.nil?
       end
 
       def definition_name
@@ -60,11 +60,11 @@ module Gitara
       end
 
       def definitions(klass)
-        self.is_a?(klass) && self.definition? ? [self] : self.own_children.map{|child| child.definitions(klass) }.flatten
+        self.is_a?(klass) && self.definition? ? [self] : self.children.map{|child| child.definitions(klass) }.flatten
       end
 
       def descendants(klass)
-        self.is_a?(klass) ? [self.definition] : self.children.map{|child| child.descendants(klass) }.flatten
+        self.is_a?(klass) ? [self.definition] : self.definition_children.map{|child| child.descendants(klass) }.flatten
       end
 
       def id_as_word
@@ -79,8 +79,8 @@ module Gitara
         attributes[:name] || "#{parent && parent.name}#{self.class.to_s.split('::').last}#{self.id_as_word}"
       end
 
-      def own_children
-        @children ||= []
+      def children
+        @definition_children ||= []
       end
 
       def root

@@ -7,8 +7,8 @@ module Gitara
         has_value :node
         has_value :voice
 
-        def children
-          node.children.map{|child| child.voiced_as(voice) }
+        def definition_children
+          node.definition_children.map{|child| child.voiced_as(voice) }
         end
 
         def prefix
