@@ -17,7 +17,7 @@ module Gitara
       end
 
       def definition_children
-        if children.empty?
+        if leaf?
           definition ? definition.children : []
         else
           children
@@ -45,7 +45,7 @@ module Gitara
       end
 
       def definition?
-        ! children.empty? || ! value.nil?
+        has_children? || ! value.nil?
       end
 
       def definition_name
