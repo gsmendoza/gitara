@@ -8,7 +8,7 @@ class AppTester < Valuable
   end
 
   def expected
-    @expected ||= Pow("examples/#{name}.ly").read!.gsub(/\n\s+\n/, "\n")
+    @expected ||= Utilities.read!(Pow("examples/#{name}.ly")).gsub(/\n\s+\n/, "\n")
   rescue PowError => e
     puts "#{e.message}. Copying actual result..."
     Pow("examples/#{name}.ly").write actual
@@ -16,6 +16,6 @@ class AppTester < Valuable
   end
 
   def actual
-    @actual ||= (test_tmp_dir / "#{name}.ly").read!.gsub(/\n\s+\n/, "\n")
+    @actual ||= Utilities.read!((test_tmp_dir / "#{name}.ly")).gsub(/\n\s+\n/, "\n")
   end
 end
