@@ -5,13 +5,11 @@ module Gitara
 
       has_value :name
       has_value :id, :default => 1
-      has_value :parent
       has_value :value
 
       def add(child)
-        children << child
-        child.id = children.select{|c| c.is_a?(child.class)}.size
-        child.parent = self
+        child.id = children.select{|c| c.is_a?(child.class)}.size + 1
+        graft child
       end
 
       def ancestor(node_class)
