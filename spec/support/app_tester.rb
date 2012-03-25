@@ -1,0 +1,21 @@
+class AppTester < Valuable
+  has_value :name
+
+  def run
+    app = FactoryGirl.build(:app)
+    app.invoke :export, ["examples/#{name}.rb"], "target-directory" => test_tmp_dir.path, "run-lilypond" => false
+    (Pow("tmp") / "#{name}.ly").write actual if self.expected != self.actual
+  end
+
+  def expected
+    @expected ||= Pow("examples/#{name}.ly").read!.gsub(/\n\s+\n/, "\n")
+  rescue PowError => e
+    puts "#{e.message}. Copying actual result..."
+    Pow("examples/#{name}.ly").write actual
+    retry
+  end
+
+  def actual
+    @actual ||= (test_tmp_dir / "#{name}.ly").read!.gsub(/\n\s+\n/, "\n")
+  end
+end

@@ -5,6 +5,7 @@ require 'pry'
 RSpec.configure do |config|
   include Gitara
   require 'factories'
+  require 'support/app_tester'
 
   config.before :each do
     test_tmp_dir.delete! if test_tmp_dir.exists?
