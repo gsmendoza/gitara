@@ -81,10 +81,6 @@ module Gitara
         attributes[:name] || "#{parent && parent.name}#{self.class.to_s.split('::').last}#{self.id_as_word}"
       end
 
-      def children
-        @definition_children ||= []
-      end
-
       def stanza_version
         self.class::StanzaVersion.new(:node => self)
       end

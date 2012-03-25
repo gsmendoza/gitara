@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Node::Base do
   describe "definition_children" do
-    it "should be its own definition_children if they exist" do
+    it "should be its own children if they exist" do
       child = FactoryGirl.build(:base, :id => nil)
 
       parent = FactoryGirl.build(:base)
@@ -10,7 +10,7 @@ describe Node::Base do
       parent.definition_children.should == [child]
     end
 
-    it "should be the definition_children of its definition if the node is not a definition" do
+    it "should be the children of its definition if the node is not a definition" do
       child = FactoryGirl.build(:note_set)
       definition_bar = FactoryGirl.build(:bar, :name => 'Intro').tap {|bar|
         bar.children = [child]
@@ -24,12 +24,12 @@ describe Node::Base do
     end
   end
 
-  describe "definition_children=(other)" do
-    it "should set the ids and parents of the definition_children" do
+  describe "children=(other)" do
+    it "should set the ids and parents of the children" do
       parent = FactoryGirl.build(:base)
       parent.children = [FactoryGirl.build(:base, :id => nil)]
-      parent.definition_children[0].id.should == 1
-      parent.definition_children[0].parent.should == parent
+      parent.children[0].id.should == 1
+      parent.children[0].parent.should == parent
     end
   end
 
@@ -38,12 +38,12 @@ describe Node::Base do
       parent = FactoryGirl.build(:base)
 
       parent.add FactoryGirl.build(:base, :id => nil)
-      parent.definition_children[0].id.should == 1
-      parent.definition_children[0].parent.should == parent
+      parent.children[0].id.should == 1
+      parent.children[0].parent.should == parent
 
       parent.add FactoryGirl.build(:base, :id => nil)
-      parent.definition_children[1].id.should == 2
-      parent.definition_children[1].parent.should == parent
+      parent.children[1].id.should == 2
+      parent.children[1].parent.should == parent
     end
 
     it "should set the id based on existing siblings having the same class as the child" do
@@ -81,7 +81,7 @@ describe Node::Base do
   end
 
   describe "definition?" do
-    it "should be true if this node has definition_children" do
+    it "should be true if this node has children" do
       definition_bar = FactoryGirl.build(:bar, :name => 'Intro').tap {|bar|
         bar.add FactoryGirl.build(:note_set)
         bar.add FactoryGirl.build(:note_set)
@@ -95,7 +95,7 @@ describe Node::Base do
       chord_set.should be_definition
     end
 
-    it "should be false if this node does not have definition_children and it does not have a value" do
+    it "should be false if this node does not have children and it does not have a value" do
       call_bar = FactoryGirl.build(:bar, :name => 'Intro', :children => [])
       call_bar.children.should be_empty
       call_bar.value.should be_nil
