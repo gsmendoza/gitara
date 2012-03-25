@@ -157,25 +157,6 @@ describe Node::Base do
     end
   end
 
-  describe "root" do
-    it "should be itself if it has no parent" do
-      node = FactoryGirl.build(:base)
-      node.root.should == node
-    end
-
-    it "should be the ancentor of the node which has no parent of its own" do
-      note_set = FactoryGirl.build(:note_set)
-
-      bar = FactoryGirl.build(:bar)
-      bar.add note_set
-
-      root = FactoryGirl.build(:base)
-      root.add bar
-
-      note_set.root.should == root
-    end
-  end
-
   describe "name" do
     it "should be the given name, if available" do
       FactoryGirl.build(:bar, :name => :Intro).name.should == :Intro

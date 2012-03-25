@@ -85,10 +85,6 @@ module Gitara
         @definition_children ||= []
       end
 
-      def root
-        parent.nil? ? self : parent.root
-      end
-
       def stanza_version
         self.class::StanzaVersion.new(:node => self)
       end
