@@ -12,8 +12,8 @@ module Gitara
         graft child
       end
 
-      def ancestor(node_class)
-        self.is_a?(node_class) ? self : self.parent && self.parent.ancestor(node_class)
+      def ancestor(klass)
+        ancestors.detect{|ancestor| ancestor.is_a?(klass)}
       end
 
       def definition_children
