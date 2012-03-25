@@ -1,10 +1,7 @@
 module Gitara
   module Node
     class Base
-      class StanzaVersion < Valuable
-        include IsNodeVersion
-
-        has_value :node
+      class StanzaVersion < NodeVersion
       end
     end
   end

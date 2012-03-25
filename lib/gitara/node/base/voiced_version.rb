@@ -1,10 +1,7 @@
 module Gitara
   module Node
     class Base
-      class VoicedVersion < Valuable
-        include IsNodeVersion
-
-        has_value :node
+      class VoicedVersion < NodeVersion
         has_value :voice
 
         def definition_children
