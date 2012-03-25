@@ -1,6 +1,8 @@
 module Gitara
   module Node
     class Base < Valuable
+      include Redwood
+
       has_value :name
       has_value :id, :default => 1
       has_value :parent
