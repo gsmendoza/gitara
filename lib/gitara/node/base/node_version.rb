@@ -8,6 +8,10 @@ module Gitara
           "\\#{definition_name}"
         end
 
+        def call_value
+          node.call_value(self)
+        end
+
         def definition_children
           node.definition_children.map{|child| self.class.new(:node => child)}
         end
@@ -21,7 +25,7 @@ module Gitara
         end
 
         def value
-          definition_children.map(&:call_name).join(' ')
+          definition_children.map(&:call_value).join(' ')
         end
       end
     end

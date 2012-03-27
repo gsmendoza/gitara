@@ -108,6 +108,11 @@ describe Node::Base do
       node = FactoryGirl.build(:base, :value => %q|notes "<g'/1>8 <a/3>8 <g'/1>8 <a/3>16 <g'/1>8 <g/3>16 <e'/1>4 <g/3>8"|)
       node.value.should == %q|notes "<g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8"|
     end
+
+    it "should work with non-strings" do
+      node = FactoryGirl.build(:base, :value => 1)
+      node.value.should == 1
+    end
   end
 
   describe "voiced_as(arg)" do
@@ -262,6 +267,14 @@ describe Node::Base do
     it "should be nil if there is no ancestor matching the node class" do
       bar = FactoryGirl.build(:bar)
       bar.ancestor(Node::Stanza).should be_nil
+    end
+  end
+
+  describe "call_value(node_version)" do
+    it "should be the call name by default" do
+      node = FactoryGirl.build(:base, :name => 'MyNode')
+      node_version = Node::Base::NodeVersion.new(:node => node)
+      node.call_value(node_version).should == '\nBaseMyNode'
     end
   end
 end

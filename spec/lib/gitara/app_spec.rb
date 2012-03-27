@@ -25,5 +25,11 @@ describe App do
       app_test.run
       app_test.actual.should == app_test.expected
     end
+
+    it "can convert a tab with repeats to lilypond" do
+      app_test = AppTester.new(:name => 'tab-with-repeats')
+      app_test.run
+      app_test.actual.should == app_test.expected
+    end
   end
 end

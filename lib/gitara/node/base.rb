@@ -16,6 +16,10 @@ module Gitara
         ancestors.detect{|ancestor| ancestor.is_a?(klass)}
       end
 
+      def call_value(node_version)
+        node_version.call_name
+      end
+
       def definition_children
         if leaf?
           definition ? definition.children : []
@@ -84,7 +88,7 @@ module Gitara
       end
 
       def value
-        attributes[:value] ? attributes[:value].gsub('/', "\\") : nil
+        attributes[:value].respond_to?(:gsub) ? attributes[:value].gsub('/', "\\") : attributes[:value]
       end
 
       def voiced_as(arg)

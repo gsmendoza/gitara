@@ -255,5 +255,52 @@ describe Gitara do
         dsl.node.specified_duration.should == 8
       end
     end
+
+    describe "repeat(value)" do
+      it "should add a repeat with the value" do
+        dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
+
+        dsl.repeat 2
+
+        dsl.node.children.should have(1).repeat
+
+        repeat = dsl.node.children[0]
+        repeat.value.should == 2
+        repeat.children.should be_empty
+      end
+
+      it "should add the children declared in the block to the repeat" do
+        dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
+
+        bar = FactoryGirl.build(:bar)
+
+        dsl.repeat 2 do
+          add bar
+        end
+
+        dsl.node.children.should have(1).repeat
+
+        repeat = dsl.node.children[0]
+        repeat.children.should have(1).child
+        repeat.children[0].should == bar
+      end
+    end
+
+    describe "alternative(value)" do
+      it "should add the children declared in the block to the alternative" do
+        dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
+        bar = FactoryGirl.build(:bar)
+
+        dsl.alternative do
+          add bar
+        end
+
+        dsl.node.children.should have(1).alternative
+
+        alternative = dsl.node.children[0]
+        alternative.children.should have(1).child
+        alternative.children[0].should == bar
+      end
+    end
   end
 end

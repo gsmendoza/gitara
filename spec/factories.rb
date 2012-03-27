@@ -2,6 +2,9 @@ FactoryGirl.define do
   factory :note_set, :class => Node::NoteSet do
   end
 
+  factory :alternative, :class => Node::Alternative do
+  end
+
   factory :app, :class => App do
   end
 
@@ -26,6 +29,9 @@ FactoryGirl.define do
 
   factory :line, :class => Node::Line do
     children [FactoryGirl.build(:bar)]
+  end
+
+  factory :repeat, :class => Node::Repeat do
   end
 
   factory :stanza, :class => Node::Stanza do

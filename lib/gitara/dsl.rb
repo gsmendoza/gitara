@@ -30,6 +30,10 @@ module Gitara
       end
     end
 
+    def alternative(&block)
+      add Node::Alternative.new, &block
+    end
+
     def bar(*names, &block)
       add_names :names => names, :node_class => Node::Bar, &block
     end
@@ -48,6 +52,10 @@ module Gitara
 
     def partial(duration)
       node.specified_duration = duration
+    end
+
+    def repeat(value, &block)
+      add Node::Repeat.new(:value => value), &block
     end
 
     def score(*names, &block)
