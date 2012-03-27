@@ -1,3 +1,4 @@
+# @private
 class AppTester < Valuable
   has_value :name
 

@@ -1,4 +1,5 @@
 lib
 spec
 --files CHANGELOG.markdown
+--no-private
 --plugin yard-rspec
