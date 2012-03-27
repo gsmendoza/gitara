@@ -1,0 +1,3 @@
+lib
+spec
+-e ./yard_extensions.rb
