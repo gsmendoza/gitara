@@ -5,6 +5,7 @@ git.bundle
 .rvmrc
 .yardoc
 Gemfile.lock
+doc/*
 files/*
 pkg/*
 tmp/*
