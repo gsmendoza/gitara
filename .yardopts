@@ -1,3 +1,4 @@
 lib
 spec
+--files CHANGELOG.markdown
 -e ./yard_extensions.rb
