@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Node::Repeat do
-  describe "call_value" do
+describe Gitara::Node::Repeat do
+  describe "#call_value" do
     it "should be a call to lilypond's repeat command" do
       repeat = FactoryGirl.build(:repeat, :value => 2, :children => [
         FactoryGirl.build(:bar)

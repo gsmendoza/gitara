@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe 'StanzaVersion' do
-  describe "value" do
+describe Gitara::Node::Bar::StanzaVersion do
+  describe "#value" do
     it "should be the stanza heading of the bar" do
       bar = FactoryGirl.build(:bar)
       stanza = FactoryGirl.build(:stanza, :name => 'Intro', :children => [bar])

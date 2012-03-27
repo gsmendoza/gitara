@@ -11,10 +11,6 @@ module Gitara
       has_value :title
       has_value :transposition
 
-      def self.parse(text)
-        Transform.new.apply(Parser.new.parse(text))
-      end
-
       def max_number_of_voices
         definitions(Node::Bar).map{|bar| bar.note_sets.size}.max
       end

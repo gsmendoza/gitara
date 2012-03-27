@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe 'Bar' do
-  describe "note_sets" do
+describe Gitara::Node::Bar do
+  describe "#note_sets" do
     it "should be the note sets of its definition" do
       definition_bar = FactoryGirl.build(:bar, :name => 'Intro').tap {|bar|
         bar.children = [
@@ -18,7 +18,7 @@ describe 'Bar' do
     end
   end
 
-  describe "stanza_heading" do
+  describe "#stanza_heading" do
     it "should be a whole rest with the stanza name if the bar is the first node of a stanza" do
       bar = FactoryGirl.build(:bar)
       stanza = FactoryGirl.build(:stanza, :name => 'Intro', :children => [bar])
@@ -32,7 +32,7 @@ describe 'Bar' do
     end
   end
 
-  describe "with a special_duration" do
+  describe "#with a special_duration" do
     subject { FactoryGirl.build(:bar, :specified_duration => 8) }
 
     it "should be a partial with the stanza name if the bar is the first node of a stanza" do
@@ -46,7 +46,7 @@ describe 'Bar' do
     end
   end
 
-  describe "first_bar_of_stanza?" do
+  describe "#first_bar_of_stanza?" do
     it "should be true if the bar is the first bar of a stanza" do
       bar = FactoryGirl.build(:bar)
       stanza = FactoryGirl.build(:stanza, :name => 'Intro', :children => [bar])
@@ -66,7 +66,7 @@ describe 'Bar' do
     end
   end
 
-  describe "specified_duration_as_lilypond" do
+  describe "#specified_duration_as_lilypond" do
     it "should be \\partial specified_duration if present" do
       bar = FactoryGirl.build(:bar, :specified_duration => 8)
       bar.specified_duration_as_lilypond.should == '\partial 8'
@@ -78,7 +78,7 @@ describe 'Bar' do
     end
   end
 
-  describe "duration" do
+  describe "#duration" do
     it "should be 1 if there is no specified duration" do
       FactoryGirl.build(:bar, :specified_duration => nil).duration.should == 1
     end

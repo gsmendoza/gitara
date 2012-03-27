@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe App do
-  describe "export" do
+describe Gitara::App do
+  describe "#export" do
     it "can convert a tab to lilypond" do
       app_test = AppTester.new(:name => 'tab')
       app_test.run

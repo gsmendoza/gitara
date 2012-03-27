@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe 'Tab' do
-  describe "voices" do
-    it "should create a <max_number_of_voices> voices" do
+describe Gitara::Node::Tab do
+  describe "#voices" do
+    it "should create a max_number_of_voices voices" do
       tab = FactoryGirl.build(:tab, :children => [
         FactoryGirl.build(:bar, :children => [
           FactoryGirl.build(:note_set),
@@ -17,7 +17,7 @@ describe 'Tab' do
     end
   end
 
-  describe "max_number_of_voices" do
+  describe "#max_number_of_voices" do
     it "should be the max number of note_sets in a bar" do
       tab = FactoryGirl.build(:tab, :children => [
         FactoryGirl.build(:bar, :children => [
@@ -30,7 +30,7 @@ describe 'Tab' do
     end
   end
 
-  describe "playable_child" do
+  describe "#playable_child" do
     it "should be the last child of the tab" do
       tab = FactoryGirl.build(:tab, :children => [
         FactoryGirl.build(:bar, :name => 'Intro', :children => [
@@ -44,7 +44,7 @@ describe 'Tab' do
     end
   end
 
-  describe "midi_instrument" do
+  describe "#midi_instrument" do
     it "should have acoustic guitar (nylon) as default" do
       tab = FactoryGirl.build(:tab)
       tab.midi_instrument.should == 'acoustic guitar (nylon)'

@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Node::NoteSet do
+describe Gitara::Node::NoteSet do
 end

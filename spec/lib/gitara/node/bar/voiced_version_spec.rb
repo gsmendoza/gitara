@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe 'Bar::VoicedVersion' do
-  describe "matching_note_set" do
+describe Gitara::Node::Bar::VoicedVersion do
+  describe "#matching_note_set" do
     it "should be the note_set matching this voiced bar" do
       note_set = FactoryGirl.build(:note_set)
 

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe 'Stanza' do
-  describe "heading_in_lilypond" do
+describe Gitara::Node::Stanza do
+  describe "#heading_in_lilypond" do
     it "should allow the stanza's name to be added as a heading to the lilypond template" do
       stanza = FactoryGirl.build(:stanza, :name => "Verse 1", :children => [
         FactoryGirl.build(:line, :children => [

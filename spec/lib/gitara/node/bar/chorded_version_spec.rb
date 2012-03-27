@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe 'ChordedVersion' do
-  describe "value" do
+describe Gitara::Node::Bar::ChordedVersion do
+  describe "#value" do
     it "should be the call names of the chord sets in the bar, if available" do
       bar = FactoryGirl.build(:bar, :children => [FactoryGirl.build(:chord_set, :name => :Am, :value => 'r-"Am"')])
 

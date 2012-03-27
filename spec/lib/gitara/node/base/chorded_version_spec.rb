@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe 'ChordedVersion' do
+describe Gitara::Node::Base::ChordedVersion do
 end
 

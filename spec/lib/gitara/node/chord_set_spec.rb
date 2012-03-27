@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Node::ChordSet do
+describe Gitara::Node::ChordSet do
 end

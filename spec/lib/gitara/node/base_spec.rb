@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Node::Base do
-  describe "definition_children" do
+describe Gitara::Node::Base do
+  describe "#definition_children" do
     it "should be its own children if they exist" do
       child = FactoryGirl.build(:base, :id => nil)
 
@@ -24,7 +24,7 @@ describe Node::Base do
     end
   end
 
-  describe "children=(other)" do
+  describe "#children=" do
     it "should set the ids and parents of the children" do
       parent = FactoryGirl.build(:base)
       parent.children = [FactoryGirl.build(:base, :id => nil)]
@@ -33,7 +33,7 @@ describe Node::Base do
     end
   end
 
-  describe "add(child)" do
+  describe "#add" do
     it "should set the id and parent of the child" do
       parent = FactoryGirl.build(:base)
 
@@ -63,7 +63,7 @@ describe Node::Base do
     end
   end
 
-  describe "definition" do
+  describe "#definition" do
     it "should be the definition node which matches this node's name" do
       definition_bar = FactoryGirl.build(:bar, :name => 'Intro').tap {|bar|
         bar.children = [
@@ -80,7 +80,7 @@ describe Node::Base do
     end
   end
 
-  describe "definition?" do
+  describe "#definition?" do
     it "should be true if this node has children" do
       definition_bar = FactoryGirl.build(:bar, :name => 'Intro').tap {|bar|
         bar.add FactoryGirl.build(:note_set)
@@ -103,7 +103,7 @@ describe Node::Base do
     end
   end
 
-  describe "value" do
+  describe "#value" do
     it "should convert slashes to backslashes" do
       node = FactoryGirl.build(:base, :value => %q|notes "<g'/1>8 <a/3>8 <g'/1>8 <a/3>16 <g'/1>8 <g/3>16 <e'/1>4 <g/3>8"|)
       node.value.should == %q|notes "<g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8"|
@@ -115,7 +115,7 @@ describe Node::Base do
     end
   end
 
-  describe "voiced_as(arg)" do
+  describe "#voiced_as" do
     it "should return the voiced version of the node, if arg is a voice" do
       node = FactoryGirl.build(:base)
       voice = FactoryGirl.build(:voice)
@@ -143,7 +143,7 @@ describe Node::Base do
     end
   end
 
-  describe "definitions(klass)" do
+  describe "#definitions" do
     it "should be itself if it is an instance of the klass" do
       node = FactoryGirl.build(:bar)
       node.add FactoryGirl.build(:note_set)
@@ -162,7 +162,7 @@ describe Node::Base do
     end
   end
 
-  describe "name" do
+  describe "#name" do
     it "should be the given name, if available" do
       FactoryGirl.build(:bar, :name => :Intro).name.should == :Intro
     end
@@ -180,28 +180,28 @@ describe Node::Base do
     end
   end
 
-  describe "id" do
+  describe "#id" do
     it "should be 1 by default" do
       child = FactoryGirl.build(:note_set)
       child.id.should == 1
     end
   end
 
-  describe "id_as_word" do
+  describe "#id_as_word" do
     it "should camelize if necessary" do
       node = FactoryGirl.build(:base, :id => 24)
       node.id_as_word.should == "TwentyFour"
     end
   end
 
-  describe "definition_name" do
+  describe "#definition_name" do
     it "should turn the name to a lilypond acceptable name" do
       node = FactoryGirl.build(:base, :name => "Verse 1 line-2")
       node.definition_name.should == "VerseOneLineTwo"
     end
   end
 
-  describe "descendants(klass)" do
+  describe "#descendants" do
     it "should be itself if it is an instance of the klass" do
       tab = FactoryGirl.build(:tab, :children => [FactoryGirl.build(:bar)])
       tab.descendants(Node::Tab).should == [tab]
@@ -237,7 +237,7 @@ describe Node::Base do
     end
   end
 
-  describe "chorded" do
+  describe "#chorded" do
     it "should return the chorded version of the node" do
       node = FactoryGirl.build(:base)
       chorded_version = node.chorded
@@ -246,7 +246,7 @@ describe Node::Base do
     end
   end
 
-  describe "stanza_version" do
+  describe "#stanza_version" do
     it "should be a stanza version of the node" do
       node = FactoryGirl.build(:base)
       stanza_version = node.stanza_version
@@ -255,7 +255,7 @@ describe Node::Base do
     end
   end
 
-  describe "ancestor(node_class)" do
+  describe "#ancestor" do
     it "should be the first ancestor of the node matching the node class" do
       bar = FactoryGirl.build(:bar)
       line = FactoryGirl.build(:line, :name => 'Intro', :children => [bar])
@@ -270,7 +270,7 @@ describe Node::Base do
     end
   end
 
-  describe "call_value(node_version)" do
+  describe "#call_value" do
     it "should be the call name by default" do
       node = FactoryGirl.build(:base, :name => 'MyNode')
       node_version = Node::Base::NodeVersion.new(:node => node)
