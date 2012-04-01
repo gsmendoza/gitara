@@ -217,6 +217,30 @@ Finally, you can call multiple expressions in a single line:
     bar :BayangMagiliw, :PerlasNgSilanganan, :AlabNgPuso, :SaDibdibMoyBuhay
 
 
+### Repeats and alternative endings
+
+You can also group expressions under [repeats](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Long-repeats) and provide alternative endings:
+
+    Gitara.define do
+      line do
+        repeat 4 do
+          bar do
+            notes "c4 d e f"
+          end
+        end
+
+        alternative do
+          bar do
+            notes "d2 e"
+          end
+
+          bar do
+            notes "f2 g"
+          end
+        end
+      end
+    end
+
 Properties
 ----------
 
