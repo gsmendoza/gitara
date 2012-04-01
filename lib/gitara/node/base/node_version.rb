@@ -2,6 +2,8 @@ module Gitara
   module Node
     class Base
       class NodeVersion < Valuable
+        # @macro [attach] has_value
+        # @attribute $1
         has_value :node
 
         def call_name

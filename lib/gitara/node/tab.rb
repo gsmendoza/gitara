@@ -1,6 +1,8 @@
 module Gitara
   module Node
     class Tab < Base
+      # @macro [attach] has_value
+      # @attribute $1
       has_value :arranger
       has_value :composer
       has_value :instrument

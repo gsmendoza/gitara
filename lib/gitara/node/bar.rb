@@ -1,6 +1,8 @@
 module Gitara
   module Node
     class Bar < Base
+      # @macro [attach] has_value
+      # @attribute $1
       has_value :specified_duration
 
       def duration

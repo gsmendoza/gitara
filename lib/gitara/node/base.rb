@@ -3,6 +3,8 @@ module Gitara
     class Base < Valuable
       include Redwood
 
+      # @macro [attach] has_value
+      # @attribute $1
       has_value :name
       has_value :id, :default => 1
       has_value :value

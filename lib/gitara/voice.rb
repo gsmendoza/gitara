@@ -1,5 +1,7 @@
 module Gitara
   class Voice < Valuable
+    # @macro [attach] has_value
+    # @attribute $1
     has_value :id
     has_value :parent
 

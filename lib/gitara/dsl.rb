@@ -4,8 +4,13 @@ module Gitara
   class Dsl < Valuable
     extend DslMacros
 
+    # @macro [attach] has_value
+    # @attribute $1
     has_value :node
 
+    # @macro [attach] can_add_property
+    # @method $1(value)
+    # Set value as the $1
     can_add_property :arranger
     can_add_property :composer
     can_add_property :instrument
