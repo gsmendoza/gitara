@@ -1,3 +1,8 @@
+0.6.0 - 2012-04-01
+------------------
+
+* [#22] I should be able to add repeats and alternatives.
+
 0.5.0 - 2012-03-18
 ------------------
 
