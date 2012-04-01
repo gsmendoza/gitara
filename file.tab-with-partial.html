@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: tab-with-partial
+  
+    &mdash; Documentation by YARD 0.7.5
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: tab-with-partial</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'>
+<p>version “2.12.3” include “english.ly”</p>
+
+<p>paper 
+<pre class="code ruby"><code>indent = #0</code></pre>
+
+<p></p>
+
+<p>header 
+<pre class="code ruby"><code><span class='id identifier rubyid_title'>title</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Huling El Bimbo</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_composer'>composer</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Eraserheads</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_arranger'>arranger</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Arranged by George Mendoza</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_instrument'>instrument</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Guitar (capo on first fret)</span><span class='tstring_end'>&quot;</span></span></code></pre>
+
+<p></p>
+
+<p>%———————————————————————– % Chord Sets</p>
+
+<p>cChordSetG = { r1-“G” } cChordSetGEight = { r8-“G” } cChordSetC = { r1-“C”
+} cChordSetASeven = { r1-“A7” } cChordSetEm = { r1-“Em” } cChordSetD = {
+r1-“D” }</p>
+
+<p>%———————————————————————– % Bars</p>
+
+<p>vOneBarVerseLineOneBarOne = { partial 8 &lt;g3&gt;8 }
+vTwoBarVerseLineOneBarOne = { partial 8 r8 } cBarVerseLineOneBarOne = {
+partial 8 cChordSetGEight } sBarVerseLineOneBarOne = { partial 8 r8^“Verse”
+}</p>
+
+<p>vOneBarVerseLineOneBarTwo = {  &lt;a3&gt;16glissando &lt;b3&gt;16
+&lt;b3&gt;4 r16 &lt;a3&gt;16glissando &lt;b3&gt;4. &lt;a3&gt;16(
+&lt;g3&gt;16) } vTwoBarVerseLineOneBarTwo = {  r1 } cBarVerseLineOneBarTwo
+= {  cChordSetG } sBarVerseLineOneBarTwo = {  r1 }</p>
+
+<p>%———————————————————————– % Lines</p>
+
+<p>vOneLineVerseLineOne = { vOneBarVerseLineOneBarOne
+vOneBarVerseLineOneBarTwo break } vTwoLineVerseLineOne = {
+vTwoBarVerseLineOneBarOne vTwoBarVerseLineOneBarTwo break }
+cLineVerseLineOne = { cBarVerseLineOneBarOne cBarVerseLineOneBarTwo }
+sLineVerseLineOne = { sBarVerseLineOneBarOne sBarVerseLineOneBarTwo }</p>
+
+<p>%———————————————————————– % Stanzas</p>
+
+<p>vOneStanzaVerse = { vOneLineVerseLineOne } vTwoStanzaVerse = {
+vTwoLineVerseLineOne } cStanzaVerse = { cLineVerseLineOne } sStanzaVerse =
+{ sLineVerseLineOne }</p>
+
+<p>%———————————————————————– % Scores</p>
+
+<p>vOneScoreTabOneScoreOne = { vOneStanzaVerse } vTwoScoreTabOneScoreOne = {
+vTwoStanzaVerse } cScoreTabOneScoreOne = { cStanzaVerse }
+sScoreTabOneScoreOne = { sStanzaVerse }</p>
+
+<p>%———————————————————————– % Voices</p>
+
+<p>vOne = 
+<pre class="code ruby"><code>\transposition cs''
+\vOneScoreTabOneScoreOne</code></pre>
+
+<p></p>
+
+<p>vTwo = 
+<pre class="code ruby"><code>\transposition cs'
+\vTwoScoreTabOneScoreOne</code></pre>
+
+<p></p>
+
+<p>%———————————————————————– % Stanza Headings</p>
+
+<p>stanzaHeadings = { sScoreTabOneScoreOne }</p>
+
+<p>%———————————————————————– % Chord Headings</p>
+
+<p>chordHeadings = { cScoreTabOneScoreOne }</p>
+
+<p>%———————————————————————–</p>
+
+<p>score {</p>
+
+<pre class="code ruby"><code>\new StaffGroup &lt;&lt;
+  \new Staff &lt;&lt;
+    \tempo 4 = 90
+
+    \clef &quot;treble_8&quot;
+
+    \new Voice \with { \remove Rest_engraver } {
+      \stanzaHeadings
+    }
+
+    \new Voice {
+      \voiceOne
+      \vOne
+    }
+    \new Voice {
+      \voiceTwo
+      \vTwo
+    }
+  &gt;&gt;
+
+  \new TabStaff &lt;&lt;
+    \new TabVoice {
+      \slurUp
+      \vOne
+    }
+    \new TabVoice {
+      \slurUp
+      \vTwo
+    }
+    \new TabVoice {
+      \chordHeadings
+    }
+  &gt;&gt;
+&gt;&gt;
+
+\layout {
+  \context { \Staff
+    \override TimeSignature #'style = #'numbered
+    \override StringNumber #'transparent = ##t
+  }
+  \context { \TabStaff
+    \override TimeSignature #'style = #'numbered
+  }
+  \context { \Voice
+    \remove Slur_engraver
+  }
+  \context { \TabVoice
+    \remove Dots_engraver
+    \remove Stem_engraver
+    \remove Rest_engraver
+  }
+}</code></pre>
+
+<p>}</p>
+
+<p>% showLastLength = R1*4 score 
+<pre class="code ruby"><code>\new Staff \with {midiInstrument = #&quot;acoustic guitar (nylon)&quot; &lt;&lt;
+  \tempo 4 = 90
+
+  \clef &quot;treble_8&quot;
+
+  \new Voice {
+    \unfoldRepeats {
+      \vOne
+    }
+  }
+  \new Voice {
+    \unfoldRepeats {
+      \vTwo
+    }
+  }
+&gt;&gt;
+
+\midi {}</code></pre>
+
+<p>}</p>
+</div></div>
+    
+    <div id="footer">
+  Generated on Sun Apr  1 18:24:55 2012 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.5 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

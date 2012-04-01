@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.7.5
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><p>Gitara is a Ruby DSL for generating Lilypond guitar tablatures</p>
+
+<h2>Usage</h2>
+
+<p>To install,</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_gitara'>gitara</span>
+</code></pre>
+
+<p>You need <a href="http://lilypond.org">lilypond</a> 2.12 or higher in order to generate pdfs and midis.</p>
+
+<p>Gitara is tested on Ruby 1.9.3 only. Patches are welcome.</p>
+
+<p>To run,</p>
+
+<pre class="code ruby"><code>gitara export PATH [OPTIONS]...
+</code></pre>
+
+<p>This will generate a lilypond .ly file and then call lilypond to export the .ly file to pdf and midi. Please see <code>gitara help export</code> for the available options.</p>
+
+<h2>Basic syntax</h2>
+
+<p>Gitara is a Ruby DSL. A typical Gitara file will have the following structure:</p>
+
+<pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_score'>score</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_stanza'>stanza</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Verse 1</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_line'>line</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+          <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c d e f g a b c</span><span class='tstring_end'>&quot;</span></span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>You can find examples at <a href="https://github.com/gsmendoza/gitara/tree/master/examples">https://github.com/gsmendoza/gitara/tree/master/examples</a>.</p>
+
+<h2>Bars</h2>
+
+<p>Bars are the smallest expressions in Gitara. That is, a gitara file must have at least one bar. The notes inside a bar follow <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Simple-notation">Lilypond syntax</a>.</p>
+
+<pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c d e f g a b c</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>With Gitara, it&#39;s easier to write notes using <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-pitches#Absolute-octave-entry">absolute note names</a> instead of relative note names. This is because we&#39;ll be reusing bars and other Gitara expressions (see Reusing expressions below).</p>
+
+<h3>Notes with single quotes and backslashes</h3>
+
+<p>In Lilypond syntax, single quotes refer to octaves while backslashes refer to string numbers. So, the c note in the second string is written as</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_c'>c</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>\2
+</span></span></code></pre>
+
+<p>Since a Gitara file is a Ruby program, you have to be careful with backslashes when writing notes like the one above. Ruby provides AFAIK two ways to preserve the backslash in the note above:</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>%q|</span><span class='tstring_content'>c'\2</span><span class='tstring_end'>|</span></span>
+</code></pre>
+
+<p>or</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c'\\2</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<p>Gitara provides a third option: it will automatically convert slashes to backslashes. This way, you can write the note above as</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c'/2</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<p>Prettier and easier to search and replace.</p>
+
+<h3>Multiple voices</h3>
+
+<p>Each line of notes in a bar is a <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Voices-contain-music">voice</a>:</p>
+
+<pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c d e f g a b c</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c' d' e' f' g' a' b' c'</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>The tab above will play &quot;c d e f g a b c&quot; and &quot;c&#39; d&#39; e&#39; f&#39; g&#39; a&#39; b&#39; c&#39;&quot; simultaneously, not sequentially.</p>
+
+<h3>Partial bars</h3>
+
+<p>To indicate that a bar is a <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Advanced-rhythmic-commands#Partial-measure">partial measure</a>, call <code>partial &lt;duration&gt;</code>:</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_partial'>partial</span> <span class='int'>8</span>
+  <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;g/3&gt;8</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>r8</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>As shown by the example, the durations of the notes within the bar must also have one-eighth durations in order for the tab to render properly.</p>
+
+<h2>Grouping bars together</h2>
+
+<h3>Lines</h3>
+
+<p>You can group bars in a line:</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_line'>line</span> <span class='symbol'>:LineOne</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_bar'>bar</span> <span class='symbol'>:BayangMagiliw</span>
+  <span class='id identifier rubyid_bar'>bar</span> <span class='symbol'>:PerlasNgSilanganan</span>
+  <span class='id identifier rubyid_bar'>bar</span> <span class='symbol'>:AlabNgPuso</span>
+  <span class='id identifier rubyid_bar'>bar</span> <span class='symbol'>:SaDibdibMoyBuhay</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>Lines are <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Line-breaking">manually breaked</a> in Gitara.</p>
+
+<h3>Stanzas</h3>
+
+<p>Lines can be grouped in stanzas. The names of a stanza will be displayed at the top of the stanza&#39;s first bar.</p>
+
+<h3>Score</h3>
+
+<p>Finally, stanzas can be grouped in a score. Scores are important in grouping the tab in a single unit because...</p>
+
+<h3>Only the last expression under Gitara.define will be generated</h3>
+
+<p>When writing a tab, oftentimes you want to generate only a part of the tab for testing purposes. Gitara makes this easy by processing only for the last expression under Gitara.define. For example, in the following tab, only the second bar (notes &quot;g a b c&quot;) will be generated.</p>
+
+<pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c d e f</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>g a b c</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>If you want Gitara to generate both bars, you must group them inside a score.</p>
+
+<pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_score'>score</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c d e f</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>g a b c</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>If you want to test a particular bar inside the score, you can copy it after the score:</p>
+
+<pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_score'>score</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c d e f</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>g a b c</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c d e f</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>Or, as you&#39;ll see below, you can give the bar a name so that you can call it later.</p>
+
+<h2>Reusing expressions</h2>
+
+<p>Bars, lines, and other Gitara expressions can be reused. For example, if you want a repeat a bar, you can name the bar and call the name afterwards:</p>
+
+<pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_score'>score</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_bar'>bar</span> <span class='symbol'>:Intro</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c d e f g a b c</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c' d' e' f' g' a' b' c'</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_bar'>bar</span> <span class='symbol'>:Intro</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>This will generate a tab with two Intro bars. It&#39;s important to group the two bars above inside a score, because otherwise Gitara will only generate the second bar.</p>
+
+<p>You can reuse a Gitara expression as long as it is defined before the call. The definition can even be deeper than the level of the call:</p>
+
+<pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_score'>score</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_bar'>bar</span> <span class='symbol'>:testing</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c d e f</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>g a b c</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_bar'>bar</span> <span class='symbol'>:testing</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>In the example above, Gitara will only generate the last :testing bar.</p>
+
+<p>Finally, you can call multiple expressions in a single line:</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_bar'>bar</span> <span class='symbol'>:BayangMagiliw</span><span class='comma'>,</span> <span class='symbol'>:PerlasNgSilanganan</span><span class='comma'>,</span> <span class='symbol'>:AlabNgPuso</span><span class='comma'>,</span> <span class='symbol'>:SaDibdibMoyBuhay</span>
+</code></pre>
+
+<h3>Repeats and alternative endings</h3>
+
+<p>You can also group expressions under <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Long-repeats">repeats</a> and provide alternative endings:</p>
+
+<pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_line'>line</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_repeat'>repeat</span> <span class='int'>4</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>c4 d e f</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_alternative'>alternative</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>d2 e</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+
+      <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+        <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>f2 g</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<h2>Properties</h2>
+
+<p>A gitara file can have the following properties:</p>
+
+<pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_title'>title</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Wise Up</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_composer'>composer</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Aimee Mann</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_arranger'>arranger</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Arranged by George Mendoza</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_instrument'>instrument</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Guitar (capo on second fret)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_key'>key</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>c \major</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_midi_instrument'>midi_instrument</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>acoustic guitar (nylon)</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_string_tunings'>string_tunings</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>#guitar-tuning</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_tempo'>tempo</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>4 = 75</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_transposition'>transposition</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>d</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+</code></pre>
+
+<ul>
+<li>arranger - tab&#39;s arranger</li>
+<li>composer - song&#39;s composer</li>
+<li>instrument - description of the instrument used on the tab</li>
+<li><a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Displaying-pitches#Key-signature">key</a></li>
+<li>midi_instrument - the type of instrument played in the midi export of the tab. By default, &quot;acoustic guitar (nylon)&quot;.</li>
+<li><a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Common-notation-for-fretted-strings#Custom-tablatures">string_tunings</a></li>
+<li><a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-parts#Metronome-marks">tempo</a></li>
+<li>title - title of the song</li>
+<li>transposition - adjusts the pitch of the instrument. The default transposition is &quot;c&quot;. If you set it to &quot;d&quot;, then you have to play the tab two frets higher on the guitar (capo on second fret).</li>
+</ul>
+
+<h2>Chord labels</h2>
+
+<p>You can add chord labels to bars:</p>
+
+<pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_chords'>chords</span> <span class='symbol'>:FC</span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>r4-&quot;F&quot; r r-&quot;C&quot; r</span><span class='tstring_end'>'</span></span>
+
+  <span class='id identifier rubyid_bar'>bar</span> <span class='symbol'>:BeganIt</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/skip 4 &lt;a/3 c'/2 &gt;8 &lt;g/3&gt;8 /skip 4 &lt;g/3 c'/2 &gt;8 &lt;g/3&gt;8</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;f/4&gt;4 &lt;f/4&gt;4 &lt;c/5&gt;4 &lt;e/4&gt;4</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_chords'>chords</span> <span class='symbol'>:FC</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p><code>r4-&quot;F&quot; r r-&quot;C&quot; r</code> is a <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Music-expressions-explained">lilypond music expression</a>.</p>
+
+<ul>
+<li><code>r</code> is a rest. <code>r4</code> is a rest that is a quarter note long. Succeeding rests have the same duration as the first one.</li>
+<li><code>-&quot;F&quot;</code> means &#39;place the text &quot;F&quot; below the rest note&#39;. See <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-text">http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-text</a>.</li>
+</ul>
+
+<p>When these chord labels are added to the Gitara lilypond output, Gitara hides the rest notes so only the chord labels are visible.</p>
+
+<p>If the bar is a partial measure, the duration of the chords within the bar must match the bar&#39;s duration:</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_chords'>chords</span> <span class='symbol'>:G8</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>r8-&quot;G&quot;</span><span class='tstring_end'>'</span></span>
+
+<span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_partial'>partial</span> <span class='int'>8</span>
+  <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;g/3&gt;8</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>r8</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_chords'>chords</span> <span class='symbol'>:G8</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<h2>Workflow</h2>
+
+<p>I&#39;m no Lilypond expert (heh). When writing a tab, I use <a href="http://tuxguitar.herac.com.ar">TuxGuitar</a> to transcribe a set of notes (usually just one bar). I then export the TuxGuitar tab to lilypond so that I can get the lilypond notes. I then place these lilypond notes inside my Gitara tab. This workflow allows me to use TuxGuitar&#39;s GUI for transcribing notes while allowing me to use Gitara&#39;s features for naming expressions and reusing them.</p>
+</div></div>
+    
+    <div id="footer">
+  Generated on Sun Apr  1 18:39:19 2012 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.5 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

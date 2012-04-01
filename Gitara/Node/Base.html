@@ -1,0 +1,2125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Gitara::Node::Base
+  
+    &mdash; Documentation by YARD 0.7.5
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '../..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (B)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../../Gitara.html" title="Gitara (module)">Gitara</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Node.html" title="Gitara::Node (module)">Node</a></span></span>
+     &raquo; 
+    <span class="title">Base</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Gitara::Node::Base
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Valuable</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Valuable</li>
+          
+            <li class="next">Gitara::Node::Base</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+      <dt class="r2">Includes:</dt>
+      <dd class="r2">Redwood</dd>
+      
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/gitara/node/base.rb<span class="defines">,<br />
+  lib/gitara/node/base/node_version.rb,<br /> lib/gitara/node/base/voiced_version.rb,<br /> lib/gitara/node/base/stanza_version.rb,<br /> lib/gitara/node/base/chorded_version.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="Alternative.html" title="Gitara::Node::Alternative (class)">Alternative</a></span>, <span class='object_link'><a href="Bar.html" title="Gitara::Node::Bar (class)">Bar</a></span>, <span class='object_link'><a href="ChordSet.html" title="Gitara::Node::ChordSet (class)">ChordSet</a></span>, <span class='object_link'><a href="Line.html" title="Gitara::Node::Line (class)">Line</a></span>, <span class='object_link'><a href="NoteSet.html" title="Gitara::Node::NoteSet (class)">NoteSet</a></span>, <span class='object_link'><a href="Repeat.html" title="Gitara::Node::Repeat (class)">Repeat</a></span>, <span class='object_link'><a href="Score.html" title="Gitara::Node::Score (class)">Score</a></span>, <span class='object_link'><a href="Stanza.html" title="Gitara::Node::Stanza (class)">Stanza</a></span>, <span class='object_link'><a href="Tab.html" title="Gitara::Node::Tab (class)">Tab</a></span></p>
+</div>
+<h2>Defined Under Namespace</h2>
+<p class="children">
+   
+    
+   
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Base/ChordedVersion.html" title="Gitara::Node::Base::ChordedVersion (class)">ChordedVersion</a></span>, <span class='object_link'><a href="Base/NodeVersion.html" title="Gitara::Node::Base::NodeVersion (class)">NodeVersion</a></span>, <span class='object_link'><a href="Base/StanzaVersion.html" title="Gitara::Node::Base::StanzaVersion (class)">StanzaVersion</a></span>, <span class='object_link'><a href="Base/VoicedVersion.html" title="Gitara::Node::Base::VoicedVersion (class)">VoicedVersion</a></span>
+    
+  
+</p>
+
+
+
+
+  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#id-instance_method" title="#id (instance method)">- (Object) <strong>id</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#name-instance_method" title="#name (instance method)">- (Object) <strong>name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#value-instance_method" title="#value (instance method)">- (Object) <strong>value</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add-instance_method" title="#add (instance method)">- (Object) <strong>add</strong>(child) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ancestor-instance_method" title="#ancestor (instance method)">- (Object) <strong>ancestor</strong>(klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#call_value-instance_method" title="#call_value (instance method)">- (Object) <strong>call_value</strong>(node_version) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#children%3D-instance_method" title="#children= (instance method)">- (Object) <strong>children=</strong>(values) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chorded-instance_method" title="#chorded (instance method)">- (Object) <strong>chorded</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#definition-instance_method" title="#definition (instance method)">- (Object) <strong>definition</strong>(target = self) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#definition%3F-instance_method" title="#definition? (instance method)">- (Boolean) <strong>definition?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#definition_children-instance_method" title="#definition_children (instance method)">- (Object) <strong>definition_children</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#definition_name-instance_method" title="#definition_name (instance method)">- (Object) <strong>definition_name</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#definition_of%3F-instance_method" title="#definition_of? (instance method)">- (Boolean) <strong>definition_of?</strong>(target) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#definitions-instance_method" title="#definitions (instance method)">- (Object) <strong>definitions</strong>(klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#descendants-instance_method" title="#descendants (instance method)">- (Object) <strong>descendants</strong>(klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#id_as_word-instance_method" title="#id_as_word (instance method)">- (Object) <strong>id_as_word</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#inspect-instance_method" title="#inspect (instance method)">- (Object) <strong>inspect</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#stanza_version-instance_method" title="#stanza_version (instance method)">- (Object) <strong>stanza_version</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#voiced_as-instance_method" title="#voiced_as (instance method)">- (Object) <strong>voiced_as</strong>(arg) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="id=-instance_method"></span>
+      <span id="id-instance_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="id-instance_method">
+  
+    - (<tt>Object</tt>) <strong>id</strong> 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should be 1 by default
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+184
+185</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 184</span>
+
+<span class='id identifier rubyid_child'>child</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:note_set</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='int'>1</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+9</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 9</span>
+
+<span class='id identifier rubyid_has_value'>has_value</span> <span class='symbol'>:id</span><span class='comma'>,</span> <span class='symbol'>:default</span> <span class='op'>=&gt;</span> <span class='int'>1</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="name=-instance_method"></span>
+      <span id="name-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>name</strong> 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should be the given name, if available
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+166</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 166</span>
+
+<span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='symbol'>:Intro</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='symbol'>:Intro</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>should be based on the parent's name the node's class and id, if not available
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+170
+171
+172
+173</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 170</span>
+
+<span class='id identifier rubyid_child'>child</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:note_set</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_bar'>bar</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='symbol'>:Intro</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_child'>child</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>IntroNoteSetOne</span><span class='tstring_end'>&quot;</span></span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>should be based on the node's class and id, if there's no parent and the there's no given name
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+177
+178</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 177</span>
+
+<span class='id identifier rubyid_child'>child</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:note_set</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>NoteSetOne</span><span class='tstring_end'>&quot;</span></span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+8
+9
+10</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 8</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_name'>name</span>
+  <span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_parent'>parent</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>::</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span><span class='rbrace'>}</span><span class='embexpr_beg'>#{</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id_as_word'>id_as_word</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="value=-instance_method"></span>
+      <span id="value-instance_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="value-instance_method">
+  
+    - (<tt>Object</tt>) <strong>value</strong> 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should convert slashes to backslashes
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+107
+108</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 107</span>
+
+<span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='comma'>,</span> <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>%q|</span><span class='tstring_content'>notes &quot;&lt;g'/1&gt;8 &lt;a/3&gt;8 &lt;g'/1&gt;8 &lt;a/3&gt;16 &lt;g'/1&gt;8 &lt;g/3&gt;16 &lt;e'/1&gt;4 &lt;g/3&gt;8&quot;</span><span class='tstring_end'>|</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>%q|</span><span class='tstring_content'>notes &quot;&lt;g'\1&gt;8 &lt;a\3&gt;8 &lt;g'\1&gt;8 &lt;a\3&gt;16 &lt;g'\1&gt;8 &lt;g\3&gt;16 &lt;e'\1&gt;4 &lt;g\3&gt;8&quot;</span><span class='tstring_end'>|</span></span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>should work with non-strings
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+112
+113</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 112</span>
+
+<span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='comma'>,</span> <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='int'>1</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_value'>value</span>
+  <span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='symbol'>:value</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:gsub</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='symbol'>:value</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\\</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='symbol'>:value</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="add-instance_method">
+  
+    - (<tt>Object</tt>) <strong>add</strong>(child) 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should set the id and parent of the child
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+37
+38
+39
+40
+41
+42
+43
+44
+45</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 37</span>
+
+<span class='id identifier rubyid_parent'>parent</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='int'>1</span>
+<span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='id identifier rubyid_parent'>parent</span>
+ <span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='int'>2</span>
+<span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='id identifier rubyid_parent'>parent</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>should set the id based on existing siblings having the same class as the child
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 49</span>
+
+<span class='id identifier rubyid_parent'>parent</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_bar_1'>bar_1</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_bar_1'>bar_1</span>
+<span class='id identifier rubyid_bar_1'>bar_1</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='int'>1</span>
+ <span class='id identifier rubyid_line_1'>line_1</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:line</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_line_1'>line_1</span>
+<span class='id identifier rubyid_line_1'>line_1</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='int'>1</span>
+ <span class='id identifier rubyid_bar_2'>bar_2</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_bar_2'>bar_2</span>
+<span class='id identifier rubyid_bar_2'>bar_2</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='int'>2</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+12
+13
+14
+15</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 12</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add'>add</span><span class='lparen'>(</span><span class='id identifier rubyid_child'>child</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='id identifier rubyid_c'>c</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span> <span class='op'>+</span> <span class='int'>1</span>
+  <span class='id identifier rubyid_graft'>graft</span> <span class='id identifier rubyid_child'>child</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ancestor-instance_method">
+  
+    - (<tt>Object</tt>) <strong>ancestor</strong>(klass) 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should be the first ancestor of the node matching the node class
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+259
+260
+261
+262
+263</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 259</span>
+
+<span class='id identifier rubyid_bar'>bar</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_line'>line</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:line</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Intro</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_bar'>bar</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_stanza'>stanza</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:stanza</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Intro</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_line'>line</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_bar'>bar</span><span class='period'>.</span><span class='id identifier rubyid_ancestor'>ancestor</span><span class='lparen'>(</span><span class='const'>Node</span><span class='op'>::</span><span class='const'>Stanza</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='id identifier rubyid_stanza'>stanza</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>should be nil if there is no ancestor matching the node class
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+267
+268</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 267</span>
+
+<span class='id identifier rubyid_bar'>bar</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_bar'>bar</span><span class='period'>.</span><span class='id identifier rubyid_ancestor'>ancestor</span><span class='lparen'>(</span><span class='const'>Node</span><span class='op'>::</span><span class='const'>Stanza</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_nil'>be_nil</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 17</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_ancestor'>ancestor</span><span class='lparen'>(</span><span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ancestors'>ancestors</span><span class='period'>.</span><span class='id identifier rubyid_detect'>detect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_ancestor'>ancestor</span><span class='op'>|</span> <span class='id identifier rubyid_ancestor'>ancestor</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="call_value-instance_method">
+  
+    - (<tt>Object</tt>) <strong>call_value</strong>(node_version) 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should be the call name by default
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+274
+275
+276</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 274</span>
+
+<span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MyNode</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_node_version'>node_version</span> <span class='op'>=</span> <span class='const'>Node</span><span class='op'>::</span><span class='const'>Base</span><span class='op'>::</span><span class='const'>NodeVersion</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_node'>node</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_call_value'>call_value</span><span class='lparen'>(</span><span class='id identifier rubyid_node_version'>node_version</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>\nBaseMyNode</span><span class='tstring_end'>'</span></span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_call_value'>call_value</span><span class='lparen'>(</span><span class='id identifier rubyid_node_version'>node_version</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_node_version'>node_version</span><span class='period'>.</span><span class='id identifier rubyid_call_name'>call_name</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="children=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>children=</strong>(values) 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should set the ids and parents of the children
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+28
+29
+30
+31</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 28</span>
+
+<span class='id identifier rubyid_parent'>parent</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='int'>1</span>
+<span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='id identifier rubyid_parent'>parent</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_children='>children=</span><span class='lparen'>(</span><span class='id identifier rubyid_values'>values</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_clear'>clear</span>
+  <span class='id identifier rubyid_values'>values</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_child'>child</span><span class='op'>|</span>
+    <span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_child'>child</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="chorded-instance_method">
+  
+    - (<tt>Object</tt>) <strong>chorded</strong> 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should return the chorded version of the node
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+241
+242
+243
+244</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 241</span>
+
+<span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_chorded_version'>chorded_version</span> <span class='op'>=</span> <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_chorded'>chorded</span>
+<span class='id identifier rubyid_chorded_version'>chorded_version</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='id identifier rubyid_node'>node</span>
+<span class='id identifier rubyid_chorded_version'>chorded_version</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_a'>be_a</span><span class='lparen'>(</span><span class='const'>Node</span><span class='op'>::</span><span class='const'>Base</span><span class='op'>::</span><span class='const'>ChordedVersion</span><span class='rparen'>)</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+40
+41
+42</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 40</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_chorded'>chorded</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='op'>::</span><span class='const'>ChordedVersion</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="definition-instance_method">
+  
+    - (<tt>Object</tt>) <strong>definition</strong>(target = self) 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should be the definition node which matches this node's name
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 67</span>
+
+<span class='id identifier rubyid_definition_bar'>definition_bar</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Intro</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_bar'>bar</span><span class='op'>|</span>
+  <span class='id identifier rubyid_bar'>bar</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+    <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:note_set</span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:note_set</span><span class='rparen'>)</span>
+  <span class='rbracket'>]</span>
+<span class='rbrace'>}</span>
+ <span class='id identifier rubyid_call_bar'>call_bar</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Intro</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_tab'>tab</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_definition_bar'>definition_bar</span><span class='comma'>,</span> <span class='id identifier rubyid_call_bar'>call_bar</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_call_bar'>call_bar</span><span class='period'>.</span><span class='id identifier rubyid_send'>send</span><span class='lparen'>(</span><span class='symbol'>:definition</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='id identifier rubyid_definition_bar'>definition_bar</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46
+47
+48
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_definition'>definition</span><span class='lparen'>(</span><span class='id identifier rubyid_target'>target</span> <span class='op'>=</span> <span class='kw'>self</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_definition_of?'>definition_of?</span><span class='lparen'>(</span><span class='id identifier rubyid_target'>target</span><span class='rparen'>)</span>
+    <span class='kw'>self</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_detect'>detect</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_node'>node</span><span class='op'>|</span> <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_definition_of?'>definition_of?</span><span class='lparen'>(</span><span class='id identifier rubyid_target'>target</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>?</span> <span class='id identifier rubyid_result'>result</span> <span class='op'>:</span> <span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_definition'>definition</span><span class='lparen'>(</span><span class='id identifier rubyid_target'>target</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="definition?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>definition?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should be true if this node has children
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+84
+85
+86
+87
+88</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 84</span>
+
+<span class='id identifier rubyid_definition_bar'>definition_bar</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Intro</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_bar'>bar</span><span class='op'>|</span>
+  <span class='id identifier rubyid_bar'>bar</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:note_set</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_bar'>bar</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:note_set</span><span class='rparen'>)</span>
+<span class='rbrace'>}</span>
+<span class='id identifier rubyid_definition_bar'>definition_bar</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_definition'>be_definition</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>should be true if the node has a value
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+92
+93
+94</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 92</span>
+
+<span class='id identifier rubyid_chord_set'>chord_set</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:chord_set</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='symbol'>:Am</span><span class='comma'>,</span> <span class='symbol'>:value</span> <span class='op'>=&gt;</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>r4-&quot;Am&quot; r r r</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_chord_set'>chord_set</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_empty'>be_empty</span>
+<span class='id identifier rubyid_chord_set'>chord_set</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_definition'>be_definition</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>should be false if this node does not have children and it does not have a value
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+98
+99
+100
+101</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 98</span>
+
+<span class='id identifier rubyid_call_bar'>call_bar</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Intro</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_call_bar'>call_bar</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_empty'>be_empty</span>
+<span class='id identifier rubyid_call_bar'>call_bar</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_nil'>be_nil</span>
+<span class='id identifier rubyid_call_bar'>call_bar</span><span class='period'>.</span><span class='id identifier rubyid_should_not'>should_not</span> <span class='id identifier rubyid_be_definition'>be_definition</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+53
+54
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 53</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_definition?'>definition?</span>
+  <span class='id identifier rubyid_has_children?'>has_children?</span> <span class='op'>||</span> <span class='op'>!</span> <span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="definition_children-instance_method">
+  
+    - (<tt>Object</tt>) <strong>definition_children</strong> 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should be its own children if they exist
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+5
+6
+7
+8
+9</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 5</span>
+
+<span class='id identifier rubyid_child'>child</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_parent'>parent</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_child'>child</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_parent'>parent</span><span class='period'>.</span><span class='id identifier rubyid_definition_children'>definition_children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='lbracket'>[</span><span class='id identifier rubyid_child'>child</span><span class='rbracket'>]</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>should be the children of its definition if the node is not a definition
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 13</span>
+
+<span class='id identifier rubyid_child'>child</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:note_set</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_definition_bar'>definition_bar</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Intro</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_tap'>tap</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_bar'>bar</span><span class='op'>|</span>
+  <span class='id identifier rubyid_bar'>bar</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_child'>child</span><span class='rbracket'>]</span>
+<span class='rbrace'>}</span>
+ <span class='id identifier rubyid_call_bar'>call_bar</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Intro</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_tab'>tab</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='id identifier rubyid_definition_bar'>definition_bar</span><span class='comma'>,</span> <span class='id identifier rubyid_call_bar'>call_bar</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_call_bar'>call_bar</span><span class='period'>.</span><span class='id identifier rubyid_definition_children'>definition_children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='lbracket'>[</span><span class='id identifier rubyid_child'>child</span><span class='rbracket'>]</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+25
+26
+27
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 25</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_definition_children'>definition_children</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_leaf?'>leaf?</span>
+    <span class='id identifier rubyid_definition'>definition</span> <span class='op'>?</span> <span class='id identifier rubyid_definition'>definition</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span> <span class='op'>:</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_children'>children</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="definition_name-instance_method">
+  
+    - (<tt>Object</tt>) <strong>definition_name</strong> 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should turn the name to a lilypond acceptable name
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+198
+199</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 198</span>
+
+<span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Verse 1 line-2</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_definition_name'>definition_name</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>VerseOneLineTwo</span><span class='tstring_end'>&quot;</span></span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+57
+58
+59
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 57</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_definition_name'>definition_name</span>
+  <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span>
+    <span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\W</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>_</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span>
+    <span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\d+</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_s'>s</span><span class='op'>|</span> <span class='const'>Utilities</span><span class='period'>.</span><span class='id identifier rubyid_id_as_word'>id_as_word</span><span class='lparen'>(</span><span class='id identifier rubyid_s'>s</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='period'>.</span>
+    <span class='id identifier rubyid_camelize'>camelize</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="definition_of?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>definition_of?</strong>(target) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_definition_of?'>definition_of?</span><span class='lparen'>(</span><span class='id identifier rubyid_target'>target</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_definition?'>definition?</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>==</span> <span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span> <span class='op'>==</span> <span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="definitions-instance_method">
+  
+    - (<tt>Object</tt>) <strong>definitions</strong>(klass) 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should be itself if it is an instance of the klass
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+147
+148
+149
+150
+151</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 147</span>
+
+<span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_add'>add</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:note_set</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_definition'>be_definition</span>
+ <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lparen'>(</span><span class='const'>Node</span><span class='op'>::</span><span class='const'>Bar</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='lbracket'>[</span><span class='id identifier rubyid_node'>node</span><span class='rbracket'>]</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>should include descendants which are instances of klass
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+155
+156
+157
+158
+159
+160</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 155</span>
+
+<span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
+  <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:note_set</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='comma'>,</span>
+  <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:note_set</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='rbracket'>]</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lparen'>(</span><span class='const'>Node</span><span class='op'>::</span><span class='const'>Bar</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_have'>have</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_bars'>bars</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 68</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_definitions'>definitions</span><span class='lparen'>(</span><span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_definition?'>definition?</span> <span class='op'>?</span> <span class='lbracket'>[</span><span class='kw'>self</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_child'>child</span><span class='op'>|</span> <span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_definitions'>definitions</span><span class='lparen'>(</span><span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="descendants-instance_method">
+  
+    - (<tt>Object</tt>) <strong>descendants</strong>(klass) 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should be itself if it is an instance of the klass
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+205
+206</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 205</span>
+
+<span class='id identifier rubyid_tab'>tab</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_tab'>tab</span><span class='period'>.</span><span class='id identifier rubyid_descendants'>descendants</span><span class='lparen'>(</span><span class='const'>Node</span><span class='op'>::</span><span class='const'>Tab</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='lbracket'>[</span><span class='id identifier rubyid_tab'>tab</span><span class='rbracket'>]</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>should include descendants which are instances of klass
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+210
+211
+212
+213
+214
+215
+216</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 210</span>
+
+<span class='id identifier rubyid_tab'>tab</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
+  <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='symbol'>:Intro</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
+    <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:note_set</span><span class='rparen'>)</span>
+  <span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='rbracket'>]</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_tab'>tab</span><span class='period'>.</span><span class='id identifier rubyid_descendants'>descendants</span><span class='lparen'>(</span><span class='const'>Node</span><span class='op'>::</span><span class='const'>Bar</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_have'>have</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_bar'>bar</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>should follow the definitions of node references for descendants
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 220</span>
+
+<span class='id identifier rubyid_tab'>tab</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
+  <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='symbol'>:Intro</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:note_set</span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='comma'>,</span>
+   <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:line</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Line 1</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
+    <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='symbol'>:Intro</span> <span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='rbracket'>]</span><span class='rparen'>)</span><span class='comma'>,</span>
+   <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:stanza</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
+    <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:line</span><span class='comma'>,</span> <span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Line 1</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='rbracket'>]</span><span class='rparen'>)</span>
+<span class='rbracket'>]</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_bar'>bar</span> <span class='op'>=</span> <span class='id identifier rubyid_tab'>tab</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+ <span class='id identifier rubyid_stanza'>stanza</span> <span class='op'>=</span> <span class='id identifier rubyid_tab'>tab</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_stanza'>stanza</span><span class='period'>.</span><span class='id identifier rubyid_descendants'>descendants</span><span class='lparen'>(</span><span class='const'>Node</span><span class='op'>::</span><span class='const'>Bar</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='lbracket'>[</span><span class='id identifier rubyid_bar'>bar</span><span class='rbracket'>]</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+72
+73
+74</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 72</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_descendants'>descendants</span><span class='lparen'>(</span><span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='lbracket'>[</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_definition'>definition</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_definition_children'>definition_children</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_child'>child</span><span class='op'>|</span> <span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_descendants'>descendants</span><span class='lparen'>(</span><span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="id_as_word-instance_method">
+  
+    - (<tt>Object</tt>) <strong>id_as_word</strong> 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should camelize if necessary
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+191
+192</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 191</span>
+
+<span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='comma'>,</span> <span class='symbol'>:id</span> <span class='op'>=&gt;</span> <span class='int'>24</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_id_as_word'>id_as_word</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>TwentyFour</span><span class='tstring_end'>&quot;</span></span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76
+77
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_id_as_word'>id_as_word</span>
+  <span class='const'>Utilities</span><span class='period'>.</span><span class='id identifier rubyid_id_as_word'>id_as_word</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="inspect-instance_method">
+  
+    - (<tt>Object</tt>) <strong>inspect</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+80
+81
+82</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 80</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_inspect'>inspect</span>
+  <span class='const'>Utilities</span><span class='period'>.</span><span class='id identifier rubyid_inspect_attributes'>inspect_attributes</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='symbol'>:name</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="stanza_version-instance_method">
+  
+    - (<tt>Object</tt>) <strong>stanza_version</strong> 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should be a stanza version of the node
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+250
+251
+252
+253</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 250</span>
+
+<span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_stanza_version'>stanza_version</span> <span class='op'>=</span> <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_stanza_version'>stanza_version</span>
+<span class='id identifier rubyid_stanza_version'>stanza_version</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='id identifier rubyid_node'>node</span>
+<span class='id identifier rubyid_stanza_version'>stanza_version</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_a'>be_a</span><span class='lparen'>(</span><span class='const'>Node</span><span class='op'>::</span><span class='const'>Base</span><span class='op'>::</span><span class='const'>StanzaVersion</span><span class='rparen'>)</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+88
+89
+90</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 88</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_stanza_version'>stanza_version</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='op'>::</span><span class='const'>StanzaVersion</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="voiced_as-instance_method">
+  
+    - (<tt>Object</tt>) <strong>voiced_as</strong>(arg) 
+  
+
+  
+</p>
+<div class="tags">
+  <h3>Specifications:</h3>
+  <ul class="specs">
+    
+      <li>should return the voiced version of the node, if arg is a voice
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+119
+120
+121
+122
+123
+124
+125</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 119</span>
+
+<span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_voice'>voice</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:voice</span><span class='rparen'>)</span>
+ <span class='id identifier rubyid_node_voice_pair'>node_voice_pair</span> <span class='op'>=</span> <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_voiced_as'>voiced_as</span><span class='lparen'>(</span><span class='id identifier rubyid_voice'>voice</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_node_voice_pair'>node_voice_pair</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_a'>be_a</span><span class='lparen'>(</span><span class='const'>Node</span><span class='op'>::</span><span class='const'>Base</span><span class='op'>::</span><span class='const'>VoicedVersion</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_node_voice_pair'>node_voice_pair</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='id identifier rubyid_node'>node</span>
+<span class='id identifier rubyid_node_voice_pair'>node_voice_pair</span><span class='period'>.</span><span class='id identifier rubyid_voice'>voice</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='id identifier rubyid_voice'>voice</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>should return the voiced versions of the node, if arg are voices
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/node/base_spec.rb', line 129</span>
+
+<span class='id identifier rubyid_node'>node</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:base</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_voices'>voices</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:voice</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:voice</span><span class='rparen'>)</span><span class='rbracket'>]</span>
+ <span class='id identifier rubyid_node_voice_pairs'>node_voice_pairs</span> <span class='op'>=</span> <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_voiced_as'>voiced_as</span><span class='lparen'>(</span><span class='id identifier rubyid_voices'>voices</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_node_voice_pairs'>node_voice_pairs</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='int'>2</span>
+ <span class='id identifier rubyid_node_voice_pairs'>node_voice_pairs</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_pair'>pair</span><span class='op'>|</span>
+  <span class='id identifier rubyid_pair'>pair</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_a'>be_a</span><span class='lparen'>(</span><span class='const'>Node</span><span class='op'>::</span><span class='const'>Base</span><span class='op'>::</span><span class='const'>VoicedVersion</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_pair'>pair</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='id identifier rubyid_node'>node</span>
+<span class='kw'>end</span>
+ <span class='id identifier rubyid_node_voice_pairs'>node_voice_pairs</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_voice'>voice</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='id identifier rubyid_voices'>voices</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+<span class='id identifier rubyid_node_voice_pairs'>node_voice_pairs</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_voice'>voice</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='id identifier rubyid_voices'>voices</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+  </ul>
+</div>
+<table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98
+99
+100
+101
+102
+103
+104</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/gitara/node/base.rb', line 96</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_voiced_as'>voiced_as</span><span class='lparen'>(</span><span class='id identifier rubyid_arg'>arg</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_arg'>arg</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Voice</span><span class='rparen'>)</span>
+    <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='op'>::</span><span class='const'>VoicedVersion</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='symbol'>:voice</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_arg'>arg</span><span class='rparen'>)</span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_arg'>arg</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Array</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_arg'>arg</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_voice'>voice</span><span class='op'>|</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_voiced_as'>voiced_as</span><span class='lparen'>(</span><span class='id identifier rubyid_voice'>voice</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Sun Apr  1 18:39:20 2012 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.5 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>
