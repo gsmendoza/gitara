@@ -37,7 +37,7 @@ Gitara is a Ruby DSL. A typical Gitara file will have the following structure:
       end
     end
 
-You can find examples in the examples directory.
+You can find examples at https://github.com/gsmendoza/gitara/tree/master/examples.
 
 
 Bars
