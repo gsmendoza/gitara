@@ -255,6 +255,7 @@ A gitara file can have the following properties:
       midi_instrument "acoustic guitar (nylon)"
       string_tunings "#guitar-tuning"
       tempo "4 = 75"
+      time "4/4"
       transposition "d"
     end
 
@@ -265,6 +266,7 @@ A gitara file can have the following properties:
 * midi_instrument - the type of instrument played in the midi export of the tab. By default, "acoustic guitar (nylon)".
 * [string_tunings](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Common-notation-for-fretted-strings#Custom-tablatures)
 * [tempo](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-parts#Metronome-marks)
+* [time](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Displaying-rhythms#Time-signature) - default is 4/4
 * title - title of the song
 * transposition - adjusts the pitch of the instrument. The default transposition is "c". If you set it to "d", then you have to play the tab two frets higher on the guitar (capo on second fret).
 
