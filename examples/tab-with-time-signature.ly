@@ -6,94 +6,73 @@
 }
 
 \header {
-  title = "<%= self.title %>"
-  composer = "<%= self.composer %>"
-  arranger = "<%= self.arranger %>"
-  instrument = "<%= self.instrument %>"
+  title = ""
+  composer = ""
+  arranger = ""
+  instrument = ""
 }
 
 %-----------------------------------------------------------------------
 % Chord Sets
-
-<% definitions(Gitara::Node::ChordSet).each do |chord_set| %>
-<%= Gitara.render('chord_set', chord_set) %>
-<% end %>
-
 %-----------------------------------------------------------------------
 % Bars
 
-<% definitions(Gitara::Node::Bar).each do |bar| %>
-<%= Gitara.render('bar', bar) %>
-<% end %>
+vOneBarCChordBarOne = {  c4 e4 }
+cBarCChordBarOne = {   }
+sBarCChordBarOne = {  r4^"C chord" r4 }
 
+vOneBarCChordBarTwo = {  g2 }
+cBarCChordBarTwo = {   }
+sBarCChordBarTwo = {  r4 r4 }
 %-----------------------------------------------------------------------
 % Lines
-
-<% definitions(Gitara::Node::Line).each do |line| %>
-<%= Gitara.render('line', line) %>
-<% end %>
-
 %-----------------------------------------------------------------------
 % Stanzas
 
-<% definitions(Gitara::Node::Stanza).each do |stanza| %>
-<%= Gitara.render('stanza', stanza) %>
-<% end %>
-
+vOneStanzaCChord = { \vOneBarCChordBarOne \vOneBarCChordBarTwo }
+cStanzaCChord = { \cBarCChordBarOne \cBarCChordBarTwo }
+sStanzaCChord = { \sBarCChordBarOne \sBarCChordBarTwo }
 %-----------------------------------------------------------------------
 % Scores
-
-<% definitions(Gitara::Node::Score).each do |score| %>
-<%= Gitara.render('score', score) %>
-<% end %>
-
 %-----------------------------------------------------------------------
 % Voices
 
-<% voices.each do |voice| %>
-<%= Gitara.render('voice', voice) %>
-<% end %>
-
+vOne = {
+  \vOneStanzaCChord
+}
 %-----------------------------------------------------------------------
 % Stanza Headings
 
-stanzaHeadings = { <%= playable_child.stanza_version.call_name %> }
+stanzaHeadings = { \sStanzaCChord }
 
 %-----------------------------------------------------------------------
 % Chord Headings
 
-chordHeadings = { <%= playable_child.chorded.call_name %> }
+chordHeadings = { \cStanzaCChord }
 
 %-----------------------------------------------------------------------
 
 \score {
   \new StaffGroup <<
     \new Staff <<
-      <%= Gitara.render('tab_time', self) %>
-      <%= Gitara.render('tab_tempo', self) %>
+      \time 2/4
       \clef "treble_8"
 
       \new Voice \with { \remove Rest_engraver } {
         \stanzaHeadings
       }
 
-      <% voices.each do |voice| %>
       \new Voice {
-        <%= self.key && "\\key #{self.key}" %>
-        <%= voice.stem_type %>
-        <%= voice.call_name %>
+        \voiceOne
+        \vOne
       }
-      <% end %>
     >>
 
     \new TabStaff <<
-      <%= self.string_tunings && "\\set TabStaff.stringTunings = #{self.string_tunings}" %>
-      <% voices.each do |voice| %>
       \new TabVoice {
         \slurUp
-        <%= voice.call_name %>
+        \vOne
       }
-      <% end %>
       \new TabVoice {
         \chordHeadings
       }
@@ -121,17 +100,14 @@ chordHeadings = { <%= playable_child.chorded.call_name %> }
 
 % showLastLength = R1*4
 \score {
-  \new Staff \with {midiInstrument = #"<%= self.midi_instrument %>"} <<
-    <%= Gitara.render('tab_tempo', self) %>
+  \new Staff \with {midiInstrument = #"acoustic guitar (nylon)"} <<
     \clef "treble_8"
 
-    <% voices.each do |voice| %>
     \new Voice {
       \unfoldRepeats {
-        <%= voice.call_name %>
+        \vOne
       }
     }
-    <% end %>
   >>
 
   \midi {}

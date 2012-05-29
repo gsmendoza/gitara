@@ -50,4 +50,16 @@ describe Gitara::Node::Tab do
       tab.midi_instrument.should == 'acoustic guitar (nylon)'
     end
   end
+
+  describe "#time_signature" do
+    it "should be based on time if it exists" do
+      tab = FactoryGirl.build(:tab, :time => '3/4')
+      tab.time_signature.value.should == '3/4'
+    end
+
+    it "should be 4/4 if time is not set" do
+      tab = FactoryGirl.build(:tab, :time => nil)
+      tab.time_signature.value.should == '4/4'
+    end
+  end
 end

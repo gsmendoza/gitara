@@ -22,27 +22,37 @@ describe Gitara::Node::Bar do
     it "should be a whole rest with the stanza name if the bar is the first node of a stanza" do
       bar = FactoryGirl.build(:bar)
       stanza = FactoryGirl.build(:stanza, :name => 'Intro', :children => [bar])
+      tab = FactoryGirl.build(:tab, :children => [stanza], :time => '4/4')
 
       bar.stanza_heading.should == 'r1^"Intro"'
     end
 
     it "should be a whole rest with no stanza name if the bar is not the first node of a stanza" do
-      bar = FactoryGirl.build(:bar)
-      bar.stanza_heading.should == 'r1'
+      first_bar = FactoryGirl.build(:bar)
+      second_bar = FactoryGirl.build(:bar)
+      stanza = FactoryGirl.build(:stanza, :name => 'Intro', :children => [first_bar, second_bar])
+      tab = FactoryGirl.build(:tab, :children => [stanza], :time => '4/4')
+
+      second_bar.stanza_heading.should == 'r1'
     end
   end
 
   describe "#with a special_duration" do
-    subject { FactoryGirl.build(:bar, :specified_duration => 8) }
-
     it "should be a partial with the stanza name if the bar is the first node of a stanza" do
+      subject = FactoryGirl.build(:bar, :specified_duration => 8)
       stanza = FactoryGirl.build(:stanza, :name => 'Intro', :children => [subject])
+      tab = FactoryGirl.build(:tab, :children => [stanza], :time => '4/4')
 
       subject.stanza_heading.should == 'r8^"Intro"'
     end
 
     it "should be a partial with no stanza name if the subject is not the first node of a stanza" do
-      subject.stanza_heading.should == 'r8'
+      first_bar = FactoryGirl.build(:bar)
+      second_bar = FactoryGirl.build(:bar, :specified_duration => 8)
+      stanza = FactoryGirl.build(:stanza, :name => 'Intro', :children => [first_bar, second_bar])
+      tab = FactoryGirl.build(:tab, :children => [stanza], :time => '4/4')
+
+      second_bar.stanza_heading.should == 'r8'
     end
   end
 
@@ -78,13 +88,21 @@ describe Gitara::Node::Bar do
     end
   end
 
-  describe "#duration" do
-    it "should be 1 if there is no specified duration" do
-      FactoryGirl.build(:bar, :specified_duration => nil).duration.should == 1
+  describe "#stanza_heading_for_first_bar" do
+    it "should be the time signature's rest bar value with the stanza name if the time signature will generate whole note bars" do
+      bar = FactoryGirl.build(:bar)
+      stanza = FactoryGirl.build(:stanza, :name => 'Intro', :children => [bar])
+      tab = FactoryGirl.build(:tab, :children => [stanza], :time => '4/4')
+
+      bar.stanza_heading_for_first_bar.should == 'r1^"Intro"'
     end
 
-    it "should be the specified duration if present" do
-      FactoryGirl.build(:bar, :specified_duration => 8).duration.should == 8
+    it "should attach the stanza name to the first rest note if the time signature will not generate whole note bars" do
+      bar = FactoryGirl.build(:bar)
+      stanza = FactoryGirl.build(:stanza, :name => 'Intro', :children => [bar])
+      tab = FactoryGirl.build(:tab, :children => [stanza], :time => '3/4')
+
+      bar.stanza_heading_for_first_bar.should == 'r4^"Intro" r4 r4'
     end
   end
 end

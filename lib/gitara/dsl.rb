@@ -18,6 +18,7 @@ module Gitara
     can_add_property :midi_instrument
     can_add_property :string_tunings
     can_add_property :tempo
+    can_add_property :time
     can_add_property :title
     can_add_property :transposition
 

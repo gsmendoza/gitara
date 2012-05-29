@@ -49,6 +49,9 @@ FactoryGirl.define do
     children [FactoryGirl.build(:score)]
   end
 
+  factory :time_signature, :class => TimeSignature do
+  end
+
   factory :voice, :class => Voice do
   end
 

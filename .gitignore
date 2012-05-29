@@ -3,6 +3,7 @@
 git.bundle
 .geanyprj
 .rvmrc
+.switch_file
 .yardoc
 Gemfile.lock
 doc/*

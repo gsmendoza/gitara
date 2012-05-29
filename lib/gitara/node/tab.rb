@@ -10,6 +10,7 @@ module Gitara
       has_value :midi_instrument, :default => "acoustic guitar (nylon)"
       has_value :string_tunings
       has_value :tempo
+      has_value :time
       has_value :title
       has_value :transposition
 
@@ -19,6 +20,10 @@ module Gitara
 
       def playable_child
         definition_children.last
+      end
+
+      def time_signature
+        @time_signature ||= TimeSignature.new(:value => time || '4/4')
       end
 
       def voices
