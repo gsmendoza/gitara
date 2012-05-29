@@ -272,6 +272,30 @@
         </div>
       </li>
     
+      <li>can convert a tab with a specified time to lilypond
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+35
+36
+37</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/app_spec.rb', line 35</span>
+
+<span class='id identifier rubyid_app_test'>app_test</span> <span class='op'>=</span> <span class='const'>AppTester</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tab-with-time-signature</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_app_test'>app_test</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span>
+<span class='id identifier rubyid_app_test'>app_test</span><span class='period'>.</span><span class='id identifier rubyid_actual'>actual</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='id identifier rubyid_app_test'>app_test</span><span class='period'>.</span><span class='id identifier rubyid_expected'>expected</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
   </ul>
 </div>
 <table class="source_code">
@@ -316,7 +340,7 @@
 </div>
     
     <div id="footer">
-  Generated on Sun Apr  1 18:39:19 2012 by 
+  Generated on Tue May 29 14:53:13 2012 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.5 (ruby-1.9.3).
 </div>
