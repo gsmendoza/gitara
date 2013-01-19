@@ -1,11 +1,13 @@
 *.gem
 *.ps
 git.bundle
+.bundle
 .geanyprj
 .rvmrc
 .switch_file
 .yardoc
 Gemfile.lock
+b/*
 doc/*
 files/*
 pkg/*
