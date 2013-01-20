@@ -142,7 +142,7 @@ Gitara.define do
       end
       
       alternative do 
-        line do 
+        line manual_break: false do 
           bar do
             notes "<fs'/1>4. <d'/2>4 <a/3>4 <d'~/2>8 "
             notes "<d,/6>4 <d/4>4 <d,/6>4 <d/4>4 "
@@ -334,7 +334,7 @@ Gitara.define do
       end
       
       alternative do
-        line do
+        line manual_break: false do
           bar do
             notes "<fs'/1>4. <d'/2>4 <a/3>4 <d'~/2>8 "
             notes "<d,/6>4 <d/4>4 <d,/6>4 <d/4>4 "

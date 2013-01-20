@@ -343,8 +343,8 @@ vTwoLineChorusRepeatOneLineOne = { \vTwoBarChorusRepeatOneLineOneBarOne \vTwoBar
 cLineChorusRepeatOneLineOne = { \cBarChorusRepeatOneLineOneBarOne \cBarChorusRepeatOneLineOneBarTwo \cBarChorusRepeatOneLineOneBarThree \cBarChorusRepeatOneLineOneBarFour }
 sLineChorusRepeatOneLineOne = { \sBarChorusRepeatOneLineOneBarOne \sBarChorusRepeatOneLineOneBarTwo \sBarChorusRepeatOneLineOneBarThree \sBarChorusRepeatOneLineOneBarFour }
 
-vOneLineChorusAlternativeOneLineOne = { \vOneBarChorusAlternativeOneLineOneBarOne \vOneBarChorusAlternativeOneLineOneBarTwo \break }
-vTwoLineChorusAlternativeOneLineOne = { \vTwoBarChorusAlternativeOneLineOneBarOne \vTwoBarChorusAlternativeOneLineOneBarTwo \break }
+vOneLineChorusAlternativeOneLineOne = { \vOneBarChorusAlternativeOneLineOneBarOne \vOneBarChorusAlternativeOneLineOneBarTwo  }
+vTwoLineChorusAlternativeOneLineOne = { \vTwoBarChorusAlternativeOneLineOneBarOne \vTwoBarChorusAlternativeOneLineOneBarTwo  }
 cLineChorusAlternativeOneLineOne = { \cBarChorusAlternativeOneLineOneBarOne \cBarChorusAlternativeOneLineOneBarTwo }
 sLineChorusAlternativeOneLineOne = { \sBarChorusAlternativeOneLineOneBarOne \sBarChorusAlternativeOneLineOneBarTwo }
 
@@ -383,8 +383,8 @@ vTwoLineChorusTwoRepeatOneLineOne = { \vTwoBarChorusTwoRepeatOneLineOneBarOne \v
 cLineChorusTwoRepeatOneLineOne = { \cBarChorusTwoRepeatOneLineOneBarOne \cBarChorusTwoRepeatOneLineOneBarTwo \cBarChorusTwoRepeatOneLineOneBarThree \cBarChorusTwoRepeatOneLineOneBarFour }
 sLineChorusTwoRepeatOneLineOne = { \sBarChorusTwoRepeatOneLineOneBarOne \sBarChorusTwoRepeatOneLineOneBarTwo \sBarChorusTwoRepeatOneLineOneBarThree \sBarChorusTwoRepeatOneLineOneBarFour }
 
-vOneLineChorusTwoAlternativeOneLineOne = { \vOneBarChorusTwoAlternativeOneLineOneBarOne \vOneBarChorusTwoAlternativeOneLineOneBarTwo \break }
-vTwoLineChorusTwoAlternativeOneLineOne = { \vTwoBarChorusTwoAlternativeOneLineOneBarOne \vTwoBarChorusTwoAlternativeOneLineOneBarTwo \break }
+vOneLineChorusTwoAlternativeOneLineOne = { \vOneBarChorusTwoAlternativeOneLineOneBarOne \vOneBarChorusTwoAlternativeOneLineOneBarTwo  }
+vTwoLineChorusTwoAlternativeOneLineOne = { \vTwoBarChorusTwoAlternativeOneLineOneBarOne \vTwoBarChorusTwoAlternativeOneLineOneBarTwo  }
 cLineChorusTwoAlternativeOneLineOne = { \cBarChorusTwoAlternativeOneLineOneBarOne \cBarChorusTwoAlternativeOneLineOneBarTwo }
 sLineChorusTwoAlternativeOneLineOne = { \sBarChorusTwoAlternativeOneLineOneBarOne \sBarChorusTwoAlternativeOneLineOneBarTwo }
 
