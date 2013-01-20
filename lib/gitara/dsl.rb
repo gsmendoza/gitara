@@ -31,7 +31,12 @@ module Gitara
       names = options[:names].empty? ? [nil] : options[:names]
       node_class = options[:node_class]
 
-      names.map{|name| node_class.new(:name => name) }.each do |child|
+      children = names.map{|name| 
+        attributes = (options[:options] || {}).merge(:name => name)
+        node_class.new(attributes) 
+      }
+      
+      children.each do |child|
         add child, &block
       end
     end
@@ -49,7 +54,10 @@ module Gitara
     end
 
     def line(*names, &block)
-      add_names :names => names, :node_class => Node::Line, &block
+      args = {}
+      args[:options] = names.pop if names.last.is_a?(Hash)
+      args.merge!(:names => names, :node_class => Node::Line)
+      add_names args, &block
     end
 
     def notes(value)

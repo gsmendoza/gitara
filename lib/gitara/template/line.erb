@@ -1,5 +1,5 @@
 <% self.voiced_as(self.root.voices).each do |voiced_line| %>
-<%= voiced_line.definition_name %> = { <%= voiced_line.value %> \break }
+<%= voiced_line.definition_name %> = { <%= voiced_line.value %> <%= voiced_line.node.manual_break? ? '\break' : '' %> }
 <% end %>
 <%= self.chorded.definition_name %> = { <%= self.chorded.value %> }
 <%= self.stanza_version.definition_name %> = { <%= self.stanza_version.value %> }

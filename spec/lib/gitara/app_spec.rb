@@ -37,5 +37,11 @@ describe Gitara::App do
       app_test.run
       app_test.actual.should == app_test.expected
     end
+
+    it "can convert a tab with a line without a break to lilypond" do
+      app_test = AppTester.new(:name => 'tab-with-line-with-no-break')
+      app_test.run
+      app_test.actual.should == app_test.expected
+    end
   end
 end

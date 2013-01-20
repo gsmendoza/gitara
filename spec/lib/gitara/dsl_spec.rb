@@ -109,6 +109,15 @@ describe Gitara::Dsl do
       line.children.should have(1).bar
       line.children[0].should == bar
     end
+    
+    it "should allow breaking to be toggled" do
+      dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
+      dsl.line :manual_break => false
+      
+      dsl.node.children.should have(1).line
+      dsl.node.children[0].name.should == 'TabOneLineOne' # not manual_breaking=false
+      dsl.node.children[0].manual_break?.should be_false
+    end
   end
 
   describe "#add_names" do
@@ -134,6 +143,19 @@ describe Gitara::Dsl do
       dsl.node.children.should have(1).bar
       dsl.node.children[0].attributes[:name].should be_nil
       dsl.node.children[0].should be_a(Node::Bar)
+    end
+    
+    it "should set o[:options] as attributes of the nodes" do
+      dsl = FactoryGirl.build(:dsl, :node => FactoryGirl.build(:tab, :children => []))
+      dsl.node.children.should be_empty
+
+      dsl.add_names :names => [:Intro, :Intro], :options => {:value => 1 }, :node_class => Node::Base
+
+      dsl.node.children.should have(2).nodes
+      dsl.node.children.each do |child|
+        child.name.should == :Intro
+        child.value.should == 1
+      end
     end
   end
 
