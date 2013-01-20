@@ -116,11 +116,6 @@ Gitara.define do
       end
     end
 
-    #bar do
-      #notes "/repeat volta 1 {"
-      #notes "/repeat volta 1 {"
-    #end
-    
     stanza "Chorus" do
       repeat 2 do
         line do
