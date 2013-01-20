@@ -3,8 +3,8 @@ Gitara.define do
   composer "Foo Fighters"
   arranger "Arranged by George Mendoza"
   instrument "DADGBE (capo on second fret)"
+  key 'g \major'
   midi_instrument "acoustic guitar (nylon)"
-
   string_tunings "#guitar-drop-d-tuning"
   tempo "4 = 100"
   transposition "d"

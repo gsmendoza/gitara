@@ -491,12 +491,12 @@ chordHeadings = { \cScoreTabOneScoreOne }
       }
 
       \new Voice {
-        
+        \key g \major
         \voiceOne
         \vOne
       }
       \new Voice {
-        
+        \key g \major
         \voiceTwo
         \vTwo
       }
