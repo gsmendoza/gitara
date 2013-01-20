@@ -1,3 +1,8 @@
+0.8.0 - 2012-05-30
+------------------
+
+* [#25] I should be able to disable manual breaking on some lines.
+
 0.7.0 - 2012-05-30
 ------------------
 

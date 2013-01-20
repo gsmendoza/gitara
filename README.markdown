@@ -115,7 +115,10 @@ You can group bars in a line:
       bar :SaDibdibMoyBuhay
     end
 
-Lines are [manually breaked](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Line-breaking) in Gitara.
+Lines are [manually breaked](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Line-breaking) in Gitara. You can disable a line break by setting `manual_break` to false:
+
+    line :LineOne, :manual_break => false do
+    end
 
 ### Stanzas
 
