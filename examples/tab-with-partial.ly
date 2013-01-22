@@ -51,7 +51,7 @@ sLineVerseLineOne = { \sBarVerseLineOneBarOne \sBarVerseLineOneBarTwo }
 vOneStanzaVerse = { \vOneLineVerseLineOne }
 vTwoStanzaVerse = { \vTwoLineVerseLineOne }
 cStanzaVerse = { \cLineVerseLineOne }
-sStanzaVerse = { r1^"Verse" r }
+sStanzaVerse = { r8^"Verse" r1 }
 
 
 %-----------------------------------------------------------------------

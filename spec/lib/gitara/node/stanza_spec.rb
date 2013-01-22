@@ -10,7 +10,9 @@ describe Gitara::Node::Stanza do
         ])
       ])
 
-      stanza.heading_in_lilypond.should == 'r1^"Verse 1" r'
+      tab = FactoryGirl.build(:tab, :time => '4/4', :children => [stanza])
+
+      stanza.heading_in_lilypond.should == 'r1^"Verse 1" r1'
     end
   end
 end

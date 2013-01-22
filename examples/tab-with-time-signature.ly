@@ -31,7 +31,7 @@ sBarCChordBarTwo = {  r4 r4 }
 
 vOneStanzaCChord = { \vOneBarCChordBarOne \vOneBarCChordBarTwo }
 cStanzaCChord = { \cBarCChordBarOne \cBarCChordBarTwo }
-sStanzaCChord = { r1^"C chord" r }
+sStanzaCChord = { r4^"C chord" r4 r4 r4 }
 %-----------------------------------------------------------------------
 % Scores
 %-----------------------------------------------------------------------
