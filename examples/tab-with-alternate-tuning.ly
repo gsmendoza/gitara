@@ -85,7 +85,7 @@ chordHeadings = { \cBarTabOneBarOne }
     >>
 
     \new TabStaff <<
-      \set TabStaff.stringTunings = #'(4 -1 -5 -10 -15 -22)
+      \set TabStaff.stringTunings = #guitar-drop-d-tuning
       \new TabVoice {
         \slurUp
         \vOne

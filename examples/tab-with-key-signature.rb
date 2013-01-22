@@ -1,6 +1,6 @@
 Gitara.define do
   key 'd \major'
-  string_tunings "#'(4 -1 -5 -10 -15 -22)" # Drop D
+  string_tunings "#guitar-drop-d-tuning"
   tempo "4 = 100"
   transposition "d"
 
