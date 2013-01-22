@@ -6,94 +6,78 @@
 }
 
 \header {
-  title = "Huling El Bimbo"
-  composer = "Eraserheads"
-  arranger = "Arranged by George Mendoza"
-  instrument = "Guitar (capo on first fret)"
+  title = ""
+  composer = ""
+  arranger = ""
+  instrument = ""
 }
 
 %-----------------------------------------------------------------------
 % Chord Sets
 
-cChordSetG = { r1-"G" }
-cChordSetGEight = { r8-"G" }
-cChordSetC = { r1-"C" }
-cChordSetASeven = { r1-"A7" }
-cChordSetEm = { r1-"Em" }
-cChordSetD = { r1-"D" }
 
 %-----------------------------------------------------------------------
 % Bars
 
-vOneBarVerseLineOneBarOne = { \partial 8 <g\3>8 }
-vTwoBarVerseLineOneBarOne = { \partial 8 r8 }
-cBarVerseLineOneBarOne = { \partial 8 \cChordSetGEight }
-sBarVerseLineOneBarOne = { \partial 8 r8^"Verse" }
-
-vOneBarVerseLineOneBarTwo = {  <a\3>16\glissando <b\3>16 <b\3>4 r16 <a\3>16\glissando <b\3>4. <a\3>16( <g\3>16) }
-vTwoBarVerseLineOneBarTwo = {  r1 }
-cBarVerseLineOneBarTwo = {  \cChordSetG }
-sBarVerseLineOneBarTwo = {  r1 }
+vOneBarIntro = {  <g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8 }
+vTwoBarIntro = {  <f\4>4 <f\4>4 <c\5>4  <e\4>4 }
+cBarIntro = {   }
+sBarIntro = {  r1 }
 
 
 %-----------------------------------------------------------------------
 % Lines
 
-vOneLineVerseLineOne = { \vOneBarVerseLineOneBarOne \vOneBarVerseLineOneBarTwo \break }
-vTwoLineVerseLineOne = { \vTwoBarVerseLineOneBarOne \vTwoBarVerseLineOneBarTwo \break }
-cLineVerseLineOne = { \cBarVerseLineOneBarOne \cBarVerseLineOneBarTwo }
-sLineVerseLineOne = { \sBarVerseLineOneBarOne \sBarVerseLineOneBarTwo }
+vOneLineIntroLineOne = { \vOneBarIntro \vOneBarIntro \vOneBarIntro \vOneBarIntro \break }
+vTwoLineIntroLineOne = { \vTwoBarIntro \vTwoBarIntro \vTwoBarIntro \vTwoBarIntro \break }
+cLineIntroLineOne = { \cBarIntro \cBarIntro \cBarIntro \cBarIntro }
+sLineIntroLineOne = { \sBarIntro \sBarIntro \sBarIntro \sBarIntro }
 
 
 %-----------------------------------------------------------------------
 % Stanzas
 
-vOneStanzaVerse = { \vOneLineVerseLineOne }
-vTwoStanzaVerse = { \vTwoLineVerseLineOne }
-cStanzaVerse = { \cLineVerseLineOne }
-sStanzaVerse = { r1^"Verse" r }
+vOneStanzaIntro = { \vOneLineIntroLineOne }
+vTwoStanzaIntro = { \vTwoLineIntroLineOne }
+cStanzaIntro = { \cLineIntroLineOne }
+sStanzaIntro = { r1^"Intro" r r r }
 
 
 %-----------------------------------------------------------------------
 % Scores
-
-vOneScoreTabOneScoreOne = { \vOneStanzaVerse }
-vTwoScoreTabOneScoreOne = { \vTwoStanzaVerse }
-cScoreTabOneScoreOne = { \cStanzaVerse }
-sScoreTabOneScoreOne = { \sStanzaVerse }
 
 
 %-----------------------------------------------------------------------
 % Voices
 
 vOne = {
-  \transposition cs''
-  \vOneScoreTabOneScoreOne
+  
+  \vOneStanzaIntro
 }
 
 vTwo = {
-  \transposition cs'
-  \vTwoScoreTabOneScoreOne
+  
+  \vTwoStanzaIntro
 }
 
 
 %-----------------------------------------------------------------------
 % Stanza Headings
 
-stanzaHeadings = { \sScoreTabOneScoreOne }
+stanzaHeadings = { \sStanzaIntro }
 
 %-----------------------------------------------------------------------
 % Chord Headings
 
-chordHeadings = { \cScoreTabOneScoreOne }
+chordHeadings = { \cStanzaIntro }
 
 %-----------------------------------------------------------------------
 
 \score {
   \new StaffGroup <<
     \new Staff <<
-      \tempo 4 = 90
-
+      
+      
       \clef "treble_8"
 
       \new Voice \with { \remove Rest_engraver } {
@@ -101,16 +85,19 @@ chordHeadings = { \cScoreTabOneScoreOne }
       }
 
       \new Voice {
+        
         \voiceOne
         \vOne
       }
       \new Voice {
+        
         \voiceTwo
         \vTwo
       }
     >>
 
     \new TabStaff <<
+      
       \new TabVoice {
         \slurUp
         \vOne
@@ -147,8 +134,7 @@ chordHeadings = { \cScoreTabOneScoreOne }
 % showLastLength = R1*4
 \score {
   \new Staff \with {midiInstrument = #"acoustic guitar (nylon)"} <<
-    \tempo 4 = 90
-
+    
     \clef "treble_8"
 
     \new Voice {

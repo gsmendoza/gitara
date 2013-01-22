@@ -43,5 +43,11 @@ describe Gitara::App do
       app_test.run
       app_test.actual.should == app_test.expected
     end
+
+    it "can convert a tab with a reused bar inside a stanza to lilypond" do
+      app_test = AppTester.new(:name => 'tab-with-reused-bar-in-stanza')
+      app_test.run
+      app_test.actual.should == app_test.expected
+    end
   end
 end

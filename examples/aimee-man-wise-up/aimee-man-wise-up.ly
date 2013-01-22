@@ -26,85 +26,85 @@ cChordSetFD = { r4-"F" r r-"D" r }
 %-----------------------------------------------------------------------
 % Bars
 
-vOneBarBeforeYouSign = { r8 <d'\2>16( <c'\2>8.) <a\3>16 <c'\2>8. <d'\2>16 <e'\1>8. <g\3>8 }
-vTwoBarBeforeYouSign = { <d\4>4 <d\4>4 <d\4>4 <d\4>4 }
-cBarBeforeYouSign = { \cChordSetD }
+vOneBarBeforeYouSign = {  r8 <d'\2>16( <c'\2>8.) <a\3>16 <c'\2>8. <d'\2>16 <e'\1>8. <g\3>8 }
+vTwoBarBeforeYouSign = {  <d\4>4 <d\4>4 <d\4>4 <d\4>4 }
+cBarBeforeYouSign = {  \cChordSetD }
 
-vOneBarBeganIt = { \skip 4 <a\3 c'\2 >8 <g\3>8 \skip 4 <g\3 c'\2 >8 <g\3>8 }
-vTwoBarBeganIt = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
-cBarBeganIt = { \cChordSetFC }
+vOneBarBeganIt = {  \skip 4 <a\3 c'\2 >8 <g\3>8 \skip 4 <g\3 c'\2 >8 <g\3>8 }
+vTwoBarBeganIt = {  <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
+cBarBeganIt = {  \cChordSetFC }
 
-vOneBarItThough = { r8 <d'\2>16( <c'\2>16) r8 <a\3>16 <c'\2>16 r8 <d'\2>16( <c'\2>16) r8 <a\3>8 }
-vTwoBarItThough = { <f\4>4 <f\4>4 <d\4>4 <d\4>4 }
-cBarItThough = { \cChordSetFD }
+vOneBarItThough = {  r8 <d'\2>16( <c'\2>16) r8 <a\3>16 <c'\2>16 r8 <d'\2>16( <c'\2>16) r8 <a\3>8 }
+vTwoBarItThough = {  <f\4>4 <f\4>4 <d\4>4 <d\4>4 }
+cBarItThough = {  \cChordSetFD }
 
-vOneBarFDm = { r8 <a\3>8 <c'\2>8 <a\3>8 r8 <d'\2>8 <a\3>8 <e'\1>8 }
-vTwoBarFDm = { <f\4>4 <f\4>4 <d\4>2 }
-cBarFDm = { \cChordSetFD }
+vOneBarFDm = {  r8 <a\3>8 <c'\2>8 <a\3>8 r8 <d'\2>8 <a\3>8 <e'\1>8 }
+vTwoBarFDm = {  <f\4>4 <f\4>4 <d\4>2 }
+cBarFDm = {  \cChordSetFD }
 
-vOneBarIntro = { <g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8 }
-vTwoBarIntro = { <f\4>4 <f\4>4 <c\5>4  <e\4>4 }
-cBarIntro = { \cChordSetFC }
+vOneBarIntro = {  <g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8 }
+vTwoBarIntro = {  <f\4>4 <f\4>4 <c\5>4  <e\4>4 }
+cBarIntro = {  \cChordSetFC }
 
-vOneBarItsNot = { r8 <g'\1>4 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>16( <a\3>16) }
-vTwoBarItsNot = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
-cBarItsNot = { \cChordSetFC }
+vOneBarItsNot = {  r8 <g'\1>4 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>16( <a\3>16) }
+vTwoBarItsNot = {  <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
+cBarItsNot = {  \cChordSetFC }
 
-vOneBarItsNotGoingToStop = { <g'\1>8 <a\3>8 <g'\1>16 <g'\1>16\glissando <a'\1>4 <e'\2>4 <d'\2>16( <c'\2>16) }
-vTwoBarItsNotGoingToStop = { <f\4>4 <f\4>4 <d\4>4 <d\4>4 }
-cBarItsNotGoingToStop = { \cChordSetFD }
+vOneBarItsNotGoingToStop = {  <g'\1>8 <a\3>8 <g'\1>16 <g'\1>16\glissando <a'\1>4 <e'\2>4 <d'\2>16( <c'\2>16) }
+vTwoBarItsNotGoingToStop = {  <f\4>4 <f\4>4 <d\4>4 <d\4>4 }
+cBarItsNotGoingToStop = {  \cChordSetFD }
 
-vOneBarItsNotGoingToStopCcge = { <g'\1>8 <g\3>8 <g'\1>16 <g'\1>16\glissando <a'\1>4 <d'\2>4 <c'\2>8 }
-vTwoBarItsNotGoingToStopCcge = { <c\5>4 <c\5>4 <g,\6>4 <e,\6>4 }
-cBarItsNotGoingToStopCcge = { \cChordSetCCGE }
+vOneBarItsNotGoingToStopCcge = {  <g'\1>8 <g\3>8 <g'\1>16 <g'\1>16\glissando <a'\1>4 <d'\2>4 <c'\2>8 }
+vTwoBarItsNotGoingToStopCcge = {  <c\5>4 <c\5>4 <g,\6>4 <e,\6>4 }
+cBarItsNotGoingToStopCcge = {  \cChordSetCCGE }
 
-vOneBarItsNotGoingToStopCcgeTwo = { r8 <g\3>8 <e'\1>8 <g'\1>8 r8 <d'\2>4 <c'\2>8 }
-vTwoBarItsNotGoingToStopCcgeTwo = { <c\5>4 <e\4>4 <g,\6>4 <e,\6>4 }
-cBarItsNotGoingToStopCcgeTwo = { \cChordSetCCGE }
+vOneBarItsNotGoingToStopCcgeTwo = {  r8 <g\3>8 <e'\1>8 <g'\1>8 r8 <d'\2>4 <c'\2>8 }
+vTwoBarItsNotGoingToStopCcgeTwo = {  <c\5>4 <e\4>4 <g,\6>4 <e,\6>4 }
+cBarItsNotGoingToStopCcgeTwo = {  \cChordSetCCGE }
 
-vOneBarOutro = { <g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8 }
-vTwoBarOutro = { <a,\5>4 <a,\5>4 <c\5>4  <c\5>4 }
-cBarOutro = { \cChordSetAmC }
+vOneBarOutro = {  <g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8 }
+vTwoBarOutro = {  <a,\5>4 <a,\5>4 <c\5>4  <c\5>4 }
+cBarOutro = {  \cChordSetAmC }
 
-vOneBarPrepareAList = { <e'\1>8 <d'\2>16( <c'\2>8.) <a\3>16 <c'\2>8. <d'\2>16 <e'\1>8. <a\3>16 <e'\1>16 }
-vTwoBarPrepareAList = { <a,\5>4 <a,\5>4 <a,\5>4 <a,\5>4 }
-cBarPrepareAList = { \cChordSetAm }
+vOneBarPrepareAList = {  <e'\1>8 <d'\2>16( <c'\2>8.) <a\3>16 <c'\2>8. <d'\2>16 <e'\1>8. <a\3>16 <e'\1>16 }
+vTwoBarPrepareAList = {  <a,\5>4 <a,\5>4 <a,\5>4 <a,\5>4 }
+cBarPrepareAList = {  \cChordSetAm }
 
-vOneBarSoJustGiveUp = { r8 <g\3>8 <c'\2>8 <a\3>8 <a\3 c'\2 g'\1 f\4 >4 <c'\3 e'\2 a'\1 >4 }
-vTwoBarSoJustGiveUp = { <as,\5>4 <d\4>4 \skip 2 }
-cBarSoJustGiveUp = { \cChordSetBbF }
+vOneBarSoJustGiveUp = {  r8 <g\3>8 <c'\2>8 <a\3>8 <a\3 c'\2 g'\1 f\4 >4 <c'\3 e'\2 a'\1 >4 }
+vTwoBarSoJustGiveUp = {  <as,\5>4 <d\4>4 \skip 2 }
+cBarSoJustGiveUp = {  \cChordSetBbF }
 
-vOneBarTheresACure = { r8 <d'\2>16( <c'\2>8.) <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8 }
-vTwoBarTheresACure = { <f\4>4 <f\4>4 <c\5>4 <c\5>4 }
-cBarTheresACure = { \cChordSetFC }
+vOneBarTheresACure = {  r8 <d'\2>16( <c'\2>8.) <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8 }
+vTwoBarTheresACure = {  <f\4>4 <f\4>4 <c\5>4 <c\5>4 }
+cBarTheresACure = {  \cChordSetFC }
 
-vOneBarTilYouWiseUp = { r8 <g\3>8 <c'\2>8 <g\3>8 <d'\2>4 <a\3>4 }
-vTwoBarTilYouWiseUp = { <as,\5>4 <d\4>4 <f\4>4 <f\4>4 }
-cBarTilYouWiseUp = { \cChordSetBbF }
+vOneBarTilYouWiseUp = {  r8 <g\3>8 <c'\2>8 <g\3>8 <d'\2>4 <a\3>4 }
+vTwoBarTilYouWiseUp = {  <as,\5>4 <d\4>4 <f\4>4 <f\4>4 }
+cBarTilYouWiseUp = {  \cChordSetBbF }
 
-vOneBarTilYouWiseUpTwo = { r8 <g\3>8 <c'\2>8 <g\3>8 <d'\2>8 <a\3>8 r8 <c'\2>8 }
-vTwoBarTilYouWiseUpTwo = { <as,\5>4 <d\4>4 <f\4>4 <f\4>4 }
-cBarTilYouWiseUpTwo = { \cChordSetBbF }
+vOneBarTilYouWiseUpTwo = {  r8 <g\3>8 <c'\2>8 <g\3>8 <d'\2>8 <a\3>8 r8 <c'\2>8 }
+vTwoBarTilYouWiseUpTwo = {  <as,\5>4 <d\4>4 <f\4>4 <f\4>4 }
+cBarTilYouWiseUpTwo = {  \cChordSetBbF }
 
-vOneBarTilYouWiseUpThree = { r8 <g\3>8 <c'\2>8 <a\3>8 <d'\2>8 <e'\1>8 r8 <e'\1>8 }
-vTwoBarTilYouWiseUpThree = { <as,\5>4 <d\4>4 <f\4>4 <f\4>4 }
-cBarTilYouWiseUpThree = { \cChordSetBbF }
+vOneBarTilYouWiseUpThree = {  r8 <g\3>8 <c'\2>8 <a\3>8 <d'\2>8 <e'\1>8 r8 <e'\1>8 }
+vTwoBarTilYouWiseUpThree = {  <as,\5>4 <d\4>4 <f\4>4 <f\4>4 }
+cBarTilYouWiseUpThree = {  \cChordSetBbF }
 
-vOneBarWhatYouThought = { r8 <g'\1>4 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8 }
-vTwoBarWhatYouThought = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
-cBarWhatYouThought = { \cChordSetFC }
+vOneBarWhatYouThought = {  r8 <g'\1>4 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>8 }
+vTwoBarWhatYouThought = {  <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
+cBarWhatYouThought = {  \cChordSetFC }
 
-vOneBarWhenYouFirst = { <e'\1>8 <d'\2>16( <c'\2>8) <a\3>8. <c'\2>4 <a\3>8 <c'\2>8 }
-vTwoBarWhenYouFirst = { <a,\5>4 <a,\5>8 <e\4>4 <a,\5>4 \skip 8 }
-cBarWhenYouFirst = { \cChordSetAm }
+vOneBarWhenYouFirst = {  <e'\1>8 <d'\2>16( <c'\2>8) <a\3>8. <c'\2>4 <a\3>8 <c'\2>8 }
+vTwoBarWhenYouFirst = {  <a,\5>4 <a,\5>8 <e\4>4 <a,\5>4 \skip 8 }
+cBarWhenYouFirst = {  \cChordSetAm }
 
-vOneBarYouGot = { <g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>16( <a\3>16) }
-vTwoBarYouGot = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
-cBarYouGot = { \cChordSetFC }
+vOneBarYouGot = {  <g'\1>8 <a\3>8 <g'\1>8 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <g\3>16( <a\3>16) }
+vTwoBarYouGot = {  <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
+cBarYouGot = {  \cChordSetFC }
 
-vOneBarYoureSure = { r8 <g'\1>4 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <e'\1>8 }
-vTwoBarYoureSure = { <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
-cBarYoureSure = { \cChordSetFC }
+vOneBarYoureSure = {  r8 <g'\1>4 <a\3>16 <g'\1>8 <g\3>16 <e'\1>4 <e'\1>8 }
+vTwoBarYoureSure = {  <f\4>4 <f\4>4 <c\5>4 <e\4>4 }
+cBarYoureSure = {  \cChordSetFC }
 
 
 %-----------------------------------------------------------------------
@@ -161,34 +161,42 @@ cLineOutroLineTwo = { \cBarOutro \cBarOutro \cBarOutro \cBarOutro }
 vOneStanzaIntro = { \vOneLineIntroLineOne }
 vTwoStanzaIntro = { \vTwoLineIntroLineOne }
 cStanzaIntro = { \cLineIntroLineOne }
+sStanzaIntro = { r1^"Intro" r r r }
 
 vOneStanzaVerseOne = { \vOneLineVerseOneLineOne \vOneLineVerseOneLineTwo }
 vTwoStanzaVerseOne = { \vTwoLineVerseOneLineOne \vTwoLineVerseOneLineTwo }
 cStanzaVerseOne = { \cLineVerseOneLineOne \cLineVerseOneLineTwo }
+sStanzaVerseOne = { r1^"Verse 1" r r r r r r r }
 
 vOneStanzaChorusOne = { \vOneLineChorusOneLineOne \vOneLineChorusOneLineTwo }
 vTwoStanzaChorusOne = { \vTwoLineChorusOneLineOne \vTwoLineChorusOneLineTwo }
 cStanzaChorusOne = { \cLineChorusOneLineOne \cLineChorusOneLineTwo }
+sStanzaChorusOne = { r1^"Chorus 1" r r r r r r r }
 
 vOneStanzaVerseTwo = { \vOneLineVerseTwoLineOne \vOneLineVerseOneLineTwo }
 vTwoStanzaVerseTwo = { \vTwoLineVerseTwoLineOne \vTwoLineVerseOneLineTwo }
 cStanzaVerseTwo = { \cLineVerseTwoLineOne \cLineVerseOneLineTwo }
+sStanzaVerseTwo = { r1^"Verse 2" r r r r r r r }
 
 vOneStanzaChorusTwo = { \vOneLineChorusOneLineOne \vOneLineChorusTwoLineTwo }
 vTwoStanzaChorusTwo = { \vTwoLineChorusOneLineOne \vTwoLineChorusTwoLineTwo }
 cStanzaChorusTwo = { \cLineChorusOneLineOne \cLineChorusTwoLineTwo }
+sStanzaChorusTwo = { r1^"Chorus 2" r r r r r r r }
 
 vOneStanzaBridge = { \vOneLineBridgeLineOne }
 vTwoStanzaBridge = { \vTwoLineBridgeLineOne }
 cStanzaBridge = { \cLineBridgeLineOne }
+sStanzaBridge = { r1^"Bridge" r }
 
 vOneStanzaChorusThree = { \vOneLineChorusOneLineOne \vOneLineChorusThreeLineTwo \vOneLineChorusThreeLineThree }
 vTwoStanzaChorusThree = { \vTwoLineChorusOneLineOne \vTwoLineChorusThreeLineTwo \vTwoLineChorusThreeLineThree }
 cStanzaChorusThree = { \cLineChorusOneLineOne \cLineChorusThreeLineTwo \cLineChorusThreeLineThree }
+sStanzaChorusThree = { r1^"Chorus 3" r r r r r r r r r r r }
 
 vOneStanzaOutro = { \vOneLineIntroLineOne \vOneLineOutroLineTwo }
 vTwoStanzaOutro = { \vTwoLineIntroLineOne \vTwoLineOutroLineTwo }
 cStanzaOutro = { \cLineIntroLineOne \cLineOutroLineTwo }
+sStanzaOutro = { r1^"Outro" r r r r r r r }
 
 
 %-----------------------------------------------------------------------
@@ -197,6 +205,7 @@ cStanzaOutro = { \cLineIntroLineOne \cLineOutroLineTwo }
 vOneScoreTabOneScoreOne = { \vOneStanzaIntro \vOneStanzaVerseOne \vOneStanzaChorusOne \vOneStanzaVerseTwo \vOneStanzaChorusTwo \vOneStanzaBridge \vOneStanzaChorusThree \vOneStanzaOutro }
 vTwoScoreTabOneScoreOne = { \vTwoStanzaIntro \vTwoStanzaVerseOne \vTwoStanzaChorusOne \vTwoStanzaVerseTwo \vTwoStanzaChorusTwo \vTwoStanzaBridge \vTwoStanzaChorusThree \vTwoStanzaOutro }
 cScoreTabOneScoreOne = { \cStanzaIntro \cStanzaVerseOne \cStanzaChorusOne \cStanzaVerseTwo \cStanzaChorusTwo \cStanzaBridge \cStanzaChorusThree \cStanzaOutro }
+sScoreTabOneScoreOne = { \sStanzaIntro \sStanzaVerseOne \sStanzaChorusOne \sStanzaVerseTwo \sStanzaChorusTwo \sStanzaBridge \sStanzaChorusThree \sStanzaOutro }
 
 
 %-----------------------------------------------------------------------
@@ -216,16 +225,7 @@ vTwo = {
 %-----------------------------------------------------------------------
 % Stanza Headings
 
-stanzaHeadings = {
-  r1^"Intro" r r r
-  r1^"Verse 1" r r r r r r r
-  r1^"Chorus 1" r r r r r r r
-  r1^"Verse 2" r r r r r r r
-  r1^"Chorus 2" r r r r r r r
-  r1^"Bridge" r
-  r1^"Chorus 3" r r r r r r r r r r r
-  r1^"Outro" r r r r r r r
-}
+stanzaHeadings = { \sScoreTabOneScoreOne }
 
 %-----------------------------------------------------------------------
 % Chord Headings
@@ -237,6 +237,7 @@ chordHeadings = { \cScoreTabOneScoreOne }
 \score {
   \new StaffGroup <<
     \new Staff <<
+      
       \tempo 4 = 75
 
       \clef "treble_8"
@@ -246,16 +247,19 @@ chordHeadings = { \cScoreTabOneScoreOne }
       }
 
       \new Voice {
+        
         \voiceOne
         \vOne
       }
       \new Voice {
+        
         \voiceTwo
         \vTwo
       }
     >>
 
     \new TabStaff <<
+      
       \new TabVoice {
         \slurUp
         \vOne
