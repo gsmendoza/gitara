@@ -1,10 +1,13 @@
 # @private
 class AppTester < Valuable
   has_value :name
+  has_value :run_lilypond, :klass => :boolean, :default => false
 
   def run
     app = FactoryGirl.build(:app)
-    app.invoke :export, ["examples/#{name}.rb"], "target-directory" => test_tmp_dir.path, "run-lilypond" => false
+    app.invoke :export, ["examples/#{name}.rb"], 
+      "target-directory" => test_tmp_dir.path, 
+      "run-lilypond" => self.run_lilypond?
     (Pow("tmp") / "#{name}.ly").write actual if self.expected != self.actual
   end
 
@@ -18,5 +21,13 @@ class AppTester < Valuable
 
   def actual
     @actual ||= Utilities.read!((test_tmp_dir / "#{name}.ly")).gsub(/\n\s+\n/, "\n")
+  end
+  
+  def midi_generated?
+    (test_tmp_dir / "#{name}.midi").exist?
+  end
+  
+  def pdf_generated?
+    (test_tmp_dir / "#{name}.pdf").exist?
   end
 end
