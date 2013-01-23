@@ -8,7 +8,7 @@ describe Gitara::Node::Bar::StanzaVersion do
       tab = FactoryGirl.build(:tab, :children => [stanza], :time => '4/4')
 
       stanza_version_of_bar = FactoryGirl.build(:stanza_version_bar, :node => bar)
-      stanza_version_of_bar.value.should == 'r1^"Intro"'
+      stanza_version_of_bar.value.should == 'r1'
     end
   end
 end

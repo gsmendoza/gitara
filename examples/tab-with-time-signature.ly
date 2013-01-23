@@ -19,7 +19,7 @@
 
 vOneBarCChordBarOne = {  c4 e4 }
 cBarCChordBarOne = {   }
-sBarCChordBarOne = {  r4^"C chord" r4 }
+sBarCChordBarOne = {  r4 r4 }
 
 vOneBarCChordBarTwo = {  g2 }
 cBarCChordBarTwo = {   }

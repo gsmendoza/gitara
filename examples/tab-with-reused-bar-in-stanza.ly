@@ -40,7 +40,7 @@ sLineIntroLineOne = { \sBarIntro \sBarIntro \sBarIntro \sBarIntro }
 vOneStanzaIntro = { \vOneLineIntroLineOne }
 vTwoStanzaIntro = { \vTwoLineIntroLineOne }
 cStanzaIntro = { \cLineIntroLineOne }
-sStanzaIntro = { r1^"Intro" r r r }
+sStanzaIntro = { r1^"Intro" r1 r1 r1 }
 
 
 %-----------------------------------------------------------------------

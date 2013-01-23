@@ -77,7 +77,7 @@ sLineVerseOneLineOne = { \sBarItsNot \sBarWhatYouThought \sBarWhenYouFirst \sBar
 vOneStanzaVerseOne = { \vOneLineVerseOneLineOne \vOneLineVerseOneLineTwo }
 vTwoStanzaVerseOne = { \vTwoLineVerseOneLineOne \vTwoLineVerseOneLineTwo }
 cStanzaVerseOne = { \cLineVerseOneLineOne \cLineVerseOneLineTwo }
-sStanzaVerseOne = { r1^"Verse 1" r r r r r r r }
+sStanzaVerseOne = { r1^"Verse 1" r1 r1 r1 r1 r1 r1 r1 }
 
 
 %-----------------------------------------------------------------------
