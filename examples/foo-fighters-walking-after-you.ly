@@ -22,7 +22,7 @@
 vOneBarIntroLineOneBarOne = {  \skip 4 r8 <d'\2 fs'\1 >4 <fs'\1 d'\2 >4 \skip 8  }
 vTwoBarIntroLineOneBarOne = {  <fs'\1 d'\2 a\3 d\4 a,\5 d,\6 >4\arpeggio <d\4>4 r4 <d\4>8 <a,\5>8  }
 cBarIntroLineOneBarOne = {   }
-sBarIntroLineOneBarOne = {  r1^"Intro" }
+sBarIntroLineOneBarOne = {  r1 }
 
 vOneBarIntroLineOneBarTwo = {  r8 r8 r8 <d'\2 fs'\1 >4 <fs'\1 d'\2 >4 \skip 8  }
 vTwoBarIntroLineOneBarTwo = {  <d,\6>4 <d\4>4 r4 <d\4>8 <a,\5>8  }
@@ -42,7 +42,7 @@ sBarIntroLineOneBarFour = {  r1 }
 vOneBarVerseRepeatOneLineOneBarOne = {  <d'\2 fs'\1 >4. <fs'\1 d'\2 >4 <fs'\1 d'\2 >8 \skip 8 \skip 8  }
 vTwoBarVerseRepeatOneLineOneBarOne = {  <d,\6>4 <d\4>4 r4 <d\4>8 <a,\5>8  }
 cBarVerseRepeatOneLineOneBarOne = {   }
-sBarVerseRepeatOneLineOneBarOne = {  r1^"Verse" }
+sBarVerseRepeatOneLineOneBarOne = {  r1 }
 
 vOneBarVerseRepeatOneLineOneBarTwo = {  <fs'\1>4 <e'\1>8 <d'\2>4 <b~\2>8 <b\2>4  }
 vTwoBarVerseRepeatOneLineOneBarTwo = {  <fs,\6>4 <d\4>4 <fs,\6>4 <d\4>4  }
@@ -72,7 +72,7 @@ sBarVerseRepeatOneLineOneBarSix = {  r1 }
 vOneBarVerseToChorusLineOneBarOne = {  r4. <d'\2 e'\1 >4 <d'\2 e'\1 >4 \skip 8  }
 vTwoBarVerseToChorusLineOneBarOne = {  <d,\6>4 <d\4>4 r4 <d\4>8 <a,\5>8  }
 cBarVerseToChorusLineOneBarOne = {   }
-sBarVerseToChorusLineOneBarOne = {  r1^"Verse to Chorus" }
+sBarVerseToChorusLineOneBarOne = {  r1 }
 
 vOneBarVerseToChorusLineOneBarTwo = {  <cs'\2>4 <cs'\2>4 <cs'\2>8 <d'\2>4 <e'~\1>8  }
 vTwoBarVerseToChorusLineOneBarTwo = {  <fs,\6>4 <d\4>4 <fs,\6>4 <d\4>4  }
@@ -112,7 +112,7 @@ sBarVerseToChorusLineTwoBarFour = {  r1 }
 vOneBarChorusRepeatOneLineOneBarOne = {  <b\2 gs\3 >2 <fs'\1>4 <fs'\1>4  }
 vTwoBarChorusRepeatOneLineOneBarOne = {  <e,\6>4 <d\4>4 <e,\6>4 <d\4>4  }
 cBarChorusRepeatOneLineOneBarOne = {   }
-sBarChorusRepeatOneLineOneBarOne = {  r1^"Chorus" }
+sBarChorusRepeatOneLineOneBarOne = {  r1 }
 
 vOneBarChorusRepeatOneLineOneBarTwo = {  <fs'\1>4 <e'\1>8 <d'\2>4 <b\2>4 <g'~\1>8  }
 vTwoBarChorusRepeatOneLineOneBarTwo = {  <e,\6>4 <d\4>4 <e,\6>4 <d\4>4  }
@@ -152,7 +152,7 @@ sBarChorusAlternativeOneLineTwoBarTwo = {  r1 }
 vOneBarBridgeLineOneBarOne = {  <fs'\1>4. <d'\2>4 <b\3>4.  }
 vTwoBarBridgeLineOneBarOne = {  <b,\5>4 <fs\4>4 <b,\5>4 <fs\4>4  }
 cBarBridgeLineOneBarOne = {   }
-sBarBridgeLineOneBarOne = {  r1^"Bridge" }
+sBarBridgeLineOneBarOne = {  r1 }
 
 vOneBarBridgeLineOneBarTwo = {  <b\3>4. <b\3>4 <d'\2>4 <g'~\1>8  }
 vTwoBarBridgeLineOneBarTwo = {  <b,\5>4 <fs\4>4 <b,\5>4 <fs\4>4  }
@@ -182,7 +182,7 @@ sBarBridgeLineOneBarSix = {  r1 }
 vOneBarInterludeLineOneRepeatOneBarOne = {  <d'\2>4 <e'\2>4 <fs'\2>4 <d'\2>4  }
 vTwoBarInterludeLineOneRepeatOneBarOne = {  <d,\6>4 <g\4>4 <a\4>4 <fs\4>4  }
 cBarInterludeLineOneRepeatOneBarOne = {   }
-sBarInterludeLineOneRepeatOneBarOne = {  r1^"Interlude" }
+sBarInterludeLineOneRepeatOneBarOne = {  r1 }
 
 vOneBarInterludeLineOneRepeatOneBarTwo = {  <g'\2>4 <fs'\2>4 <e'\2>4 <d'\2>4  }
 vTwoBarInterludeLineOneRepeatOneBarTwo = {  <d,\6>4 <a\4>4 <g\4>4 <fs\4>4  }
@@ -202,7 +202,7 @@ sBarInterludeLineOneBarTwo = {  r1 }
 vOneBarVerseTwoLineOneBarOne = {  <d'\2 fs'\1 >4. <fs'\1 d'\2 >4 <fs'\1 d'\2 >8 \skip 8 \skip 8  }
 vTwoBarVerseTwoLineOneBarOne = {  <d,\6>4 <d\4>4 r4 <d\4>8 <a,\5>8  }
 cBarVerseTwoLineOneBarOne = {   }
-sBarVerseTwoLineOneBarOne = {  r1^"Verse 2" }
+sBarVerseTwoLineOneBarOne = {  r1 }
 
 vOneBarVerseTwoLineOneBarTwo = {  <fs'\1>4 <e'\1>8 <d'\2>4 <b~\2>8 <b\2>4  }
 vTwoBarVerseTwoLineOneBarTwo = {  <fs,\6>4 <d\4>4 <fs,\6>4 <d\4>4  }
@@ -232,7 +232,7 @@ sBarVerseTwoLineOneBarSix = {  r1 }
 vOneBarVerseToChorusTwoLineOneBarOne = {  r4. <d'\2 e'\1 >4 <d'\2 e'\1 >4 \skip 8  }
 vTwoBarVerseToChorusTwoLineOneBarOne = {  <d,\6>4 <d\4>4 r4 <d\4>8 <a,\5>8  }
 cBarVerseToChorusTwoLineOneBarOne = {   }
-sBarVerseToChorusTwoLineOneBarOne = {  r1^"Verse to Chorus 2" }
+sBarVerseToChorusTwoLineOneBarOne = {  r1 }
 
 vOneBarVerseToChorusTwoLineOneBarTwo = {  <cs'\2>4 <cs'\2>4 <cs'\2>8 <d'\2>4 <e'~\1>8  }
 vTwoBarVerseToChorusTwoLineOneBarTwo = {  <fs,\6>4 <d\4>4 <fs,\6>4 <d\4>4  }
@@ -272,7 +272,7 @@ sBarVerseToChorusTwoLineTwoBarFour = {  r1 }
 vOneBarChorusTwoRepeatOneLineOneBarOne = {  <b\2 gs\3 >2 <fs'\1>4 <fs'\1>4  }
 vTwoBarChorusTwoRepeatOneLineOneBarOne = {  <e,\6>4 <d\4>4 <e,\6>4 <d\4>4  }
 cBarChorusTwoRepeatOneLineOneBarOne = {   }
-sBarChorusTwoRepeatOneLineOneBarOne = {  r1^"Chorus 2" }
+sBarChorusTwoRepeatOneLineOneBarOne = {  r1 }
 
 vOneBarChorusTwoRepeatOneLineOneBarTwo = {  <fs'\1>4 <e'\1>8 <d'\2>4 <b\2>4 <g'~\1>8  }
 vTwoBarChorusTwoRepeatOneLineOneBarTwo = {  <e,\6>4 <d\4>4 <e,\6>4 <d\4>4  }
@@ -400,47 +400,47 @@ sLineChorusTwoAlternativeOneLineTwo = { \sBarChorusTwoAlternativeOneLineTwoBarOn
 vOneStanzaIntro = { \vOneLineIntroLineOne }
 vTwoStanzaIntro = { \vTwoLineIntroLineOne }
 cStanzaIntro = { \cLineIntroLineOne }
-sStanzaIntro = { \sLineIntroLineOne }
+sStanzaIntro = { r1^"Intro" r1 r1 r1 }
 
 vOneStanzaVerse = { \repeat volta 2 { \vOneLineVerseRepeatOneLineOne } }
 vTwoStanzaVerse = { \repeat volta 2 { \vTwoLineVerseRepeatOneLineOne } }
 cStanzaVerse = { \repeat volta 2 { \cLineVerseRepeatOneLineOne } }
-sStanzaVerse = { \repeat volta 2 { \sLineVerseRepeatOneLineOne } }
+sStanzaVerse = { r1^"Verse" r1 r1 r1 r1 r1 }
 
 vOneStanzaVerseToChorus = { \vOneLineVerseToChorusLineOne \vOneLineVerseToChorusLineTwo }
 vTwoStanzaVerseToChorus = { \vTwoLineVerseToChorusLineOne \vTwoLineVerseToChorusLineTwo }
 cStanzaVerseToChorus = { \cLineVerseToChorusLineOne \cLineVerseToChorusLineTwo }
-sStanzaVerseToChorus = { \sLineVerseToChorusLineOne \sLineVerseToChorusLineTwo }
+sStanzaVerseToChorus = { r1^"Verse to Chorus" r1 r1 r1 r1 r1 r1 r1 }
 
 vOneStanzaChorus = { \repeat volta 2 { \vOneLineChorusRepeatOneLineOne } \alternative { { \vOneLineChorusAlternativeOneLineOne } { \vOneLineChorusAlternativeOneLineTwo } } }
 vTwoStanzaChorus = { \repeat volta 2 { \vTwoLineChorusRepeatOneLineOne } \alternative { { \vTwoLineChorusAlternativeOneLineOne } { \vTwoLineChorusAlternativeOneLineTwo } } }
 cStanzaChorus = { \repeat volta 2 { \cLineChorusRepeatOneLineOne } \alternative { { \cLineChorusAlternativeOneLineOne } { \cLineChorusAlternativeOneLineTwo } } }
-sStanzaChorus = { \repeat volta 2 { \sLineChorusRepeatOneLineOne } \alternative { { \sLineChorusAlternativeOneLineOne } { \sLineChorusAlternativeOneLineTwo } } }
+sStanzaChorus = { r1^"Chorus" r1 r1 r1 r1 r1 r1 r1 }
 
 vOneStanzaBridge = { \vOneLineBridgeLineOne }
 vTwoStanzaBridge = { \vTwoLineBridgeLineOne }
 cStanzaBridge = { \cLineBridgeLineOne }
-sStanzaBridge = { \sLineBridgeLineOne }
+sStanzaBridge = { r1^"Bridge" r1 r1 r1 r1 r1 }
 
 vOneStanzaInterlude = { \vOneLineInterludeLineOne }
 vTwoStanzaInterlude = { \vTwoLineInterludeLineOne }
 cStanzaInterlude = { \cLineInterludeLineOne }
-sStanzaInterlude = { \sLineInterludeLineOne }
+sStanzaInterlude = { r1^"Interlude" r1 r1 r1 }
 
 vOneStanzaVerseTwo = { \vOneLineVerseTwoLineOne }
 vTwoStanzaVerseTwo = { \vTwoLineVerseTwoLineOne }
 cStanzaVerseTwo = { \cLineVerseTwoLineOne }
-sStanzaVerseTwo = { \sLineVerseTwoLineOne }
+sStanzaVerseTwo = { r1^"Verse 2" r1 r1 r1 r1 r1 }
 
 vOneStanzaVerseToChorusTwo = { \vOneLineVerseToChorusTwoLineOne \vOneLineVerseToChorusTwoLineTwo }
 vTwoStanzaVerseToChorusTwo = { \vTwoLineVerseToChorusTwoLineOne \vTwoLineVerseToChorusTwoLineTwo }
 cStanzaVerseToChorusTwo = { \cLineVerseToChorusTwoLineOne \cLineVerseToChorusTwoLineTwo }
-sStanzaVerseToChorusTwo = { \sLineVerseToChorusTwoLineOne \sLineVerseToChorusTwoLineTwo }
+sStanzaVerseToChorusTwo = { r1^"Verse to Chorus 2" r1 r1 r1 r1 r1 r1 r1 }
 
 vOneStanzaChorusTwo = { \repeat volta 3 { \vOneLineChorusTwoRepeatOneLineOne } \alternative { { \vOneLineChorusTwoAlternativeOneLineOne } { \vOneLineChorusTwoAlternativeOneLineTwo } } }
 vTwoStanzaChorusTwo = { \repeat volta 3 { \vTwoLineChorusTwoRepeatOneLineOne } \alternative { { \vTwoLineChorusTwoAlternativeOneLineOne } { \vTwoLineChorusTwoAlternativeOneLineTwo } } }
 cStanzaChorusTwo = { \repeat volta 3 { \cLineChorusTwoRepeatOneLineOne } \alternative { { \cLineChorusTwoAlternativeOneLineOne } { \cLineChorusTwoAlternativeOneLineTwo } } }
-sStanzaChorusTwo = { \repeat volta 3 { \sLineChorusTwoRepeatOneLineOne } \alternative { { \sLineChorusTwoAlternativeOneLineOne } { \sLineChorusTwoAlternativeOneLineTwo } } }
+sStanzaChorusTwo = { r1^"Chorus 2" r1 r1 r1 r1 r1 r1 r1 r1 }
 
 
 %-----------------------------------------------------------------------

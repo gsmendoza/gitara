@@ -14,6 +14,8 @@
 
 %-----------------------------------------------------------------------
 % Chord Sets
+
+
 %-----------------------------------------------------------------------
 % Bars
 
@@ -24,22 +26,33 @@ sBarCChordBarOne = {  r4 r4 }
 vOneBarCChordBarTwo = {  g2 }
 cBarCChordBarTwo = {   }
 sBarCChordBarTwo = {  r4 r4 }
+
+
 %-----------------------------------------------------------------------
 % Lines
+
+
 %-----------------------------------------------------------------------
 % Stanzas
 
 vOneStanzaCChord = { \vOneBarCChordBarOne \vOneBarCChordBarTwo }
 cStanzaCChord = { \cBarCChordBarOne \cBarCChordBarTwo }
 sStanzaCChord = { r4^"C chord" r4 r4 r4 }
+
+
 %-----------------------------------------------------------------------
 % Scores
+
+
 %-----------------------------------------------------------------------
 % Voices
 
 vOne = {
+  
   \vOneStanzaCChord
 }
+
+
 %-----------------------------------------------------------------------
 % Stanza Headings
 
@@ -56,6 +69,8 @@ chordHeadings = { \cStanzaCChord }
   \new StaffGroup <<
     \new Staff <<
       \time 2/4
+
+      
       \clef "treble_8"
 
       \new Voice \with { \remove Rest_engraver } {
@@ -63,12 +78,14 @@ chordHeadings = { \cStanzaCChord }
       }
 
       \new Voice {
+        
         \voiceOne
         \vOne
       }
     >>
 
     \new TabStaff <<
+      
       \new TabVoice {
         \slurUp
         \vOne
@@ -101,6 +118,7 @@ chordHeadings = { \cStanzaCChord }
 % showLastLength = R1*4
 \score {
   \new Staff \with {midiInstrument = #"acoustic guitar (nylon)"} <<
+    
     \clef "treble_8"
 
     \new Voice {

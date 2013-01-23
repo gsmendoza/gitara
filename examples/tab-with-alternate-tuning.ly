@@ -66,6 +66,7 @@ chordHeadings = { \cBarTabOneBarOne }
 \score {
   \new StaffGroup <<
     \new Staff <<
+      
       \tempo 4 = 100
 
       \clef "treble_8"
@@ -75,10 +76,12 @@ chordHeadings = { \cBarTabOneBarOne }
       }
 
       \new Voice {
+        
         \voiceOne
         \vOne
       }
       \new Voice {
+        
         \voiceTwo
         \vTwo
       }

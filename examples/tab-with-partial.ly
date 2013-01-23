@@ -92,6 +92,7 @@ chordHeadings = { \cScoreTabOneScoreOne }
 \score {
   \new StaffGroup <<
     \new Staff <<
+      
       \tempo 4 = 90
 
       \clef "treble_8"
@@ -101,16 +102,19 @@ chordHeadings = { \cScoreTabOneScoreOne }
       }
 
       \new Voice {
+        
         \voiceOne
         \vOne
       }
       \new Voice {
+        
         \voiceTwo
         \vTwo
       }
     >>
 
     \new TabStaff <<
+      
       \new TabVoice {
         \slurUp
         \vOne

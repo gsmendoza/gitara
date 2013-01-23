@@ -28,7 +28,7 @@ cChordSetD = { r1-"D" }
 vOneBarVerseLineOneBarOne = { \partial 8 <g\3>8 }
 vTwoBarVerseLineOneBarOne = { \partial 8 r8 }
 cBarVerseLineOneBarOne = { \partial 8 \cChordSetGEight }
-sBarVerseLineOneBarOne = { \partial 8 r8^"Verse" }
+sBarVerseLineOneBarOne = { \partial 8 r8 }
 
 vOneBarVerseLineOneBarTwo = {  <a\3>16\glissando <b\3>16 <b\3>4 r16 <a\3>16\glissando <b\3>4. <a\3>16( <g\3>16) }
 vTwoBarVerseLineOneBarTwo = {  r1 }
@@ -113,7 +113,7 @@ sBarVerseLineFourBarFour = {  r1 }
 vOneBarRefrainLineOneBarOne = {  r4 <g\3>8 <g\3>8 <g\3>8 <g\3>8 <e'\1>8 <d'~\2>8 }
 vTwoBarRefrainLineOneBarOne = {  <e,\6>4 <e\4>4 <e,\6>4 <e\4>4 }
 cBarRefrainLineOneBarOne = {  \cChordSetEm }
-sBarRefrainLineOneBarOne = {  r1^"Refrain" }
+sBarRefrainLineOneBarOne = {  r1 }
 
 vOneBarRefrainLineOneBarTwo = {  <d'\2>8 <b\2>4 <a\3>4 <a\3>4 <b\2>8 }
 vTwoBarRefrainLineOneBarTwo = {  <g,\6>4 <d\4>4 <g,\6>4 <d\4>4 }
@@ -158,7 +158,7 @@ sBarRefrainLineTwoBarFive = {  r1 }
 vOneBarChorusLineOneBarOne = {  <d'\2>4. <g'\1>4 <d'\2>4 <cs'~\2>8 }
 vTwoBarChorusLineOneBarOne = {  <g,\6>4 <d\4>4 <g,\6>4 <d\4>4 }
 cBarChorusLineOneBarOne = {  \cChordSetG }
-sBarChorusLineOneBarOne = {  r1^"Chorus" }
+sBarChorusLineOneBarOne = {  r1 }
 
 vOneBarChorusLineOneBarTwo = {  <cs'\2>4 <g'\1>8 <g'\1>4 <cs'\2>4 <c'~\2>8 }
 vTwoBarChorusLineOneBarTwo = {  <a,\5>4 <e\4>4 <a,\5>4 <e\4>4 }
@@ -251,17 +251,17 @@ sLineChorusLineTwo = { \sBarChorusLineTwoBarOne \sBarChorusLineTwoBarTwo \sBarCh
 vOneStanzaVerse = { \vOneLineVerseLineOne \vOneLineVerseLineTwo \vOneLineVerseLineThree \vOneLineVerseLineFour }
 vTwoStanzaVerse = { \vTwoLineVerseLineOne \vTwoLineVerseLineTwo \vTwoLineVerseLineThree \vTwoLineVerseLineFour }
 cStanzaVerse = { \cLineVerseLineOne \cLineVerseLineTwo \cLineVerseLineThree \cLineVerseLineFour }
-sStanzaVerse = { \sLineVerseLineOne \sLineVerseLineTwo \sLineVerseLineThree \sLineVerseLineFour }
+sStanzaVerse = { r8^"Verse" r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 }
 
 vOneStanzaRefrain = { \vOneLineRefrainLineOne \vOneLineRefrainLineTwo }
 vTwoStanzaRefrain = { \vTwoLineRefrainLineOne \vTwoLineRefrainLineTwo }
 cStanzaRefrain = { \cLineRefrainLineOne \cLineRefrainLineTwo }
-sStanzaRefrain = { \sLineRefrainLineOne \sLineRefrainLineTwo }
+sStanzaRefrain = { r1^"Refrain" r1 r1 r1 r1 r1 r1 r1 r1 }
 
 vOneStanzaChorus = { \vOneLineChorusLineOne \vOneLineChorusLineTwo }
 vTwoStanzaChorus = { \vTwoLineChorusLineOne \vTwoLineChorusLineTwo }
 cStanzaChorus = { \cLineChorusLineOne \cLineChorusLineTwo }
-sStanzaChorus = { \sLineChorusLineOne \sLineChorusLineTwo }
+sStanzaChorus = { r1^"Chorus" r1 r1 r1 r1 r1 r1 r1 r1 }
 
 
 %-----------------------------------------------------------------------
@@ -302,6 +302,7 @@ chordHeadings = { \cScoreTabOneScoreOne }
 \score {
   \new StaffGroup <<
     \new Staff <<
+      
       \tempo 4 = 90
 
       \clef "treble_8"
@@ -311,16 +312,19 @@ chordHeadings = { \cScoreTabOneScoreOne }
       }
 
       \new Voice {
+        
         \voiceOne
         \vOne
       }
       \new Voice {
+        
         \voiceTwo
         \vTwo
       }
     >>
 
     \new TabStaff <<
+      
       \new TabVoice {
         \slurUp
         \vOne

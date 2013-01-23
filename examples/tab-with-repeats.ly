@@ -14,6 +14,8 @@
 
 %-----------------------------------------------------------------------
 % Chord Sets
+
+
 %-----------------------------------------------------------------------
 % Bars
 
@@ -28,22 +30,33 @@ sBarTabOneLineOneAlternativeOneBarOne = {  r1 }
 vOneBarTabOneLineOneAlternativeOneBarTwo = {  f2 g }
 cBarTabOneLineOneAlternativeOneBarTwo = {   }
 sBarTabOneLineOneAlternativeOneBarTwo = {  r1 }
+
+
 %-----------------------------------------------------------------------
 % Lines
 
 vOneLineTabOneLineOne = { \repeat volta 4 { \vOneBarTabOneLineOneRepeatOneBarOne } \alternative { { \vOneBarTabOneLineOneAlternativeOneBarOne } { \vOneBarTabOneLineOneAlternativeOneBarTwo } } \break }
 cLineTabOneLineOne = { \repeat volta 4 { \cBarTabOneLineOneRepeatOneBarOne } \alternative { { \cBarTabOneLineOneAlternativeOneBarOne } { \cBarTabOneLineOneAlternativeOneBarTwo } } }
 sLineTabOneLineOne = { \repeat volta 4 { \sBarTabOneLineOneRepeatOneBarOne } \alternative { { \sBarTabOneLineOneAlternativeOneBarOne } { \sBarTabOneLineOneAlternativeOneBarTwo } } }
+
+
 %-----------------------------------------------------------------------
 % Stanzas
+
+
 %-----------------------------------------------------------------------
 % Scores
+
+
 %-----------------------------------------------------------------------
 % Voices
 
 vOne = {
+  
   \vOneLineTabOneLineOne
 }
+
+
 %-----------------------------------------------------------------------
 % Stanza Headings
 
@@ -59,6 +72,8 @@ chordHeadings = { \cLineTabOneLineOne }
 \score {
   \new StaffGroup <<
     \new Staff <<
+      
+      
       \clef "treble_8"
 
       \new Voice \with { \remove Rest_engraver } {
@@ -66,12 +81,14 @@ chordHeadings = { \cLineTabOneLineOne }
       }
 
       \new Voice {
+        
         \voiceOne
         \vOne
       }
     >>
 
     \new TabStaff <<
+      
       \new TabVoice {
         \slurUp
         \vOne
@@ -104,6 +121,7 @@ chordHeadings = { \cLineTabOneLineOne }
 % showLastLength = R1*4
 \score {
   \new Staff \with {midiInstrument = #"acoustic guitar (nylon)"} <<
+    
     \clef "treble_8"
 
     \new Voice {
