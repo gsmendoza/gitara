@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "gitara"
 
-  s.files         = `git ls-files`.split("\n")
+  s.files         = `git ls-files`.split("\n").reject{|file| file =~ %r{\.(pdf)|(midi)}}
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
