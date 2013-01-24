@@ -8,10 +8,9 @@ To install,
 
     gem install gitara
 
-You need [lilypond](http://lilypond.org) 2.12 or higher in order to generate pdfs and midis.
+You need [lilypond](http://lilypond.org) in order to generate pdfs and midis.
 
-Gitara is tested on Ruby 1.9.3 only. Patches are welcome.
-
+Gitara is tested on Ruby 1.9.3 and Lilypond 2.14. Patches are welcome.
 
 To run,
 
@@ -43,7 +42,7 @@ You can find examples at https://github.com/gsmendoza/gitara/tree/master/example
 Bars
 ----
 
-Bars are the smallest expressions in Gitara. That is, a gitara file must have at least one bar. The notes inside a bar follow [Lilypond syntax](http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Simple-notation).
+Bars are the smallest expressions in Gitara. That is, a gitara file must have at least one bar. The notes inside a bar follow [Lilypond syntax](http://lilypond.org/doc/v2.14/Documentation/notation/musical-notation).
 
     Gitara.define do
       bar do
@@ -51,7 +50,7 @@ Bars are the smallest expressions in Gitara. That is, a gitara file must have at
       end
     end
 
-With Gitara, it's easier to write notes using [absolute note names](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-pitches#Absolute-octave-entry) instead of relative note names. This is because we'll be reusing bars and other Gitara expressions (see Reusing expressions below).
+With Gitara, it's easier to write notes using [absolute note names](http://lilypond.org/doc/v2.14/Documentation/notation/writing-pitches#absolute-octave-entry) instead of relative note names. This is because we'll be reusing bars and other Gitara expressions (see Reusing expressions below).
 
 
 ### Notes with single quotes and backslashes
@@ -77,7 +76,7 @@ Prettier and easier to search and replace.
 
 ### Multiple voices
 
-Each line of notes in a bar is a [voice](http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Voices-contain-music):
+Each line of notes in a bar is a [voice](http://lilypond.org/doc/v2.14/Documentation/learning/voices-contain-music):
 
     Gitara.define do
       bar do
@@ -91,7 +90,7 @@ The tab above will play "c d e f g a b c" and "c' d' e' f' g' a' b' c'" simultan
 
 ### Partial bars
 
-To indicate that a bar is a [partial measure](http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Advanced-rhythmic-commands#Partial-measure), call `partial <duration>`:
+To indicate that a bar is a [partial measure](http://lilypond.org/doc/v2.14/Documentation/notation/displaying-rhythms#upbeats), call `partial <duration>`:
 
     bar do
       partial 8
@@ -115,7 +114,7 @@ You can group bars in a line:
       bar :SaDibdibMoyBuhay
     end
 
-Lines are [manually breaked](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Line-breaking) in Gitara. You can disable a line break by setting `manual_break` to false:
+Lines are [manually breaked](http://lilypond.org/doc/v2.14/Documentation/notation/line-breaking) in Gitara. You can disable a line break by setting `manual_break` to false:
 
     line :LineOne, :manual_break => false do
     end
@@ -222,7 +221,7 @@ Finally, you can call multiple expressions in a single line:
 
 ### Repeats and alternative endings
 
-You can also group expressions under [repeats](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Long-repeats) and provide alternative endings:
+You can also group expressions under [repeats](http://lilypond.org/doc/v2.14/Documentation/notation/long-repeats) and provide alternative endings:
 
     Gitara.define do
       line do
@@ -265,11 +264,11 @@ A gitara file can have the following properties:
 * arranger - tab's arranger
 * composer - song's composer
 * instrument - description of the instrument used on the tab
-* [key](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Displaying-pitches#Key-signature)
+* [key](http://lilypond.org/doc/v2.14/Documentation/notation/displaying-pitches#key-signature)
 * midi_instrument - the type of instrument played in the midi export of the tab. By default, "acoustic guitar (nylon)".
-* [string_tunings](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Common-notation-for-fretted-strings#Custom-tablatures)
-* [tempo](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-parts#Metronome-marks)
-* [time](http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Displaying-rhythms#Time-signature) - default is 4/4
+* [string_tunings](http://lilypond.org/doc/v2.14/Documentation/notation/common-notation-for-fretted-strings#custom-tablatures)
+* [tempo](http://lilypond.org/doc/v2.14/Documentation/notation/displaying-rhythms#metronome-marks)
+* [time](http://lilypond.org/doc/v2.14/Documentation/notation/displaying-rhythms#time-signature) - default is 4/4
 * title - title of the song
 * transposition - adjusts the pitch of the instrument. The default transposition is "c". If you set it to "d", then you have to play the tab two frets higher on the guitar (capo on second fret).
 
@@ -280,7 +279,7 @@ Chord labels
 You can add chord labels to bars:
 
     Gitara.define do
-      chords :FC,   'r4-"F" r r-"C" r'
+      chords :FC,   'f2 c2'
 
       bar :BeganIt do
         notes "/skip 4 <a/3 c'/2 >8 <g/3>8 /skip 4 <g/3 c'/2 >8 <g/3>8"
@@ -289,16 +288,11 @@ You can add chord labels to bars:
       end
     end
 
-`r4-"F" r r-"C" r` is a [lilypond music expression](http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Music-expressions-explained).
-
-* `r` is a rest. `r4` is a rest that is a quarter note long. Succeeding rests have the same duration as the first one.
-* `-"F"` means 'place the text "F" below the rest note'. See http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-text.
-
-When these chord labels are added to the Gitara lilypond output, Gitara hides the rest notes so only the chord labels are visible.
+`f2` and `c2` are [lilypond chord names](http://lilypond.org/doc/v2.14/Documentation/notation/displaying-chords).
 
 If the bar is a partial measure, the duration of the chords within the bar must match the bar's duration:
 
-    chords :G8, 'r8-"G"'
+    chords :G8, 'g8'
 
     bar do
       partial 8
