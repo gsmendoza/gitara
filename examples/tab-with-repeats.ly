@@ -21,15 +21,12 @@
 
 vOneBarTabOneLineOneRepeatOneBarOne = {  c4 d e f }
 cBarTabOneLineOneRepeatOneBarOne = {   }
-sBarTabOneLineOneRepeatOneBarOne = {  r1 }
 
 vOneBarTabOneLineOneAlternativeOneBarOne = {  d2 e }
 cBarTabOneLineOneAlternativeOneBarOne = {   }
-sBarTabOneLineOneAlternativeOneBarOne = {  r1 }
 
 vOneBarTabOneLineOneAlternativeOneBarTwo = {  f2 g }
 cBarTabOneLineOneAlternativeOneBarTwo = {   }
-sBarTabOneLineOneAlternativeOneBarTwo = {  r1 }
 
 
 %-----------------------------------------------------------------------
@@ -37,7 +34,6 @@ sBarTabOneLineOneAlternativeOneBarTwo = {  r1 }
 
 vOneLineTabOneLineOne = { \repeat volta 4 { \vOneBarTabOneLineOneRepeatOneBarOne } \alternative { { \vOneBarTabOneLineOneAlternativeOneBarOne } { \vOneBarTabOneLineOneAlternativeOneBarTwo } } \break }
 cLineTabOneLineOne = { \repeat volta 4 { \cBarTabOneLineOneRepeatOneBarOne } \alternative { { \cBarTabOneLineOneAlternativeOneBarOne } { \cBarTabOneLineOneAlternativeOneBarTwo } } }
-sLineTabOneLineOne = { \repeat volta 4 { \sBarTabOneLineOneRepeatOneBarOne } \alternative { { \sBarTabOneLineOneAlternativeOneBarOne } { \sBarTabOneLineOneAlternativeOneBarTwo } } }
 
 
 %-----------------------------------------------------------------------
@@ -60,7 +56,8 @@ vOne = {
 %-----------------------------------------------------------------------
 % Stanza Headings
 
-stanzaHeadings = { \sLineTabOneLineOne }
+stanzaHeadings = { 
+}
 
 %-----------------------------------------------------------------------
 % Chord Headings

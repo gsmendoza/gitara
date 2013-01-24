@@ -57,7 +57,11 @@
 %-----------------------------------------------------------------------
 % Stanza Headings
 
-stanzaHeadings = { <%= playable_child.stanza_version.call_name %> }
+stanzaHeadings = { 
+<%- if playable_child.descendants(Gitara::Node::Stanza).any? %>
+<%= playable_child.stanza_version.call_name %> 
+<% end %>
+}
 
 %-----------------------------------------------------------------------
 % Chord Headings

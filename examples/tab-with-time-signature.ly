@@ -21,11 +21,9 @@
 
 vOneBarCChordBarOne = {  c4 e4 }
 cBarCChordBarOne = {   }
-sBarCChordBarOne = {  r4 r4 }
 
 vOneBarCChordBarTwo = {  g2 }
 cBarCChordBarTwo = {   }
-sBarCChordBarTwo = {  r4 r4 }
 
 
 %-----------------------------------------------------------------------
@@ -56,7 +54,9 @@ vOne = {
 %-----------------------------------------------------------------------
 % Stanza Headings
 
-stanzaHeadings = { \sStanzaCChord }
+stanzaHeadings = { 
+\sStanzaCChord 
+}
 
 %-----------------------------------------------------------------------
 % Chord Headings

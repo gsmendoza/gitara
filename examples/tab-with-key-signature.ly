@@ -22,7 +22,6 @@
 vOneBarTabOneBarOne = {  <d'\2 fs'\1 >4. <fs'\1 d'\2 >4 <fs'\1 d'\2 >8 \skip 4 }
 vTwoBarTabOneBarOne = {  <d,\6>4 <d\4>2 <d\4>8 <a,\5>8 }
 cBarTabOneBarOne = {   }
-sBarTabOneBarOne = {  r1 }
 
 
 %-----------------------------------------------------------------------
@@ -54,7 +53,8 @@ vTwo = {
 %-----------------------------------------------------------------------
 % Stanza Headings
 
-stanzaHeadings = { \sBarTabOneBarOne }
+stanzaHeadings = { 
+}
 
 %-----------------------------------------------------------------------
 % Chord Headings

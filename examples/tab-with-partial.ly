@@ -28,12 +28,10 @@ cChordSetD = { r1-"D" }
 vOneBarVerseLineOneBarOne = { \partial 8 <g\3>8 }
 vTwoBarVerseLineOneBarOne = { \partial 8 r8 }
 cBarVerseLineOneBarOne = { \partial 8 \cChordSetGEight }
-sBarVerseLineOneBarOne = { \partial 8 r8 }
 
 vOneBarVerseLineOneBarTwo = {  <a\3>16\glissando <b\3>16 <b\3>4 r16 <a\3>16\glissando <b\3>4. <a\3>16( <g\3>16) }
 vTwoBarVerseLineOneBarTwo = {  r1 }
 cBarVerseLineOneBarTwo = {  \cChordSetG }
-sBarVerseLineOneBarTwo = {  r1 }
 
 
 %-----------------------------------------------------------------------
@@ -42,7 +40,6 @@ sBarVerseLineOneBarTwo = {  r1 }
 vOneLineVerseLineOne = { \vOneBarVerseLineOneBarOne \vOneBarVerseLineOneBarTwo \break }
 vTwoLineVerseLineOne = { \vTwoBarVerseLineOneBarOne \vTwoBarVerseLineOneBarTwo \break }
 cLineVerseLineOne = { \cBarVerseLineOneBarOne \cBarVerseLineOneBarTwo }
-sLineVerseLineOne = { \sBarVerseLineOneBarOne \sBarVerseLineOneBarTwo }
 
 
 %-----------------------------------------------------------------------
@@ -80,7 +77,9 @@ vTwo = {
 %-----------------------------------------------------------------------
 % Stanza Headings
 
-stanzaHeadings = { \sScoreTabOneScoreOne }
+stanzaHeadings = { 
+\sScoreTabOneScoreOne 
+}
 
 %-----------------------------------------------------------------------
 % Chord Headings

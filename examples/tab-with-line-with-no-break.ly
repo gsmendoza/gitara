@@ -22,22 +22,18 @@
 vOneBarTabOneScoreOneLineOneBarOne = {  <fs'\1>4. <d'\2>4 <a\3>4 <d'~\2>8  }
 vTwoBarTabOneScoreOneLineOneBarOne = {  <d,\6>4 <d\4>4 <d,\6>4 <d\4>4  }
 cBarTabOneScoreOneLineOneBarOne = {   }
-sBarTabOneScoreOneLineOneBarOne = {  r1 }
 
 vOneBarTabOneScoreOneLineOneBarTwo = {  <d'\2>8 <a\3>4 <d'\2>4 <a\3>8 \skip 4  }
 vTwoBarTabOneScoreOneLineOneBarTwo = {  <d,\6>4 <d\4>4 <d,\6>4 <d\4>4  }
 cBarTabOneScoreOneLineOneBarTwo = {   }
-sBarTabOneScoreOneLineOneBarTwo = {  r1 }
 
 vOneBarTabOneScoreOneLineTwoBarOne = {  \skip 4 r8 <d'\2 fs'\1 >4 <d'\2 fs'\1 >4 <d'~\2 fs'~\1 >8  }
 vTwoBarTabOneScoreOneLineTwoBarOne = {  <d,\6>4 <d\4>4 r4 <d\4>4  }
 cBarTabOneScoreOneLineTwoBarOne = {   }
-sBarTabOneScoreOneLineTwoBarOne = {  r1 }
 
 vOneBarTabOneScoreOneLineTwoBarTwo = {  <d'\2 fs'\1 >8 <d'\2 fs'\1 >4 <d'\2>8 <d'\2>8 <e'\1>4.  }
 vTwoBarTabOneScoreOneLineTwoBarTwo = {  r4 <d\4>4 r4 r4  }
 cBarTabOneScoreOneLineTwoBarTwo = {   }
-sBarTabOneScoreOneLineTwoBarTwo = {  r1 }
 
 
 %-----------------------------------------------------------------------
@@ -46,12 +42,10 @@ sBarTabOneScoreOneLineTwoBarTwo = {  r1 }
 vOneLineTabOneScoreOneLineOne = { \vOneBarTabOneScoreOneLineOneBarOne \vOneBarTabOneScoreOneLineOneBarTwo  }
 vTwoLineTabOneScoreOneLineOne = { \vTwoBarTabOneScoreOneLineOneBarOne \vTwoBarTabOneScoreOneLineOneBarTwo  }
 cLineTabOneScoreOneLineOne = { \cBarTabOneScoreOneLineOneBarOne \cBarTabOneScoreOneLineOneBarTwo }
-sLineTabOneScoreOneLineOne = { \sBarTabOneScoreOneLineOneBarOne \sBarTabOneScoreOneLineOneBarTwo }
 
 vOneLineTabOneScoreOneLineTwo = { \vOneBarTabOneScoreOneLineTwoBarOne \vOneBarTabOneScoreOneLineTwoBarTwo \break }
 vTwoLineTabOneScoreOneLineTwo = { \vTwoBarTabOneScoreOneLineTwoBarOne \vTwoBarTabOneScoreOneLineTwoBarTwo \break }
 cLineTabOneScoreOneLineTwo = { \cBarTabOneScoreOneLineTwoBarOne \cBarTabOneScoreOneLineTwoBarTwo }
-sLineTabOneScoreOneLineTwo = { \sBarTabOneScoreOneLineTwoBarOne \sBarTabOneScoreOneLineTwoBarTwo }
 
 
 %-----------------------------------------------------------------------
@@ -64,7 +58,6 @@ sLineTabOneScoreOneLineTwo = { \sBarTabOneScoreOneLineTwoBarOne \sBarTabOneScore
 vOneScoreTabOneScoreOne = { \vOneLineTabOneScoreOneLineOne \vOneLineTabOneScoreOneLineTwo }
 vTwoScoreTabOneScoreOne = { \vTwoLineTabOneScoreOneLineOne \vTwoLineTabOneScoreOneLineTwo }
 cScoreTabOneScoreOne = { \cLineTabOneScoreOneLineOne \cLineTabOneScoreOneLineTwo }
-sScoreTabOneScoreOne = { \sLineTabOneScoreOneLineOne \sLineTabOneScoreOneLineTwo }
 
 
 %-----------------------------------------------------------------------
@@ -84,7 +77,8 @@ vTwo = {
 %-----------------------------------------------------------------------
 % Stanza Headings
 
-stanzaHeadings = { \sScoreTabOneScoreOne }
+stanzaHeadings = { 
+}
 
 %-----------------------------------------------------------------------
 % Chord Headings
