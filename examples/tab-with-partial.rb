@@ -7,12 +7,12 @@ Gitara.define do
   transposition "cs"
   tempo "4 = 90"
 
-  chords :G, 'r1-"G"'
-  chords :G8, 'r8-"G"'
-  chords :C, 'r1-"C"'
-  chords :A7, 'r1-"A7"'
-  chords :Em, 'r1-"Em"'
-  chords :D, 'r1-"D"'
+  chords :G, 'g1'
+  chords :G8, 'g8'
+  chords :C, 'c1'
+  chords :A7, 'a1:7'
+  chords :Em, 'e1:m'
+  chords :D, 'd1'
 
   score do
     stanza "Verse" do

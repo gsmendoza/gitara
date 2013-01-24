@@ -7,13 +7,13 @@ Gitara.define do
   tempo "4 = 75"
   transposition "d"
 
-  chords :Am,   'r4-"Am" r r r'
-  chords :AmC,  'r4-"Am" r r-"C" r'
-  chords :BbF,  'r4-"Bb" r r-"F" r'
-  chords :CCGE, 'r4-"C" r r-"G" r-"E"'
-  chords :D,    'r4-"D" r r r'
-  chords :FC,   'r4-"F" r r-"C" r'
-  chords :FD,   'r4-"F" r r-"D" r'
+  chords :Am,   'a1:m'
+  chords :AmC,  'a2:m c2'
+  chords :BbF,  'bf2 f2'
+  chords :CCGE, 'c2 g4 e4'
+  chords :D,    'd1'
+  chords :FC,   'f2 c2'
+  chords :FD,   'f2 d2'
 
   bar :BeforeYouSign do
     notes "r8 <d'/2>16( <c'/2>8.) <a/3>16 <c'/2>8. <d'/2>16 <e'/1>8. <g/3>8"

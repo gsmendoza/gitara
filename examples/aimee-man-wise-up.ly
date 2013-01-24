@@ -15,13 +15,20 @@
 %-----------------------------------------------------------------------
 % Chord Sets
 
-cChordSetAm = { r4-"Am" r r r }
-cChordSetAmC = { r4-"Am" r r-"C" r }
-cChordSetBbF = { r4-"Bb" r r-"F" r }
-cChordSetCCGE = { r4-"C" r r-"G" r-"E" }
-cChordSetD = { r4-"D" r r r }
-cChordSetFC = { r4-"F" r r-"C" r }
-cChordSetFD = { r4-"F" r r-"D" r }
+cChordSetAm = { \chordmode { a1:m } }
+
+cChordSetAmC = { \chordmode { a2:m c2 } }
+
+cChordSetBbF = { \chordmode { bf2 f2 } }
+
+cChordSetCCGE = { \chordmode { c2 g4 e4 } }
+
+cChordSetD = { \chordmode { d1 } }
+
+cChordSetFC = { \chordmode { f2 c2 } }
+
+cChordSetFD = { \chordmode { f2 d2 } }
+
 
 %-----------------------------------------------------------------------
 % Bars
@@ -244,6 +251,10 @@ chordHeadings = { \cScoreTabOneScoreOne }
 
       \clef "treble_8"
 
+      \new ChordNames {
+        \chordHeadings
+      }
+
       \new Voice \with { \remove Rest_engraver } {
         \stanzaHeadings
       }
@@ -269,9 +280,6 @@ chordHeadings = { \cScoreTabOneScoreOne }
       \new TabVoice {
         \slurUp
         \vTwo
-      }
-      \new TabVoice {
-        \chordHeadings
       }
     >>
   >>

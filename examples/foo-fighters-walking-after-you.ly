@@ -414,6 +414,10 @@ chordHeadings = { \cScoreTabOneScoreOne }
 
       \clef "treble_8"
 
+      \new ChordNames {
+        \chordHeadings
+      }
+
       \new Voice \with { \remove Rest_engraver } {
         \stanzaHeadings
       }
@@ -439,9 +443,6 @@ chordHeadings = { \cScoreTabOneScoreOne }
       \new TabVoice {
         \slurUp
         \vTwo
-      }
-      \new TabVoice {
-        \chordHeadings
       }
     >>
   >>

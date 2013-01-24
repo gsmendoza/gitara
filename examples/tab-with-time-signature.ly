@@ -73,6 +73,10 @@ chordHeadings = { \cStanzaCChord }
       
       \clef "treble_8"
 
+      \new ChordNames {
+        \chordHeadings
+      }
+
       \new Voice \with { \remove Rest_engraver } {
         \stanzaHeadings
       }
@@ -89,9 +93,6 @@ chordHeadings = { \cStanzaCChord }
       \new TabVoice {
         \slurUp
         \vOne
-      }
-      \new TabVoice {
-        \chordHeadings
       }
     >>
   >>
