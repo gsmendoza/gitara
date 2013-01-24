@@ -1,4 +1,11 @@
-0.8.0 - 2012-05-30
+1.0.0 - 2013-01-24
+------------------
+
+* [#26] Stanza labels do not display when reusing bars.
+* [#27]	Render chords using chord notation.
+* `app_spec.rb` now runs all the Gitara files in the examples directory. You can also set the `RUN_LILYPOND` environment variable to true to run lilypond on the generated lilypond files.
+
+0.8.0 - 2013-01-20
 ------------------
 
 * [#25] I should be able to disable manual breaking on some lines.
