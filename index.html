@@ -63,9 +63,9 @@
 <pre class="code ruby"><code><span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_gitara'>gitara</span>
 </code></pre>
 
-<p>You need <a href="http://lilypond.org">lilypond</a> 2.12 or higher in order to generate pdfs and midis.</p>
+<p>You need <a href="http://lilypond.org">lilypond</a> in order to generate pdfs and midis.</p>
 
-<p>Gitara is tested on Ruby 1.9.3 only. Patches are welcome.</p>
+<p>Gitara is tested on Ruby 1.9.3 and Lilypond 2.14. Patches are welcome.</p>
 
 <p>To run,</p>
 
@@ -95,7 +95,7 @@
 
 <h2>Bars</h2>
 
-<p>Bars are the smallest expressions in Gitara. That is, a gitara file must have at least one bar. The notes inside a bar follow <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Simple-notation">Lilypond syntax</a>.</p>
+<p>Bars are the smallest expressions in Gitara. That is, a gitara file must have at least one bar. The notes inside a bar follow <a href="http://lilypond.org/doc/v2.14/Documentation/notation/musical-notation">Lilypond syntax</a>.</p>
 
 <pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
   <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
@@ -104,7 +104,7 @@
 <span class='kw'>end</span>
 </code></pre>
 
-<p>With Gitara, it&#39;s easier to write notes using <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-pitches#Absolute-octave-entry">absolute note names</a> instead of relative note names. This is because we&#39;ll be reusing bars and other Gitara expressions (see Reusing expressions below).</p>
+<p>With Gitara, it&#39;s easier to write notes using <a href="http://lilypond.org/doc/v2.14/Documentation/notation/writing-pitches#absolute-octave-entry">absolute note names</a> instead of relative note names. This is because we&#39;ll be reusing bars and other Gitara expressions (see Reusing expressions below).</p>
 
 <h3>Notes with single quotes and backslashes</h3>
 
@@ -132,7 +132,7 @@
 
 <h3>Multiple voices</h3>
 
-<p>Each line of notes in a bar is a <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Voices-contain-music">voice</a>:</p>
+<p>Each line of notes in a bar is a <a href="http://lilypond.org/doc/v2.14/Documentation/learning/voices-contain-music">voice</a>:</p>
 
 <pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
   <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
@@ -146,7 +146,7 @@
 
 <h3>Partial bars</h3>
 
-<p>To indicate that a bar is a <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Advanced-rhythmic-commands#Partial-measure">partial measure</a>, call <code>partial &lt;duration&gt;</code>:</p>
+<p>To indicate that a bar is a <a href="http://lilypond.org/doc/v2.14/Documentation/notation/displaying-rhythms#upbeats">partial measure</a>, call <code>partial &lt;duration&gt;</code>:</p>
 
 <pre class="code ruby"><code><span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
   <span class='id identifier rubyid_partial'>partial</span> <span class='int'>8</span>
@@ -171,7 +171,11 @@
 <span class='kw'>end</span>
 </code></pre>
 
-<p>Lines are <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Line-breaking">manually breaked</a> in Gitara.</p>
+<p>Lines are <a href="http://lilypond.org/doc/v2.14/Documentation/notation/line-breaking">manually breaked</a> in Gitara. You can disable a line break by setting <code>manual_break</code> to false:</p>
+
+<pre class="code ruby"><code><span class='id identifier rubyid_line'>line</span> <span class='symbol'>:LineOne</span><span class='comma'>,</span> <span class='symbol'>:manual_break</span> <span class='op'>=&gt;</span> <span class='kw'>false</span> <span class='kw'>do</span>
+<span class='kw'>end</span>
+</code></pre>
 
 <h3>Stanzas</h3>
 
@@ -276,7 +280,7 @@
 
 <h3>Repeats and alternative endings</h3>
 
-<p>You can also group expressions under <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Long-repeats">repeats</a> and provide alternative endings:</p>
+<p>You can also group expressions under <a href="http://lilypond.org/doc/v2.14/Documentation/notation/long-repeats">repeats</a> and provide alternative endings:</p>
 
 <pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
   <span class='id identifier rubyid_line'>line</span> <span class='kw'>do</span>
@@ -321,11 +325,11 @@
 <li>arranger - tab&#39;s arranger</li>
 <li>composer - song&#39;s composer</li>
 <li>instrument - description of the instrument used on the tab</li>
-<li><a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Displaying-pitches#Key-signature">key</a></li>
+<li><a href="http://lilypond.org/doc/v2.14/Documentation/notation/displaying-pitches#key-signature">key</a></li>
 <li>midi_instrument - the type of instrument played in the midi export of the tab. By default, &quot;acoustic guitar (nylon)&quot;.</li>
-<li><a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Common-notation-for-fretted-strings#Custom-tablatures">string_tunings</a></li>
-<li><a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-parts#Metronome-marks">tempo</a></li>
-<li><a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Displaying-rhythms#Time-signature">time</a> - default is 4/4</li>
+<li><a href="http://lilypond.org/doc/v2.14/Documentation/notation/common-notation-for-fretted-strings#custom-tablatures">string_tunings</a></li>
+<li><a href="http://lilypond.org/doc/v2.14/Documentation/notation/displaying-rhythms#metronome-marks">tempo</a></li>
+<li><a href="http://lilypond.org/doc/v2.14/Documentation/notation/displaying-rhythms#time-signature">time</a> - default is 4/4</li>
 <li>title - title of the song</li>
 <li>transposition - adjusts the pitch of the instrument. The default transposition is &quot;c&quot;. If you set it to &quot;d&quot;, then you have to play the tab two frets higher on the guitar (capo on second fret).</li>
 </ul>
@@ -335,7 +339,7 @@
 <p>You can add chord labels to bars:</p>
 
 <pre class="code ruby"><code><span class='const'>Gitara</span><span class='period'>.</span><span class='id identifier rubyid_define'>define</span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_chords'>chords</span> <span class='symbol'>:FC</span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>r4-&quot;F&quot; r r-&quot;C&quot; r</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_chords'>chords</span> <span class='symbol'>:FC</span><span class='comma'>,</span>   <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>f2 c2</span><span class='tstring_end'>'</span></span>
 
   <span class='id identifier rubyid_bar'>bar</span> <span class='symbol'>:BeganIt</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_notes'>notes</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/skip 4 &lt;a/3 c'/2 &gt;8 &lt;g/3&gt;8 /skip 4 &lt;g/3 c'/2 &gt;8 &lt;g/3&gt;8</span><span class='tstring_end'>&quot;</span></span>
@@ -345,18 +349,11 @@
 <span class='kw'>end</span>
 </code></pre>
 
-<p><code>r4-&quot;F&quot; r r-&quot;C&quot; r</code> is a <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond-learning/Music-expressions-explained">lilypond music expression</a>.</p>
-
-<ul>
-<li><code>r</code> is a rest. <code>r4</code> is a rest that is a quarter note long. Succeeding rests have the same duration as the first one.</li>
-<li><code>-&quot;F&quot;</code> means &#39;place the text &quot;F&quot; below the rest note&#39;. See <a href="http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-text">http://lilypond.org/doc/v2.12/Documentation/user/lilypond/Writing-text</a>.</li>
-</ul>
-
-<p>When these chord labels are added to the Gitara lilypond output, Gitara hides the rest notes so only the chord labels are visible.</p>
+<p><code>f2</code> and <code>c2</code> are <a href="http://lilypond.org/doc/v2.14/Documentation/notation/displaying-chords">lilypond chord names</a>.</p>
 
 <p>If the bar is a partial measure, the duration of the chords within the bar must match the bar&#39;s duration:</p>
 
-<pre class="code ruby"><code><span class='id identifier rubyid_chords'>chords</span> <span class='symbol'>:G8</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>r8-&quot;G&quot;</span><span class='tstring_end'>'</span></span>
+<pre class="code ruby"><code><span class='id identifier rubyid_chords'>chords</span> <span class='symbol'>:G8</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>g8</span><span class='tstring_end'>'</span></span>
 
 <span class='id identifier rubyid_bar'>bar</span> <span class='kw'>do</span>
   <span class='id identifier rubyid_partial'>partial</span> <span class='int'>8</span>
@@ -372,7 +369,7 @@
 </div></div>
     
     <div id="footer">
-  Generated on Tue May 29 14:53:12 2012 by 
+  Generated on Thu Jan 24 18:13:37 2013 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.5 (ruby-1.9.3).
 </div>

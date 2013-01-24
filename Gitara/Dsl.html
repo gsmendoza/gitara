@@ -789,19 +789,19 @@
                 <pre class="lines">
 
 
-115
-116
-117
-118
-119
-120
-121
-122
-123
-124</pre>
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133</pre>
               </td>
               <td>
-                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 115</span>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 124</span>
 
 <span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_empty'>be_empty</span>
@@ -825,17 +825,17 @@
                 <pre class="lines">
 
 
-128
-129
-130
-131
-132
-133
-134
-135</pre>
+137
+138
+139
+140
+141
+142
+143
+144</pre>
               </td>
               <td>
-                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 128</span>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 137</span>
 
 <span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_empty'>be_empty</span>
@@ -843,6 +843,42 @@
  <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_have'>have</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_bar'>bar</span>
 <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='symbol'>:name</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_nil'>be_nil</span>
 <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_a'>be_a</span><span class='lparen'>(</span><span class='const'>Node</span><span class='op'>::</span><span class='const'>Bar</span><span class='rparen'>)</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
+      <li>should set o[:options] as attributes of the nodes
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 148</span>
+
+<span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_empty'>be_empty</span>
+ <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_add_names'>add_names</span> <span class='symbol'>:names</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:Intro</span><span class='comma'>,</span> <span class='symbol'>:Intro</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:options</span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='int'>1</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='symbol'>:node_class</span> <span class='op'>=&gt;</span> <span class='const'>Node</span><span class='op'>::</span><span class='const'>Base</span>
+ <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_have'>have</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_nodes'>nodes</span>
+<span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_child'>child</span><span class='op'>|</span>
+  <span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='symbol'>:Intro</span>
+  <span class='id identifier rubyid_child'>child</span><span class='period'>.</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='int'>1</span>
+<span class='kw'>end</span></pre>
               </td>
             </tr>
           </table>
@@ -864,7 +900,12 @@
 34
 35
 36
-37</pre>
+37
+38
+39
+40
+41
+42</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 30</span>
@@ -873,7 +914,12 @@
   <span class='id identifier rubyid_names'>names</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:names</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span> <span class='op'>?</span> <span class='lbracket'>[</span><span class='kw'>nil</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:names</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_node_class'>node_class</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:node_class</span><span class='rbracket'>]</span>
 
-  <span class='id identifier rubyid_names'>names</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='op'>|</span> <span class='id identifier rubyid_node_class'>node_class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_child'>child</span><span class='op'>|</span>
+  <span class='id identifier rubyid_children'>children</span> <span class='op'>=</span> <span class='id identifier rubyid_names'>names</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_name'>name</span><span class='op'>|</span> 
+    <span class='id identifier rubyid_attributes'>attributes</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:options</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_node_class'>node_class</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_attributes'>attributes</span><span class='rparen'>)</span> 
+  <span class='rbrace'>}</span>
+  
+  <span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_child'>child</span><span class='op'>|</span>
     <span class='id identifier rubyid_add'>add</span> <span class='id identifier rubyid_child'>child</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
   <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
@@ -902,21 +948,21 @@
                 <pre class="lines">
 
 
-289
-290
-291
-292
-293
-294
-295
-296
-297
-298
-299
-300</pre>
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322</pre>
               </td>
               <td>
-                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 289</span>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 311</span>
 
 <span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_bar'>bar</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='rparen'>)</span>
@@ -941,12 +987,12 @@
       <pre class="lines">
 
 
-39
-40
-41</pre>
+44
+45
+46</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 39</span>
+      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 44</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_alternative'>alternative</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add'>add</span> <span class='const'>Node</span><span class='op'>::</span><span class='const'>Alternative</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
@@ -1092,12 +1138,12 @@
       <pre class="lines">
 
 
-43
-44
-45</pre>
+48
+49
+50</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 43</span>
+      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 48</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_bar'>bar</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_names'>names</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_names'>add_names</span> <span class='symbol'>:names</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_names'>names</span><span class='comma'>,</span> <span class='symbol'>:node_class</span> <span class='op'>=&gt;</span> <span class='const'>Node</span><span class='op'>::</span><span class='const'>Bar</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
@@ -1127,19 +1173,19 @@
                 <pre class="lines">
 
 
-219
-220
-221
-222
-223
-224
-225
-226
-227
-228</pre>
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250</pre>
               </td>
               <td>
-                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 219</span>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 241</span>
 
 <span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_empty'>be_empty</span>
@@ -1162,18 +1208,18 @@
                 <pre class="lines">
 
 
-234
-235
-236
-237
-238
-239
-240
-241
-242</pre>
+256
+257
+258
+259
+260
+261
+262
+263
+264</pre>
               </td>
               <td>
-                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 234</span>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 256</span>
 
 <span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_empty'>be_empty</span>
@@ -1195,12 +1241,12 @@
       <pre class="lines">
 
 
-47
-48
-49</pre>
+52
+53
+54</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 47</span>
+      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 52</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_chords'>chords</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_value'>value</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add'>add</span> <span class='const'>Node</span><span class='op'>::</span><span class='const'>ChordSet</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:name</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
@@ -1412,6 +1458,36 @@
         </div>
       </li>
     
+      <li>should allow breaking to be toggled
+        <div class="source_code">
+          <table>
+            <tr>
+              <td>
+                <pre class="lines">
+
+
+113
+114
+115
+116
+117
+118</pre>
+              </td>
+              <td>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 113</span>
+
+<span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_line'>line</span> <span class='symbol'>:manual_break</span> <span class='op'>=&gt;</span> <span class='kw'>false</span>
+
+<span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_have'>have</span><span class='lparen'>(</span><span class='int'>1</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_line'>line</span>
+<span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>TabOneLineOne</span><span class='tstring_end'>'</span></span> <span class='comment'># not manual_breaking=false
+</span><span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_manual_break?'>manual_break?</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_false'>be_false</span></pre>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </li>
+    
   </ul>
 </div>
 <table class="source_code">
@@ -1420,15 +1496,21 @@
       <pre class="lines">
 
 
-51
-52
-53</pre>
+56
+57
+58
+59
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 51</span>
+      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 56</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_line'>line</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_names'>names</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_add_names'>add_names</span> <span class='symbol'>:names</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_names'>names</span><span class='comma'>,</span> <span class='symbol'>:node_class</span> <span class='op'>=&gt;</span> <span class='const'>Node</span><span class='op'>::</span><span class='const'>Line</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
+  <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id identifier rubyid_args'>args</span><span class='lbracket'>[</span><span class='symbol'>:options</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_names'>names</span><span class='period'>.</span><span class='id identifier rubyid_pop'>pop</span> <span class='kw'>if</span> <span class='id identifier rubyid_names'>names</span><span class='period'>.</span><span class='id identifier rubyid_last'>last</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_merge!'>merge!</span><span class='lparen'>(</span><span class='symbol'>:names</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_names'>names</span><span class='comma'>,</span> <span class='symbol'>:node_class</span> <span class='op'>=&gt;</span> <span class='const'>Node</span><span class='op'>::</span><span class='const'>Line</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_add_names'>add_names</span> <span class='id identifier rubyid_args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1522,12 +1604,12 @@
       <pre class="lines">
 
 
-55
-56
-57</pre>
+63
+64
+65</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 63</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_notes'>notes</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add'>add</span> <span class='const'>Node</span><span class='op'>::</span><span class='const'>NoteSet</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span>
@@ -1557,15 +1639,15 @@
                 <pre class="lines">
 
 
-248
-249
-250
-251
-252
-253</pre>
+270
+271
+272
+273
+274
+275</pre>
               </td>
               <td>
-                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 248</span>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 270</span>
 
 <span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_specified_duration'>specified_duration</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_nil'>be_nil</span>
@@ -1585,12 +1667,12 @@
       <pre class="lines">
 
 
-59
-60
-61</pre>
+67
+68
+69</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 59</span>
+      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 67</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_partial'>partial</span><span class='lparen'>(</span><span class='id identifier rubyid_duration'>duration</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_specified_duration'>specified_duration</span> <span class='op'>=</span> <span class='id identifier rubyid_duration'>duration</span>
@@ -1620,18 +1702,18 @@
                 <pre class="lines">
 
 
-259
-260
-261
-262
-263
-264
-265
-266
-267</pre>
+281
+282
+283
+284
+285
+286
+287
+288
+289</pre>
               </td>
               <td>
-                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 259</span>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 281</span>
 
 <span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
  <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_repeat'>repeat</span> <span class='int'>2</span>
@@ -1653,22 +1735,22 @@
                 <pre class="lines">
 
 
-271
-272
-273
-274
-275
-276
-277
-278
-279
-280
-281
-282
-283</pre>
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305</pre>
               </td>
               <td>
-                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 271</span>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 293</span>
 
 <span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
  <span class='id identifier rubyid_bar'>bar</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:bar</span><span class='rparen'>)</span>
@@ -1693,12 +1775,12 @@
       <pre class="lines">
 
 
-63
-64
-65</pre>
+71
+72
+73</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 63</span>
+      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 71</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_repeat'>repeat</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add'>add</span> <span class='const'>Node</span><span class='op'>::</span><span class='const'>Repeat</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='symbol'>:value</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_value'>value</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
@@ -1728,19 +1810,19 @@
                 <pre class="lines">
 
 
-141
-142
-143
-144
-145
-146
-147
-148
-149
-150</pre>
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172</pre>
               </td>
               <td>
-                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 141</span>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 163</span>
 
 <span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_empty'>be_empty</span>
@@ -1763,23 +1845,23 @@
                 <pre class="lines">
 
 
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167</pre>
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189</pre>
               </td>
               <td>
-                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 154</span>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 176</span>
 
 <span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_empty'>be_empty</span>
@@ -1805,12 +1887,12 @@
       <pre class="lines">
 
 
-67
-68
-69</pre>
+75
+76
+77</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 67</span>
+      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_score'>score</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_names'>names</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_names'>add_names</span> <span class='symbol'>:names</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_names'>names</span><span class='comma'>,</span> <span class='symbol'>:node_class</span> <span class='op'>=&gt;</span> <span class='const'>Node</span><span class='op'>::</span><span class='const'>Score</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
@@ -1840,19 +1922,19 @@
                 <pre class="lines">
 
 
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182</pre>
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204</pre>
               </td>
               <td>
-                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 173</span>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 195</span>
 
 <span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_empty'>be_empty</span>
@@ -1875,24 +1957,24 @@
                 <pre class="lines">
 
 
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
-196
-197
-198
-199
-200</pre>
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222</pre>
               </td>
               <td>
-                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 186</span>
+                <pre class="code"><span class="info file"># File 'spec/lib/gitara/dsl_spec.rb', line 208</span>
 
 <span class='id identifier rubyid_dsl'>dsl</span> <span class='op'>=</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:dsl</span><span class='comma'>,</span> <span class='symbol'>:node</span> <span class='op'>=&gt;</span> <span class='const'>FactoryGirl</span><span class='period'>.</span><span class='id identifier rubyid_build'>build</span><span class='lparen'>(</span><span class='symbol'>:tab</span><span class='comma'>,</span> <span class='symbol'>:children</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
 <span class='id identifier rubyid_dsl'>dsl</span><span class='period'>.</span><span class='id identifier rubyid_node'>node</span><span class='period'>.</span><span class='id identifier rubyid_children'>children</span><span class='period'>.</span><span class='id identifier rubyid_should'>should</span> <span class='id identifier rubyid_be_empty'>be_empty</span>
@@ -1919,12 +2001,12 @@
       <pre class="lines">
 
 
-71
-72
-73</pre>
+79
+80
+81</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 71</span>
+      <pre class="code"><span class="info file"># File 'lib/gitara/dsl.rb', line 79</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_stanza'>stanza</span><span class='lparen'>(</span><span class='op'>*</span><span class='id identifier rubyid_names'>names</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_add_names'>add_names</span> <span class='symbol'>:names</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_names'>names</span><span class='comma'>,</span> <span class='symbol'>:node_class</span> <span class='op'>=&gt;</span> <span class='const'>Node</span><span class='op'>::</span><span class='const'>Stanza</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id identifier rubyid_block'>block</span>
@@ -2124,7 +2206,7 @@
 </div>
     
     <div id="footer">
-  Generated on Tue May 29 14:53:13 2012 by 
+  Generated on Thu Jan 24 18:13:37 2013 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.7.5 (ruby-1.9.3).
 </div>
