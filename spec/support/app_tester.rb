@@ -13,7 +13,7 @@ class AppTester < Valuable
 
   def expected
     @expected ||= Utilities.read!(Pathname.new("examples/#{name}.ly")).gsub(/\n\s+\n/, "\n")
-  rescue PowError => e
+  rescue Utilities::PathnameDoesNotExist => e
     puts "#{e.message}. Copying actual result..."
     Pathname.new("examples/#{name}.ly").write actual
     retry

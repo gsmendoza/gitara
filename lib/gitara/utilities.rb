@@ -1,5 +1,8 @@
 module Gitara
   module Utilities
+    class PathnameDoesNotExist < StandardError
+    end
+
     def self.id_as_word(id)
       id.en.numwords.gsub('-', '_').camelize
     end
@@ -12,7 +15,7 @@ module Gitara
       if pathname.exist?
         pathname.read
       else
-        raise PowError, "#{pathname} does not exist"
+        raise PathnameDoesNotExist, "#{pathname} does not exist"
       end
     end
   end
