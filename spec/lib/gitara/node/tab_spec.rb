@@ -3,10 +3,10 @@ require 'spec_helper'
 describe Gitara::Node::Tab do
   describe "#voices" do
     it "should create a max_number_of_voices voices" do
-      tab = FactoryGirl.build(:tab, :children => [
-        FactoryGirl.build(:bar, :children => [
-          FactoryGirl.build(:note_set),
-          FactoryGirl.build(:note_set)
+      tab = FactoryBot.build(:tab, :children => [
+        FactoryBot.build(:bar, :children => [
+          FactoryBot.build(:note_set),
+          FactoryBot.build(:note_set)
         ])
       ])
       voices = tab.voices
@@ -19,10 +19,10 @@ describe Gitara::Node::Tab do
 
   describe "#max_number_of_voices" do
     it "should be the max number of note_sets in a bar" do
-      tab = FactoryGirl.build(:tab, :children => [
-        FactoryGirl.build(:bar, :children => [
-          FactoryGirl.build(:note_set),
-          FactoryGirl.build(:note_set)
+      tab = FactoryBot.build(:tab, :children => [
+        FactoryBot.build(:bar, :children => [
+          FactoryBot.build(:note_set),
+          FactoryBot.build(:note_set)
         ])
       ])
 
@@ -32,12 +32,12 @@ describe Gitara::Node::Tab do
 
   describe "#playable_child" do
     it "should be the last child of the tab" do
-      tab = FactoryGirl.build(:tab, :children => [
-        FactoryGirl.build(:bar, :name => 'Intro', :children => [
-          FactoryGirl.build(:note_set),
-          FactoryGirl.build(:note_set)
+      tab = FactoryBot.build(:tab, :children => [
+        FactoryBot.build(:bar, :name => 'Intro', :children => [
+          FactoryBot.build(:note_set),
+          FactoryBot.build(:note_set)
         ]),
-        FactoryGirl.build(:bar, :name => 'Intro')
+        FactoryBot.build(:bar, :name => 'Intro')
       ])
 
       tab.playable_child.id.should == 2
@@ -46,19 +46,19 @@ describe Gitara::Node::Tab do
 
   describe "#midi_instrument" do
     it "should have acoustic guitar (nylon) as default" do
-      tab = FactoryGirl.build(:tab)
+      tab = FactoryBot.build(:tab)
       tab.midi_instrument.should == 'acoustic guitar (nylon)'
     end
   end
 
   describe "#time_signature" do
     it "should be based on time if it exists" do
-      tab = FactoryGirl.build(:tab, :time => '3/4')
+      tab = FactoryBot.build(:tab, :time => '3/4')
       tab.time_signature.value.should == '3/4'
     end
 
     it "should be 4/4 if time is not set" do
-      tab = FactoryGirl.build(:tab, :time => nil)
+      tab = FactoryBot.build(:tab, :time => nil)
       tab.time_signature.value.should == '4/4'
     end
   end

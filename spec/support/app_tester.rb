@@ -4,7 +4,7 @@ class AppTester < Valuable
   has_value :run_lilypond, :klass => :boolean, :default => false
 
   def run
-    app = FactoryGirl.build(:app)
+    app = FactoryBot.build(:app)
     app.invoke :export, ["examples/#{name}.rb"], 
       "target-directory" => test_tmp_dir.path, 
       "run-lilypond" => self.run_lilypond?

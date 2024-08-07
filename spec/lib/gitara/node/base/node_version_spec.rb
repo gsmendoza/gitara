@@ -10,23 +10,23 @@ describe Gitara::Node::Base::NodeVersion do
 
   describe "#definition_name" do
     it "should include the node's class and the node's name" do
-      version = Node::Base::NodeVersion.new(:node => FactoryGirl.build(:base, :name => 'some node'))
+      version = Node::Base::NodeVersion.new(:node => FactoryBot.build(:base, :name => 'some node'))
       version.definition_name.should == 'nBaseSomeNode'
     end
   end
 
   describe "#call_name" do
     it "should be the call version of the definition name" do
-      version = Node::Base::NodeVersion.new(:node => FactoryGirl.build(:base, :name => 'some node'))
+      version = Node::Base::NodeVersion.new(:node => FactoryBot.build(:base, :name => 'some node'))
       version.call_name.should == '\nBaseSomeNode'
     end
   end
 
   describe "#value" do
     it "should be the call values of its definition_children" do
-      node = FactoryGirl.build(:base, :children => [
-        FactoryGirl.build(:base, :name => :First),
-        FactoryGirl.build(:base, :name => :Second)
+      node = FactoryBot.build(:base, :children => [
+        FactoryBot.build(:base, :name => :First),
+        FactoryBot.build(:base, :name => :Second)
       ])
       node_version = Node::Base::NodeVersion.new(:node => node)
       node_version.value.should == '\nBaseFirst \nBaseSecond'
@@ -35,8 +35,8 @@ describe Gitara::Node::Base::NodeVersion do
 
   describe "#definition_children" do
     it "should be versionized versions of the node's definition_children" do
-      parent = FactoryGirl.build(:base, :name => 'parent')
-      child = FactoryGirl.build(:base, :name => 'child')
+      parent = FactoryBot.build(:base, :name => 'parent')
+      child = FactoryBot.build(:base, :name => 'child')
       parent.add child
 
       node_version = Node::Base::NodeVersion.new(:node => parent)
@@ -50,13 +50,13 @@ describe Gitara::Node::Base::NodeVersion do
 
   describe "#call_value" do
     it "should be the call name if we want to render the node's definition name in the lilypond output" do
-      node = FactoryGirl.build(:base, :name => 'parent')
+      node = FactoryBot.build(:base, :name => 'parent')
       node_version = Node::Base::NodeVersion.new(:node => node)
       node_version.call_value.should == '\nBaseParent'
     end
 
     it "should be the call value of the node if we don't want to render the node's definition name in the lilypond output" do
-      node = FactoryGirl.build(:base, :name => 'name')
+      node = FactoryBot.build(:base, :name => 'name')
       node_version = Node::Base::NodeVersion.new(:node => node)
       node.should_receive(:call_value).with(node_version).and_return("todo { }")
       node_version.call_value.should == "todo { }"
