@@ -58,7 +58,7 @@ describe Gitara::Node::Base::NodeVersion do
     it "should be the call value of the node if we don't want to render the node's definition name in the lilypond output" do
       node = FactoryBot.build(:base, :name => 'name')
       node_version = Node::Base::NodeVersion.new(:node => node)
-      expect(node).to_receive(:call_value).with(node_version).and_return("todo { }")
+      expect(node).to receive(:call_value).with(node_version).and_return("todo { }")
       expect(node_version.call_value).to eq("todo { }")
     end
   end
