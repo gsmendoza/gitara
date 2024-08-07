@@ -6,14 +6,14 @@ describe Gitara::Node::Bar::ChordedVersion do
       bar = FactoryBot.build(:bar, :children => [FactoryBot.build(:chord_set, :name => :Am, :value => 'r-"Am"')])
 
       chorded_bar = FactoryBot.build(:chorded_bar, :node => bar)
-      expect(chorded_bar.value).to == '\cChordSetAm'
+      expect(chorded_bar.value).to eq('\cChordSetAm')
     end
 
     it "should be blank, if the bar does not have any chord sets" do
       bar = FactoryBot.build(:bar, :children => [FactoryBot.build(:note_set, :value => 'c')])
 
       chorded_bar = FactoryBot.build(:chorded_bar, :node => bar)
-      expect(chorded_bar.value).to == ""
+      expect(chorded_bar.value).to eq("")
     end
   end
 end

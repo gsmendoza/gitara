@@ -8,7 +8,7 @@ describe Gitara::Node::Repeat do
       ])
 
       version = Node::Base::NodeVersion.new(:node => repeat)
-      expect(repeat.call_value(version)).to == "\\repeat volta 2 { \\nBarRepeatOneBarOne }"
+      expect(repeat.call_value(version)).to eq("\\repeat volta 2 { \\nBarRepeatOneBarOne }")
     end
   end
 

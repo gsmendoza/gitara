@@ -8,7 +8,7 @@ describe Gitara::App do
       it "can convert #{path.name(false)} to lilypond" do
         app_test.name = path.name(false)
         app_test.run
-        expect(app_test.actual).to == app_test.expected
+        expect(app_test.actual).to eq(app_test.expected)
       end
     end
     

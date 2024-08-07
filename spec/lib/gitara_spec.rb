@@ -18,8 +18,8 @@ describe Gitara do
       end
 
       bars = tab.definitions(Node::Bar)
-      expect(bars.size).to == 1
-      expect(bars[0].name).to == 'Intro'
+      expect(bars.size).to eq(1)
+      expect(bars[0].name).to eq('Intro')
     end
   end
 end

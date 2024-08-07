@@ -25,7 +25,7 @@ describe Gitara::Node::Bar do
       stanza = FactoryBot.build(:stanza, :name => 'Intro', :children => [first_bar, second_bar])
       tab = FactoryBot.build(:tab, :children => [stanza], :time => '4/4')
 
-      expect(second_bar.stanza_heading).to == 'r1'
+      expect(second_bar.stanza_heading).to eq('r1')
     end
 
     it "should be a partial with no stanza name if the bar has a special_duration" do
@@ -34,14 +34,14 @@ describe Gitara::Node::Bar do
       stanza = FactoryBot.build(:stanza, :name => 'Intro', :children => [first_bar, second_bar])
       tab = FactoryBot.build(:tab, :children => [stanza], :time => '4/4')
 
-      expect(second_bar.stanza_heading).to == 'r8'
+      expect(second_bar.stanza_heading).to eq('r8')
     end
   end
 
   describe "#specified_duration_as_lilypond" do
     it "should be \\partial specified_duration if present" do
       bar = FactoryBot.build(:bar, :specified_duration => 8)
-      expect(bar.specified_duration_as_lilypond).to == '\partial 8'
+      expect(bar.specified_duration_as_lilypond).to eq('\partial 8')
     end
 
     it "should be nil if there is no specified_duration" do

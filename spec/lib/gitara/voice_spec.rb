@@ -4,28 +4,28 @@ describe Gitara::Voice do
   describe "#call_name" do
     it "should be the variable name of the node when called inside lilypond" do
       voice = FactoryBot.build(:voice, :id => 1)
-      expect(voice.call_name).to == '\vOne'
+      expect(voice.call_name).to eq('\vOne')
     end
   end
 
   describe "#definition_name" do
     it "should be the name of the voice in a lilypond variable definition statement" do
       voice = FactoryBot.build(:voice, :id => 1)
-      expect(voice.definition_name).to == "vOne"
+      expect(voice.definition_name).to eq("vOne")
     end
   end
 
   describe "#id_as_word" do
     it "should convert the id to word" do
       node = FactoryBot.build(:voice, :id => 1)
-      expect(node.id_as_word).to == "One"
+      expect(node.id_as_word).to eq("One")
     end
   end
 
   describe "#stem_type" do
     it "should be the lilypond stem type for the voice" do
       voice = FactoryBot.build(:voice, :id => 1)
-      expect(voice.stem_type).to == '\voiceOne'
+      expect(voice.stem_type).to eq('\voiceOne')
     end
   end
 
@@ -40,13 +40,13 @@ describe Gitara::Voice do
           ])
         ]
       )
-      expect(tab.max_number_of_voices).to == 2
+      expect(tab.max_number_of_voices).to eq(2)
 
       voice = FactoryBot.build(:voice, :parent => tab, :id => 1)
-      expect(voice.transposition).to == "d''"
+      expect(voice.transposition).to eq("d''")
 
       voice = FactoryBot.build(:voice, :parent => tab, :id => 2)
-      expect(voice.transposition).to == "d'"
+      expect(voice.transposition).to eq("d'")
     end
 
     it "should be blank if the tab has no transposition" do
@@ -58,7 +58,7 @@ describe Gitara::Voice do
           ])
         ]
       )
-      expect(tab.max_number_of_voices).to == 2
+      expect(tab.max_number_of_voices).to eq(2)
 
       voice = FactoryBot.build(:voice, :parent => tab, :id => 1)
       expect(voice.transposition).to be_nil
@@ -73,13 +73,13 @@ describe Gitara::Voice do
           FactoryBot.build(:note_set)
         ])
       ])
-      expect(tab.max_number_of_voices).to == 2
+      expect(tab.max_number_of_voices).to eq(2)
 
       voice = FactoryBot.build(:voice, :parent => tab, :id => 1)
-      expect(voice.octave).to == 2
+      expect(voice.octave).to eq(2)
 
       voice = FactoryBot.build(:voice, :parent => tab, :id => 2)
-      expect(voice.octave).to == 1
+      expect(voice.octave).to eq(1)
     end
   end
 end

@@ -10,7 +10,7 @@ describe Gitara::Node::Bar::VoicedVersion do
       voice = FactoryBot.build(:voice, :id => 1)
 
       voiced_bar = FactoryBot.build(:voiced_bar, :node => bar, :voice => voice)
-      expect(voiced_bar.matching_note_set).to == note_set
+      expect(voiced_bar.matching_note_set).to eq(note_set)
     end
   end
 end

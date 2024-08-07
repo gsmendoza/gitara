@@ -12,7 +12,7 @@ describe Gitara::Node::Stanza do
 
       tab = FactoryBot.build(:tab, :time => '4/4', :children => [stanza])
 
-      expect(stanza.heading_in_lilypond).to == 'r1^"Verse 1" r1'
+      expect(stanza.heading_in_lilypond).to eq('r1^"Verse 1" r1')
     end
   end
 
@@ -22,7 +22,7 @@ describe Gitara::Node::Stanza do
       stanza = FactoryBot.build(:stanza, :name => 'Intro', :children => [bar])
       tab = FactoryBot.build(:tab, :children => [stanza], :time => '4/4')
 
-      expect(stanza.heading_for_first_bar).to == 'r1^"Intro"'
+      expect(stanza.heading_for_first_bar).to eq('r1^"Intro"')
     end
 
     it "should attach the stanza name to the first rest note if the time signature will not generate whole note bars" do
@@ -30,7 +30,7 @@ describe Gitara::Node::Stanza do
       stanza = FactoryBot.build(:stanza, :name => 'Intro', :children => [bar])
       tab = FactoryBot.build(:tab, :children => [stanza], :time => '3/4')
 
-      expect(stanza.heading_for_first_bar).to == 'r4^"Intro" r4 r4'
+      expect(stanza.heading_for_first_bar).to eq('r4^"Intro" r4 r4')
     end
   end
 end

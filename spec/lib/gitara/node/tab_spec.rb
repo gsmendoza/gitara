@@ -11,9 +11,9 @@ describe Gitara::Node::Tab do
       ])
       voices = tab.voices
       expect(voices).to have(2).values
-      expect(voices[0].id).to == 1
-      expect(voices[1].id).to == 2
-      expect(voices.map(&:parent).uniq).to == [tab]
+      expect(voices[0].id).to eq(1)
+      expect(voices[1].id).to eq(2)
+      expect(voices.map(&:parent).uniq).to eq([tab])
     end
   end
 
@@ -26,7 +26,7 @@ describe Gitara::Node::Tab do
         ])
       ])
 
-      expect(tab.max_number_of_voices).to == 2
+      expect(tab.max_number_of_voices).to eq(2)
     end
   end
 
@@ -40,26 +40,26 @@ describe Gitara::Node::Tab do
         FactoryBot.build(:bar, :name => 'Intro')
       ])
 
-      expect(tab.playable_child.id).to == 2
+      expect(tab.playable_child.id).to eq(2)
     end
   end
 
   describe "#midi_instrument" do
     it "should have acoustic guitar (nylon) as default" do
       tab = FactoryBot.build(:tab)
-      expect(tab.midi_instrument).to == 'acoustic guitar (nylon)'
+      expect(tab.midi_instrument).to eq('acoustic guitar (nylon)')
     end
   end
 
   describe "#time_signature" do
     it "should be based on time if it exists" do
       tab = FactoryBot.build(:tab, :time => '3/4')
-      expect(tab.time_signature.value).to == '3/4'
+      expect(tab.time_signature.value).to eq('3/4')
     end
 
     it "should be 4/4 if time is not set" do
       tab = FactoryBot.build(:tab, :time => nil)
-      expect(tab.time_signature.value).to == '4/4'
+      expect(tab.time_signature.value).to eq('4/4')
     end
   end
 end
