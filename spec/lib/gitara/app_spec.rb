@@ -4,7 +4,7 @@ describe Gitara::App do
   describe "#export" do
     let(:app_test){AppTester.new(:run_lilypond => run_lilypond?)}
     
-    Pow('examples').glob('/*.rb').each do |path|
+    Pathname.new('examples').glob('/*.rb').each do |path|
       it "can convert #{path.name(false)} to lilypond" do
         app_test.name = path.name(false)
         app_test.run

@@ -8,11 +8,11 @@ module Gitara
       "#{object.class}(" + attributes.collect{|a| "#{a}=#{object.send(a).inspect}"}.join(', ') + ")"
     end
 
-    def self.read!(pow)
-      if pow.exists?
-        pow.read
+    def self.read!(pathname)
+      if pathname.exists?
+        pathname.read
       else
-        raise PowError, "#{pow} does not exist"
+        raise PowError, "#{pathname} does not exist"
       end
     end
   end

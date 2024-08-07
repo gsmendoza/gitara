@@ -17,8 +17,8 @@ module Gitara
     def export(source_path)
       load source_path
       tab = Gitara.tab
-      lilypond_name = Pow(source_path).name(false) + '.ly'
-      lilypond_path = Pow(options['target-directory']) / lilypond_name
+      lilypond_name = Pathname.new(source_path).name(false) + '.ly'
+      lilypond_path = Pathname.new(options['target-directory']) / lilypond_name
       lilypond_path.write(Gitara.render('tab', tab))
 
       if options['run-lilypond']

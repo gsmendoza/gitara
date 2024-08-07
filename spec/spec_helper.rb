@@ -13,7 +13,7 @@ RSpec.configure do |config|
   end
 
   def test_tmp_dir
-    Pow('tmp/test')
+    Pathname.new('tmp/test')
   end
   
   def run_lilypond?

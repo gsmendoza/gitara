@@ -41,7 +41,7 @@ module Gitara
   end
 
   def self.render(path, object)
-    template = (Pow!('gitara/template') / "#{path}.erb")
+    template = (Pathname.new('gitara/template') / "#{path}.erb")
     erb = Erubis::Eruby.new(Utilities.read!(template))
     erb.evaluate(object)
   end
