@@ -4,20 +4,20 @@ describe Gitara::Dsl do
   describe "#bar" do
     it "should add a bar with the name" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       dsl.bar 'Intro'
 
-      dsl.node.children.should have(1).bar
+      expect(dsl.node.children).to have(1).bar
 
       bar = dsl.node.children[0]
-      bar.name.should == 'Intro'
-      bar.children.should be_empty
+      expect(bar.name).to == 'Intro'
+      expect(bar.children).to be_empty
     end
 
     it "should add the definition_children declared in the block to the bar" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       note_set = FactoryBot.build(:note_set)
 
@@ -25,31 +25,31 @@ describe Gitara::Dsl do
         add note_set
       end
 
-      dsl.node.children.should have(1).bar
-      dsl.node.children[0].name.should == 'Intro'
+      expect(dsl.node.children).to have(1).bar
+      expect(dsl.node.children[0].name).to == 'Intro'
 
       bar = dsl.node.children[0]
-      bar.children.should have(1).note_set
-      bar.children[0].should == note_set
+      expect(bar.children).to have(1).note_set
+      expect(bar.children[0]).to == note_set
     end
   end
 
   describe "#add" do
     it "should add the child to the dsl's node" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       bar = FactoryBot.build(:bar, :name => 'Intro')
 
       dsl.add bar
 
-      dsl.node.children.should have(1).bar
-      dsl.node.children[0].should == bar
+      expect(dsl.node.children).to have(1).bar
+      expect(dsl.node.children[0]).to == bar
     end
 
     it "should add the definition_children in the block to the child" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       bar = FactoryBot.build(:bar, :children => [])
       note_set = FactoryBot.build(:note_set)
@@ -58,43 +58,43 @@ describe Gitara::Dsl do
         add note_set
       end
 
-      dsl.node.children.should have(1).bar
-      dsl.node.children[0].should == bar
+      expect(dsl.node.children).to have(1).bar
+      expect(dsl.node.children[0]).to == bar
 
-      bar.children.should have(1).note_set
-      bar.children[0].should == note_set
+      expect(bar.children).to have(1).note_set
+      expect(bar.children[0]).to == note_set
     end
   end
 
   describe "#notes" do
     it "should add a note set with the value" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:bar, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       dsl.notes 'test'
 
-      dsl.node.children.should have(1).note_set
-      dsl.node.children[0].value.should == 'test'
+      expect(dsl.node.children).to have(1).note_set
+      expect(dsl.node.children[0].value).to == 'test'
     end
   end
 
   describe "#line" do
     it "should add a line with the name" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       dsl.line 'Intro'
 
-      dsl.node.children.should have(1).line
+      expect(dsl.node.children).to have(1).line
 
       line = dsl.node.children[0]
-      line.name.should == 'Intro'
-      line.children.should be_empty
+      expect(line.name).to == 'Intro'
+      expect(line.children).to be_empty
     end
 
     it "should add the definition_children declared in the block to the line" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       bar = FactoryBot.build(:bar)
 
@@ -102,59 +102,59 @@ describe Gitara::Dsl do
         add bar
       end
 
-      dsl.node.children.should have(1).line
-      dsl.node.children[0].name.should == 'Intro'
+      expect(dsl.node.children).to have(1).line
+      expect(dsl.node.children[0].name).to == 'Intro'
 
       line = dsl.node.children[0]
-      line.children.should have(1).bar
-      line.children[0].should == bar
+      expect(line.children).to have(1).bar
+      expect(line.children[0]).to == bar
     end
     
     it "should allow breaking to be toggled" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
       dsl.line :manual_break => false
       
-      dsl.node.children.should have(1).line
-      dsl.node.children[0].name.should == 'TabOneLineOne' # not manual_breaking=false
-      dsl.node.children[0].manual_break?.should be_false
+      expect(dsl.node.children).to have(1).line
+      expect(dsl.node.children[0].name).to == 'TabOneLineOne' # not manual_breaking=false
+      expect(dsl.node.children[0].manual_break?).to be_false
     end
   end
 
   describe "#add_names" do
     it "should add a node with o[:name] of o[:node_class] to the node" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       dsl.add_names :names => [:Intro, :Intro], :node_class => Node::Bar
 
-      dsl.node.children.should have(2).bars
+      expect(dsl.node.children).to have(2).bars
       dsl.node.children.each do |child|
-        child.should be_a(Node::Bar)
-        child.name.should == :Intro
+        expect(child).to be_a(Node::Bar)
+        expect(child.name).to == :Intro
       end
     end
 
     it "should add a node with nil name if the o[:names] is blank" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       dsl.add_names :names => [], :node_class => Node::Bar
 
-      dsl.node.children.should have(1).bar
-      dsl.node.children[0].attributes[:name].should be_nil
-      dsl.node.children[0].should be_a(Node::Bar)
+      expect(dsl.node.children).to have(1).bar
+      expect(dsl.node.children[0].attributes[:name]).to be_nil
+      expect(dsl.node.children[0]).to be_a(Node::Bar)
     end
     
     it "should set o[:options] as attributes of the nodes" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       dsl.add_names :names => [:Intro, :Intro], :options => {:value => 1 }, :node_class => Node::Base
 
-      dsl.node.children.should have(2).nodes
+      expect(dsl.node.children).to have(2).nodes
       dsl.node.children.each do |child|
-        child.name.should == :Intro
-        child.value.should == 1
+        expect(child.name).to == :Intro
+        expect(child.value).to == 1
       end
     end
   end
@@ -162,20 +162,20 @@ describe Gitara::Dsl do
   describe "#score" do
     it "should add a score with the name" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       dsl.score
 
-      dsl.node.children.should have(1).score
+      expect(dsl.node.children).to have(1).score
 
       score = dsl.node.children[0]
-      score.should be_a(Node::Score)
-      score.children.should be_empty
+      expect(score).to be_a(Node::Score)
+      expect(score.children).to be_empty
     end
 
     it "should add the definition_children declared in the block to the score" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       note_set = FactoryBot.build(:note_set)
 
@@ -183,31 +183,31 @@ describe Gitara::Dsl do
         add note_set
       end
 
-      dsl.node.children.should have(1).score
+      expect(dsl.node.children).to have(1).score
 
       score = dsl.node.children[0]
-      score.children.should have(1).note_set
-      score.children[0].should == note_set
+      expect(score.children).to have(1).note_set
+      expect(score.children[0]).to == note_set
     end
   end
 
   describe "#stanza" do
     it "should add a stanza with the name" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       dsl.stanza 'Intro'
 
-      dsl.node.children.should have(1).stanza
+      expect(dsl.node.children).to have(1).stanza
 
       stanza = dsl.node.children[0]
-      stanza.name.should == 'Intro'
-      stanza.children.should be_empty
+      expect(stanza.name).to == 'Intro'
+      expect(stanza.children).to be_empty
     end
 
     it "should add the definition_children declared in the block to the stanza" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       line = FactoryBot.build(:line)
 
@@ -215,12 +215,12 @@ describe Gitara::Dsl do
         add line
       end
 
-      dsl.node.children.should have(1).stanza
-      dsl.node.children[0].name.should == 'Intro'
+      expect(dsl.node.children).to have(1).stanza
+      expect(dsl.node.children[0].name).to == 'Intro'
 
       stanza = dsl.node.children[0]
-      stanza.children.should have(1).line
-      stanza.children[0].should == line
+      expect(stanza.children).to have(1).line
+      expect(stanza.children[0]).to == line
     end
   end
 
@@ -232,7 +232,7 @@ describe Gitara::Dsl do
         dsl = FactoryBot.build(:dsl, :node => tab)
         dsl.send property, "test"
 
-        tab.send(property).should == "test"
+        expect(tab.send(property)).to == "test"
       end
     end
   end
@@ -240,40 +240,40 @@ describe Gitara::Dsl do
   describe "#chords" do
     it "should add a chord set with the name" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       dsl.chords :Am, 'r4-"Am" r r r'
 
-      dsl.node.children.should have(1).chord_set
+      expect(dsl.node.children).to have(1).chord_set
 
       chord_set = dsl.node.children[0]
-      chord_set.name.should == :Am
-      chord_set.value.should == 'r4-"Am" r r r'
+      expect(chord_set.name).to == :Am
+      expect(chord_set.value).to == 'r4-"Am" r r r'
     end
   end
 
   describe "#chords" do
     it "should add a bar with the name" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
-      dsl.node.children.should be_empty
+      expect(dsl.node.children).to be_empty
 
       dsl.chords :Am
 
-      dsl.node.children.should have(1).chord_set
+      expect(dsl.node.children).to have(1).chord_set
 
       chord_set = dsl.node.children[0]
-      chord_set.name.should == :Am
+      expect(chord_set.name).to == :Am
     end
   end
 
   describe "#partial" do
     it "should set the specified duration of the bar node to duration" do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:bar))
-      dsl.node.specified_duration.should be_nil
+      expect(dsl.node.specified_duration).to be_nil
 
       dsl.partial 8
 
-      dsl.node.specified_duration.should == 8
+      expect(dsl.node.specified_duration).to == 8
     end
   end
 
@@ -283,11 +283,11 @@ describe Gitara::Dsl do
 
       dsl.repeat 2
 
-      dsl.node.children.should have(1).repeat
+      expect(dsl.node.children).to have(1).repeat
 
       repeat = dsl.node.children[0]
-      repeat.value.should == 2
-      repeat.children.should be_empty
+      expect(repeat.value).to == 2
+      expect(repeat.children).to be_empty
     end
 
     it "should add the children declared in the block to the repeat" do
@@ -299,11 +299,11 @@ describe Gitara::Dsl do
         add bar
       end
 
-      dsl.node.children.should have(1).repeat
+      expect(dsl.node.children).to have(1).repeat
 
       repeat = dsl.node.children[0]
-      repeat.children.should have(1).child
-      repeat.children[0].should == bar
+      expect(repeat.children).to have(1).child
+      expect(repeat.children[0]).to == bar
     end
   end
 
@@ -316,11 +316,11 @@ describe Gitara::Dsl do
         add bar
       end
 
-      dsl.node.children.should have(1).alternative
+      expect(dsl.node.children).to have(1).alternative
 
       alternative = dsl.node.children[0]
-      alternative.children.should have(1).child
-      alternative.children[0].should == bar
+      expect(alternative.children).to have(1).child
+      expect(alternative.children[0]).to == bar
     end
   end
 end

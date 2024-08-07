@@ -4,21 +4,21 @@ describe Gitara::Node::Base::NodeVersion do
   describe "#prefix" do
     it "should be by default the first letter of the class" do
       version = Node::Base::NodeVersion.new
-      version.prefix.should == 'n'
+      expect(version.prefix).to == 'n'
     end
   end
 
   describe "#definition_name" do
     it "should include the node's class and the node's name" do
       version = Node::Base::NodeVersion.new(:node => FactoryBot.build(:base, :name => 'some node'))
-      version.definition_name.should == 'nBaseSomeNode'
+      expect(version.definition_name).to == 'nBaseSomeNode'
     end
   end
 
   describe "#call_name" do
     it "should be the call version of the definition name" do
       version = Node::Base::NodeVersion.new(:node => FactoryBot.build(:base, :name => 'some node'))
-      version.call_name.should == '\nBaseSomeNode'
+      expect(version.call_name).to == '\nBaseSomeNode'
     end
   end
 
@@ -29,7 +29,7 @@ describe Gitara::Node::Base::NodeVersion do
         FactoryBot.build(:base, :name => :Second)
       ])
       node_version = Node::Base::NodeVersion.new(:node => node)
-      node_version.value.should == '\nBaseFirst \nBaseSecond'
+      expect(node_version.value).to == '\nBaseFirst \nBaseSecond'
     end
   end
 
@@ -42,9 +42,9 @@ describe Gitara::Node::Base::NodeVersion do
       node_version = Node::Base::NodeVersion.new(:node => parent)
 
       children = node_version.definition_children
-      children.should have(1).child
-      children[0].node.should == child
-      children[0].should be_a(Node::Base::NodeVersion)
+      expect(children).to have(1).child
+      expect(children[0].node).to == child
+      expect(children[0]).to be_a(Node::Base::NodeVersion)
     end
   end
 
@@ -52,14 +52,14 @@ describe Gitara::Node::Base::NodeVersion do
     it "should be the call name if we want to render the node's definition name in the lilypond output" do
       node = FactoryBot.build(:base, :name => 'parent')
       node_version = Node::Base::NodeVersion.new(:node => node)
-      node_version.call_value.should == '\nBaseParent'
+      expect(node_version.call_value).to == '\nBaseParent'
     end
 
     it "should be the call value of the node if we don't want to render the node's definition name in the lilypond output" do
       node = FactoryBot.build(:base, :name => 'name')
       node_version = Node::Base::NodeVersion.new(:node => node)
-      node.should_receive(:call_value).with(node_version).and_return("todo { }")
-      node_version.call_value.should == "todo { }"
+      expect(node).to_receive(:call_value).with(node_version).and_return("todo { }")
+      expect(node_version.call_value).to == "todo { }"
     end
   end
 end

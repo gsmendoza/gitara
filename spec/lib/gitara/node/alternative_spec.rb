@@ -9,7 +9,7 @@ describe Gitara::Node::Alternative do
       ])
 
       version = Node::Base::NodeVersion.new(:node => alternative)
-      alternative.call_value(version).should == "\\alternative { { \\nBarFirst } { \\nBarSecond } }"
+      expect(alternative.call_value(version)).to == "\\alternative { { \\nBarFirst } { \\nBarSecond } }"
     end
   end
 end

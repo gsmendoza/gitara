@@ -8,7 +8,7 @@ describe Gitara::Node::Bar::StanzaVersion do
       tab = FactoryBot.build(:tab, :children => [stanza], :time => '4/4')
 
       stanza_version_of_bar = FactoryBot.build(:stanza_version_bar, :node => bar)
-      stanza_version_of_bar.value.should == 'r1'
+      expect(stanza_version_of_bar.value).to == 'r1'
     end
   end
 end
