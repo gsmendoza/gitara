@@ -19,7 +19,7 @@ describe Gitara::Node::Base::VoicedVersion do
       voiced_version = FactoryBot.build(:voiced_version, :node => parent, :voice => voice)
 
       children = voiced_version.definition_children
-      expect(children).to have(1).voiced_version
+      expect(children.size).to eq(1)
       expect(children[0].node).to eq(child)
       expect(children[0].voice).to eq(voice)
     end

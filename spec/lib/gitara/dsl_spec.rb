@@ -8,7 +8,7 @@ describe Gitara::Dsl do
 
       dsl.bar 'Intro'
 
-      expect(dsl.node.children).to have(1).bar
+      expect(dsl.node.children.size).to eq(1)
 
       bar = dsl.node.children[0]
       expect(bar.name).to eq('Intro')
@@ -25,11 +25,11 @@ describe Gitara::Dsl do
         add note_set
       end
 
-      expect(dsl.node.children).to have(1).bar
+      expect(dsl.node.children.size).to eq(1)
       expect(dsl.node.children[0].name).to eq('Intro')
 
       bar = dsl.node.children[0]
-      expect(bar.children).to have(1).note_set
+      expect(bar.children.size).to eq(1)
       expect(bar.children[0]).to eq(note_set)
     end
   end
@@ -43,7 +43,7 @@ describe Gitara::Dsl do
 
       dsl.add bar
 
-      expect(dsl.node.children).to have(1).bar
+      expect(dsl.node.children.size).to eq(1)
       expect(dsl.node.children[0]).to eq(bar)
     end
 
@@ -58,10 +58,10 @@ describe Gitara::Dsl do
         add note_set
       end
 
-      expect(dsl.node.children).to have(1).bar
+      expect(dsl.node.children.size).to eq(1)
       expect(dsl.node.children[0]).to eq(bar)
 
-      expect(bar.children).to have(1).note_set
+      expect(bar.children.size).to eq(1)
       expect(bar.children[0]).to eq(note_set)
     end
   end
@@ -73,7 +73,7 @@ describe Gitara::Dsl do
 
       dsl.notes 'test'
 
-      expect(dsl.node.children).to have(1).note_set
+      expect(dsl.node.children.size).to eq(1)
       expect(dsl.node.children[0].value).to eq('test')
     end
   end
@@ -85,7 +85,7 @@ describe Gitara::Dsl do
 
       dsl.line 'Intro'
 
-      expect(dsl.node.children).to have(1).line
+      expect(dsl.node.children.size).to eq(1)
 
       line = dsl.node.children[0]
       expect(line.name).to eq('Intro')
@@ -102,11 +102,11 @@ describe Gitara::Dsl do
         add bar
       end
 
-      expect(dsl.node.children).to have(1).line
+      expect(dsl.node.children.size).to eq(1)
       expect(dsl.node.children[0].name).to eq('Intro')
 
       line = dsl.node.children[0]
-      expect(line.children).to have(1).bar
+      expect(line.children.size).to eq(1)
       expect(line.children[0]).to eq(bar)
     end
     
@@ -114,7 +114,7 @@ describe Gitara::Dsl do
       dsl = FactoryBot.build(:dsl, :node => FactoryBot.build(:tab, :children => []))
       dsl.line :manual_break => false
       
-      expect(dsl.node.children).to have(1).line
+      expect(dsl.node.children.size).to eq(1)
       expect(dsl.node.children[0].name).to eq('TabOneLineOne') # not manual_breaking=false
       expect(dsl.node.children[0].manual_break?).to be_false
     end
@@ -127,7 +127,7 @@ describe Gitara::Dsl do
 
       dsl.add_names :names => [:Intro, :Intro], :node_class => Node::Bar
 
-      expect(dsl.node.children).to have(2).bars
+      expect(dsl.node.children.size).to eq(2)
       dsl.node.children.each do |child|
         expect(child).to be_a(Node::Bar)
         expect(child.name).to eq(:Intro)
@@ -140,7 +140,7 @@ describe Gitara::Dsl do
 
       dsl.add_names :names => [], :node_class => Node::Bar
 
-      expect(dsl.node.children).to have(1).bar
+      expect(dsl.node.children.size).to eq(1)
       expect(dsl.node.children[0].attributes[:name]).to be_nil
       expect(dsl.node.children[0]).to be_a(Node::Bar)
     end
@@ -151,7 +151,7 @@ describe Gitara::Dsl do
 
       dsl.add_names :names => [:Intro, :Intro], :options => {:value => 1 }, :node_class => Node::Base
 
-      expect(dsl.node.children).to have(2).nodes
+      expect(dsl.node.children.size).to eq(2)
       dsl.node.children.each do |child|
         expect(child.name).to eq(:Intro)
         expect(child.value).to eq(1)
@@ -166,7 +166,7 @@ describe Gitara::Dsl do
 
       dsl.score
 
-      expect(dsl.node.children).to have(1).score
+      expect(dsl.node.children.size).to eq(1)
 
       score = dsl.node.children[0]
       expect(score).to be_a(Node::Score)
@@ -183,10 +183,10 @@ describe Gitara::Dsl do
         add note_set
       end
 
-      expect(dsl.node.children).to have(1).score
+      expect(dsl.node.children.size).to eq(1)
 
       score = dsl.node.children[0]
-      expect(score.children).to have(1).note_set
+      expect(score.children.size).to eq(1)
       expect(score.children[0]).to eq(note_set)
     end
   end
@@ -198,7 +198,7 @@ describe Gitara::Dsl do
 
       dsl.stanza 'Intro'
 
-      expect(dsl.node.children).to have(1).stanza
+      expect(dsl.node.children.size).to eq(1)
 
       stanza = dsl.node.children[0]
       expect(stanza.name).to eq('Intro')
@@ -215,11 +215,11 @@ describe Gitara::Dsl do
         add line
       end
 
-      expect(dsl.node.children).to have(1).stanza
+      expect(dsl.node.children.size).to eq(1)
       expect(dsl.node.children[0].name).to eq('Intro')
 
       stanza = dsl.node.children[0]
-      expect(stanza.children).to have(1).line
+      expect(stanza.children.size).to eq(1)
       expect(stanza.children[0]).to eq(line)
     end
   end
@@ -244,7 +244,7 @@ describe Gitara::Dsl do
 
       dsl.chords :Am, 'r4-"Am" r r r'
 
-      expect(dsl.node.children).to have(1).chord_set
+      expect(dsl.node.children.size).to eq(1)
 
       chord_set = dsl.node.children[0]
       expect(chord_set.name).to eq(:Am)
@@ -259,7 +259,7 @@ describe Gitara::Dsl do
 
       dsl.chords :Am
 
-      expect(dsl.node.children).to have(1).chord_set
+      expect(dsl.node.children.size).to eq(1)
 
       chord_set = dsl.node.children[0]
       expect(chord_set.name).to eq(:Am)
@@ -283,7 +283,7 @@ describe Gitara::Dsl do
 
       dsl.repeat 2
 
-      expect(dsl.node.children).to have(1).repeat
+      expect(dsl.node.children.size).to eq(1)
 
       repeat = dsl.node.children[0]
       expect(repeat.value).to eq(2)
@@ -299,10 +299,10 @@ describe Gitara::Dsl do
         add bar
       end
 
-      expect(dsl.node.children).to have(1).repeat
+      expect(dsl.node.children.size).to eq(1)
 
       repeat = dsl.node.children[0]
-      expect(repeat.children).to have(1).child
+      expect(repeat.children.size).to eq(1)
       expect(repeat.children[0]).to eq(bar)
     end
   end
@@ -316,10 +316,10 @@ describe Gitara::Dsl do
         add bar
       end
 
-      expect(dsl.node.children).to have(1).alternative
+      expect(dsl.node.children.size).to eq(1)
 
       alternative = dsl.node.children[0]
-      expect(alternative.children).to have(1).child
+      expect(alternative.children.size).to eq(1)
       expect(alternative.children[0]).to eq(bar)
     end
   end

@@ -158,7 +158,7 @@ describe Gitara::Node::Base do
         FactoryBot.build(:bar, :children => [FactoryBot.build(:note_set)])
       ])
 
-      expect(node.definitions(Node::Bar)).to have(2).bars
+      expect(node.definitions(Node::Bar).size).to eq(2)
     end
   end
 
@@ -214,7 +214,7 @@ describe Gitara::Node::Base do
         ])
       ])
 
-      expect(tab.descendants(Node::Bar)).to have(1).bar
+      expect(tab.descendants(Node::Bar).size).to eq(1)
     end
 
     it "should follow the definitions of node references for descendants" do

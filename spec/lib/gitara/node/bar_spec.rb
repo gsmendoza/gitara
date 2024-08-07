@@ -14,7 +14,7 @@ describe Gitara::Node::Bar do
 
       tab = FactoryBot.build(:tab, :children => [definition_bar, call_bar])
 
-      expect(call_bar.note_sets).to have(2).note_sets
+      expect(call_bar.note_sets.size).to eq(2)
     end
   end
 

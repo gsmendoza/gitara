@@ -10,7 +10,7 @@ describe Gitara::Node::Tab do
         ])
       ])
       voices = tab.voices
-      expect(voices).to have(2).values
+      expect(voices.size).to eq(2)
       expect(voices[0].id).to eq(1)
       expect(voices[1].id).to eq(2)
       expect(voices.map(&:parent).uniq).to eq([tab])

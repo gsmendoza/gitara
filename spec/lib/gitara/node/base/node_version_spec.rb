@@ -42,7 +42,7 @@ describe Gitara::Node::Base::NodeVersion do
       node_version = Node::Base::NodeVersion.new(:node => parent)
 
       children = node_version.definition_children
-      expect(children).to have(1).child
+      expect(children.size).to eq(1)
       expect(children[0].node).to eq(child)
       expect(children[0]).to be_a(Node::Base::NodeVersion)
     end
