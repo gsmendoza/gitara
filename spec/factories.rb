@@ -9,7 +9,7 @@ FactoryBot.define do
   end
 
   factory :bar, :class => Node::Bar do
-    children [FactoryBot.build(:note_set)]
+    children { [FactoryBot.build(:note_set)] }
   end
 
   factory :base, :class => Node::Base do
@@ -28,25 +28,25 @@ FactoryBot.define do
   end
 
   factory :line, :class => Node::Line do
-    children [FactoryBot.build(:bar)]
+    children { [FactoryBot.build(:bar)] }
   end
 
   factory :repeat, :class => Node::Repeat do
   end
 
   factory :stanza, :class => Node::Stanza do
-    children [FactoryBot.build(:line)]
+    children { [FactoryBot.build(:line)] }
   end
 
   factory :stanza_version_bar, :class => Node::Bar::StanzaVersion do
   end
 
   factory :score, :class => Node::Score do
-    children [FactoryBot.build(:stanza)]
+    children { [FactoryBot.build(:stanza)] }
   end
 
   factory :tab, :class => Node::Tab do
-    children [FactoryBot.build(:score)]
+    children { [FactoryBot.build(:score)] }
   end
 
   factory :time_signature, :class => TimeSignature do
