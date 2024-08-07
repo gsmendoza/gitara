@@ -1,7 +1,7 @@
 require "active_support/inflector"
 require "erubis"
 require "linguistics"
-require "pow"
+require "pathname"
 require "redwood"
 require "thor"
 require "valuable"
