@@ -115,7 +115,7 @@ describe Gitara::Dsl do
       dsl.line :manual_break => false
       
       expect(dsl.node.children).to have(1).line
-      expect(dsl.node.children[0].name).to eq('TabOneLineOne' # not manual_breaking=false)
+      expect(dsl.node.children[0].name).to eq('TabOneLineOne') # not manual_breaking=false
       expect(dsl.node.children[0].manual_break?).to be_false
     end
   end
