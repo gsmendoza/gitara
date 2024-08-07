@@ -17,12 +17,12 @@ module Gitara
     def export(source_path)
       load source_path
       tab = Gitara.tab
-      lilypond_name = Pathname.new(source_path).name(false) + '.ly'
+      lilypond_name = Pathname.new(source_path).sub_ext('.ly')
       lilypond_path = Pathname.new(options['target-directory']) / lilypond_name
       lilypond_path.write(Gitara.render('tab', tab))
 
       if options['run-lilypond']
-        `lilypond -o #{lilypond_path.parent / lilypond_path.name(false)} #{lilypond_path}`
+        `lilypond -o #{lilypond_path.parent / lilypond_path.basename.sub_ext('') } #{lilypond_path}`
       end
     end
   end
