@@ -1,6 +1,6 @@
 require 'factory_bot'
 require 'gitara'
-require 'pry'
+require 'byebug'
 
 RSpec.configure do |config|
   include Gitara
