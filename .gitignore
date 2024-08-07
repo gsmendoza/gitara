@@ -12,4 +12,5 @@ b/*
 doc/*
 files/*
 pkg/*
+spec/support/examples.txt
 tmp/*
