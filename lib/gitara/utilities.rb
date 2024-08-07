@@ -9,7 +9,7 @@ module Gitara
     end
 
     def self.read!(pathname)
-      if pathname.exists?
+      if pathname.exist?
         pathname.read
       else
         raise PowError, "#{pathname} does not exist"

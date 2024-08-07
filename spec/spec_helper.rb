@@ -10,7 +10,7 @@ RSpec.configure do |config|
   config.example_status_persistence_file_path = 'spec/support/examples.txt'
 
   config.before :each do
-    test_tmp_dir.delete! if test_tmp_dir.exists? && ! run_lilypond?
+    test_tmp_dir.delete! if test_tmp_dir.exist? && ! run_lilypond?
     Gitara.instance_variable_set :@tab, nil
   end
 
