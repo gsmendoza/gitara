@@ -129,33 +129,33 @@ vOneLineVerseOneLineTwo = { \vOneBarYouGot \vOneBarWhatYouThought \vOneBarWhenYo
 vTwoLineVerseOneLineTwo = { \vTwoBarYouGot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarItThough \break }
 cLineVerseOneLineTwo = { \cBarYouGot \cBarWhatYouThought \cBarWhenYouFirst \cBarItThough }
 
-vOneLineVerseOnelineone = { \vOneBarItsNot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarBeganIt \break }
-vTwoLineVerseOnelineone = { \vTwoBarItsNot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
-cLineVerseOnelineone = { \cBarItsNot \cBarWhatYouThought \cBarWhenYouFirst \cBarBeganIt }
+vOneLineVerseOneLineOne = { \vOneBarItsNot \vOneBarWhatYouThought \vOneBarWhenYouFirst \vOneBarBeganIt \break }
+vTwoLineVerseOneLineOne = { \vTwoBarItsNot \vTwoBarWhatYouThought \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
+cLineVerseOneLineOne = { \cBarItsNot \cBarWhatYouThought \cBarWhenYouFirst \cBarBeganIt }
 
-vOneLineChorusOnelinetwo = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUp \vOneBarIntro \vOneBarIntro \break }
-vTwoLineChorusOnelinetwo = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUp \vTwoBarIntro \vTwoBarIntro \break }
-cLineChorusOnelinetwo = { \cBarItsNotGoingToStopCcge \cBarTilYouWiseUp \cBarIntro \cBarIntro }
+vOneLineChorusOneLineTwo = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUp \vOneBarIntro \vOneBarIntro \break }
+vTwoLineChorusOneLineTwo = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUp \vTwoBarIntro \vTwoBarIntro \break }
+cLineChorusOneLineTwo = { \cBarItsNotGoingToStopCcge \cBarTilYouWiseUp \cBarIntro \cBarIntro }
 
-vOneLineVerseTwolineone = { \vOneBarYoureSure \vOneBarTheresACure \vOneBarWhenYouFirst \vOneBarBeganIt \break }
-vTwoLineVerseTwolineone = { \vTwoBarYoureSure \vTwoBarTheresACure \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
-cLineVerseTwolineone = { \cBarYoureSure \cBarTheresACure \cBarWhenYouFirst \cBarBeganIt }
+vOneLineVerseTwoLineOne = { \vOneBarYoureSure \vOneBarTheresACure \vOneBarWhenYouFirst \vOneBarBeganIt \break }
+vTwoLineVerseTwoLineOne = { \vTwoBarYoureSure \vTwoBarTheresACure \vTwoBarWhenYouFirst \vTwoBarBeganIt \break }
+cLineVerseTwoLineOne = { \cBarYoureSure \cBarTheresACure \cBarWhenYouFirst \cBarBeganIt }
 
-vOneLineChorusTwolinetwo = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUpTwo \vOneBarIntro \vOneBarIntro \break }
-vTwoLineChorusTwolinetwo = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUpTwo \vTwoBarIntro \vTwoBarIntro \break }
-cLineChorusTwolinetwo = { \cBarItsNotGoingToStopCcge \cBarTilYouWiseUpTwo \cBarIntro \cBarIntro }
+vOneLineChorusTwoLineTwo = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUpTwo \vOneBarIntro \vOneBarIntro \break }
+vTwoLineChorusTwoLineTwo = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUpTwo \vTwoBarIntro \vTwoBarIntro \break }
+cLineChorusTwoLineTwo = { \cBarItsNotGoingToStopCcge \cBarTilYouWiseUpTwo \cBarIntro \cBarIntro }
 
 vOneLineBridgeLineOne = { \vOneBarPrepareAList \vOneBarBeforeYouSign \break }
 vTwoLineBridgeLineOne = { \vTwoBarPrepareAList \vTwoBarBeforeYouSign \break }
 cLineBridgeLineOne = { \cBarPrepareAList \cBarBeforeYouSign }
 
-vOneLineChorusThreelinetwo = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUpThree \vOneBarItsNotGoingToStopCcgeTwo \vOneBarTilYouWiseUpThree \break }
-vTwoLineChorusThreelinetwo = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUpThree \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarTilYouWiseUpThree \break }
-cLineChorusThreelinetwo = { \cBarItsNotGoingToStopCcge \cBarTilYouWiseUpThree \cBarItsNotGoingToStopCcgeTwo \cBarTilYouWiseUpThree }
+vOneLineChorusThreeLineTwo = { \vOneBarItsNotGoingToStopCcge \vOneBarTilYouWiseUpThree \vOneBarItsNotGoingToStopCcgeTwo \vOneBarTilYouWiseUpThree \break }
+vTwoLineChorusThreeLineTwo = { \vTwoBarItsNotGoingToStopCcge \vTwoBarTilYouWiseUpThree \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarTilYouWiseUpThree \break }
+cLineChorusThreeLineTwo = { \cBarItsNotGoingToStopCcge \cBarTilYouWiseUpThree \cBarItsNotGoingToStopCcgeTwo \cBarTilYouWiseUpThree }
 
-vOneLineChorusThreelinethree = { \vOneBarItsNotGoingToStopCcgeTwo \vOneBarTilYouWiseUpThree \vOneBarItsNotGoingToStopCcgeTwo \vOneBarSoJustGiveUp \break }
-vTwoLineChorusThreelinethree = { \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarTilYouWiseUpThree \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarSoJustGiveUp \break }
-cLineChorusThreelinethree = { \cBarItsNotGoingToStopCcgeTwo \cBarTilYouWiseUpThree \cBarItsNotGoingToStopCcgeTwo \cBarSoJustGiveUp }
+vOneLineChorusThreeLineThree = { \vOneBarItsNotGoingToStopCcgeTwo \vOneBarTilYouWiseUpThree \vOneBarItsNotGoingToStopCcgeTwo \vOneBarSoJustGiveUp \break }
+vTwoLineChorusThreeLineThree = { \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarTilYouWiseUpThree \vTwoBarItsNotGoingToStopCcgeTwo \vTwoBarSoJustGiveUp \break }
+cLineChorusThreeLineThree = { \cBarItsNotGoingToStopCcgeTwo \cBarTilYouWiseUpThree \cBarItsNotGoingToStopCcgeTwo \cBarSoJustGiveUp }
 
 vOneLineOutroLineTwo = { \vOneBarOutro \vOneBarOutro \vOneBarOutro \vOneBarOutro \break }
 vTwoLineOutroLineTwo = { \vTwoBarOutro \vTwoBarOutro \vTwoBarOutro \vTwoBarOutro \break }
@@ -170,24 +170,24 @@ vTwoStanzaIntro = { \vTwoLineIntroLineOne }
 cStanzaIntro = { \cLineIntroLineOne }
 sStanzaIntro = { r1^"Intro" r1 r1 r1 }
 
-vOneStanzaVerseOne = { \vOneLineVerseOnelineone \vOneLineVerseOneLineTwo }
-vTwoStanzaVerseOne = { \vTwoLineVerseOnelineone \vTwoLineVerseOneLineTwo }
-cStanzaVerseOne = { \cLineVerseOnelineone \cLineVerseOneLineTwo }
+vOneStanzaVerseOne = { \vOneLineVerseOneLineOne \vOneLineVerseOneLineTwo }
+vTwoStanzaVerseOne = { \vTwoLineVerseOneLineOne \vTwoLineVerseOneLineTwo }
+cStanzaVerseOne = { \cLineVerseOneLineOne \cLineVerseOneLineTwo }
 sStanzaVerseOne = { r1^"Verse 1" r1 r1 r1 r1 r1 r1 r1 }
 
-vOneStanzaChorusOne = { \vOneLineChorusOneLineOne \vOneLineChorusOnelinetwo }
-vTwoStanzaChorusOne = { \vTwoLineChorusOneLineOne \vTwoLineChorusOnelinetwo }
-cStanzaChorusOne = { \cLineChorusOneLineOne \cLineChorusOnelinetwo }
+vOneStanzaChorusOne = { \vOneLineChorusOneLineOne \vOneLineChorusOneLineTwo }
+vTwoStanzaChorusOne = { \vTwoLineChorusOneLineOne \vTwoLineChorusOneLineTwo }
+cStanzaChorusOne = { \cLineChorusOneLineOne \cLineChorusOneLineTwo }
 sStanzaChorusOne = { r1^"Chorus 1" r1 r1 r1 r1 r1 r1 r1 }
 
-vOneStanzaVerseTwo = { \vOneLineVerseTwolineone \vOneLineVerseOneLineTwo }
-vTwoStanzaVerseTwo = { \vTwoLineVerseTwolineone \vTwoLineVerseOneLineTwo }
-cStanzaVerseTwo = { \cLineVerseTwolineone \cLineVerseOneLineTwo }
+vOneStanzaVerseTwo = { \vOneLineVerseTwoLineOne \vOneLineVerseOneLineTwo }
+vTwoStanzaVerseTwo = { \vTwoLineVerseTwoLineOne \vTwoLineVerseOneLineTwo }
+cStanzaVerseTwo = { \cLineVerseTwoLineOne \cLineVerseOneLineTwo }
 sStanzaVerseTwo = { r1^"Verse 2" r1 r1 r1 r1 r1 r1 r1 }
 
-vOneStanzaChorusTwo = { \vOneLineChorusOneLineOne \vOneLineChorusTwolinetwo }
-vTwoStanzaChorusTwo = { \vTwoLineChorusOneLineOne \vTwoLineChorusTwolinetwo }
-cStanzaChorusTwo = { \cLineChorusOneLineOne \cLineChorusTwolinetwo }
+vOneStanzaChorusTwo = { \vOneLineChorusOneLineOne \vOneLineChorusTwoLineTwo }
+vTwoStanzaChorusTwo = { \vTwoLineChorusOneLineOne \vTwoLineChorusTwoLineTwo }
+cStanzaChorusTwo = { \cLineChorusOneLineOne \cLineChorusTwoLineTwo }
 sStanzaChorusTwo = { r1^"Chorus 2" r1 r1 r1 r1 r1 r1 r1 }
 
 vOneStanzaBridge = { \vOneLineBridgeLineOne }
@@ -195,9 +195,9 @@ vTwoStanzaBridge = { \vTwoLineBridgeLineOne }
 cStanzaBridge = { \cLineBridgeLineOne }
 sStanzaBridge = { r1^"Bridge" r1 }
 
-vOneStanzaChorusThree = { \vOneLineChorusOneLineOne \vOneLineChorusThreelinetwo \vOneLineChorusThreelinethree }
-vTwoStanzaChorusThree = { \vTwoLineChorusOneLineOne \vTwoLineChorusThreelinetwo \vTwoLineChorusThreelinethree }
-cStanzaChorusThree = { \cLineChorusOneLineOne \cLineChorusThreelinetwo \cLineChorusThreelinethree }
+vOneStanzaChorusThree = { \vOneLineChorusOneLineOne \vOneLineChorusThreeLineTwo \vOneLineChorusThreeLineThree }
+vTwoStanzaChorusThree = { \vTwoLineChorusOneLineOne \vTwoLineChorusThreeLineTwo \vTwoLineChorusThreeLineThree }
+cStanzaChorusThree = { \cLineChorusOneLineOne \cLineChorusThreeLineTwo \cLineChorusThreeLineThree }
 sStanzaChorusThree = { r1^"Chorus 3" r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 r1 }
 
 vOneStanzaOutro = { \vOneLineIntroLineOne \vOneLineOutroLineTwo }

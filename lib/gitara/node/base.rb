@@ -55,10 +55,7 @@ module Gitara
       end
 
       def definition_name
-        name.to_s.
-          gsub(/\W/, '_').
-          gsub(/\d+/){|s| Utilities.id_as_word(s)}.
-          camelize
+        name.to_s.gsub(/\d+/){ |s| Utilities.id_as_word(s) }.split(/\W/).map(&:camelize).join
       end
 
       def definition_of?(target)

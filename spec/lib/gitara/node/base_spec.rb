@@ -199,6 +199,13 @@ describe Gitara::Node::Base do
       node = FactoryBot.build(:base, :name => "Verse 1 line-2")
       expect(node.definition_name).to eq("VerseOneLineTwo")
     end
+
+    context 'when a word of the name is already camelized' do
+      it 'should retain the camelization' do
+        node = FactoryBot.build(:base, :name => "Verse 1LineOne")
+        expect(node.definition_name).to eq("VerseOneLineOne")
+      end
+    end
   end
 
   describe "#descendants" do
