@@ -10,7 +10,7 @@ To install,
 
 You need [lilypond](http://lilypond.org) in order to generate pdfs and midis.
 
-Gitara is tested on Ruby 1.9.3 and Lilypond 2.14. Patches are welcome.
+Gitara is tested on Ruby 3.3.3 and Lilypond 2.22. Patches are welcome.
 
 To run,
 

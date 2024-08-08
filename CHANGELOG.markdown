@@ -1,3 +1,9 @@
+1.2.0 - 2024-08-08
+-------------------
+
+* [#28] Support Ruby 3.3 and Lilypond 2.22
+* Chord names have moved between the staff and tab staffs. Still figuring out how to move it back under the tab staff.
+
 1.0.1 - 2013-01-24
 ------------------
 
